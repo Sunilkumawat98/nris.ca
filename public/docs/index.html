@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://local-nris.ca";
+        var tryItOutBaseUrl = "https://stage-api.nris.ca";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -100,14 +100,16 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://local-nris.ca</code>
+    <strong>Base URL</strong>: <code>https://stage-api.nris.ca</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbG9jYWwtbW92aWZsZXguaW5cL2FwaVwvdjFcL2xvZ2luIiwiaWF0IjoxNjg5NDE5NTEyLCJleHAiOjE2ODk0MjMxMTIsIm5iZiI6MTY4OTQxOTUxMiwianRpIjoiaXRxTnR1REpQS0E3ZE9oRiIsInN1YiI6MSwicHJ2IjoiYTQyM2I2ZDgzY2I3MTEwMjdmMWU5OTBiMjA3OGY2YTY4NDQ5Y2FlOSJ9.UpilgGwdqSUD4tIYhTjA_13UmIG-QxfVR3DdkbaZO-w"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="country-state-city">Country State & City</h1>
 
@@ -128,14 +130,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://local-nris.ca/api/v1/get-all-country" \
+    "https://stage-api.nris.ca/api/v1/get-all-country" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://local-nris.ca/api/v1/get-all-country"
+    "https://stage-api.nris.ca/api/v1/get-all-country"
 );
 
 const headers = {
@@ -289,7 +291,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://local-nris.ca/api/v1/get-all-state-by-country" \
+    "https://stage-api.nris.ca/api/v1/get-all-state-by-country" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -300,7 +302,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://local-nris.ca/api/v1/get-all-state-by-country"
+    "https://stage-api.nris.ca/api/v1/get-all-state-by-country"
 );
 
 const headers = {
@@ -479,7 +481,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://local-nris.ca/api/v1/get-all-city-by-state-and-country" \
+    "https://stage-api.nris.ca/api/v1/get-all-city-by-state-and-country" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -491,7 +493,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://local-nris.ca/api/v1/get-all-city-by-state-and-country"
+    "https://stage-api.nris.ca/api/v1/get-all-city-by-state-and-country"
 );
 
 const headers = {

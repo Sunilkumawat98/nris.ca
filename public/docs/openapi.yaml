@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://local-nris.ca'
+    url: 'https://stage-api.nris.ca'
 paths:
   /api/v1/get-all-country:
     post:
@@ -325,3 +325,12 @@ tags:
   -
     name: 'Country State & City'
     description: "\nAPIs for managing all country, state, city"
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

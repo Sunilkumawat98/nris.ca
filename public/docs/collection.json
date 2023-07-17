@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/local-nris.ca"
+            "value": "https:\/\/stage-api.nris.ca"
         }
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "a7eaa2ba-c427-4973-a4b1-fc7d3507e50b",
+        "_postman_id": "33dc5f86-545a-4213-9811-7f363a668999",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -152,6 +152,13 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "value": null,
+                "type": "string"
+            }
+        ]
     }
 }
