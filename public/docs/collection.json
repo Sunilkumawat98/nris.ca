@@ -1,0 +1,157 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/local-nris.ca"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "a7eaa2ba-c427-4973-a4b1-fc7d3507e50b",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Country State & City",
+            "description": "\nAPIs for managing all country, state, city",
+            "item": [
+                {
+                    "name": "getAllCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-country"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully country list get...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n},\n{\n\"id\": 2,\n\"name\": \"Canada\",\n\"color\": \"#990d00\",\n\"code\": \"ca\",\n\"domain\": \"canada\",\n\"image\": \"47659423262639bd6a30242.39786820.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in Canada\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in Canada . Get information on\",\n\"c_meta_keywords\": \"Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website\",\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Country not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllStateByCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-state-by-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-state-by-country"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"country_id\":1\n}\n\n<aside class=\"note\">basepath\/api\/v1\/get-all-state-by-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully state list get...\",\n\"data\": [\n{\n\"id\": 3,\n\"name\": \"Aberconwy and Colwyn\",\n\"code\": \"AC\",\n\"domain\": \"aberconwyandcolwyn\",\n\"description\": \"Aberconwy and Colwyn\",\n\"logo\": \"\",\n\"s_meta_title\": \"\",\n\"s_meta_description\": \"\",\n\"s_meta_keywords\": \"\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\",\n\"created_by\": \"NULL\"\n},\n{\n\"id\": 5,\n\"name\": \"Aberdeen City\",\n\"code\": \"ADC\",\n\"domain\": \"aberdeencity\",\n\"description\": \"Aberdeen City\",\n\"logo\": \"\",\n\"s_meta_title\": \"\",\n\"s_meta_description\": \"\",\n\"s_meta_keywords\": \"\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\",\n\"created_by\": \"NULL\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"State not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCityByStateAndCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-city-by-state-and-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-city-by-state-and-country"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"country_id\":101,\n\"state_id\":4037\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-all-city-by-state-and-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully city list get...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"Airdrie\",\n\"state_code\": \"AB\"\n},\n{\n\"id\": 2,\n\"name\": \"Brooks\",\n\"state_code\": \"AB\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
