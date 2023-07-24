@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1;
+use App\Http\Controllers\Api\V1\CountryStateCityController;
+use App\Http\Controllers\Api\V1\UserController;
+use App\Http\Controllers\Api\V1\LoginRegisterController;
+use App\Http\Controllers\Api\V1\NrisTalkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +29,7 @@ use App\Http\Controllers\Api\V1;
 Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
-    // Route::post('get-all-country', [\App\Http\Controllers\Api\V1\CountryStateCityController::class, 'getAllCountry']);
+    
     /*
         Country, State
         &
@@ -33,10 +37,44 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
     */
 
-    Route::post('/get-all-country', [App\Http\Controllers\Api\V1\CountryStateCityController::class,'getAllCountry']);
-    Route::post('/get-all-state-by-country', [App\Http\Controllers\Api\V1\CountryStateCityController::class,'getAllStateByCountry']);
-    Route::post('/get-all-city-by-state-and-country', [App\Http\Controllers\Api\V1\CountryStateCityController::class,'getAllCityByStateAndCountry']);
+    Route::get('/get-all-country', [CountryStateCityController::class,'getAllCountry']);
+    Route::post('/get-all-state-by-country', [CountryStateCityController::class,'getAllStateByCountry']);
+    Route::post('/get-all-city-by-state-and-country', [CountryStateCityController::class,'getAllCityByStateAndCountry']);
 
 
+    Route::get('/get-all-nris-talk', [NrisTalkController::class,'getAllNrisTalk']);
+    Route::post('/get-nris-talk-reply-by-id', [NrisTalkController::class,'getNrisTalkReplyById']);
+
+
+
+
+    /*
+        Login & Register
+    */
+    
+    Route::post('/register', [LoginRegisterController::class,'register']);
+    Route::post('/login', [LoginRegisterController::class,'login']);
+    Route::post('/forgot-pass', [LoginRegisterController::class,'forgotPass']);
+    Route::post('/forgot-password-change', [LoginRegisterController::class,'changeForgotPassword']); 
+
+
+
+
+    /*
+        After Login Start
+    */
+
+    Route::group(['middleware' => ['jwtAuth']], function($router) {
+        
+        $router->post('/get-user-profile', [UserController::class,'getUserProfile']);
+        $router->post('/change-password', [UserController::class,'changePassword']); 
+
+        $router->post('/create-nris-talk', [NrisTalkController::class,'createNrisTalk']); 
+        $router->post('/create-nris-talk-reply', [NrisTalkController::class,'createNrisTalkReply']); 
+        $router->post('/get-nris-talk', [NrisTalkController::class,'getNrisTalk']); 
+    
+    });
+
+    
 
 });

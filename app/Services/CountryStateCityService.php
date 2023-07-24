@@ -11,9 +11,8 @@ use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-
 use Exception;
-
+use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 
 
@@ -28,6 +27,9 @@ class CountryStateCityService
         $this->code                     = 'status_code';
         $this->data                     = 'data';
         $this->total                    = 'total_count';
+        $this->code_200                 = Response::HTTP_OK;
+        $this->code_404                 = Response::HTTP_NOT_FOUND;
+        $this->code_500                 = Response::HTTP_INTERNAL_SERVER_ERROR;
     }
 
     
@@ -48,25 +50,27 @@ class CountryStateCityService
     {
         $return[$this->status]                  = false;
         $return[$this->message]                 = 'Country not found...';
-        $return[$this->code]                    = 404;
+        $return[$this->code]                    = $this->code_404;
         $return[$this->data]                    = [];
-        
-
-        $result                                 = Country::all();
-        
-
-        if($result)
-        {
-
-            $result                             = $result->toArray();
-
-
-            $return[$this->status]              = true;
-            $return[$this->message]             = 'Successfully country list get...';
-            $return[$this->code]                = 200;
-            $return[$this->data]                = $result;
+        try{
+            $result                                 = Country::all();
+            if($result)
+            {
+                $result                             = $result->toArray();
+                $return[$this->status]              = true;
+                $return[$this->message]             = 'Successfully country list get...';
+                $return[$this->code]                = $this->code_200;
+                $return[$this->data]                = $result;
+            }
         }
-        
+        catch (Exception $e) {
+            $except['status'] = false;
+            $except['error'][] = 'Exception Error...';
+            $except['message'] = $e;
+            $exception = new BaseController();
+            $exception = $exception->throwExceptionError($except, $this->code_500);
+            return $e;
+        }
         return $return;
     }
     
@@ -89,7 +93,7 @@ class CountryStateCityService
     {
         $return[$this->status]                  = false;
         $return[$this->message]                 = 'State not found...';
-        $return[$this->code]                    = 404;
+        $return[$this->code]                    = $this->code_404;
         $return[$this->data]                    = [];
         
 
@@ -104,7 +108,7 @@ class CountryStateCityService
 
             $return[$this->status]              = true;
             $return[$this->message]             = 'Successfully state list get...';
-            $return[$this->code]                = 200;
+            $return[$this->code]                = $this->code_200;
             $return[$this->data]                = $result;
         }
         
@@ -132,7 +136,7 @@ class CountryStateCityService
     {
         $return[$this->status]                  = false;
         $return[$this->message]                 = 'City list not found';
-        $return[$this->code]                    = 404;
+        $return[$this->code]                    = $this->code_404;
         $return[$this->data]                    = [];
         
 
@@ -147,7 +151,7 @@ class CountryStateCityService
 
             $return[$this->status]              = true;
             $return[$this->message]             = 'Successfully city list get...';
-            $return[$this->code]                = 200;
+            $return[$this->code]                = $this->code_200;
             $return[$this->data]                = $result;
         }
         

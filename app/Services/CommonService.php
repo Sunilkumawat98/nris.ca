@@ -11,7 +11,9 @@ use Illuminate\Pagination\Paginator;
 use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use Validator;
+use App\Models\User;
 use App\Exceptions;
+use Illuminate\Support\Facades\Hash;
 
 
 class CommonService
@@ -19,12 +21,16 @@ class CommonService
 
     public function __construct()
     {
-        $this->status = 'status';
-        $this->message = 'message';
-        $this->code = 'status_code';
-        $this->data = 'data';
-        $this->total = 'total_count';
-        
+        $this->status                       = 'status';
+        $this->message                      = 'message';
+        $this->code                         = 'status_code';
+        $this->data                         = 'data';
+        $this->total                        = 'total_count';
+        $this->code_200                     = Response::HTTP_OK;
+        $this->code_404                     = Response::HTTP_NOT_FOUND;
+        $this->code_401                     = Response::HTTP_UNAUTHORIZED;
+        $this->code_409                     = Response::HTTP_CONFLICT;
+        $this->code_500                     = Response::HTTP_INTERNAL_SERVER_ERROR;
 
     }
     
@@ -108,6 +114,130 @@ class CommonService
         $percent4Txn = 5;                                           //  I want to get 3% of $amount.
         $percentInDecimal4Txn = $percent4Txn / 100;                 //  Convert our percentage value into a decimal.
         return $percentInDecimal4Txn * $amount;                     //  Get the result.
+    }
+
+
+
+
+
+    /**
+        * Profile Code
+        * method getUserProfile()
+        * 
+        * @param[]
+        * userId
+        * 
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 404
+        * 
+    **/
+    
+    public function getUserProfile($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Profile not found...';
+        $return[$this->code]                        = $this->code_404;
+        $return[$this->data]                        = [];
+
+        $result                                     = User::where('id',$param['user_id'])->first();
+        
+        if($result)
+        {
+            $result                                 = $result->toArray();
+            $return[$this->status]                  = true;
+            $return[$this->message]                 = 'Successfully Profile Get...';
+            $return[$this->code]                    = $this->code_200;
+            $return[$this->data]                    = $result;
+        }
+        
+        return $return;
+    }
+
+
+
+
+
+
+
+    /**
+        * method changeUserPassword()
+        * 
+        * @param[]
+        * user_id
+        * current_password
+        * new_password
+        * 
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 404
+        * 
+    **/
+    
+    public function changeUserPassword($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 201;
+        $return[$this->data]                        = [];
+
+        
+        $exist                                      = $this->getUserPasswordByUserId($param);
+
+        if($exist[$this->status])
+        {
+            $return[$this->status]                  = false;
+            $return[$this->message]                 = 'Current password is not being match...';
+            $return[$this->code]                    = $this->code_401;
+            $return[$this->data]                    = [];
+            
+            if (Hash::check($param['current_password'], $exist[$this->data]['password'])) 
+            {
+
+                $userMaster                                 = User::find($param['user_id']);
+                $userMaster->password                       = bcrypt($param['new_password']);
+                if($userMaster->save())
+                {
+                    $return[$this->status]                  = true;
+                    $return[$this->message]                 = 'Successfully Password Changed...';
+                    $return[$this->code]                    = $this->code_200;
+                    $return[$this->data]                    = [];
+                }                
+            }
+        }
+        return $return;
+    }
+
+
+
+    public function getUserPasswordByUserId($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'User not found...';
+        $return[$this->code]                        = $this->code_404;
+        $return[$this->data]                        = [];
+
+        $result                                     = User::select('password','email')->where('id',$param['user_id'])->first();
+              
+        if($result)
+        {
+            $result->makeVisible('password');
+            $result                                 = $result->toArray();
+            $return[$this->status]                  = true;
+            $return[$this->message]                 = 'Successfully User Get...';
+            $return[$this->code]                    = $this->code_200;
+            $return[$this->data]                    = $result;
+        }
+        
+        return $return;
     }
 
 

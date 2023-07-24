@@ -17,10 +17,6 @@ class CountryStateCityController extends BaseController
 {
     public function __construct()
     {
-        $this->num_of_day               = 1;
-        $this->to_day                   = date('d-m-Y');
-        
-        
         $this->code                     = 'status_code';
         $this->status                   = 'status';
         $this->result                   = 'result';
@@ -28,8 +24,6 @@ class CountryStateCityController extends BaseController
         $this->data                     = 'data';
         $this->total                    = 'total_count';
         $this->countryStateLibObj       = new CountryStateCityLibrary();
-        
-        
     }
     
     
@@ -268,11 +262,6 @@ class CountryStateCityController extends BaseController
         $all = $request->all();
         
         $response = $this->countryStateLibObj->allCityByStateCountry($all);
-
-        // echo "<pre>";
-        // print_r($response);
-        // echo "</pre>";
-        // die();
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);

@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,6 +56,7 @@ return [
     */
 
     'url' => env('APP_URL'),
+    'domain' => env('DOMAIN_URL'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -168,6 +169,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
     ])->toArray(),
 
     /*
