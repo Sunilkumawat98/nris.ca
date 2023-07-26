@@ -1,0 +1,250 @@
+name: 'User Profile Related'
+description: |-
+
+  APIs for managing all user's profile related
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-user-profile
+    metadata:
+      groupName: 'User Profile Related'
+      groupDescription: |-
+
+        APIs for managing all user's profile related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getUserProfile
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        EX
+         {
+        "user_id":1
+        }
+
+        <aside class="notice">basepath/api/v1/get-user-profile</aside>
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer _token required'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*user_id':
+        name: '*user_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*user_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully Profile Get...",
+          "data": {
+          "id": 1,
+          "first_name": "Abc",
+          "last_name": "Def",
+          "email": "you@domain.com",
+          "dob": "2023-02-02",
+          "mobile": "9899****54"
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "Profile not found...",
+          "data": []
+          }
+
+           @response 401
+           {
+          "message": "Token is Invalid",
+          "status_code": 401,
+          "status": false
+          }
+
+
+           @response 419
+           {
+          "message": "Token is Expired",
+          "status_code": 401,
+          "status": false
+          }
+
+
+           @response 403
+           {
+          "message": "Authorised Token Not Found",
+          "status_code": 401,
+          "status": false
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer e8f5a6bvDE1gcVZ4ahd6P3k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/change-password
+    metadata:
+      groupName: 'User Profile Related'
+      groupDescription: |-
+
+        APIs for managing all user's profile related
+      subgroup: ''
+      subgroupDescription: ''
+      title: changePassword
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Oops, something went wrong...
+
+        EX
+         {
+        "user_id":1,
+        "current_password":"Abc@123456789",
+        "new_password":"Abc@12345",
+        "retype_password":"Abc@12345"
+        }
+        <aside class="notice">basepath/api/v1/change-password</aside>
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer _token required .'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*user_id':
+        name: '*user_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*current_password':
+        name: '*current_password'
+        description: ''
+        required: true
+        example: '1,2,3 in JSON BODY'
+        type: string
+        custom: []
+      '*new_password':
+        name: '*new_password'
+        description: ''
+        required: true
+        example: '1,2,3 in JSON BODY'
+        type: string
+        custom: []
+      '*retype_password':
+        name: '*retype_password'
+        description: ''
+        required: true
+        example: '1,2,3 in JSON BODY'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      '*user_id': 1
+      '*current_password': '1,2,3 in JSON BODY'
+      '*new_password': '1,2,3 in JSON BODY'
+      '*retype_password': '1,2,3 in JSON BODY'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully Password Changed...",
+          "result": []
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 201
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "User not found..."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+          "status": false,
+          "status_code": 403,
+          "message": "Current password is not being match...",
+          "data": []
+          }
+           @response 401
+           {
+          "message": "Token is Invalid",
+          "status_code": 401,
+          "status": false
+          }
+
+
+           @response 419
+           {
+          "message": "Token is Expired",
+          "status_code": 401,
+          "status": false
+          }
+
+
+           @response 403
+           {
+          "message": "Authorised Token Not Found",
+          "status_code": 401,
+          "status": false
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer EPe6kafc65Zd4aVD3g8b1vh'
+    controller: null
+    method: null
+    route: null
+    custom: []

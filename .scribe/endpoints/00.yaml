@@ -5,7 +5,7 @@ description: |-
 endpoints:
   -
     httpMethods:
-      - POST
+      - GET
     uri: api/v1/get-all-country
     metadata:
       groupName: 'Country State & City'

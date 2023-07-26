@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "33dc5f86-545a-4213-9811-7f363a668999",
+        "_postman_id": "2a0019c9-024b-4c9d-8630-cd280aa4452e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -28,7 +28,7 @@
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/v1\/get-all-country"
                         },
-                        "method": "POST",
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -144,6 +144,532 @@
                             "header": [],
                             "code": 404,
                             "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Login, Register",
+            "description": "\nAPIs for managing all Auth Related",
+            "item": [
+                {
+                    "name": "register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*first_name\":\"autem\",\"*last_name\":\"nulla\",\"*email_id\":\"facere\",\"*dob\":\"consectetur\",\"*mobile\":\"dolore\",\"*password\":\"quod\",\"*country_id\":\"quia\",\"*state_id\":\"quibusdam\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email_id\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Registered...\",\n\"data\": {\n\"user_id\": 1,\n\"email\": \"you@domain.com\"\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 202,
+                            "body": "{\n\"status\": false,\n\"status_code\": 202,\n\"message\": \"Oops, please try again...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 409,
+                            "body": "{\n\"status\": false,\n\"status_code\": 409,\n\"message\": \"Email Id already exist...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email\":\"gustave.bashirian@example.com\",\"*password\":\"sint\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"status\": true,\n     \"status_code\": 200,\n     \"message\": \"Successfully login..\",\n     \"data\": {\n         \"user_data\": {\n             \"user_id\": 1,\n             \"name\": \"Md Saddam Hussain\",\n             \"email\": \"Hussain@gmail.com\"\n         },\n         \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWwtbnJpcy5jYS9hcGkvdjEvbG9naW4iLCJpYXQiOjE2ODk2Nzk3ODYsImV4cCI6MTY4OTY4MzM4NiwibmJmIjoxNjg5Njc5Nzg2LCJqdGkiOiJUeXFsTU95MlA0WXpibXFsIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xSMoCqyWexiUAmnCNmC6xJZjvOWbQM9GMRZuQUYpSfc\",\n         \"token_type\": \"bearer\",\n         \"expires_in\": 60\n     }\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n     \"status\": false,\n     \"status_code\": 401,\n     \"message\": \"Incorrect Password...\",\n     \"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n     \"status\": false,\n     \"status_code\": 404,\n     \"message\": \"Eamil id not found...\",\n     \"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "forgotPass",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/forgot-pass",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/forgot-pass"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email\":\"fbartoletti@example.net\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully email send...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 201,\n\"message\": \"Oops, something went wrong...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 202,
+                            "body": "{\n\"status\": false,\n\"status_code\": 202,\n\"message\": \"Oops, please try again...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "changeForgotPassword",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/forgot-password-change",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/forgot-password-change"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email\":\"walsh.betty@example.org\",\"*new_password\":\"velit\",\"*retype_password\":\"molestias\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully password updated...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 201,\n\"message\": \"Oops, some problem occure, Please try again...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "NrisTalk Related",
+            "description": "\nAPIs for managing all nris talk and its reply related",
+            "item": [
+                {
+                    "name": "getAllNrisTalk",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-nris-talk",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-nris-talk"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-nris-talk<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 6,\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again2\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 07:18 AM\",\n\"its_reply\": null\n},\n{\n\"id\": 4,\n\"title\": \"this is test title\",\n\"title_slug\": \"this-is-test-title\",\n\"description\": \"This is test title description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 06:50 AM\",\n\"its_reply\": {\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n}\n],\n\"first_page_url\": \"BASE_PATH\/get-all-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_PATH\/get-all-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNrisTalkReplyById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-nris-talk-reply-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-nris-talk-reply-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*talk_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n EX\n {\n\"talk_id\":4\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk-reply-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 5,\n\"talk_id\": 4,\n\"comment\": \"testing again\",\n\"created_at\": 20-Jul-2023 07:39 AM\n},\n{\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n],\n\"first_page_url\": \"BASE_PATH\/get-nris-talk-reply-by-id?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_PATH\/get-nris-talk-reply-by-id\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "createNrisTalk",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-nris-talk",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-nris-talk"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*state_id\":1,\"*title\":\"'This is test title' in JSON BODY\",\"*description\":\"'This is test description' in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"title\":\"new this is test title 2\",\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Nris talk created...\",\n\"data\": {\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again2\",\n\"created_at\": \"20-Jul-2023 07:18 AM\",\n\"id\": 6\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "createNrisTalkReply",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-nris-talk-reply",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-nris-talk-reply"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*state_id\":1,\"*talk_id\":1,\"*description\":\"'This is test description' in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"talk_id\":1,\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk-reply<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Nris talk reply created...\",\n\"data\": {\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\",\n\"id\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNrisTalk",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-nris-talk",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-nris-talk"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*talk_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"talk_id\":1,\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 4,\n\"title\": \"this is test title\",\n\"title_slug\": \"this-is-test-title\",\n\"description\": \"This is test title description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 06:50 AM\",\n\"its_reply\": {\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n}\n],\n\"first_page_url\": \"BASE_URL\/get-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_URL\/get-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Profile Related",
+            "description": "\nAPIs for managing all user's profile related",
+            "item": [
+                {
+                    "name": "getUserProfile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-user-profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-user-profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-user-profile<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Profile Get...\",\n\"data\": {\n\"id\": 1,\n\"first_name\": \"Abc\",\n\"last_name\": \"Def\",\n\"email\": \"you@domain.com\",\n\"dob\": \"2023-02-02\",\n\"mobile\": \"9899****54\"\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "changePassword",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/change-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/change-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*current_password\":\"1,2,3 in JSON BODY\",\"*new_password\":\"1,2,3 in JSON BODY\",\"*retype_password\":\"1,2,3 in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Oops, something went wrong...\n\nEX\n {\n\"user_id\":1,\n\"current_password\":\"Abc@123456789\",\n\"new_password\":\"Abc@12345\",\n\"retype_password\":\"Abc@12345\"\n}\n<aside class=\"notice\">basepath\/api\/v1\/change-password<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Password Changed...\",\n\"result\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"User not found...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n}\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
                             "name": ""
                         }
                     ]
