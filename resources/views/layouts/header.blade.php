@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="{{ URL::asset('dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
 
+      <!-- Select2 -->
+    <link rel="stylesheet" href="{{ URL::asset('plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{ URL::asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 
 </head>
 

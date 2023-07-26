@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Libraries\CountryStateCityLibrary;
+
 use App\Models\Country;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 
-class CountryStateCityController 
+class CountryController 
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class CountryStateCityController
         $this->message                  = 'message';
         $this->data                     = 'data';
         $this->total                    = 'total_count';
-        $this->countryStateLibObj       = new CountryStateCityLibrary();
+        
     }
     
     
@@ -30,7 +30,7 @@ class CountryStateCityController
             abort(404, 'You are not Authorised...');
         }
         // Retrieve all countries using Eloquent ORM
-        $countries                      = Country::orderBy('id', 'DESC')->paginate(3); // Change the pagination size as needed (e.g., 10 countries per page)
+        $countries                      = Country::where('status', 1)->orderBy('id', 'DESC')->paginate(10); // Change the pagination size as needed (e.g., 10 countries per page)
         $currentPage                    = request()->query('page', 1);
 
         // Calculate the previous and next pages for forward and backward navigation

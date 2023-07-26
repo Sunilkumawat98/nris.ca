@@ -33,7 +33,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               
+
           @if(auth()->user()->hasPermission('manage_dashboard'))
           <li class="nav-item">
             <a href="{{ route('admin.dashboard') }}" class="nav-link">
@@ -75,6 +75,49 @@
                       <p>City</p>
                     </a>
                   </li>
+                </ul>
+              </li>
+            @endif
+          
+         
+            @if(auth()->user()->hasPermission('manage_users'))
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-cog"></i>
+                  <p>
+                    Administration
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('admin_user.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Users</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('role.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Role</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('permission.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Permission</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('permission_role.index') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Role Permission</p>
+                    </a>
+                  </li>
+                  
                 </ul>
               </li>
             @endif

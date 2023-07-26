@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Permission;
+
+use App\Models\Country;
+use App\Models\State;
+use App\Models\City;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Exception;
-use Illuminate\Support\Facades\Hash;
 
-class PermissionController 
+class CityController 
 {
     public function __construct()
     {
@@ -26,12 +28,12 @@ class PermissionController
     
     public function index(Request $request)
     {     
-        if(!auth()->user()->hasPermission('manage_permissions'))
+        if(!auth()->user()->hasPermission('manage_location'))
         {
             abort(404, 'You are not Authorised...');
         }
-        // Retrieve all user using Eloquent ORM
-        $results                      = Permission::where('status', 1)->orderBy('id', 'DESC')->paginate(10); 
+        // Retrieve all city using Eloquent ORM
+        $results                      = City::where('status', 1)->orderBy('id', 'DESC')->paginate(10); 
         $currentPage                    = request()->query('page', 1);
 
         // Calculate the previous and next pages for forward and backward navigation
@@ -39,67 +41,21 @@ class PermissionController
         $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
 
 
-        return view('admin.permission.index', compact('results', 'previousPage', 'nextPage'));
+        return view('admin.city.index', compact('results', 'previousPage', 'nextPage'));
     
     }
 
 
     public function create()
     {
-        return view('admin.permission.create');
+        $countries                      = Country::all();
+        $states                         = State::all();
+        return view('admin.city.create', compact('countries', 'states'));
     }
 
     public function store(Request $request)
     {
-        if(!auth()->user()->hasPermission('create_permissions'))
-        {
-            abort(404, 'You are not Authorised...');
-        }
-        $all                            = $request->all();
-        // Validate the request data
-        $request->validate([
-            'name' => 'required'
-        ]);
-        
-        $all['name']                    = str_replace(' ', '_', strtolower($all['name']));
-        $all['name_slug']               = Str::slug($all['name']);
-        $all['created_at']              = date('Y-m-d H:i:s');
-        $all['updated_at']              = date('Y-m-d H:i:s');
-
-        // Create a new post
-        Permission::create($all);
-
-        // Redirect to the index page with a success message
-        return redirect()->route('permission.index')->with('success', 'Permission created successfully.');
-    }
-
-    public function show($id)
-    {
-        if(!auth()->user()->hasPermission('show_permissions'))
-        {
-            abort(404, 'You are not Authorised...');
-        }
-        // Find the post by its ID and pass it to the view
-        $results                        = Permission::findOrFail($id);
-        return view('admin.permission.show', compact('results'));
-    }
-
-    public function edit($id)
-    {
-        if(!auth()->user()->hasPermission('edit_permissions'))
-        {
-            abort(404, 'You are not Authorised...');
-        }
-        // Find the post by its ID and pass it to the view for editing
-        $results                        = Permission::findOrFail($id);
-        return view('admin.permission.edit', compact('results'));
-    }
-
-    
-
-    public function update(Request $request, $id)
-    {
-        if(!auth()->user()->hasPermission('edit_permissions'))
+        if(!auth()->user()->hasPermission('create_city'))
         {
             abort(404, 'You are not Authorised...');
         }
@@ -107,40 +63,99 @@ class PermissionController
         // Validate the request data
         $request->validate([
             'name' => 'required',
+            'country_id' => 'required',
+            'state_id' => 'required',
+            'state_code' => 'required',
+            'code' => 'required'
         ]);
 
-        $all['name']                    = str_replace(' ', '_', strtolower($all['name']));
-        $all['name_slug']               = Str::slug($all['name']);
+        $all['name']                    = ucfirst($all['name']);
+        $all['code']                    = strtoupper($all['code']);
+        $all['state_code']              = strtoupper($all['state_code']);
+        $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');
 
-        $results                        = Permission::findOrFail($id);
+        // Create a new post
+        City::create($all);
+
+        // Redirect to the index page with a success message
+        return redirect()->route('city.index')->with('success', 'City created successfully.');
+    }
+
+    public function show($id)
+    {
+        if(!auth()->user()->hasPermission('show_city'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
+        // Find the post by its ID and pass it to the view
+        $results                        = City::findOrFail($id);
+        return view('admin.city.show', compact('results'));
+    }
+
+    public function edit($id)
+    {
+        if(!auth()->user()->hasPermission('edit_city'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
+        // Find the post by its ID and pass it to the view for editing
+        $results                        = City::findOrFail($id);
+        $countries                      = Country::all();
+        $states                         = State::all();
+        return view('admin.city.edit', compact('results', 'countries', 'states'));
+    }
+
+    
+
+    public function update(Request $request, $id)
+    {
+        if(!auth()->user()->hasPermission('edit_city'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
+        $all                            = $request->all();
+        // Validate the request data
+        $request->validate([
+            'name' => 'required',
+            'country_id' => 'required',
+            'state_id' => 'required',
+            'state_code' => 'required',
+            'code' => 'required',
+        ]);
+
+        $all['name']                    = ucfirst($all['name']);
+        $all['code']                    = strtoupper($all['code']);
+        $all['updated_at']              = date('Y-m-d H:i:s');
+
+        $results                        = City::findOrFail($id);
         $results->update($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('permission.index')->with('success', 'Permission updated successfully.');
+        return redirect()->route('city.index')->with('success', 'City updated successfully.');
     }
 
-    public function destroy(Permission $permission)
+    public function destroy(City $city)
     {
-        if(!auth()->user()->hasPermission('delete_permissions'))
+        if(!auth()->user()->hasPermission('delete_city'))
         {
             abort(404, 'You are not Authorised...');
         }
 
-        $permission->delete();
-        return redirect()->route('permission.index')->with('success', 'Permission deleted successfully!');
+        $city->delete();
+        return redirect()->route('city.index')->with('success', 'City deleted successfully!');
     }
 
     public function livePause($id)
     {
         // Find the post by ID
-        $results = Permission::findOrFail($id);
+        $results = City::findOrFail($id);
 
         // Toggle the status between "pause" and "live"
-        $results->is_active = ($results->is_active === 1) ? 0 : 1;
+        $results->is_live = ($results->is_live === 1) ? 0 : 1;
         $results->save();
 
-        return redirect()->route('permission.index')->with('success', 'Live status updated successfully.');
+        return redirect()->route('city.index')->with('success', 'Live status updated successfully.');
     }
     
 

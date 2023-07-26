@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Nris Dashboard | Country')
+@section('title', 'Nris Dashboard | State')
 
 @section('content')
      <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Dashboard</h1>
+            <h1>State</h1>
 
             <?php 
               // echo "<pre>";
@@ -26,7 +26,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-              <li class="breadcrumb-item active">Country</li>
+              <li class="breadcrumb-item active">State</li>
             </ol>
             
 
@@ -44,7 +44,7 @@
           
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Show Country</h3>
+                    <h3 class="card-title">Show State</h3>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -52,32 +52,32 @@
                     <div class="col-12">
                       <div class="post">
                         <div class="user-block">
-                          <span class="description">{{ $country->created_at }}</span>
+                          <span class="description">{{ $results->created_at }}</span>
                         </div>
                         
                         <p>
-                           Name : {{ $country->name }}
+                           Name : {{ $results->name }}
                         </p>
                         <p>
-                           Color : {{ $country->color }}
+                           Country : {{ getCountryNamebyId($results->country_id)->name }}
                         </p>
                         <p>
-                           Code : {{ $country->code }}
+                           Code : {{ $results->code }}
                         </p>
                         <p>
-                           Domain : {{ $country->domain }}
+                           Domain : {{ $results->domain }}
                         </p>
                         <p>
-                           Live : {{ $country->is_live ? 'Live' : 'Pause' }}
+                           Live : {{ $results->is_live ? 'Live' : 'Pause' }}
                         </p>
                         <p>
-                           Meta Title : {{ $country->c_meta_title }}
+                           Meta Title : {{ $results->s_meta_title }}
                         </p>
                         <p>
-                           Meta Description : {{ $country->c_meta_description }}
+                           Meta Description : {{ $results->s_meta_description }}
                         </p>
                         <p>
-                           Meta Keyword : {{ $country->c_meta_keywords }}
+                           Meta Keyword : {{ $results->s_meta_keywords }}
                         </p>
 
                       

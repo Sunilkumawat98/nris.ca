@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Nris Dashboard | Country')
+@section('title', 'Nris Dashboard | City Show')
 
 @section('content')
      <!-- Content Wrapper. Contains page content -->
@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Dashboard</h1>
+            <h1>Show City</h1>
 
             <?php 
               // echo "<pre>";
@@ -26,7 +26,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-              <li class="breadcrumb-item active">Country</li>
+              <li class="breadcrumb-item active">City</li>
             </ol>
             
 
@@ -44,7 +44,7 @@
           
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Show Country</h3>
+                    <h3 class="card-title">Show City</h3>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -52,34 +52,29 @@
                     <div class="col-12">
                       <div class="post">
                         <div class="user-block">
-                          <span class="description">{{ $country->created_at }}</span>
+                          <span class="description">{{ $results->created_at }}</span>
                         </div>
                         
                         <p>
-                           Name : {{ $country->name }}
+                           Name : {{ $results->name }}
                         </p>
                         <p>
-                           Color : {{ $country->color }}
+                           Country : {{ getCountryNamebyId($results->country_id)->name }}
                         </p>
                         <p>
-                           Code : {{ $country->code }}
+                           State : {{ getStateNamebyId($results->state_id)->name }}
                         </p>
                         <p>
-                           Domain : {{ $country->domain }}
+                           State Code : {{ $results->state_code }}
                         </p>
                         <p>
-                           Live : {{ $country->is_live ? 'Live' : 'Pause' }}
+                           Code : {{ $results->code }}
                         </p>
+                       
                         <p>
-                           Meta Title : {{ $country->c_meta_title }}
+                           Live : {{ $results->is_live ? 'Live' : 'Pause' }}
                         </p>
-                        <p>
-                           Meta Description : {{ $country->c_meta_description }}
-                        </p>
-                        <p>
-                           Meta Keyword : {{ $country->c_meta_keywords }}
-                        </p>
-
+                        
                       
                       </div>
                     </div>

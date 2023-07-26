@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\Admin\CountryStateCityController;
+use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\StateController;
+use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\PermissionRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,12 +41,30 @@ Route::domain(config('app.domain'))->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'showDashboard'])->name('admin.dashboard');
         Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-        Route::resource('country', CountryStateCityController::class);
-        Route::post('/country/{id}/active-status', [CountryStateCityController::class, 'livePause'])->name('country.activeStatus');
+        Route::resource('country', CountryController::class);
+        Route::post('/country/{id}/active-status', [CountryController::class, 'livePause'])->name('country.activeStatus');
+        
 
 
-        Route::resource('state', CountryStateCityController::class);
-        Route::resource('city', CountryStateCityController::class);
+        Route::resource('state', StateController::class);
+        Route::post('/state/{id}/active-status', [StateController::class, 'livePause'])->name('state.activeStatus');
+
+        Route::resource('city', CityController::class);
+        Route::post('/city/{id}/active-status', [CityController::class, 'livePause'])->name('city.activeStatus');
+
+
+        Route::resource('admin_user', AdminUserController::class);
+        Route::post('/admin_user/{id}/active-status', [AdminUserController::class, 'livePause'])->name('admin_user.activeStatus');
+
+        Route::resource('role', RoleController::class);
+        Route::post('/role/{id}/active-status', [RoleController::class, 'livePause'])->name('role.activeStatus');
+
+        Route::resource('permission', PermissionController::class);
+        Route::post('/permission/{id}/active-status', [PermissionController::class, 'livePause'])->name('permission.activeStatus');
+
+        Route::resource('permission_role', PermissionRoleController::class);
+        Route::post('/permission_role/{id}/active-status', [PermissionRoleController::class, 'livePause'])->name('permission_role.activeStatus');
+        Route::get('/get-permissions/{roleId}', [PermissionRoleController::class, 'getAllPermissions']);
 
     });
     

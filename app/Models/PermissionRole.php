@@ -4,18 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Permission extends Model
+
+class PermissionRole extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    
 
-    protected $table            = 'permissions';
+    protected $table            = 'permission_role';
 
     protected $fillable = [
-        'name',
-        'name_slug',
+        'role_id',
+        'permission_id',
         'is_active',
         'created_at',
         'updated_at',
@@ -25,7 +25,7 @@ class Permission extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'is_live',
+        'is_active',
         'status'
     ];
 
@@ -40,19 +40,8 @@ class Permission extends Model
         'updated_at'            => "datetime:d-M-Y h:i A",
     ];
 
-    public function roles()
+    public function permissions()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Permission::class);
     }
-
-
-    // public function permissionRoles($roleId)
-    public function permissionRoles()
-    {
-        return $this->hasMany(PermissionRole::class, 'permission_id', 'id')
-            // ->where(function ($query) use ($roleId) {
-            //     $query->where('role_id', $roleId);
-            // });
-            ;
-    }
-}
+} 

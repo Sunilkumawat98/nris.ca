@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Nris Dashboard | Country')
+@section('title', 'Nris Dashboard | User Show')
 
 @section('content')
      <!-- Content Wrapper. Contains page content -->
@@ -10,23 +10,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Dashboard</h1>
+            <h1>Show User</h1>
 
-            <?php 
-              // echo "<pre>";
-              // print_r(Auth::guard()->user());
-              // echo "</pre>";
-              // echo "<pre>";
-              // print_r($country);
-              // echo "</pre>";
-
-
-            ?>
+            
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-              <li class="breadcrumb-item active">Country</li>
+              <li class="breadcrumb-item active">User</li>
             </ol>
             
 
@@ -44,7 +35,7 @@
           
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Show Country</h3>
+                    <h3 class="card-title">Show User</h3>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -52,34 +43,27 @@
                     <div class="col-12">
                       <div class="post">
                         <div class="user-block">
-                          <span class="description">{{ $country->created_at }}</span>
+                          <span class="description">{{ $results->created_at }}</span>
                         </div>
                         
                         <p>
-                           Name : {{ $country->name }}
+                           Name : {{ $results->name }}
+                        </p>
+                        
+                        <p>
+                           Email : {{ $results->email }}
                         </p>
                         <p>
-                           Color : {{ $country->color }}
+                           Username : {{ $results->username }}
                         </p>
                         <p>
-                           Code : {{ $country->code }}
+                           Role : {{ getRoleNamebyId($results->role_id)->name }}
                         </p>
+                       
                         <p>
-                           Domain : {{ $country->domain }}
+                           Live : {{ $results->is_active ? 'Live' : 'Pause' }}
                         </p>
-                        <p>
-                           Live : {{ $country->is_live ? 'Live' : 'Pause' }}
-                        </p>
-                        <p>
-                           Meta Title : {{ $country->c_meta_title }}
-                        </p>
-                        <p>
-                           Meta Description : {{ $country->c_meta_description }}
-                        </p>
-                        <p>
-                           Meta Keyword : {{ $country->c_meta_keywords }}
-                        </p>
-
+                        
                       
                       </div>
                     </div>

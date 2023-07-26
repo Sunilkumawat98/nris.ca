@@ -2,13 +2,52 @@
  
 
 
+function getAllRoles()
+{
+	return \App\Models\Role::all();
+}
+
+function getAllPermissions()
+{
+	return \App\Models\Permission::all();
+}
+
+function getAllCountries()
+{
+	return \App\Models\Country::all();
+}
+
+function getAllState()
+{
+	return \App\Models\State::all();
+}
 
 
-function sendCommentAlert($data){
-	// echo "Data = ";
-	// echo "<pre>";
-	// print_r($data);
-	// echo "</pre>";
+function getCountryNamebyId($id)
+{
+	return \App\Models\Country::where('id', $id)->first();
+}
+
+function getStateNamebyId($id)
+{
+	return \App\Models\State::where('id', $id)->first();
+}
+
+function getRoleNamebyId($id)
+{
+	return \App\Models\Role::where('id', $id)->first();
+}
+
+function getPermissionNamebyId($id)
+{
+	return \App\Models\Permission::where('id', $id)->first();
+}
+
+
+
+
+function sendCommentAlert($data)
+{
 
     // dd($data);
 	$sub_type = isset($data['sub_type']) ? $data['sub_type'] : 'Comment';

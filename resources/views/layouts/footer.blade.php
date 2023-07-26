@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+      <!-- <b>Version</b> 3.2.0 -->
     </div>
-    <strong>Copyright &copy; 2014-2021 SADDDAM</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date('Y') }}</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -25,11 +25,16 @@
 <script src="{{ URL::asset('plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
 
 <script src="{{ URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/select2/js/select2.full.min.js') }}"></script>
 
 
 <script>
     $(function () {
       
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+
         //Colorpicker
         $('.my-colorpicker1').colorpicker()
         //color picker with addon      
