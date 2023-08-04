@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PermissionRoleController;
+use App\Http\Controllers\Admin\ClassifiedCategoryController;
+use App\Http\Controllers\Admin\ClassifiedSubCategoryController;
+use App\Http\Controllers\Admin\FreeClassifiedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +69,18 @@ Route::domain(config('app.domain'))->group(function () {
         Route::post('/permission_role/{id}/active-status', [PermissionRoleController::class, 'livePause'])->name('permission_role.activeStatus');
         Route::get('/get-permissions/{roleId}', [PermissionRoleController::class, 'getAllPermissions']);
 
+
+
+        Route::resource('classified_category', ClassifiedCategoryController::class);
+        Route::post('/classified_category/{id}/active-status', [ClassifiedCategoryController::class, 'livePause'])->name('classified_category.activeStatus');
+
+        Route::resource('classified_sub_category', ClassifiedSubCategoryController::class);
+        Route::post('/classified_sub_category/{id}/active-status', [ClassifiedSubCategoryController::class, 'livePause'])->name('classified_sub_category.activeStatus');
+
+        Route::resource('free_classified', FreeClassifiedController::class);
+        Route::post('/free_classified/{id}/active-status', [FreeClassifiedController::class, 'livePause'])->name('free_classified.activeStatus');
+
+        
     });
     
 });

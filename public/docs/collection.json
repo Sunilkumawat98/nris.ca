@@ -10,11 +10,438 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "2a0019c9-024b-4c9d-8630-cd280aa4452e",
+        "_postman_id": "97fd7f00-e5a6-4fa6-8cb2-f6fa59c8ac41",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "ClasifiedCategory Related",
+            "description": "\nAPIs for managing all Clasified Category related",
+            "item": [
+                {
+                    "name": "getAllCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*state_id\":1,\"*title\":\"'This is test title' in JSON BODY\",\"*description\":\"'This is test description' in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Baby Sitting\",\n\"slug\": \"baby-sitting\",\n\"color\": \"#C41414\",\n\"created_at\": \"27-Jul-2023 12:52 PM\"\n},\n{\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n}\n]\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllSubCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-sub-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-sub-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-sub-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n{\n\"id\": 2,\n\"category_id\": 1,\n\"name\": \"Bmw\",\n\"slug\": \"bmw\",\n\"color\": \"#846CCA\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n}\n]\n\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllSubCategoryById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-sub-category-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-sub-category-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*category_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-sub-category-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n}\n]\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getFreeClasifiedById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-free-clasified-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-free-clasified-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-free-clasified-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully clasified found..\",\n\"data\": {\n\"id\": 1,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"IMAGE_BASE_PATH\/1691044108_photo1.png\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"03-Aug-2023 06:28 AM\",\n\"bids\": [\n{\n\"id\": 3,\n\"user_id\": 1,\n\"comments\": \"Only 123 dollar\",\n\"amount\": 123,\n\"created_at\": \"03-Aug-2023 06:48 AM\"\n},\n{\n\"id\": 5,\n\"user_id\": 1,\n\"comments\": \"Only 130 dollar\",\n\"amount\": 130,\n\"created_at\": \"03-Aug-2023 07:30 AM\"\n}\n],\n\"comments\": [\n{\n\"id\": 1,\n\"user_id\": 1,\n\"comments\": \"Mast Product\",\n\"created_at\": \"03-Aug-2023 07:43 AM\"\n},\n{\n\"id\": 2,\n\"user_id\": 1,\n\"comments\": \"Great and nice.....\",\n\"created_at\": \"03-Aug-2023 07:45 AM\"\n},\n{\n\"id\": 5,\n\"user_id\": 1,\n\"comments\": \"awesome and nice.....\",\n\"created_at\": \"03-Aug-2023 07:45 AM\"\n}\n]\n}\n\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Clasified not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getRecentAds",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-recent-ads",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-recent-ads"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully clasified found..\",\n\"data\": [\n{\n\"id\": 7,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690973959_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:59 AM\"\n},\n{\n\"id\": 6,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690971434_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:17 AM\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Clasified not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "createFreeClasified",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-free-clasified",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-free-clasified"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*country_id\":1,\"*state_id\":1,\"category_id\":1,\"sub_cat_id\":1,\"title\":\"\\\"title text \\\" in JSON BODY\",\"message\":\"\\\"message text \\\" in JSON BODY\",\"image\":\"\\\"abc.jpg\\\" in JSON BODY\",\"*contact_name\":\"Abc in JSON BODY\",\"*contact_email\":\"you@domain.com in JSON BODY\",\"*contact_number\":\"9090654320 in JSON BODY\",\"*contact_address\":\"Address in JSON BODY\",\"*show_email\":true,\"*use_address_map\":true,\"other_details\":\"[{\\\"Make\\\":\\\"audi\\\"},{\\\"Color\\\":\\\"red\\\"}, {\\\"Condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ] JSON BODY\",\"*end_at\":\"YYYY-MM-DD JSON BODY\\n\\n<aside class=\\\"note\\\">Make sure \\\"other_details\\\" Key's First Charecter should be in CAPITAL LETTER <\\\/aside>\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"country_id\":1,\n\"state_id\":1,\n\"category_id\":1,\n\"sub_cat_id\":1,\n\"contact_name\":\"Abc\",\n\"contact_email\":\"you@domain.com\",\n\"contact_number\":\"98****3212\",\n\"contact_address\":\"Address\",\n\"show_email\":false,\n\"use_address_map\":true,\n\"title\":\"this is test ads\",\n\"message\":\"this is test message\",\n\"image\":\"abc.jpg\"\n\"other_details\":\"[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]\",\n\"end_at\":\"2023-08-01\",\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/create-free-clasified<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully free clasified created...\",\n\"data\": {\n\"user_id\": \"1\",\n\"country_id\": \"1\",\n\"state_id\": \"1\",\n\"cat_id\": \"1\",\n\"sub_cat_id\": \"1\",\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690973959_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": \"1\",\n\"use_address_map\": \"0\",\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"created_at\": \"02-Aug-2023 10:59 AM\",\n\"id\": 7\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "createFreeClasifiedBid",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-free-clasified-bid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-free-clasified-bid"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*classified_id\":1,\"*comment\":\"comment text in JSON BODY\",\"*amount\":10}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"classified_id\":1,\n\"amount\":123,\n\"comment\":\"Only 123 dollar\"\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/create-free-clasified-bid<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully free clasified bid created...\",\n\"data\": {\n\"user_id\": 1,\n\"classified_id\": 1,\n\"comments\": \"Only 123 dollar\",\n\"amount\": 123,\n\"created_at\": \"03-Aug-2023 06:48 AM\",\n\"id\": 3\n}\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "createFreeClasifiedComment",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-free-clasified-comment",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-free-clasified-comment"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*classified_id\":1,\"*comment\":\"comment text in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"classified_id\":1,\n\"comment\":\"Only 123 dollar\"\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/create-free-clasified-comment<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully free clasified bid created...\",\n\"data\": {\n\"user_id\": 1,\n\"classified_id\": 1,\n\"comments\": \"Great items....\",\n\"created_at\": \"03-Aug-2023 06:48 AM\",\n\"id\": 3\n}\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Country State & City",
             "description": "\nAPIs for managing all country, state, city",
@@ -49,7 +476,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully country list get...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n},\n{\n\"id\": 2,\n\"name\": \"Canada\",\n\"color\": \"#990d00\",\n\"code\": \"ca\",\n\"domain\": \"canada\",\n\"image\": \"47659423262639bd6a30242.39786820.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in Canada\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in Canada . Get information on\",\n\"c_meta_keywords\": \"Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website\",\n}\n]\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully country list get...\",\n\"data\":\n[\n{\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n{\n\"id\": 2,\n\"name\": \"Canada\",\n\"color\": \"#990d00\",\n\"code\": \"ca\",\n\"domain\": \"canada\",\n\"image\": \"47659423262639bd6a30242.39786820.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in Canada\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in Canada . Get information on\",\n\"c_meta_keywords\": \"Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n}\n]\n}",
                             "name": ""
                         },
                         {
@@ -176,7 +603,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"autem\",\"*last_name\":\"nulla\",\"*email_id\":\"facere\",\"*dob\":\"consectetur\",\"*mobile\":\"dolore\",\"*password\":\"quod\",\"*country_id\":\"quia\",\"*state_id\":\"quibusdam\"}"
+                            "raw": "{\"*first_name\":\"cupiditate\",\"*last_name\":\"impedit\",\"*email_id\":\"perspiciatis\",\"*dob\":\"ipsa\",\"*mobile\":\"aut\",\"*password\":\"modi\",\"*country_id\":\"sint\",\"*state_id\":\"ut\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email_id\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -226,7 +653,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"gustave.bashirian@example.com\",\"*password\":\"sint\"}"
+                            "raw": "{\"*email\":\"flatley.vincenzo@example.org\",\"*password\":\"voluptate\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -276,7 +703,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"fbartoletti@example.net\"}"
+                            "raw": "{\"*email\":\"hartmann.dessie@example.com\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -326,7 +753,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"walsh.betty@example.org\",\"*new_password\":\"velit\",\"*retype_password\":\"molestias\"}"
+                            "raw": "{\"*email\":\"may.casper@example.net\",\"*new_password\":\"nostrum\",\"*retype_password\":\"libero\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -486,8 +913,26 @@
                         },
                         {
                             "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
                             "code": 500,
-                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
                             "name": ""
                         }
                     ]
@@ -527,8 +972,26 @@
                         },
                         {
                             "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
                             "code": 500,
-                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
                             "name": ""
                         }
                     ]
@@ -568,8 +1031,26 @@
                         },
                         {
                             "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
                             "code": 404,
-                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
                             "name": ""
                         },
                         {
@@ -616,13 +1097,31 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Profile Get...\",\n\"data\": {\n\"id\": 1,\n\"first_name\": \"Abc\",\n\"last_name\": \"Def\",\n\"email\": \"you@domain.com\",\n\"dob\": \"2023-02-02\",\n\"mobile\": \"9899****54\"\n}\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Profile Get...\",\n\"data\": {\n\"id\": 1,\n\"first_name\": \"Abc\",\n\"last_name\": \"Def\",\n\"email\": \"you@domain.com\",\n\"dob\": \"2023-02-02\",\n\"mobile\": \"9899****54\"\n}\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n }",
                             "name": ""
                         },
                         {
                             "header": [],
                             "code": 404,
-                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n  }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n }",
                             "name": ""
                         }
                     ]
@@ -663,13 +1162,31 @@
                         {
                             "header": [],
                             "code": 201,
-                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"User not found...\"\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"User not found...\"\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n }",
                             "name": ""
                         },
                         {
                             "header": [],
                             "code": 403,
-                            "body": "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n}\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "body": "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n  }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n }",
                             "name": ""
                         }
                     ]

@@ -54,6 +54,7 @@ class UserController extends BaseController
      * @bodyParam *user_id integer required Example: 1,2,3 in JSON BODY
      * @return \Illuminate\Http\Response
      *
+     * 
      * @response 200
      *  {
             "status": true,
@@ -67,7 +68,7 @@ class UserController extends BaseController
                 "dob": "2023-02-02",
                 "mobile": "9899****54"
             }
-        }
+     *  }
      *
      *
      * @response 404
@@ -76,30 +77,34 @@ class UserController extends BaseController
             "status_code": 404,
             "message": "Profile not found...",
             "data": []
-        }
+     *   }
      * 
-     *  @response 401
+     * 
+     * @response 401
      *  {
             "message": "Token is Invalid",
             "status_code": 401,
             "status": false
-        }
-
-
-     *  @response 419
+     *  }
+     * 
+     *
+     * 
+     *   
+     * @response 419
      *  {
             "message": "Token is Expired",
-            "status_code": 401,
+            "status_code": 419,
             "status": false
-        }
-
-
-     *  @response 403
+     *  }
+     * 
+     *  
+     * 
+     * @response 403
      *  {
             "message": "Authorised Token Not Found",
-            "status_code": 401,
+            "status_code": 403,
             "status": false
-        }
+     *  }
      *
      *
      */
@@ -161,36 +166,41 @@ class UserController extends BaseController
             "status": false,
             "status_code": 404,
             "message": "User not found..."
-        }
+     *  }
+     * 
+     * 
+     * 
      * @response 403
      *  {
             "status": false,
             "status_code": 403,
             "message": "Current password is not being match...",
             "data": []
-        }
-     *  @response 401
+     *   }
+     *  
+     * 
+     * @response 401
      *  {
             "message": "Token is Invalid",
             "status_code": 401,
             "status": false
-        }
-
-
-     *  @response 419
+     *  }
+     * 
+     * 
+     * @response 419
      *  {
             "message": "Token is Expired",
-            "status_code": 401,
+            "status_code": 419,
             "status": false
-        }
-
-
-     *  @response 403
+     *  }
+     * 
+     * 
+     * @response 403
      *  {
             "message": "Authorised Token Not Found",
-            "status_code": 401,
+            "status_code": 403,
             "status": false
-        }
+     *  }
      *
      *
      */

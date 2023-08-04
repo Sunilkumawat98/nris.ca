@@ -83,7 +83,7 @@ class NrisTalkController extends BaseController
             "data": []
         }
      * 
-     *  @response 401
+     * @response 401
      *  {
             "message": "Token is Invalid",
             "status_code": 401,
@@ -91,18 +91,18 @@ class NrisTalkController extends BaseController
         }
 
 
-     *  @response 419
+     * @response 419
      *  {
             "message": "Token is Expired",
-            "status_code": 401,
+            "status_code": 419,
             "status": false
         }
 
 
-     *  @response 403
+     * @response 403
      *  {
             "message": "Authorised Token Not Found",
-            "status_code": 401,
+            "status_code": 403,
             "status": false
         }
      *
@@ -177,7 +177,7 @@ class NrisTalkController extends BaseController
             "data": []
         }
      * 
-     *  @response 401
+     * @response 401
      *  {
             "message": "Token is Invalid",
             "status_code": 401,
@@ -185,18 +185,18 @@ class NrisTalkController extends BaseController
         }
 
 
-     *  @response 419
+     * @response 419
      *  {
             "message": "Token is Expired",
-            "status_code": 401,
+            "status_code": 419,
             "status": false
         }
 
 
-     *  @response 403
+     * @response 403
      *  {
             "message": "Authorised Token Not Found",
-            "status_code": 401,
+            "status_code": 403,
             "status": false
         }
      *
@@ -298,7 +298,7 @@ class NrisTalkController extends BaseController
             "data": []
         }
      * 
-     *  @response 401
+     * @response 401
      *  {
             "message": "Token is Invalid",
             "status_code": 401,
@@ -306,18 +306,18 @@ class NrisTalkController extends BaseController
         }
 
 
-     *  @response 419
+     * @response 419
      *  {
             "message": "Token is Expired",
-            "status_code": 401,
+            "status_code": 419,
             "status": false
         }
 
 
-     *  @response 403
+     * @response 403
      *  {
             "message": "Authorised Token Not Found",
-            "status_code": 401,
+            "status_code": 403,
             "status": false
         }
      *

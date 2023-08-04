@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class State extends Model
+class ClassifiedSubCategory extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,14 +14,12 @@ class State extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'states';
+    protected $table            = 'classified_sub_category';
 
     protected $hidden           = [
-        'country_id',
-        'created_at',
+        'created_by',
         'updated_at',
         'deleted_at',
-        'created_by',
         'is_live',
         'status'
     ];
@@ -38,19 +36,10 @@ class State extends Model
     ];
 
     protected $fillable         = [        
+        'category_id',
         'name',
-        'code',
-        'domain',
-        'country_id',
-        'description',
-        'logo',
-        's_meta_title',
-        's_meta_description',
-        's_meta_keywords',
-        'header_image',
-        'header_image2',
-        'header_image3',
-        'created_by',
+        'color',
+        'slug',
         'is_live',
         'created_at',
         'updated_at',
@@ -58,9 +47,4 @@ class State extends Model
         'status'
     ];
 
-
-    public function cities() {
-        return $this->belongsTo(City::class, 'city_id', 'id');
-    }
-    
 }

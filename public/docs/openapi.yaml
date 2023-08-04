@@ -7,6 +7,1941 @@ servers:
   -
     url: 'https://stage-api.nris.ca'
 paths:
+  /api/v1/get-all-category:
+    get:
+      summary: getAllCategory
+      operationId: getAllCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 2
+                      name: 'Baby Sitting'
+                      slug: baby-sitting
+                      color: '#C41414'
+                      created_at: '27-Jul-2023 12:52 PM'
+                    -
+                      id: 1
+                      name: Auto
+                      slug: auto
+                      color: '#846A6A'
+                      created_at: '27-Jul-2023 11:35 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        name: 'Baby Sitting'
+                        slug: baby-sitting
+                        color: '#C41414'
+                        created_at: '27-Jul-2023 12:52 PM'
+                      -
+                        id: 1
+                        name: Auto
+                        slug: auto
+                        color: '#846A6A'
+                        created_at: '27-Jul-2023 11:35 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        name:
+                          type: string
+                          example: 'Baby Sitting'
+                        slug:
+                          type: string
+                          example: baby-sitting
+                        color:
+                          type: string
+                          example: '#C41414'
+                        created_at:
+                          type: string
+                          example: '27-Jul-2023 12:52 PM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*title':
+                  type: string
+                  description: ''
+                  example: "'This is test title' in JSON BODY"
+                '*description':
+                  type: string
+                  description: ''
+                  example: "'This is test description' in JSON BODY"
+              required:
+                - '*user_id'
+                - '*state_id'
+                - '*title'
+                - '*description'
+      security: []
+  /api/v1/get-all-sub-category:
+    get:
+      summary: getAllSubCategory
+      operationId: getAllSubCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-sub-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 1
+                      category_id: 1
+                      name: Audis
+                      slug: audis
+                      color: '#846A6A'
+                      created_at: '28-Jul-2023 07:03 AM'
+                    -
+                      id: 2
+                      category_id: 1
+                      name: Bmw
+                      slug: bmw
+                      color: '#846CCA'
+                      created_at: '28-Jul-2023 07:03 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 1
+                        name: Audis
+                        slug: audis
+                        color: '#846A6A'
+                        created_at: '28-Jul-2023 07:03 AM'
+                      -
+                        id: 2
+                        category_id: 1
+                        name: Bmw
+                        slug: bmw
+                        color: '#846CCA'
+                        created_at: '28-Jul-2023 07:03 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Audis
+                        slug:
+                          type: string
+                          example: audis
+                        color:
+                          type: string
+                          example: '#846A6A'
+                        created_at:
+                          type: string
+                          example: '28-Jul-2023 07:03 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      security: []
+  /api/v1/get-all-sub-category-by-id:
+    post:
+      summary: getAllSubCategoryById
+      operationId: getAllSubCategoryById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-sub-category-by-id</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 1
+                      category_id: 1
+                      name: Audis
+                      slug: audis
+                      color: '#846A6A'
+                      created_at: '28-Jul-2023 07:03 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 1
+                        name: Audis
+                        slug: audis
+                        color: '#846A6A'
+                        created_at: '28-Jul-2023 07:03 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Audis
+                        slug:
+                          type: string
+                          example: audis
+                        color:
+                          type: string
+                          example: '#846A6A'
+                        created_at:
+                          type: string
+                          example: '28-Jul-2023 07:03 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*category_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*category_id'
+      security: []
+  /api/v1/get-free-clasified-by-id:
+    post:
+      summary: getFreeClasifiedById
+      operationId: getFreeClasifiedById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-free-clasified-by-id</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully clasified found..'
+                  data:
+                    id: 1
+                    user_id: 1
+                    country_id:
+                      id: 1
+                      name: USA
+                      color: '#16b19f'
+                      code: us
+                      domain: usa
+                      image: 152194054262639fda95ac05.12411768.jpg
+                      c_meta_title: 'Indian Website for Nris in USA'
+                      c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                      c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                      created_at: '20-Jan-2022 05:18 AM'
+                    state_id:
+                      id: 1
+                      name: Alberta
+                      code: AB
+                      domain: alberta
+                      description: Alberta
+                      logo: 196066989625087bd37a4c2.18410119.jpg
+                      s_meta_title: 'Indian Website for Nris in || Alberta'
+                      s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                      s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                      header_image: 1522842913625087eb594b47.13394636.jpg
+                      header_image2: 1522842913625087eb594b47.13394636.jpg
+                      header_image3: 1522842913625087eb594b47.13394636.jpg
+                    cat_id:
+                      id: 1
+                      name: Auto
+                      slug: auto
+                      color: '#846A6A'
+                      created_at: '27-Jul-2023 11:35 AM'
+                    sub_cat_id:
+                      id: 1
+                      category_id: 1
+                      name: Audis
+                      slug: audis
+                      color: '#846A6A'
+                      created_at: '28-Jul-2023 07:03 AM'
+                    title: 'this is simple test title'
+                    title_slug: this-is-simple-test-title
+                    message: null
+                    image: IMAGE_BASE_PATH/1691044108_photo1.png
+                    contact_name: MdSaddam
+                    contact_email: hussainmd@gmail.com
+                    contact_number: '9088123678'
+                    contact_address: address
+                    show_email: 1
+                    use_address_map: 0
+                    meta_title: null
+                    meta_description: null
+                    meta_keywords: null
+                    other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                    end_at: 02/08/2023
+                    total_views: 0
+                    created_at: '03-Aug-2023 06:28 AM'
+                    bids:
+                      -
+                        id: 3
+                        user_id: 1
+                        comments: 'Only 123 dollar'
+                        amount: 123
+                        created_at: '03-Aug-2023 06:48 AM'
+                      -
+                        id: 5
+                        user_id: 1
+                        comments: 'Only 130 dollar'
+                        amount: 130
+                        created_at: '03-Aug-2023 07:30 AM'
+                    comments:
+                      -
+                        id: 1
+                        user_id: 1
+                        comments: 'Mast Product'
+                        created_at: '03-Aug-2023 07:43 AM'
+                      -
+                        id: 2
+                        user_id: 1
+                        comments: 'Great and nice.....'
+                        created_at: '03-Aug-2023 07:45 AM'
+                      -
+                        id: 5
+                        user_id: 1
+                        comments: 'awesome and nice.....'
+                        created_at: '03-Aug-2023 07:45 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully clasified found..'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      user_id:
+                        type: integer
+                        example: 1
+                      country_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: USA
+                          color:
+                            type: string
+                            example: '#16b19f'
+                          code:
+                            type: string
+                            example: us
+                          domain:
+                            type: string
+                            example: usa
+                          image:
+                            type: string
+                            example: 152194054262639fda95ac05.12411768.jpg
+                          c_meta_title:
+                            type: string
+                            example: 'Indian Website for Nris in USA'
+                          c_meta_description:
+                            type: string
+                            example: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                          c_meta_keywords:
+                            type: string
+                            example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                          created_at:
+                            type: string
+                            example: '20-Jan-2022 05:18 AM'
+                      state_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: Alberta
+                          code:
+                            type: string
+                            example: AB
+                          domain:
+                            type: string
+                            example: alberta
+                          description:
+                            type: string
+                            example: Alberta
+                          logo:
+                            type: string
+                            example: 196066989625087bd37a4c2.18410119.jpg
+                          s_meta_title:
+                            type: string
+                            example: 'Indian Website for Nris in || Alberta'
+                          s_meta_description:
+                            type: string
+                            example: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                          s_meta_keywords:
+                            type: string
+                            example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                          header_image:
+                            type: string
+                            example: 1522842913625087eb594b47.13394636.jpg
+                          header_image2:
+                            type: string
+                            example: 1522842913625087eb594b47.13394636.jpg
+                          header_image3:
+                            type: string
+                            example: 1522842913625087eb594b47.13394636.jpg
+                      cat_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: Auto
+                          slug:
+                            type: string
+                            example: auto
+                          color:
+                            type: string
+                            example: '#846A6A'
+                          created_at:
+                            type: string
+                            example: '27-Jul-2023 11:35 AM'
+                      sub_cat_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          category_id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: Audis
+                          slug:
+                            type: string
+                            example: audis
+                          color:
+                            type: string
+                            example: '#846A6A'
+                          created_at:
+                            type: string
+                            example: '28-Jul-2023 07:03 AM'
+                      title:
+                        type: string
+                        example: 'this is simple test title'
+                      title_slug:
+                        type: string
+                        example: this-is-simple-test-title
+                      message:
+                        type: string
+                        example: null
+                      image:
+                        type: string
+                        example: IMAGE_BASE_PATH/1691044108_photo1.png
+                      contact_name:
+                        type: string
+                        example: MdSaddam
+                      contact_email:
+                        type: string
+                        example: hussainmd@gmail.com
+                      contact_number:
+                        type: string
+                        example: '9088123678'
+                      contact_address:
+                        type: string
+                        example: address
+                      show_email:
+                        type: integer
+                        example: 1
+                      use_address_map:
+                        type: integer
+                        example: 0
+                      meta_title:
+                        type: string
+                        example: null
+                      meta_description:
+                        type: string
+                        example: null
+                      meta_keywords:
+                        type: string
+                        example: null
+                      other_details:
+                        type: string
+                        example: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                      end_at:
+                        type: string
+                        example: 02/08/2023
+                      total_views:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '03-Aug-2023 06:28 AM'
+                      bids:
+                        type: array
+                        example:
+                          -
+                            id: 3
+                            user_id: 1
+                            comments: 'Only 123 dollar'
+                            amount: 123
+                            created_at: '03-Aug-2023 06:48 AM'
+                          -
+                            id: 5
+                            user_id: 1
+                            comments: 'Only 130 dollar'
+                            amount: 130
+                            created_at: '03-Aug-2023 07:30 AM'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 3
+                            user_id:
+                              type: integer
+                              example: 1
+                            comments:
+                              type: string
+                              example: 'Only 123 dollar'
+                            amount:
+                              type: integer
+                              example: 123
+                            created_at:
+                              type: string
+                              example: '03-Aug-2023 06:48 AM'
+                      comments:
+                        type: array
+                        example:
+                          -
+                            id: 1
+                            user_id: 1
+                            comments: 'Mast Product'
+                            created_at: '03-Aug-2023 07:43 AM'
+                          -
+                            id: 2
+                            user_id: 1
+                            comments: 'Great and nice.....'
+                            created_at: '03-Aug-2023 07:45 AM'
+                          -
+                            id: 5
+                            user_id: 1
+                            comments: 'awesome and nice.....'
+                            created_at: '03-Aug-2023 07:45 AM'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            user_id:
+                              type: integer
+                              example: 1
+                            comments:
+                              type: string
+                              example: 'Mast Product'
+                            created_at:
+                              type: string
+                              example: '03-Aug-2023 07:43 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Clasified not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Clasified not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*id'
+      security: []
+  /api/v1/get-recent-ads:
+    get:
+      summary: getRecentAds
+      operationId: getRecentAds
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-recent-ads</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully clasified found..'
+                  data:
+                    -
+                      id: 7
+                      user_id: 1
+                      country_id:
+                        id: 1
+                        name: USA
+                        color: '#16b19f'
+                        code: us
+                        domain: usa
+                        image: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title: 'Indian Website for Nris in USA'
+                        c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                      state_id:
+                        id: 1
+                        name: Alberta
+                        code: AB
+                        domain: alberta
+                        description: Alberta
+                        logo: 196066989625087bd37a4c2.18410119.jpg
+                        s_meta_title: 'Indian Website for Nris in || Alberta'
+                        s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                        s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                        header_image: 1522842913625087eb594b47.13394636.jpg
+                        header_image2: 1522842913625087eb594b47.13394636.jpg
+                        header_image3: 1522842913625087eb594b47.13394636.jpg
+                      cat_id:
+                        id: 1
+                        name: Auto
+                        slug: auto
+                        color: '#846A6A'
+                        created_at: '27-Jul-2023 11:35 AM'
+                      sub_cat_id:
+                        id: 1
+                        category_id: 1
+                        name: Audis
+                        slug: audis
+                        color: '#846A6A'
+                        created_at: '28-Jul-2023 07:03 AM'
+                      title: 'this is simple test title'
+                      title_slug: this-is-simple-test-title
+                      message: null
+                      image: 1690973959_Ridge_post_2-1.jpg
+                      contact_name: MdSaddam
+                      contact_email: hussainmd@gmail.com
+                      contact_number: '9088123678'
+                      contact_address: address
+                      show_email: 1
+                      use_address_map: 0
+                      meta_title: null
+                      meta_description: null
+                      meta_keywords: null
+                      other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                      end_at: 02/08/2023
+                      total_views: 0
+                      created_at: '02-Aug-2023 10:59 AM'
+                    -
+                      id: 6
+                      user_id: 1
+                      country_id:
+                        id: 1
+                        name: USA
+                        color: '#16b19f'
+                        code: us
+                        domain: usa
+                        image: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title: 'Indian Website for Nris in USA'
+                        c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                      state_id:
+                        id: 1
+                        name: Alberta
+                        code: AB
+                        domain: alberta
+                        description: Alberta
+                        logo: 196066989625087bd37a4c2.18410119.jpg
+                        s_meta_title: 'Indian Website for Nris in || Alberta'
+                        s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                        s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                        header_image: 1522842913625087eb594b47.13394636.jpg
+                        header_image2: 1522842913625087eb594b47.13394636.jpg
+                        header_image3: 1522842913625087eb594b47.13394636.jpg
+                      cat_id:
+                        id: 1
+                        name: Auto
+                        slug: auto
+                        color: '#846A6A'
+                        created_at: '27-Jul-2023 11:35 AM'
+                      sub_cat_id:
+                        id: 1
+                        category_id: 1
+                        name: Audis
+                        slug: audis
+                        color: '#846A6A'
+                        created_at: '28-Jul-2023 07:03 AM'
+                      title: 'this is simple test title'
+                      title_slug: this-is-simple-test-title
+                      message: null
+                      image: 1690971434_Ridge_post_2-1.jpg
+                      contact_name: MdSaddam
+                      contact_email: hussainmd@gmail.com
+                      contact_number: '9088123678'
+                      contact_address: address
+                      show_email: 1
+                      use_address_map: 0
+                      meta_title: null
+                      meta_description: null
+                      meta_keywords: null
+                      other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                      end_at: 02/08/2023
+                      total_views: 0
+                      created_at: '02-Aug-2023 10:17 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully clasified found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 7
+                        user_id: 1
+                        country_id:
+                          id: 1
+                          name: USA
+                          color: '#16b19f'
+                          code: us
+                          domain: usa
+                          image: 152194054262639fda95ac05.12411768.jpg
+                          c_meta_title: 'Indian Website for Nris in USA'
+                          c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                          c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                          created_at: '20-Jan-2022 05:18 AM'
+                        state_id:
+                          id: 1
+                          name: Alberta
+                          code: AB
+                          domain: alberta
+                          description: Alberta
+                          logo: 196066989625087bd37a4c2.18410119.jpg
+                          s_meta_title: 'Indian Website for Nris in || Alberta'
+                          s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                          s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                          header_image: 1522842913625087eb594b47.13394636.jpg
+                          header_image2: 1522842913625087eb594b47.13394636.jpg
+                          header_image3: 1522842913625087eb594b47.13394636.jpg
+                        cat_id:
+                          id: 1
+                          name: Auto
+                          slug: auto
+                          color: '#846A6A'
+                          created_at: '27-Jul-2023 11:35 AM'
+                        sub_cat_id:
+                          id: 1
+                          category_id: 1
+                          name: Audis
+                          slug: audis
+                          color: '#846A6A'
+                          created_at: '28-Jul-2023 07:03 AM'
+                        title: 'this is simple test title'
+                        title_slug: this-is-simple-test-title
+                        message: null
+                        image: 1690973959_Ridge_post_2-1.jpg
+                        contact_name: MdSaddam
+                        contact_email: hussainmd@gmail.com
+                        contact_number: '9088123678'
+                        contact_address: address
+                        show_email: 1
+                        use_address_map: 0
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                        end_at: 02/08/2023
+                        total_views: 0
+                        created_at: '02-Aug-2023 10:59 AM'
+                      -
+                        id: 6
+                        user_id: 1
+                        country_id:
+                          id: 1
+                          name: USA
+                          color: '#16b19f'
+                          code: us
+                          domain: usa
+                          image: 152194054262639fda95ac05.12411768.jpg
+                          c_meta_title: 'Indian Website for Nris in USA'
+                          c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                          c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                          created_at: '20-Jan-2022 05:18 AM'
+                        state_id:
+                          id: 1
+                          name: Alberta
+                          code: AB
+                          domain: alberta
+                          description: Alberta
+                          logo: 196066989625087bd37a4c2.18410119.jpg
+                          s_meta_title: 'Indian Website for Nris in || Alberta'
+                          s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                          s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                          header_image: 1522842913625087eb594b47.13394636.jpg
+                          header_image2: 1522842913625087eb594b47.13394636.jpg
+                          header_image3: 1522842913625087eb594b47.13394636.jpg
+                        cat_id:
+                          id: 1
+                          name: Auto
+                          slug: auto
+                          color: '#846A6A'
+                          created_at: '27-Jul-2023 11:35 AM'
+                        sub_cat_id:
+                          id: 1
+                          category_id: 1
+                          name: Audis
+                          slug: audis
+                          color: '#846A6A'
+                          created_at: '28-Jul-2023 07:03 AM'
+                        title: 'this is simple test title'
+                        title_slug: this-is-simple-test-title
+                        message: null
+                        image: 1690971434_Ridge_post_2-1.jpg
+                        contact_name: MdSaddam
+                        contact_email: hussainmd@gmail.com
+                        contact_number: '9088123678'
+                        contact_address: address
+                        show_email: 1
+                        use_address_map: 0
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                        end_at: 02/08/2023
+                        total_views: 0
+                        created_at: '02-Aug-2023 10:17 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 7
+                        user_id:
+                          type: integer
+                          example: 1
+                        country_id:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: USA
+                            color:
+                              type: string
+                              example: '#16b19f'
+                            code:
+                              type: string
+                              example: us
+                            domain:
+                              type: string
+                              example: usa
+                            image:
+                              type: string
+                              example: 152194054262639fda95ac05.12411768.jpg
+                            c_meta_title:
+                              type: string
+                              example: 'Indian Website for Nris in USA'
+                            c_meta_description:
+                              type: string
+                              example: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                            c_meta_keywords:
+                              type: string
+                              example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                            created_at:
+                              type: string
+                              example: '20-Jan-2022 05:18 AM'
+                        state_id:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: Alberta
+                            code:
+                              type: string
+                              example: AB
+                            domain:
+                              type: string
+                              example: alberta
+                            description:
+                              type: string
+                              example: Alberta
+                            logo:
+                              type: string
+                              example: 196066989625087bd37a4c2.18410119.jpg
+                            s_meta_title:
+                              type: string
+                              example: 'Indian Website for Nris in || Alberta'
+                            s_meta_description:
+                              type: string
+                              example: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                            s_meta_keywords:
+                              type: string
+                              example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                            header_image:
+                              type: string
+                              example: 1522842913625087eb594b47.13394636.jpg
+                            header_image2:
+                              type: string
+                              example: 1522842913625087eb594b47.13394636.jpg
+                            header_image3:
+                              type: string
+                              example: 1522842913625087eb594b47.13394636.jpg
+                        cat_id:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: Auto
+                            slug:
+                              type: string
+                              example: auto
+                            color:
+                              type: string
+                              example: '#846A6A'
+                            created_at:
+                              type: string
+                              example: '27-Jul-2023 11:35 AM'
+                        sub_cat_id:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 1
+                            category_id:
+                              type: integer
+                              example: 1
+                            name:
+                              type: string
+                              example: Audis
+                            slug:
+                              type: string
+                              example: audis
+                            color:
+                              type: string
+                              example: '#846A6A'
+                            created_at:
+                              type: string
+                              example: '28-Jul-2023 07:03 AM'
+                        title:
+                          type: string
+                          example: 'this is simple test title'
+                        title_slug:
+                          type: string
+                          example: this-is-simple-test-title
+                        message:
+                          type: string
+                          example: null
+                        image:
+                          type: string
+                          example: 1690973959_Ridge_post_2-1.jpg
+                        contact_name:
+                          type: string
+                          example: MdSaddam
+                        contact_email:
+                          type: string
+                          example: hussainmd@gmail.com
+                        contact_number:
+                          type: string
+                          example: '9088123678'
+                        contact_address:
+                          type: string
+                          example: address
+                        show_email:
+                          type: integer
+                          example: 1
+                        use_address_map:
+                          type: integer
+                          example: 0
+                        meta_title:
+                          type: string
+                          example: null
+                        meta_description:
+                          type: string
+                          example: null
+                        meta_keywords:
+                          type: string
+                          example: null
+                        other_details:
+                          type: string
+                          example: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                        end_at:
+                          type: string
+                          example: 02/08/2023
+                        total_views:
+                          type: integer
+                          example: 0
+                        created_at:
+                          type: string
+                          example: '02-Aug-2023 10:59 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Clasified not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Clasified not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      security: []
+  /api/v1/create-free-clasified:
+    post:
+      summary: createFreeClasified
+      operationId: createFreeClasified
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"country_id\":1,\n\"state_id\":1,\n\"category_id\":1,\n\"sub_cat_id\":1,\n\"contact_name\":\"Abc\",\n\"contact_email\":\"you@domain.com\",\n\"contact_number\":\"98****3212\",\n\"contact_address\":\"Address\",\n\"show_email\":false,\n\"use_address_map\":true,\n\"title\":\"this is test ads\",\n\"message\":\"this is test message\",\n\"image\":\"abc.jpg\"\n\"other_details\":\"[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]\",\n\"end_at\":\"2023-08-01\",\n }\n\n<aside class=\"notice\">basepath/api/v1/create-free-clasified</aside>"
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer _token required'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully free clasified created...'
+                  data:
+                    user_id: '1'
+                    country_id: '1'
+                    state_id: '1'
+                    cat_id: '1'
+                    sub_cat_id: '1'
+                    title: 'this is simple test title'
+                    title_slug: this-is-simple-test-title
+                    message: null
+                    image: 1690973959_Ridge_post_2-1.jpg
+                    contact_name: MdSaddam
+                    contact_email: hussainmd@gmail.com
+                    contact_number: '9088123678'
+                    contact_address: address
+                    show_email: '1'
+                    use_address_map: '0'
+                    other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                    end_at: 02/08/2023
+                    created_at: '02-Aug-2023 10:59 AM'
+                    id: 7
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully free clasified created...'
+                  data:
+                    type: object
+                    properties:
+                      user_id:
+                        type: string
+                        example: '1'
+                      country_id:
+                        type: string
+                        example: '1'
+                      state_id:
+                        type: string
+                        example: '1'
+                      cat_id:
+                        type: string
+                        example: '1'
+                      sub_cat_id:
+                        type: string
+                        example: '1'
+                      title:
+                        type: string
+                        example: 'this is simple test title'
+                      title_slug:
+                        type: string
+                        example: this-is-simple-test-title
+                      message:
+                        type: string
+                        example: null
+                      image:
+                        type: string
+                        example: 1690973959_Ridge_post_2-1.jpg
+                      contact_name:
+                        type: string
+                        example: MdSaddam
+                      contact_email:
+                        type: string
+                        example: hussainmd@gmail.com
+                      contact_number:
+                        type: string
+                        example: '9088123678'
+                      contact_address:
+                        type: string
+                        example: address
+                      show_email:
+                        type: string
+                        example: '1'
+                      use_address_map:
+                        type: string
+                        example: '0'
+                      other_details:
+                        type: string
+                        example: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                      end_at:
+                        type: string
+                        example: 02/08/2023
+                      created_at:
+                        type: string
+                        example: '02-Aug-2023 10:59 AM'
+                      id:
+                        type: integer
+                        example: 7
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                category_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                sub_cat_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                title:
+                  type: string
+                  description: ''
+                  example: '"title text " in JSON BODY'
+                message:
+                  type: string
+                  description: ''
+                  example: '"message text " in JSON BODY'
+                image:
+                  type: image
+                  description: ''
+                  example: '"abc.jpg" in JSON BODY'
+                '*contact_name':
+                  type: string
+                  description: ''
+                  example: 'Abc in JSON BODY'
+                '*contact_email':
+                  type: string
+                  description: ''
+                  example: 'you@domain.com in JSON BODY'
+                '*contact_number':
+                  type: string
+                  description: ''
+                  example: '9090654320 in JSON BODY'
+                '*contact_address':
+                  type: string
+                  description: ''
+                  example: 'Address in JSON BODY'
+                '*show_email':
+                  type: boolean
+                  description: ''
+                  example: true
+                '*use_address_map':
+                  type: boolean
+                  description: ''
+                  example: true
+                other_details:
+                  type: json
+                  description: ''
+                  example: '[{"Make":"audi"},{"Color":"red"}, {"Condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ] JSON BODY'
+                '*end_at':
+                  type: date
+                  description: ''
+                  example: "YYYY-MM-DD JSON BODY\n\n<aside class=\"note\">Make sure \"other_details\" Key's First Charecter should be in CAPITAL LETTER </aside>"
+              required:
+                - '*user_id'
+                - '*country_id'
+                - '*state_id'
+                - category_id
+                - sub_cat_id
+                - '*contact_name'
+                - '*contact_email'
+                - '*contact_number'
+                - '*contact_address'
+                - '*show_email'
+                - '*use_address_map'
+                - '*end_at'
+  /api/v1/create-free-clasified-bid:
+    post:
+      summary: createFreeClasifiedBid
+      operationId: createFreeClasifiedBid
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"classified_id\":1,\n\"amount\":123,\n\"comment\":\"Only 123 dollar\"\n }\n\n<aside class=\"notice\">basepath/api/v1/create-free-clasified-bid</aside>"
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer _token required'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully free clasified bid created...'
+                  data:
+                    user_id: 1
+                    classified_id: 1
+                    comments: 'Only 123 dollar'
+                    amount: 123
+                    created_at: '03-Aug-2023 06:48 AM'
+                    id: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully free clasified bid created...'
+                  data:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                        example: 1
+                      classified_id:
+                        type: integer
+                        example: 1
+                      comments:
+                        type: string
+                        example: 'Only 123 dollar'
+                      amount:
+                        type: integer
+                        example: 123
+                      created_at:
+                        type: string
+                        example: '03-Aug-2023 06:48 AM'
+                      id:
+                        type: integer
+                        example: 3
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*classified_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*comment':
+                  type: string
+                  description: ''
+                  example: 'comment text in JSON BODY'
+                '*amount':
+                  type: number
+                  description: ''
+                  example: 10.0
+              required:
+                - '*user_id'
+                - '*classified_id'
+                - '*comment'
+                - '*amount'
+  /api/v1/create-free-clasified-comment:
+    post:
+      summary: createFreeClasifiedComment
+      operationId: createFreeClasifiedComment
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"classified_id\":1,\n\"comment\":\"Only 123 dollar\"\n }\n\n<aside class=\"notice\">basepath/api/v1/create-free-clasified-comment</aside>"
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer _token required'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully free clasified bid created...'
+                  data:
+                    user_id: 1
+                    classified_id: 1
+                    comments: 'Great items....'
+                    created_at: '03-Aug-2023 06:48 AM'
+                    id: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully free clasified bid created...'
+                  data:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                        example: 1
+                      classified_id:
+                        type: integer
+                        example: 1
+                      comments:
+                        type: string
+                        example: 'Great items....'
+                      created_at:
+                        type: string
+                        example: '03-Aug-2023 06:48 AM'
+                      id:
+                        type: integer
+                        example: 3
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*classified_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*comment':
+                  type: string
+                  description: ''
+                  example: 'comment text in JSON BODY'
+              required:
+                - '*user_id'
+                - '*classified_id'
+                - '*comment'
   /api/v1/get-all-country:
     get:
       summary: getAllCountry
@@ -17,10 +1952,104 @@ paths:
         200:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully country list get...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n},\n{\n\"id\": 2,\n\"name\": \"Canada\",\n\"color\": \"#990d00\",\n\"code\": \"ca\",\n\"domain\": \"canada\",\n\"image\": \"47659423262639bd6a30242.39786820.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in Canada\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in Canada . Get information on\",\n\"c_meta_keywords\": \"Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website\",\n}\n]\n}"
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully country list get...'
+                  data:
+                    -
+                      id: 1
+                      name: USA
+                      color: '#16b19f'
+                      code: us
+                      domain: usa
+                      image: 152194054262639fda95ac05.12411768.jpg
+                      c_meta_title: 'Indian Website for Nris in USA'
+                      c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                      c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                      created_at: '20-Jan-2022 05:18 AM'
+                    -
+                      id: 2
+                      name: Canada
+                      color: '#990d00'
+                      code: ca
+                      domain: canada
+                      image: 47659423262639bd6a30242.39786820.jpg
+                      c_meta_title: 'Indian Website for Nris in Canada'
+                      c_meta_description: 'An Indian community website for all NRIS residing in Canada . Get information on'
+                      c_meta_keywords: 'Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website'
+                      created_at: '20-Jan-2022 05:18 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully country list get...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: USA
+                        color: '#16b19f'
+                        code: us
+                        domain: usa
+                        image: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title: 'Indian Website for Nris in USA'
+                        c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                      -
+                        id: 2
+                        name: Canada
+                        color: '#990d00'
+                        code: ca
+                        domain: canada
+                        image: 47659423262639bd6a30242.39786820.jpg
+                        c_meta_title: 'Indian Website for Nris in Canada'
+                        c_meta_description: 'An Indian community website for all NRIS residing in Canada . Get information on'
+                        c_meta_keywords: 'Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: USA
+                        color:
+                          type: string
+                          example: '#16b19f'
+                        code:
+                          type: string
+                          example: us
+                        domain:
+                          type: string
+                          example: usa
+                        image:
+                          type: string
+                          example: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title:
+                          type: string
+                          example: 'Indian Website for Nris in USA'
+                        c_meta_description:
+                          type: string
+                          example: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords:
+                          type: string
+                          example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at:
+                          type: string
+                          example: '20-Jan-2022 05:18 AM'
         404:
           description: ''
           content:
@@ -412,35 +2441,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: autem
+                  example: cupiditate
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: nulla
+                  example: impedit
                 '*email_id':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: facere
+                  example: perspiciatis
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: consectetur
+                  example: ipsa
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: dolore
+                  example: aut
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: quod
+                  example: modi
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: quia
+                  example: sint
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: quibusdam
+                  example: ut
       security: []
   /api/v1/login:
     post:
@@ -561,11 +2590,11 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: gustave.bashirian@example.com
+                  example: flatley.vincenzo@example.org
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: sint
+                  example: voluptate
       security: []
   /api/v1/forgot-pass:
     post:
@@ -650,7 +2679,7 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: fbartoletti@example.net
+                  example: hartmann.dessie@example.com
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -715,15 +2744,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: walsh.betty@example.org
+                  example: may.casper@example.net
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: velit
+                  example: nostrum
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: molestias
+                  example: libero
       security: []
   /api/v1/get-all-nris-talk:
     get:
@@ -1064,13 +3093,90 @@ paths:
                       id:
                         type: integer
                         example: 6
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
         500:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
       tags:
         - 'NrisTalk Related'
       requestBody:
@@ -1151,13 +3257,90 @@ paths:
                       id:
                         type: integer
                         example: 3
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
         500:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
       tags:
         - 'NrisTalk Related'
       requestBody:
@@ -1337,13 +3520,90 @@ paths:
                       to:
                         type: integer
                         example: 1
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
         404:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
         500:
           description: ''
           content:
@@ -1450,13 +3710,90 @@ paths:
                       mobile:
                         type: string
                         example: '9899****54'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
         404:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Profile not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Profile not found...'
+                  data:
+                    type: array
+                    example: []
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
       tags:
         - 'User Profile Related'
       requestBody:
@@ -1530,13 +3867,66 @@ paths:
                   message:
                     type: string
                     example: 'User not found...'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
         403:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n}\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
       tags:
         - 'User Profile Related'
       requestBody:
@@ -1568,6 +3958,9 @@ paths:
                 - '*new_password'
                 - '*retype_password'
 tags:
+  -
+    name: 'ClasifiedCategory Related'
+    description: "\nAPIs for managing all Clasified Category related"
   -
     name: 'Country State & City'
     description: "\nAPIs for managing all country, state, city"

@@ -172,7 +172,7 @@
                             var checkboxId = "checkbox_" + permission.id;
                             var isChecked = permission.role_permission.length > 0 ? true : false;
                             
-                            var checkboxElement = '<div class="col-md-4 icheck-primary d-inline"> '+count+' <input type="checkbox" id="' + checkboxId + '" name="permission[]" value="' + permission.id + '" class="form-control"' + (isChecked ? ' checked' : '') + '>';
+                            var checkboxElement = '<div class="col-md-4 icheck-primary d-inline"> '+count+'. <input type="checkbox" id="' + checkboxId + '" name="permission[]" value="' + permission.id + '" class="form-control"' + (isChecked ? ' checked' : '') + '>';
                             var labelElement = '<label for="' + checkboxId + '">' + permission.name.name + '</label><br>';
                             
                             // Append the checkbox and label to a container (e.g., a div with ID "checkboxes-container")

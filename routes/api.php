@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\V1\CountryStateCityController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\LoginRegisterController;
 use App\Http\Controllers\Api\V1\NrisTalkController;
+use App\Http\Controllers\Api\V1\ClasifiedCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,23 @@ use App\Http\Controllers\Api\V1\NrisTalkController;
 
 
 Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
+
+
+
+    /*
+        Free Clasiffied category & Sub Category
+
+    */
+
+    Route::get('/get-all-category', [ClasifiedCategoryController::class,'getAllCategory']);
+    Route::get('/get-all-sub-category', [ClasifiedCategoryController::class,'getAllSubCategory']);
+    Route::post('/get-all-sub-category-by-id', [ClasifiedCategoryController::class,'getAllSubCategoryById']);
+    
+    Route::post('/get-free-clasified-by-id', [ClasifiedCategoryController::class,'getFreeClasifiedById']);
+    Route::get('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
+
+
+
 
 
     
@@ -72,6 +90,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/create-nris-talk', [NrisTalkController::class,'createNrisTalk']); 
         $router->post('/create-nris-talk-reply', [NrisTalkController::class,'createNrisTalkReply']); 
         $router->post('/get-nris-talk', [NrisTalkController::class,'getNrisTalk']); 
+        $router->post('/create-free-clasified', [ClasifiedCategoryController::class,'createFreeClasified']);
+        $router->post('/create-free-clasified-bid', [ClasifiedCategoryController::class,'createFreeClasifiedBid']);
+        $router->post('/create-free-clasified-comment', [ClasifiedCategoryController::class,'createFreeClasifiedComment']);
     
     });
 

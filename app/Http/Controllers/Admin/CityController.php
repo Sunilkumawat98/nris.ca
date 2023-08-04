@@ -32,8 +32,13 @@ class CityController
         {
             abort(404, 'You are not Authorised...');
         }
+        $searchQuery = $request->input('search');
         // Retrieve all city using Eloquent ORM
-        $results                      = City::where('status', 1)->orderBy('id', 'DESC')->paginate(10); 
+        $results                      = City::where('status', 1); 
+        if ($searchQuery) {
+            $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
+        }
+        $results = $results->orderBy('id', 'DESC')->paginate(10);
         $currentPage                    = request()->query('page', 1);
 
         // Calculate the previous and next pages for forward and backward navigation
@@ -41,7 +46,7 @@ class CityController
         $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
 
 
-        return view('admin.city.index', compact('results', 'previousPage', 'nextPage'));
+        return view('admin.city.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
     
     }
 

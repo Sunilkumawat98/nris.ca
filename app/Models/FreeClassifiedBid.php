@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class State extends Model
+
+class FreeClassifiedBid extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,14 +15,12 @@ class State extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'states';
+    protected $table            = 'free_classified_bid';
 
     protected $hidden           = [
-        'country_id',
-        'created_at',
+        'classified_id',
         'updated_at',
         'deleted_at',
-        'created_by',
         'is_live',
         'status'
     ];
@@ -38,29 +37,16 @@ class State extends Model
     ];
 
     protected $fillable         = [        
-        'name',
-        'code',
-        'domain',
-        'country_id',
-        'description',
-        'logo',
-        's_meta_title',
-        's_meta_description',
-        's_meta_keywords',
-        'header_image',
-        'header_image2',
-        'header_image3',
-        'created_by',
+        'user_id',
+        'classified_id',
+        'comments',
+        'amount',
         'is_live',
         'created_at',
         'updated_at',
-        'deleted_at',
         'status'
     ];
 
 
-    public function cities() {
-        return $this->belongsTo(City::class, 'city_id', 'id');
-    }
     
 }

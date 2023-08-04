@@ -49,11 +49,12 @@ class CountryStateCityController extends BaseController
      * @return \Illuminate\Http\Response
      *
      * @response 200
-     *  {
+        {
             "status": true,
             "status_code": 200,
             "message": "Successfully country list get...",
-            "data": [
+            "data": 
+            [
                 {
                     "id": 1,
                     "name": "USA",
@@ -64,6 +65,7 @@ class CountryStateCityController extends BaseController
                     "c_meta_title": "Indian Website for Nris in USA",
                     "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
                     "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+                    "created_at": "20-Jan-2022 05:18 AM"
                 },
                 {
                     "id": 2,
@@ -75,6 +77,7 @@ class CountryStateCityController extends BaseController
                     "c_meta_title": "Indian Website for Nris in Canada",
                     "c_meta_description": "An Indian community website for all NRIS residing in Canada . Get information on",
                     "c_meta_keywords": "Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website",
+                    "created_at": "20-Jan-2022 05:18 AM"
                 }
             ]
         }
@@ -82,7 +85,7 @@ class CountryStateCityController extends BaseController
      *
      * 
 
-        @response 404
+       @response 404
         {
             "status": false,
             "status_code": 404,
@@ -173,7 +176,7 @@ class CountryStateCityController extends BaseController
      *
      *
 
-        @response 404
+       @response 404
         {
             "status": false,
             "status_code": 404,

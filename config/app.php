@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -124,6 +124,8 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'upload_ads_img' => env('UPLOAD_ADS_IMG'),
+    'clasified_cdn_path' => env('SHOW_ADS_IMG'),
 
     'cipher' => 'AES-256-CBC',
 

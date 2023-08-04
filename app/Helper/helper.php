@@ -1,6 +1,11 @@
 <?php
  
 
+ function getAllCategory()
+{
+
+	return \App\Models\ClassifiedCategory::all();
+}
 
 function getAllRoles()
 {
@@ -41,6 +46,16 @@ function getRoleNamebyId($id)
 function getPermissionNamebyId($id)
 {
 	return \App\Models\Permission::where('id', $id)->first();
+}
+
+function getCategoryNamebyId($id)
+{
+	return \App\Models\ClassifiedCategory::where('id', $id)->first();
+}
+
+function getSubCategoryNamebyId($id)
+{
+	return \App\Models\ClassifiedSubCategory::where('id', $id)->first();
 }
 
 
