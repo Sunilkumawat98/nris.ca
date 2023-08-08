@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\V1\UserController;
 use App\Http\Controllers\Api\V1\LoginRegisterController;
 use App\Http\Controllers\Api\V1\NrisTalkController;
 use App\Http\Controllers\Api\V1\ClasifiedCategoryController;
+use App\Http\Controllers\Api\V1\MovieRelatedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,18 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
 
+    /*
+
+        Movie Rating
+        Movie Source
+        Desi Movies
+    
+    */
+
+    Route::get('/get-movie-ratings', [MovieRelatedController::class,'getMovieRatings']);
+    Route::get('/get-all-movie-ratings', [MovieRelatedController::class,'getAllMovieRatings']);
+    Route::post('/get-all-desi-movies', [MovieRelatedController::class,'getAllDesiMovies']);
+    Route::post('/get-latest-desi-movies', [MovieRelatedController::class,'getLatestDesiMovies']);
 
 
     

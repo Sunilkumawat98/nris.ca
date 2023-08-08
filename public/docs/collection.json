@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "97fd7f00-e5a6-4fa6-8cb2-f6fa59c8ac41",
+        "_postman_id": "638ee7f4-1ce5-4dbd-9319-591994b20d5a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -603,7 +603,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"cupiditate\",\"*last_name\":\"impedit\",\"*email_id\":\"perspiciatis\",\"*dob\":\"ipsa\",\"*mobile\":\"aut\",\"*password\":\"modi\",\"*country_id\":\"sint\",\"*state_id\":\"ut\"}"
+                            "raw": "{\"*first_name\":\"debitis\",\"*last_name\":\"molestiae\",\"*email_id\":\"enim\",\"*dob\":\"autem\",\"*mobile\":\"molestiae\",\"*password\":\"incidunt\",\"*country_id\":\"sequi\",\"*state_id\":\"hic\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email_id\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -653,7 +653,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"flatley.vincenzo@example.org\",\"*password\":\"voluptate\"}"
+                            "raw": "{\"*email\":\"tsenger@example.net\",\"*password\":\"eum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -703,7 +703,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"hartmann.dessie@example.com\"}"
+                            "raw": "{\"*email\":\"dzulauf@example.com\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -753,7 +753,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"may.casper@example.net\",\"*new_password\":\"nostrum\",\"*retype_password\":\"libero\"}"
+                            "raw": "{\"*email\":\"citlalli.harvey@example.com\",\"*new_password\":\"nihil\",\"*retype_password\":\"sequi\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -1187,6 +1187,206 @@
                             "header": [],
                             "code": 419,
                             "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n }",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "allMovieRelated Related",
+            "description": "\nAPIs for managing all movie related",
+            "item": [
+                {
+                    "name": "getMovieRatings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-movie-ratings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-movie-ratings"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-movie-ratings<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully ratings found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Bro Telugu\",\n\"slug\": \"bro-telugu\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https:\/\/wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:41 AM\"\n},\n{\n\"id\": 1,\n\"name\": \"Bro Hindi\",\n\"slug\": \"bro-hindi\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https:\/\/wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:28 AM\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllMovieRatings",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-movie-ratings",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-movie-ratings"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-movie-ratings<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully ratings found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Bro Telugu\",\n\"slug\": \"bro-telugu\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https:\/\/wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:41 AM\"\n},\n{\n\"id\": 1,\n\"name\": \"Bro Hindi\",\n\"slug\": \"bro-hindi\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https:\/\/wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https:\/\/wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:28 AM\"\n}\n]\n],\n\"first_page_url\": \"http:\/\/PATH\/api\/v1\/get-all-movie-ratings?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/PATH\/api\/v1\/get-all-movie-ratings\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 2\n}\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllDesiMovies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-desi-movies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-desi-movies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":\"et\",\"*state_id\":\"et\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Desi movies found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 4,\n\"country_id\": 1,\n\"state_id\": 1,\n\"city_id\": 1,\n\"address\": \"ADDRESS\",\n\"name\": \"Bro movie\",\n\"slug\": \"bro-movie\",\n\"description\": null,\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"image\": \"http:\/\/PATH\/DESI_MOVIE_IMAGE\/1691470622_bhadmegali.jpeg\",\n\"start_date\": \"09\/08\/2023\",\n\"end_date\": \"30\/09\/2023\",\n\"additional_info\": \"[{\\\"cast\\\":\\\"arjun rampal, rani, ajay \\\"},{\\\"director\\\":\\\"ajay\\\"}, {\\\"duaration\\\": \\\"1 ghanta\\\"} ]\",\n\"meta_title\": \"META TITLE\",\n\"meta_description\": \"META DESC\",\n\"meta_keywords\": \"META KEY\",\n\"created_at\": \"08-Aug-2023 04:57 AM\"\n}\n],\n\"first_page_url\": \"http:\/\/PATH\/api\/v1\/get-all-desi-movies?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/PATH\/api\/v1\/get-all-desi-movies\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 1\n}\n\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Desi movies not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getLatestDesiMovies",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-latest-desi-movies",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-latest-desi-movies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":\"consectetur\",\"*state_id\":\"vitae\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully desi movies found..\",\n\"data\": {\n\"id\": 4,\n\"country_id\": 1,\n\"state_id\": 1,\n\"city_id\": 1,\n\"address\": \"ADDRESS\",\n\"name\": \"Bro movie\",\n\"slug\": \"bro-movie\",\n\"description\": null,\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"image\": \"http:\/\/IMAGE_PATH\/1691470622_bhadmegali.jpeg\",\n\"start_date\": \"09\/08\/2023\",\n\"end_date\": \"30\/09\/2023\",\n\"additional_info\": \"[{\\\"cast\\\":\\\"arjun rampal, rani, ajay \\\"},{\\\"director\\\":\\\"ajay\\\"}, {\\\"duaration\\\": \\\"1 ghanta\\\"} ]\",\n\"meta_title\": \"META TITLE\",\n\"meta_description\": \"META DESC\",\n\"meta_keywords\": \"META KEY\",\n\"created_at\": \"08-Aug-2023 04:57 AM\"\n}\n\n\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Desi movies not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
                             "name": ""
                         }
                     ]

@@ -226,5 +226,29 @@ return [
         ],
 
 
+        /* 
+        
+            Movie Related
+        */
+        "allDesiMoviesGet" => [
+           
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+        "latestDesiMoviesGet" => [
+           
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+
+
     ],
 ];

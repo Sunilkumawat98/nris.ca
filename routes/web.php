@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\PermissionRoleController;
 use App\Http\Controllers\Admin\ClassifiedCategoryController;
 use App\Http\Controllers\Admin\ClassifiedSubCategoryController;
 use App\Http\Controllers\Admin\FreeClassifiedController;
+use App\Http\Controllers\Admin\RatingSourceController;
+use App\Http\Controllers\Admin\MovieRatingController;
+use App\Http\Controllers\Admin\DesiMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +82,15 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('free_classified', FreeClassifiedController::class);
         Route::post('/free_classified/{id}/active-status', [FreeClassifiedController::class, 'livePause'])->name('free_classified.activeStatus');
+
+        Route::resource('rating_source', RatingSourceController::class);
+        Route::post('/rating_source/{id}/active-status', [RatingSourceController::class, 'livePause'])->name('rating_source.activeStatus');
+
+        Route::resource('movie_rating', MovieRatingController::class);
+        Route::post('/movie_rating/{id}/active-status', [MovieRatingController::class, 'livePause'])->name('movie_rating.activeStatus');
+
+        Route::resource('desi_movies', DesiMovieController::class);
+        Route::post('/desi_movies/{id}/active-status', [DesiMovieController::class, 'livePause'])->name('desi_movies.activeStatus');
 
         
     });

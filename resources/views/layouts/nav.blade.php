@@ -35,7 +35,7 @@
                with font-awesome or any other icon font library -->
 
           @if(auth()->user()->hasPermission('manage_dashboard'))
-          <li class="nav-item">
+          <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
             <a href="{{ route('admin.dashboard') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -48,8 +48,9 @@
   
           
             @if(auth()->user()->hasPermission('manage_location'))
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <!-- <li class="nav-item menu-open"> -->
+              <li class="nav-item {{ request()->is('country') || request()->is('state') || request()->is('city') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('country') || request()->is('state') || request()->is('city') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-flag"></i>
                   <p>
                     Location
@@ -58,19 +59,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ route('country.index') }}" class="nav-link">
+                    <a href="{{ route('country.index') }}" class="nav-link {{ request()->is('country') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Country</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('state.index') }}" class="nav-link">
+                    <a href="{{ route('state.index') }}" class="nav-link {{ request()->is('state') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>State</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{ route('city.index') }}" class="nav-link">
+                    <a href="{{ route('city.index') }}" class="nav-link {{ request()->is('city') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>City</p>
                     </a>
@@ -81,8 +82,8 @@
           
          
             @if(auth()->user()->hasPermission('manage_users'))
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item {{ request()->is('admin_user') || request()->is('role') || request()->is('permission') || request()->is('permission_role') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('admin_user') || request()->is('role') || request()->is('permission') || request()->is('permission_role') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-cog"></i>
                   <p>
                     Administration
@@ -91,28 +92,28 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ route('admin_user.index') }}" class="nav-link">
+                    <a href="{{ route('admin_user.index') }}" class="nav-link {{ request()->is('admin_user') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Users</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('role.index') }}" class="nav-link">
+                    <a href="{{ route('role.index') }}" class="nav-link {{ request()->is('role') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Role</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('permission.index') }}" class="nav-link">
+                    <a href="{{ route('permission.index') }}" class="nav-link {{ request()->is('permission') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Permission</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('permission_role.index') }}" class="nav-link">
+                    <a href="{{ route('permission_role.index') }}" class="nav-link {{ request()->is('permission_role') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Role Permission</p>
                     </a>
@@ -123,8 +124,8 @@
             @endif
          
             @if(auth()->user()->hasPermission('manage_free_classifieds'))
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') || request()->is('free_classified') || request()->is('free_classified/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') ||  request()->is('free_classified') || request()->is('free_classified/*') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-info"></i>
                   <p>
                     Free classified
@@ -133,28 +134,63 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ route('classified_category.index') }}" class="nav-link">
+                    <a href="{{ route('classified_category.index') }}" class="nav-link {{ request()->is('classified_category') || request()->is('classified_category/*')  ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Category</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('classified_sub_category.index') }}" class="nav-link">
+                    <a href="{{ route('classified_sub_category.index') }}" class="nav-link {{ request()->is('classified_sub_category') || request()->is('classified_sub_category/*') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Sub Category</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
-                    <a href="{{ route('free_classified.index') }}" class="nav-link">
+                    <a href="{{ route('free_classified.index') }}" class="nav-link {{ request()->is('free_classified') || request()->is('free_classified/*') ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Free Classified</p>
                     </a>
                   </li>
-                  
-                  
                 </ul>
+              </li>
+            @endif
+
+            @if(auth()->user()->hasPermission('manage_movie_ratings'))
+              <li class="nav-item {{ request()->is('rating_source') || request()->is('rating_source/*') || request()->is('movie_rating') || request()->is('movie_rating/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('rating_source') || request()->is('rating_source/*') || request()->is('movie_rating') || request()->is('movie_rating/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-tree"></i>
+                  <p>
+                    Movie Rating 
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('rating_source.index') }}" class="nav-link {{ request()->is('rating_source') || request()->is('rating_source/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Source</p>
+                    </a>
+                  </li>                  
+                  <li class="nav-item">
+                    <a href="{{ route('movie_rating.index') }}" class="nav-link {{ request()->is('movie_rating') || request()->is('movie_rating/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Ratings</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
+
+            @if(auth()->user()->hasPermission('manage_desi_movies'))
+              <li class="nav-item {{ request()->is('desi_movies') || request()->is('desi_movies/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('desi_movies.index') }}" class="nav-link {{ request()->is('desi_movies') || request()->is('desi_movies/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-video"></i>
+                  <p>
+                    Desi Movies
+                  </p>
+                </a>
               </li>
             @endif
           

@@ -67,7 +67,7 @@ class FreeClassified extends Model
 
     public function getImageAttribute($value)
     {
-        return $value ? config('app.clasified_cdn_path').$value : null;
+        return $value ? config('app.clasified_cdn_path').'ADS_IMAGE/'.$value : null;
     }
 
     public function getEndAtAttribute($value)

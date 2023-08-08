@@ -17,6 +17,7 @@
 <script src="{{ URL::asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ URL::asset('dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -25,7 +26,15 @@
 <script src="{{ URL::asset('plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
 
 <script src="{{ URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
 <script src="{{ URL::asset('plugins/select2/js/select2.full.min.js') }}"></script>
+
+<script src="{{ URL::asset('plugins/moment/moment.min.js') }}"></script>
+
+<!-- date-range-picker -->
+<script src="{{ URL::asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 
 
 <script>
@@ -38,6 +47,17 @@
         //Colorpicker
         $('.my-colorpicker1').colorpicker()
         //color picker with addon      
+    })
+
+
+    
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({
+        timePicker: false,
+        timePickerIncrement: 30,
+        locale: {
+          format: 'MM/DD/YYYY'
+        }
     })
 
 

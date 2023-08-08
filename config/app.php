@@ -125,7 +125,9 @@ return [
 
     'key' => env('APP_KEY'),
     'upload_ads_img' => env('UPLOAD_ADS_IMG'),
-    'clasified_cdn_path' => env('SHOW_ADS_IMG'),
+    'clasified_cdn_path' => env('SHOW_IMG'),
+
+    'upload_desi_movie_img' => env('UPLOAD_DESI_MOVIE_IMG'),
 
     'cipher' => 'AES-256-CBC',
 

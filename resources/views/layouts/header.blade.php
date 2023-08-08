@@ -24,6 +24,10 @@
 
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="{{ URL::asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{ URL::asset('plugins/daterangepicker/daterangepicker.css') }}">
+    
 
 </head>
 
@@ -37,18 +41,21 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-
             </ul>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.logout') }}" role="button">
-                          Logout
-                          <i class="fas fa-angle-right"></i>
-                        
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">{{ Auth::guard('admin')->user()->name }}
+                        <i class="far fa-user"></i>
                     </a>
+                    <div class="dropdown-menu dropdown-menu dropdown-menu-right">
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <a href="{{ route('admin.logout') }}" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                            <span class="float-right text-muted text-sm"></span>
+                        </a>
+                    </div>
                 </li>
-            </ul>
+            </ul>            
         </nav>
         <!-- /.navbar -->

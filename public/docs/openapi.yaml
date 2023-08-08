@@ -2441,35 +2441,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: cupiditate
+                  example: debitis
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: impedit
+                  example: molestiae
                 '*email_id':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: perspiciatis
+                  example: enim
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: ipsa
+                  example: autem
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: aut
+                  example: molestiae
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: modi
+                  example: incidunt
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: sint
+                  example: sequi
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: ut
+                  example: hic
       security: []
   /api/v1/login:
     post:
@@ -2590,11 +2590,11 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: flatley.vincenzo@example.org
+                  example: tsenger@example.net
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: voluptate
+                  example: eum
       security: []
   /api/v1/forgot-pass:
     post:
@@ -2679,7 +2679,7 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: hartmann.dessie@example.com
+                  example: dzulauf@example.com
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -2744,15 +2744,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: may.casper@example.net
+                  example: citlalli.harvey@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: nostrum
+                  example: nihil
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: libero
+                  example: sequi
       security: []
   /api/v1/get-all-nris-talk:
     get:
@@ -3957,6 +3957,583 @@ paths:
                 - '*current_password'
                 - '*new_password'
                 - '*retype_password'
+  /api/v1/get-movie-ratings:
+    get:
+      summary: getMovieRatings
+      operationId: getMovieRatings
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-movie-ratings</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully ratings found..'
+                  data:
+                    -
+                      id: 2
+                      name: 'Bro Telugu'
+                      slug: bro-telugu
+                      rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                      created_at: '05-Aug-2023 10:41 AM'
+                    -
+                      id: 1
+                      name: 'Bro Hindi'
+                      slug: bro-hindi
+                      rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                      created_at: '05-Aug-2023 10:28 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully ratings found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        name: 'Bro Telugu'
+                        slug: bro-telugu
+                        rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        created_at: '05-Aug-2023 10:41 AM'
+                      -
+                        id: 1
+                        name: 'Bro Hindi'
+                        slug: bro-hindi
+                        rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        created_at: '05-Aug-2023 10:28 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        name:
+                          type: string
+                          example: 'Bro Telugu'
+                        slug:
+                          type: string
+                          example: bro-telugu
+                        rating_data:
+                          type: string
+                          example: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        created_at:
+                          type: string
+                          example: '05-Aug-2023 10:41 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'allMovieRelated Related'
+      security: []
+  /api/v1/get-all-movie-ratings:
+    get:
+      summary: getAllMovieRatings
+      operationId: getAllMovieRatings
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-movie-ratings</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully ratings found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Bro Telugu\",\n\"slug\": \"bro-telugu\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https://wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https://wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https://wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:41 AM\"\n},\n{\n\"id\": 1,\n\"name\": \"Bro Hindi\",\n\"slug\": \"bro-hindi\",\n\"rating_data\": \"{\\\"1\\\": [\\\"4.75\\\", \\\"https://wwww.url2.com\\\"], \\\"2\\\": [\\\"3.25\\\", \\\"https://wwww.url2.com\\\"], \\\"3\\\": [\\\"4.5\\\", \\\"https://wwww.url5.com\\\"]}\",\n\"created_at\": \"05-Aug-2023 10:28 AM\"\n}\n]\n],\n\"first_page_url\": \"http://PATH/api/v1/get-all-movie-ratings?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http://PATH/api/v1/get-all-movie-ratings\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 2\n}\n }"
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'allMovieRelated Related'
+      security: []
+  /api/v1/get-all-desi-movies:
+    post:
+      summary: getAllDesiMovies
+      operationId: getAllDesiMovies
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-desi-movies</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully Desi movies found..'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 4
+                        country_id: 1
+                        state_id: 1
+                        city_id: 1
+                        address: ADDRESS
+                        name: 'Bro movie'
+                        slug: bro-movie
+                        description: null
+                        url: 'https://www.youtube.com/watch?v=L_nN1P297N0&t=19s'
+                        image: 'http://PATH/DESI_MOVIE_IMAGE/1691470622_bhadmegali.jpeg'
+                        start_date: 09/08/2023
+                        end_date: 30/09/2023
+                        additional_info: '[{"cast":"arjun rampal, rani, ajay "},{"director":"ajay"}, {"duaration": "1 ghanta"} ]'
+                        meta_title: 'META TITLE'
+                        meta_description: 'META DESC'
+                        meta_keywords: 'META KEY'
+                        created_at: '08-Aug-2023 04:57 AM'
+                    first_page_url: 'http://PATH/api/v1/get-all-desi-movies?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: 'http://PATH/api/v1/get-all-desi-movies'
+                    per_page: 15
+                    prev_page_url: null
+                    to: 1
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully Desi movies found..'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            country_id: 1
+                            state_id: 1
+                            city_id: 1
+                            address: ADDRESS
+                            name: 'Bro movie'
+                            slug: bro-movie
+                            description: null
+                            url: 'https://www.youtube.com/watch?v=L_nN1P297N0&t=19s'
+                            image: 'http://PATH/DESI_MOVIE_IMAGE/1691470622_bhadmegali.jpeg'
+                            start_date: 09/08/2023
+                            end_date: 30/09/2023
+                            additional_info: '[{"cast":"arjun rampal, rani, ajay "},{"director":"ajay"}, {"duaration": "1 ghanta"} ]'
+                            meta_title: 'META TITLE'
+                            meta_description: 'META DESC'
+                            meta_keywords: 'META KEY'
+                            created_at: '08-Aug-2023 04:57 AM'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            country_id:
+                              type: integer
+                              example: 1
+                            state_id:
+                              type: integer
+                              example: 1
+                            city_id:
+                              type: integer
+                              example: 1
+                            address:
+                              type: string
+                              example: ADDRESS
+                            name:
+                              type: string
+                              example: 'Bro movie'
+                            slug:
+                              type: string
+                              example: bro-movie
+                            description:
+                              type: string
+                              example: null
+                            url:
+                              type: string
+                              example: 'https://www.youtube.com/watch?v=L_nN1P297N0&t=19s'
+                            image:
+                              type: string
+                              example: 'http://PATH/DESI_MOVIE_IMAGE/1691470622_bhadmegali.jpeg'
+                            start_date:
+                              type: string
+                              example: 09/08/2023
+                            end_date:
+                              type: string
+                              example: 30/09/2023
+                            additional_info:
+                              type: string
+                              example: '[{"cast":"arjun rampal, rani, ajay "},{"director":"ajay"}, {"duaration": "1 ghanta"} ]'
+                            meta_title:
+                              type: string
+                              example: 'META TITLE'
+                            meta_description:
+                              type: string
+                              example: 'META DESC'
+                            meta_keywords:
+                              type: string
+                              example: 'META KEY'
+                            created_at:
+                              type: string
+                              example: '08-Aug-2023 04:57 AM'
+                      first_page_url:
+                        type: string
+                        example: 'http://PATH/api/v1/get-all-desi-movies?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: 'http://PATH/api/v1/get-all-desi-movies'
+                      per_page:
+                        type: integer
+                        example: 15
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Desi movies not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Desi movies not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'allMovieRelated Related'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: required
+                  description: 'integer     Ex 1/2/3'
+                  example: et
+                '*state_id':
+                  type: required
+                  description: 'integer     Ex 1/2/3'
+                  example: et
+      security: []
+  /api/v1/get-latest-desi-movies:
+    post:
+      summary: getLatestDesiMovies
+      operationId: getLatestDesiMovies
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-latest-desi-movies</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully desi movies found..'
+                  data:
+                    id: 4
+                    country_id: 1
+                    state_id: 1
+                    city_id: 1
+                    address: ADDRESS
+                    name: 'Bro movie'
+                    slug: bro-movie
+                    description: null
+                    url: 'https://www.youtube.com/watch?v=L_nN1P297N0&t=19s'
+                    image: 'http://IMAGE_PATH/1691470622_bhadmegali.jpeg'
+                    start_date: 09/08/2023
+                    end_date: 30/09/2023
+                    additional_info: '[{"cast":"arjun rampal, rani, ajay "},{"director":"ajay"}, {"duaration": "1 ghanta"} ]'
+                    meta_title: 'META TITLE'
+                    meta_description: 'META DESC'
+                    meta_keywords: 'META KEY'
+                    created_at: '08-Aug-2023 04:57 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully desi movies found..'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 4
+                      country_id:
+                        type: integer
+                        example: 1
+                      state_id:
+                        type: integer
+                        example: 1
+                      city_id:
+                        type: integer
+                        example: 1
+                      address:
+                        type: string
+                        example: ADDRESS
+                      name:
+                        type: string
+                        example: 'Bro movie'
+                      slug:
+                        type: string
+                        example: bro-movie
+                      description:
+                        type: string
+                        example: null
+                      url:
+                        type: string
+                        example: 'https://www.youtube.com/watch?v=L_nN1P297N0&t=19s'
+                      image:
+                        type: string
+                        example: 'http://IMAGE_PATH/1691470622_bhadmegali.jpeg'
+                      start_date:
+                        type: string
+                        example: 09/08/2023
+                      end_date:
+                        type: string
+                        example: 30/09/2023
+                      additional_info:
+                        type: string
+                        example: '[{"cast":"arjun rampal, rani, ajay "},{"director":"ajay"}, {"duaration": "1 ghanta"} ]'
+                      meta_title:
+                        type: string
+                        example: 'META TITLE'
+                      meta_description:
+                        type: string
+                        example: 'META DESC'
+                      meta_keywords:
+                        type: string
+                        example: 'META KEY'
+                      created_at:
+                        type: string
+                        example: '08-Aug-2023 04:57 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Desi movies not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Desi movies not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'allMovieRelated Related'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: required
+                  description: 'integer     Ex 1/2/3'
+                  example: consectetur
+                '*state_id':
+                  type: required
+                  description: 'integer     Ex 1/2/3'
+                  example: vitae
+      security: []
 tags:
   -
     name: 'ClasifiedCategory Related'
@@ -3973,6 +4550,9 @@ tags:
   -
     name: 'User Profile Related'
     description: "\nAPIs for managing all user's profile related"
+  -
+    name: 'allMovieRelated Related'
+    description: "\nAPIs for managing all movie related"
 components:
   securitySchemes:
     default:

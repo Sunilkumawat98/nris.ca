@@ -12,15 +12,6 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>State Edit</h1>
-
-            <?php 
-              // echo "<pre>";
-              // print_r(Auth::guard()->user());
-              // echo "</pre>";
-              // echo "<pre>";
-              // print_r($countries);
-              // echo "</pre>";
-            ?>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
