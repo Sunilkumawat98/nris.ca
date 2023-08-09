@@ -95,7 +95,11 @@ class DesiMovieController
             'state_id' => 'required',
             'city_id' => 'required',
             'name' => 'required',
-            'image' => 'required',
+            'image' => 'required|max:1024',
+        ],
+        [
+            'image.required' => 'The image field is required.',
+            'image.max' => 'The image size should not exceed 1 MB.',
         ]);
 
         
@@ -114,8 +118,10 @@ class DesiMovieController
         $all['start_date']               = $new_date_from;
         $all['image']                    = $imageName ?? NULL;
         
+        $citiesList = implode(",", $all['city_id']);
         
-        
+        $all['city_id']                  = $citiesList;
+
         $all['created_at']               = date('Y-m-d H:i:s');
         $all['updated_at']               = date('Y-m-d H:i:s');
 
@@ -155,16 +161,16 @@ class DesiMovieController
         }
         $all                            = $request->all();
         // Validate the request data
-        $date = $all['date'];
-        $expDate = explode("-",$date);
-        $from_dt = $expDate[0];
-        $to_dt = $expDate[1];
+        $date                           = $all['date'];
+        $expDate                        = explode("-",$date);
+        $from_dt                        = $expDate[0];
+        $to_dt                          = $expDate[1];
 
-        $from = strtotime($from_dt);
-        $to = strtotime($to_dt);
+        $from                           = strtotime($from_dt);
+        $to                             = strtotime($to_dt);
 
-        $new_date_from = date('Y-m-d', $from);
-        $new_date_to = date('Y-m-d', $to);
+        $new_date_from                  = date('Y-m-d', $from);
+        $new_date_to                    = date('Y-m-d', $to);
 
         // Validate the request data
         $request->validate([
@@ -177,8 +183,8 @@ class DesiMovieController
 
         if ($request->has('image'))
         {
-            $image = $all['image'];
-            $imageName = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
+            $image                      = $all['image'];
+            $imageName                  = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
             $image->move(config('app.upload_desi_movie_img'), $imageName);
         }
         
@@ -187,9 +193,12 @@ class DesiMovieController
         $all['slug']                     = Str::slug(strtolower($all['name']));
         $all['start_date']               = $new_date_from;
         $all['image']                    = $imageName ?? NULL;
+        $citiesList                      = implode(",", $all['city_id']);
         
+        $all['city_id']                  = $citiesList;
 
-        $result                        = DesiMovie::findOrFail($id);
+
+        $result                          = DesiMovie::findOrFail($id);
         $result->update($all);
 
         // Redirect to the index page with a success message

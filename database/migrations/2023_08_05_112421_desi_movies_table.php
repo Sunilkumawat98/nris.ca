@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('state_id');
-            $table->unsignedBigInteger('city_id');
+            $table->text('city_id');
             $table->text('address')->nullable(true);
             $table->string('name');
             $table->string('slug');
@@ -35,7 +35,6 @@ return new class extends Migration
             $table->tinyInteger('status')->default(1);
             $table->foreign('country_id', 'FK_CountryIdWithDesiMovies')->references('id')->on('countries')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('state_id', 'FK_StateIdWithDesiMovies')->references('id')->on('states')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('city_id', 'FK_CityIdWithDesiMovies')->references('id')->on('cities')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 

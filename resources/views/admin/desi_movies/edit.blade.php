@@ -115,11 +115,14 @@
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">City</label>
-                            <div class="col-sm-9">
-                                <select class="form-control select2 select2-danger" name="city_id" id="city_id" data-dropdown-css-class="select2-danger" >
+                            <div class="col-sm-9 select2-purple">
+                                <select class="form-control select2 select2-danger" multiple="multiple" name="city_id[]" id="city_id" data-dropdown-css-class="select2-danger" >
                                     <option value="" >Select City</option>
                                     @foreach($cities as $item)
-                                          <option value="{{ $item->id }}" {{ $results->city_id == $item->id ? 'selected' : '' }} >{{ $item->name }}</option>
+                                        @php
+                                            $selectedCities = explode(',', $results->city_id);
+                                        @endphp
+                                          <option value="{{ $item->id }}" {{ in_array($item->id, $selectedCities) ? 'selected' : '' }} >{{ $item->name }}</option>
                                     @endforeach
                                 </select>   
                             </div>

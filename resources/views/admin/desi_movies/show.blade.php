@@ -59,6 +59,14 @@
                         <p>
                            State : {{ ($results->state_id) ? getStateNamebyId($results->state_id)->name : 'NA' }}
                         </p>
+
+                        <p>
+                           City : 
+
+                           @foreach(getMultipleCityNamebyId($results->city_id) as $key => $value)
+                              {{ $value->name.','  }} 
+                          @endforeach
+                        </p>
                         
                         
                         <p>

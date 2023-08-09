@@ -118,11 +118,11 @@
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">City</label>
-                            <div class="col-sm-9">
-                                <select class="form-control select2 select2-danger" name="city_id" id="city_id" data-dropdown-css-class="select2-danger" >
+                            <div class="col-sm-9 select2-purple">
+                                <select class="form-control select2 select2-danger" multiple="multiple" name="city_id[]" id="city_id" data-dropdown-css-class="select2-danger" >
                                     <option value="" >Select City</option>
                                     @foreach($cities as $item)
-                                          <option value="{{ $item->id }}" {{ old('city_id') == $item->id ? 'selected' : '' }} >{{ $item->name }}</option>
+                                          <option value="{{ $item->id }}" {{ in_array($item->id, old('city_id', [])) ? 'selected' : '' }} >{{ $item->name }}</option>
                                     @endforeach
                                 </select>   
                             </div>
@@ -136,11 +136,12 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-sm-6">
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">
-                                    <input type="file" id="image" name="image" class="form-control" placeholder="select Image"/>
+                                    <input type="file" id="image" name="image" class="form-control" placeholder="select Image" />
                                 </div>
                             </div>
                         </div>

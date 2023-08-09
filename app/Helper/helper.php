@@ -58,6 +58,12 @@ function getSubCategoryNamebyId($id)
 	return \App\Models\ClassifiedSubCategory::where('id', $id)->first();
 }
 
+function getMultipleCityNamebyId($id)
+{
+	$citiesIds = explode(",", $id);
+	return \App\Models\City::whereIn('id', $citiesIds)->get();
+}
+
 
 
 
