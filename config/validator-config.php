@@ -16,9 +16,9 @@ return [
         'address'               => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'contact_address'       => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'keyword'               => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
-        'email_id'              => "bail|required|email|unique:users",
+        'email_id'              => "bail|required|email",
         'contact_email'         => "bail|required|email",
-        'email'                 => "bail|required|email",
+        'email'                 => "bail|required|email|unique:users",
         'email_key'             => "bail|required|string",
         'mobile'                => "required|numeric|regex:/^[6-9]\d{9}$/",
         'contact_number'        => "required|numeric|regex:/^[6-9]\d{9}$/",
@@ -74,14 +74,7 @@ return [
 
         "register" => [
             "required" => [
-                "first_name",
-                "last_name",
-                "email_id",
-                "dob",
-                "mobile",
-                "password",
-                "country_id", 
-                "state_id"
+                "first_name", "last_name",  "email", "dob", "mobile", "password", "country_id", "state_id"
             ],
             "optional" => [
             ]
@@ -89,7 +82,7 @@ return [
 
         "userLogin" => [
             "required" => [
-                "email",
+                "email_id",
                 "password"
             ],
             "optional" => [
@@ -98,7 +91,7 @@ return [
 
         "forgotPass" => [
             "required" => [
-                "email",
+                "email_id",
             ],
             "optional" => [
             ]
@@ -106,7 +99,7 @@ return [
 
         "changeforgotPass" => [
             "required" => [
-                "email", "new_password", "retype_password"
+                "email_id", "new_password", "retype_password"
             ],
             "optional" => [
             ]

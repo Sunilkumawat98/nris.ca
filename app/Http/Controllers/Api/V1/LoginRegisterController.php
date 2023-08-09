@@ -42,7 +42,7 @@ class LoginRegisterController extends BaseController
      *  {
             "first_name":"Abc",
             "last_name":"Def",
-            "email_id":"You@domain.com",
+            "email":"You@domain.com",
             "dob":"2023-02-02",
             "mobile":"9899****54",
             "password":"Abc@12345",
@@ -54,7 +54,7 @@ class LoginRegisterController extends BaseController
      * @method POST
      * @bodyParam *first_name     required String     Ex ('Abc')
      * @bodyParam *last_name      required String     Ex ('def')
-     * @bodyParam *email_id       required Email      Ex ('you@domain.com')
+     * @bodyParam *email          required Email      Ex ('you@domain.com')
      * @bodyParam *dob            required Date       Ex ('YYYY-MM-DD')
      * @bodyParam *mobile         required String     Ex ('9876****09')
      * @bodyParam *password       required String     Ex ('Abc')
@@ -102,7 +102,8 @@ class LoginRegisterController extends BaseController
     public function register(Request $request)
     {
         
-        $all = $request->only('email', 'password');
+        $all = $request->all();
+        // $all['email_id'] = $all['email'];
         $response = $this->loginRegLib->register($all);
 
         if (!$response[$this->status]) {
@@ -121,12 +122,16 @@ class LoginRegisterController extends BaseController
      *
      * Otherwise, the request will fail with a `404` error, and a response not found!
      *
-     *
+     * EX
+     *  {
+            "email_id":"You@domain.com",
+            "password":"Abc@12345",
+        }
      *  <aside class="notice">basepath/api/v1/login</aside>
      *
      * @method POST
      
-     * @bodyParam *email                      required        Number     Ex ('you@domain.com')
+     * @bodyParam *email_id                   required        Number     Ex ('you@domain.com')
      * @bodyParam *password                   required        String     Ex ('********')
      * 
      * @return \Illuminate\Http\Response
@@ -202,7 +207,7 @@ class LoginRegisterController extends BaseController
      * <aside class="notice">basepath/api/v1/forgot-pass</aside>
      *
      * @method POST
-     * @bodyParam *email                       required        Number     Ex ('you@domain.com')
+     * @bodyParam *email_id                       required        Number     Ex ('you@domain.com')
      * @return \Illuminate\Http\Response
      *
      * @response 200

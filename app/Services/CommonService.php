@@ -58,27 +58,38 @@ class CommonService
                     }
             }
         }
-//        print_r($rules);exit;
+    //     echo "<pre>";
+    //    print_r($params);
+    //    echo "</pre>";
+    //     echo "<pre>";
+    //    print_r($pageParams);
+    //    echo "</pre>";
+    //     echo "<pre>";
+    //    print_r($rules);
+    //    echo "</pre>";
+    //    exit;
         
         $validator = Validator::make($params, $rules);
         if ($validator->fails()) {
             $validate['status'] = false;
+            $validate['status_code'] = 422;
             $validate['error'][] = $validator->messages()->first();
             $validate['message'] = $validator->messages()->first();
             $exception = new BaseController();
-            $exception = $exception->throwValidationException($validate);
+            $exception = $exception->throwExceptionError($validate, 422);
         }
         
-//        echo "Validators";
-//        echo "<pre>";
-//            print_r($validator);
-//        echo "</pre>";
-//        echo "validate";
-//        echo "<pre>";
-//            print_r($validate);
-//        echo "</pre>";
-//        
-//        exit;
+    //    echo "Validators";
+    //    echo "<pre>";
+    //        print_r($validator);
+    //    echo "</pre>";
+
+    //    echo "validate";
+    //    echo "<pre>";
+    //        print_r($validate);
+    //    echo "</pre>";
+       
+    //    exit;
         
         return $validate;
     }

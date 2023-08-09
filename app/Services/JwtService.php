@@ -38,7 +38,7 @@ class JwtService
 
         $user                                   = User::where(
             [
-                ["email", "=", $all['email']], 
+                ["email", "=", $all['email_id']], 
             ])->first();
 
         if($user)

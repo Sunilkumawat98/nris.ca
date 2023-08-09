@@ -190,7 +190,7 @@ class LoginRegisterService
 
     public function checkEmailAvailable($param)
     {
-        $user                                       = User::where('email',$param['email'])->first();
+        $user                                       = User::where('email',$param['email_id'])->first();
 
         if($user)
         {
@@ -223,7 +223,7 @@ class LoginRegisterService
         $return[$this->code] = 201;
         $return[$this->data] = [];
 
-        if($param['email'] != '' && !empty($param['email']))
+        if($param['email_id'] != '' && !empty($param['email_id']))
         {
 
             $added_at = date("Y-m-d H:i:s");
@@ -280,7 +280,7 @@ class LoginRegisterService
     {
         $password =  Hash::make($param['new_password']);
         \DB::beginTransaction();
-        $updatePass = User::where('email',$param['email'])
+        $updatePass = User::where('email',$param['email_id'])
                     ->take(1)
                     ->update(['password' => $password]);
         
