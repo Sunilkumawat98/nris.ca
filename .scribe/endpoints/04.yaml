@@ -24,7 +24,7 @@ endpoints:
          {
         "first_name":"Abc",
         "last_name":"Def",
-        "email_id":"You@domain.com",
+        "email":"You@domain.com",
         "dob":"2023-02-02",
         "mobile":"9899****54",
         "password":"Abc@12345",
@@ -46,67 +46,67 @@ endpoints:
         name: '*first_name'
         description: "String     Ex ('Abc')"
         required: false
-        example: debitis
+        example: rem
         type: required
         custom: []
       '*last_name':
         name: '*last_name'
         description: "String     Ex ('def')"
         required: false
-        example: molestiae
+        example: magnam
         type: required
         custom: []
-      '*email_id':
-        name: '*email_id'
+      '*email':
+        name: '*email'
         description: "Email      Ex ('you@domain.com')"
         required: false
-        example: enim
+        example: lehner.garfield@example.com
         type: required
         custom: []
       '*dob':
         name: '*dob'
         description: "Date       Ex ('YYYY-MM-DD')"
         required: false
-        example: autem
+        example: voluptas
         type: required
         custom: []
       '*mobile':
         name: '*mobile'
         description: "String     Ex ('9876****09')"
         required: false
-        example: molestiae
+        example: illum
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('Abc')"
         required: false
-        example: incidunt
+        example: eaque
         type: required
         custom: []
       '*country_id':
         name: '*country_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: sequi
+        example: rerum
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: hic
+        example: quia
         type: required
         custom: []
     cleanBodyParameters:
-      '*first_name': debitis
-      '*last_name': molestiae
-      '*email_id': enim
-      '*dob': autem
-      '*mobile': molestiae
-      '*password': incidunt
-      '*country_id': sequi
-      '*state_id': hic
+      '*first_name': rem
+      '*last_name': magnam
+      '*email': lehner.garfield@example.com
+      '*dob': voluptas
+      '*mobile': illum
+      '*password': eaque
+      '*country_id': rerum
+      '*state_id': quia
     fileParameters: []
     responses:
       -
@@ -169,7 +169,11 @@ endpoints:
 
         Otherwise, the request will fail with a `404` error, and a response not found!
 
-
+        EX
+         {
+        "email_id":"You@domain.com",
+        "password":"Abc@12345",
+        }
          <aside class="notice">basepath/api/v1/login</aside>
       authenticated: false
       custom: []
@@ -181,23 +185,23 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*email':
-        name: '*email'
+      '*email_id':
+        name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: tsenger@example.net
+        example: voluptate
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('********')"
         required: false
-        example: eum
+        example: qui
         type: required
         custom: []
     cleanBodyParameters:
-      '*email': tsenger@example.net
-      '*password': eum
+      '*email_id': voluptate
+      '*password': qui
     fileParameters: []
     responses:
       -
@@ -280,15 +284,15 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*email':
-        name: '*email'
+      '*email_id':
+        name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: dzulauf@example.com
+        example: sint
         type: required
         custom: []
     cleanBodyParameters:
-      '*email': dzulauf@example.com
+      '*email_id': sint
     fileParameters: []
     responses:
       -
@@ -364,27 +368,27 @@ endpoints:
         name: '*email'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: citlalli.harvey@example.com
+        example: della.marvin@example.com
         type: required
         custom: []
       '*new_password':
         name: '*new_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: nihil
+        example: dolor
         type: required
         custom: []
       '*retype_password':
         name: '*retype_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: sequi
+        example: non
         type: required
         custom: []
     cleanBodyParameters:
-      '*email': citlalli.harvey@example.com
-      '*new_password': nihil
-      '*retype_password': sequi
+      '*email': della.marvin@example.com
+      '*new_password': dolor
+      '*retype_password': non
     fileParameters: []
     responses:
       -

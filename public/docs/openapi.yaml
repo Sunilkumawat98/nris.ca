@@ -2354,7 +2354,7 @@ paths:
     post:
       summary: register
       operationId: register
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email_id\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath/api/v1/register-mobile-no</aside>"
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath/api/v1/register-mobile-no</aside>"
       parameters: []
       responses:
         200:
@@ -2441,41 +2441,41 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: debitis
+                  example: rem
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: molestiae
-                '*email_id':
+                  example: magnam
+                '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: enim
+                  example: lehner.garfield@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: autem
+                  example: voluptas
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: molestiae
+                  example: illum
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: incidunt
+                  example: eaque
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: sequi
+                  example: rerum
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: hic
+                  example: quia
       security: []
   /api/v1/login:
     post:
       summary: login
       operationId: login
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n <aside class=\"notice\">basepath/api/v1/login</aside>"
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath/api/v1/login</aside>"
       parameters: []
       responses:
         200:
@@ -2587,14 +2587,14 @@ paths:
             schema:
               type: object
               properties:
-                '*email':
+                '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: tsenger@example.net
+                  example: voluptate
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: eum
+                  example: qui
       security: []
   /api/v1/forgot-pass:
     post:
@@ -2676,10 +2676,10 @@ paths:
             schema:
               type: object
               properties:
-                '*email':
+                '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: dzulauf@example.com
+                  example: sint
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -2744,15 +2744,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: citlalli.harvey@example.com
+                  example: della.marvin@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: nihil
+                  example: dolor
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: sequi
+                  example: non
       security: []
   /api/v1/get-all-nris-talk:
     get:
@@ -4363,11 +4363,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: et
+                  example: omnis
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: et
+                  example: quisquam
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -4528,11 +4528,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: consectetur
+                  example: enim
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: vitae
+                  example: dolores
       security: []
 tags:
   -
