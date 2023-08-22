@@ -764,6 +764,201 @@ class ClasifiedCategoryController extends BaseController
      *  {
             "status": true,
             "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "country_id": {
+                            "id": 1,
+                            "name": "USA",
+                            "color": "#16b19f",
+                            "code": "us",
+                            "domain": "usa",
+                            "image": "152194054262639fda95ac05.12411768.jpg",
+                            "c_meta_title": "Indian Website for Nris in USA",
+                            "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
+                            "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+                            "created_at": "20-Jan-2022 05:18 AM"
+                        },
+                        "state_id": {
+                            "id": 1,
+                            "name": "Alberta",
+                            "code": "AB",
+                            "domain": "alberta",
+                            "description": "Alberta",
+                            "logo": "196066989625087bd37a4c2.18410119.jpg",
+                            "s_meta_title": "Indian Website for Nris in || Alberta",
+                            "s_meta_description": "An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc",
+                            "s_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta",
+                            "header_image": "1522842913625087eb594b47.13394636.jpg",
+                            "header_image2": "1522842913625087eb594b47.13394636.jpg",
+                            "header_image3": "1522842913625087eb594b47.13394636.jpg"
+                        },
+                        "cat_id": {
+                            "id": 1,
+                            "name": "Auto",
+                            "slug": "auto",
+                            "color": "#846A6A",
+                            "created_at": "27-Jul-2023 11:35 AM"
+                        },
+                        "sub_cat_id": {
+                            "id": 1,
+                            "category_id": 1,
+                            "name": "Audis",
+                            "slug": "audis",
+                            "color": "#846A6A",
+                            "created_at": "28-Jul-2023 07:03 AM"
+                        },
+                        "title": "this is simple test title",
+                        "title_slug": "this-is-simple-test-title",
+                        "message": null,
+                        "image": "PATH/ADS_IMAGE/1691047686_photo1.png",
+                        "contact_name": "MdSaddam",
+                        "contact_email": "hussainmd@gmail.com",
+                        "contact_number": "9088123678",
+                        "contact_address": "address",
+                        "show_email": 1,
+                        "use_address_map": 0,
+                        "meta_title": null,
+                        "meta_description": null,
+                        "meta_keywords": null,
+                        "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+                        "end_at": "02/08/2023",
+                        "total_views": 0,
+                        "created_at": "03-Aug-2023 07:28 AM"
+                    },
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "country_id": {
+                            "id": 1,
+                            "name": "USA",
+                            "color": "#16b19f",
+                            "code": "us",
+                            "domain": "usa",
+                            "image": "152194054262639fda95ac05.12411768.jpg",
+                            "c_meta_title": "Indian Website for Nris in USA",
+                            "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
+                            "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+                            "created_at": "20-Jan-2022 05:18 AM"
+                        },
+                        "state_id": {
+                            "id": 1,
+                            "name": "Alberta",
+                            "code": "AB",
+                            "domain": "alberta",
+                            "description": "Alberta",
+                            "logo": "196066989625087bd37a4c2.18410119.jpg",
+                            "s_meta_title": "Indian Website for Nris in || Alberta",
+                            "s_meta_description": "An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc",
+                            "s_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta",
+                            "header_image": "1522842913625087eb594b47.13394636.jpg",
+                            "header_image2": "1522842913625087eb594b47.13394636.jpg",
+                            "header_image3": "1522842913625087eb594b47.13394636.jpg"
+                        },
+                        "cat_id": {
+                            "id": 1,
+                            "name": "Auto",
+                            "slug": "auto",
+                            "color": "#846A6A",
+                            "created_at": "27-Jul-2023 11:35 AM"
+                        },
+                        "sub_cat_id": {
+                            "id": 1,
+                            "category_id": 1,
+                            "name": "Audis",
+                            "slug": "audis",
+                            "color": "#846A6A",
+                            "created_at": "28-Jul-2023 07:03 AM"
+                        },
+                        "title": "this is simple test title",
+                        "title_slug": "this-is-simple-test-title",
+                        "message": null,
+                        "image": "PATH/ADS_IMAGE/1691044108_photo1.png",
+                        "contact_name": "MdSaddam",
+                        "contact_email": "hussainmd@gmail.com",
+                        "contact_number": "9088123678",
+                        "contact_address": "address",
+                        "show_email": 1,
+                        "use_address_map": 0,
+                        "meta_title": null,
+                        "meta_description": null,
+                        "meta_keywords": null,
+                        "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+                        "end_at": "02/08/2023",
+                        "total_views": 0,
+                        "created_at": "03-Aug-2023 06:28 AM"
+                    }
+                ],
+                "first_page_url": "PATH/api/v1/get-recent-ads?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "PATH/api/v1/get-recent-ads",
+                "per_page": 4,
+                "prev_page_url": null,
+                "to": 2
+            }
+        }
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "Clasified not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getRecentAds(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->clasifiedCatLib->recentAdsGet($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+    
+    
+
+
+      
+    /**
+     * getRecentAdsList
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * 
+     *
+     * <aside class="notice">basepath/api/v1/get-recent-ads-list</aside>
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     *  {
+            "status": true,
+            "status_code": 200,
             "message": "Successfully clasified found..",
             "data": [
                 {
@@ -916,10 +1111,10 @@ class ClasifiedCategoryController extends BaseController
     
     
     
-    public function getRecentAds(Request $request)
+    public function getRecentAdsList(Request $request)
     {
         $all = $request->all();
-        $response = $this->clasifiedCatLib->recentAdsGet($all);
+        $response = $this->clasifiedCatLib->recentAdsListGet($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);
@@ -928,6 +1123,6 @@ class ClasifiedCategoryController extends BaseController
         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
     }
     
-
+    
 
 }

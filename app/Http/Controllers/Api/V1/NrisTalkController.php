@@ -233,9 +233,7 @@ class NrisTalkController extends BaseController
      * EX
      *  {
             "user_id":1,
-            "state_id":1,
             "talk_id":1,
-            "description":"This is test title description again2"
         }
      *
      * <aside class="notice">basepath/api/v1/get-nris-talk</aside>
@@ -339,6 +337,86 @@ class NrisTalkController extends BaseController
         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
     }
     
+
+
+    
+    /**
+     * getNrisTalkList
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * EX
+     *  {
+     *       "state_id":1,
+     *  }
+     *
+     * <aside class="notice">basepath/api/v1/get-nris-talk-list</aside>
+     * @method POST
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * 
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     *  {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
+                {
+                    "id": 6,
+                    "title": "Title",
+                    "title_slug": "title-slug",
+                    "description": "Nris talk decription",
+                    "meta_title": null,
+                    "meta_description": null,
+                    "meta_keywords": null,
+                    "total_views": null,
+                    "created_at": "20-Jul-2023 07:18 AM"
+                }
+            ]
+        }
+     *
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+        }
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+        }
+     * 
+     *
+     *
+     */
+    
+    
+    
+    
+     public function getNrisTalkList(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->nrisLibrary->nrisTalkListFetch($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+
+
+
+
+
     
     /**
      * getAllNrisTalk

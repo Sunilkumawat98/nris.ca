@@ -42,7 +42,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-all-sub-category-by-id', [ClasifiedCategoryController::class,'getAllSubCategoryById']);
     
     Route::post('/get-free-clasified-by-id', [ClasifiedCategoryController::class,'getFreeClasifiedById']);
+    
+    Route::get('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);
+
     Route::get('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
+    
 
 
 
@@ -72,8 +76,16 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-all-state-by-country', [CountryStateCityController::class,'getAllStateByCountry']);
     Route::post('/get-all-city-by-state-and-country', [CountryStateCityController::class,'getAllCityByStateAndCountry']);
 
+    
+    
+    /*
+        Nris talk 
+        &
+        Its Reply
 
+    */
     Route::get('/get-all-nris-talk', [NrisTalkController::class,'getAllNrisTalk']);
+    Route::post('/get-nris-talk-list', [NrisTalkController::class,'getNrisTalkList']);
     Route::post('/get-nris-talk-reply-by-id', [NrisTalkController::class,'getNrisTalkReplyById']);
 
 

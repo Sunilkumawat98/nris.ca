@@ -319,6 +319,59 @@ class ClasifiedCategoryService
     
     
 
+
+    /**
+        
+        * method getRecentAdsList()
+        * 
+        * @param
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function getRecentAdsList($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id')
+                                        ->where('is_live',1)
+                                        ->where('display_status',1)
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC')
+                                        ->take(10)
+                                        ->get();
+        if(count($result)>0)
+        {
+
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully clasified found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'Recent ads not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+        return $return;
+    }
+    
+
+
+
     /**
         
         * method getRecentAds()
@@ -345,30 +398,35 @@ class ClasifiedCategoryService
                                         ->where('is_live',1)
                                         ->where('display_status',1)
                                         ->where('status',1)
-                                        ->orderBy('id', 'DESC')
-                                        ->take(4)
-                                        ->get();
+                                        ->orderBy('id', 'DESC');
+
+        $total_count                = $result->count();
+        $result                     = $result->simplePaginate(4);
+    
         if(count($result)>0)
         {
-
             $result                 = $result->toArray();
             $return[$this->status]  = true;
-            $return[$this->message] = 'Successfully clasified found..';
+            $return[$this->message] = 'Successfully your list found..';
             $return[$this->code]    = 200;
+            $return[$this->total]   = $total_count;
             $return[$this->data]    = $result;
         }
         else
         {
             $return[$this->status]  = false;
-            $return[$this->message] = 'Recent ads not found...';
+            $return[$this->message] = 'List not found...';
             $return[$this->code]    = 404;
             $return[$this->data]    = [];
         }
 
 
+
         return $return;
     }
     
+    
+
 
     /**
         

@@ -834,11 +834,11 @@ paths:
               required:
                 - '*id'
       security: []
-  /api/v1/get-recent-ads:
+  /api/v1/get-recent-ads-list:
     get:
-      summary: getRecentAds
-      operationId: getRecentAds
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-recent-ads</aside>"
+      summary: getRecentAdsList
+      operationId: getRecentAdsList
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-recent-ads-list</aside>"
       parameters: []
       responses:
         200:
@@ -1264,6 +1264,523 @@ paths:
                         created_at:
                           type: string
                           example: '02-Aug-2023 10:59 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Clasified not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Clasified not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      security: []
+  /api/v1/get-recent-ads:
+    get:
+      summary: getRecentAds
+      operationId: getRecentAds
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-recent-ads</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 2
+                        user_id: 1
+                        country_id:
+                          id: 1
+                          name: USA
+                          color: '#16b19f'
+                          code: us
+                          domain: usa
+                          image: 152194054262639fda95ac05.12411768.jpg
+                          c_meta_title: 'Indian Website for Nris in USA'
+                          c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                          c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                          created_at: '20-Jan-2022 05:18 AM'
+                        state_id:
+                          id: 1
+                          name: Alberta
+                          code: AB
+                          domain: alberta
+                          description: Alberta
+                          logo: 196066989625087bd37a4c2.18410119.jpg
+                          s_meta_title: 'Indian Website for Nris in || Alberta'
+                          s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                          s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                          header_image: 1522842913625087eb594b47.13394636.jpg
+                          header_image2: 1522842913625087eb594b47.13394636.jpg
+                          header_image3: 1522842913625087eb594b47.13394636.jpg
+                        cat_id:
+                          id: 1
+                          name: Auto
+                          slug: auto
+                          color: '#846A6A'
+                          created_at: '27-Jul-2023 11:35 AM'
+                        sub_cat_id:
+                          id: 1
+                          category_id: 1
+                          name: Audis
+                          slug: audis
+                          color: '#846A6A'
+                          created_at: '28-Jul-2023 07:03 AM'
+                        title: 'this is simple test title'
+                        title_slug: this-is-simple-test-title
+                        message: null
+                        image: PATH/ADS_IMAGE/1691047686_photo1.png
+                        contact_name: MdSaddam
+                        contact_email: hussainmd@gmail.com
+                        contact_number: '9088123678'
+                        contact_address: address
+                        show_email: 1
+                        use_address_map: 0
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                        end_at: 02/08/2023
+                        total_views: 0
+                        created_at: '03-Aug-2023 07:28 AM'
+                      -
+                        id: 1
+                        user_id: 1
+                        country_id:
+                          id: 1
+                          name: USA
+                          color: '#16b19f'
+                          code: us
+                          domain: usa
+                          image: 152194054262639fda95ac05.12411768.jpg
+                          c_meta_title: 'Indian Website for Nris in USA'
+                          c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                          c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                          created_at: '20-Jan-2022 05:18 AM'
+                        state_id:
+                          id: 1
+                          name: Alberta
+                          code: AB
+                          domain: alberta
+                          description: Alberta
+                          logo: 196066989625087bd37a4c2.18410119.jpg
+                          s_meta_title: 'Indian Website for Nris in || Alberta'
+                          s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                          s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                          header_image: 1522842913625087eb594b47.13394636.jpg
+                          header_image2: 1522842913625087eb594b47.13394636.jpg
+                          header_image3: 1522842913625087eb594b47.13394636.jpg
+                        cat_id:
+                          id: 1
+                          name: Auto
+                          slug: auto
+                          color: '#846A6A'
+                          created_at: '27-Jul-2023 11:35 AM'
+                        sub_cat_id:
+                          id: 1
+                          category_id: 1
+                          name: Audis
+                          slug: audis
+                          color: '#846A6A'
+                          created_at: '28-Jul-2023 07:03 AM'
+                        title: 'this is simple test title'
+                        title_slug: this-is-simple-test-title
+                        message: null
+                        image: PATH/ADS_IMAGE/1691044108_photo1.png
+                        contact_name: MdSaddam
+                        contact_email: hussainmd@gmail.com
+                        contact_number: '9088123678'
+                        contact_address: address
+                        show_email: 1
+                        use_address_map: 0
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                        end_at: 02/08/2023
+                        total_views: 0
+                        created_at: '03-Aug-2023 06:28 AM'
+                    first_page_url: 'PATH/api/v1/get-recent-ads?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: PATH/api/v1/get-recent-ads
+                    per_page: 4
+                    prev_page_url: null
+                    to: 2
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 2
+                            user_id: 1
+                            country_id:
+                              id: 1
+                              name: USA
+                              color: '#16b19f'
+                              code: us
+                              domain: usa
+                              image: 152194054262639fda95ac05.12411768.jpg
+                              c_meta_title: 'Indian Website for Nris in USA'
+                              c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                              c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                              created_at: '20-Jan-2022 05:18 AM'
+                            state_id:
+                              id: 1
+                              name: Alberta
+                              code: AB
+                              domain: alberta
+                              description: Alberta
+                              logo: 196066989625087bd37a4c2.18410119.jpg
+                              s_meta_title: 'Indian Website for Nris in || Alberta'
+                              s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                              s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                              header_image: 1522842913625087eb594b47.13394636.jpg
+                              header_image2: 1522842913625087eb594b47.13394636.jpg
+                              header_image3: 1522842913625087eb594b47.13394636.jpg
+                            cat_id:
+                              id: 1
+                              name: Auto
+                              slug: auto
+                              color: '#846A6A'
+                              created_at: '27-Jul-2023 11:35 AM'
+                            sub_cat_id:
+                              id: 1
+                              category_id: 1
+                              name: Audis
+                              slug: audis
+                              color: '#846A6A'
+                              created_at: '28-Jul-2023 07:03 AM'
+                            title: 'this is simple test title'
+                            title_slug: this-is-simple-test-title
+                            message: null
+                            image: PATH/ADS_IMAGE/1691047686_photo1.png
+                            contact_name: MdSaddam
+                            contact_email: hussainmd@gmail.com
+                            contact_number: '9088123678'
+                            contact_address: address
+                            show_email: 1
+                            use_address_map: 0
+                            meta_title: null
+                            meta_description: null
+                            meta_keywords: null
+                            other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                            end_at: 02/08/2023
+                            total_views: 0
+                            created_at: '03-Aug-2023 07:28 AM'
+                          -
+                            id: 1
+                            user_id: 1
+                            country_id:
+                              id: 1
+                              name: USA
+                              color: '#16b19f'
+                              code: us
+                              domain: usa
+                              image: 152194054262639fda95ac05.12411768.jpg
+                              c_meta_title: 'Indian Website for Nris in USA'
+                              c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                              c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                              created_at: '20-Jan-2022 05:18 AM'
+                            state_id:
+                              id: 1
+                              name: Alberta
+                              code: AB
+                              domain: alberta
+                              description: Alberta
+                              logo: 196066989625087bd37a4c2.18410119.jpg
+                              s_meta_title: 'Indian Website for Nris in || Alberta'
+                              s_meta_description: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                              s_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                              header_image: 1522842913625087eb594b47.13394636.jpg
+                              header_image2: 1522842913625087eb594b47.13394636.jpg
+                              header_image3: 1522842913625087eb594b47.13394636.jpg
+                            cat_id:
+                              id: 1
+                              name: Auto
+                              slug: auto
+                              color: '#846A6A'
+                              created_at: '27-Jul-2023 11:35 AM'
+                            sub_cat_id:
+                              id: 1
+                              category_id: 1
+                              name: Audis
+                              slug: audis
+                              color: '#846A6A'
+                              created_at: '28-Jul-2023 07:03 AM'
+                            title: 'this is simple test title'
+                            title_slug: this-is-simple-test-title
+                            message: null
+                            image: PATH/ADS_IMAGE/1691044108_photo1.png
+                            contact_name: MdSaddam
+                            contact_email: hussainmd@gmail.com
+                            contact_number: '9088123678'
+                            contact_address: address
+                            show_email: 1
+                            use_address_map: 0
+                            meta_title: null
+                            meta_description: null
+                            meta_keywords: null
+                            other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                            end_at: 02/08/2023
+                            total_views: 0
+                            created_at: '03-Aug-2023 06:28 AM'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            user_id:
+                              type: integer
+                              example: 1
+                            country_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: USA
+                                color:
+                                  type: string
+                                  example: '#16b19f'
+                                code:
+                                  type: string
+                                  example: us
+                                domain:
+                                  type: string
+                                  example: usa
+                                image:
+                                  type: string
+                                  example: 152194054262639fda95ac05.12411768.jpg
+                                c_meta_title:
+                                  type: string
+                                  example: 'Indian Website for Nris in USA'
+                                c_meta_description:
+                                  type: string
+                                  example: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                                c_meta_keywords:
+                                  type: string
+                                  example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                                created_at:
+                                  type: string
+                                  example: '20-Jan-2022 05:18 AM'
+                            state_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Alberta
+                                code:
+                                  type: string
+                                  example: AB
+                                domain:
+                                  type: string
+                                  example: alberta
+                                description:
+                                  type: string
+                                  example: Alberta
+                                logo:
+                                  type: string
+                                  example: 196066989625087bd37a4c2.18410119.jpg
+                                s_meta_title:
+                                  type: string
+                                  example: 'Indian Website for Nris in || Alberta'
+                                s_meta_description:
+                                  type: string
+                                  example: 'An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc'
+                                s_meta_keywords:
+                                  type: string
+                                  example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta'
+                                header_image:
+                                  type: string
+                                  example: 1522842913625087eb594b47.13394636.jpg
+                                header_image2:
+                                  type: string
+                                  example: 1522842913625087eb594b47.13394636.jpg
+                                header_image3:
+                                  type: string
+                                  example: 1522842913625087eb594b47.13394636.jpg
+                            cat_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Auto
+                                slug:
+                                  type: string
+                                  example: auto
+                                color:
+                                  type: string
+                                  example: '#846A6A'
+                                created_at:
+                                  type: string
+                                  example: '27-Jul-2023 11:35 AM'
+                            sub_cat_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                category_id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Audis
+                                slug:
+                                  type: string
+                                  example: audis
+                                color:
+                                  type: string
+                                  example: '#846A6A'
+                                created_at:
+                                  type: string
+                                  example: '28-Jul-2023 07:03 AM'
+                            title:
+                              type: string
+                              example: 'this is simple test title'
+                            title_slug:
+                              type: string
+                              example: this-is-simple-test-title
+                            message:
+                              type: string
+                              example: null
+                            image:
+                              type: string
+                              example: PATH/ADS_IMAGE/1691047686_photo1.png
+                            contact_name:
+                              type: string
+                              example: MdSaddam
+                            contact_email:
+                              type: string
+                              example: hussainmd@gmail.com
+                            contact_number:
+                              type: string
+                              example: '9088123678'
+                            contact_address:
+                              type: string
+                              example: address
+                            show_email:
+                              type: integer
+                              example: 1
+                            use_address_map:
+                              type: integer
+                              example: 0
+                            meta_title:
+                              type: string
+                              example: null
+                            meta_description:
+                              type: string
+                              example: null
+                            meta_keywords:
+                              type: string
+                              example: null
+                            other_details:
+                              type: string
+                              example: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
+                            end_at:
+                              type: string
+                              example: 02/08/2023
+                            total_views:
+                              type: integer
+                              example: 0
+                            created_at:
+                              type: string
+                              example: '03-Aug-2023 07:28 AM'
+                      first_page_url:
+                        type: string
+                        example: 'PATH/api/v1/get-recent-ads?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: PATH/api/v1/get-recent-ads
+                      per_page:
+                        type: integer
+                        example: 4
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 2
         404:
           description: ''
           content:
@@ -2441,35 +2958,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: rem
+                  example: fuga
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: magnam
+                  example: eos
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: lehner.garfield@example.com
+                  example: langworth.tyrell@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: voluptas
+                  example: odio
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: illum
+                  example: voluptatibus
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: eaque
+                  example: nihil
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: rerum
+                  example: aliquid
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: quia
+                  example: nostrum
       security: []
   /api/v1/login:
     post:
@@ -2590,11 +3107,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: voluptate
+                  example: laboriosam
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: qui
+                  example: impedit
       security: []
   /api/v1/forgot-pass:
     post:
@@ -2679,7 +3196,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: sint
+                  example: voluptatem
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -2744,15 +3261,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: della.marvin@example.com
+                  example: thills@example.org
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: dolor
+                  example: nihil
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: non
+                  example: voluptatem
       security: []
   /api/v1/get-all-nris-talk:
     get:
@@ -2956,6 +3473,151 @@ paths:
                     example: []
       tags:
         - 'NrisTalk Related'
+      security: []
+  /api/v1/get-nris-talk-list:
+    post:
+      summary: getNrisTalkList
+      operationId: getNrisTalkList
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n      \"state_id\":1,\n }\n\n<aside class=\"notice\">basepath/api/v1/get-nris-talk-list</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 6
+                      title: Title
+                      title_slug: title-slug
+                      description: 'Nris talk decription'
+                      meta_title: null
+                      meta_description: null
+                      meta_keywords: null
+                      total_views: null
+                      created_at: '20-Jul-2023 07:18 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 6
+                        title: Title
+                        title_slug: title-slug
+                        description: 'Nris talk decription'
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        total_views: null
+                        created_at: '20-Jul-2023 07:18 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 6
+                        title:
+                          type: string
+                          example: Title
+                        title_slug:
+                          type: string
+                          example: title-slug
+                        description:
+                          type: string
+                          example: 'Nris talk decription'
+                        meta_title:
+                          type: string
+                          example: null
+                        meta_description:
+                          type: string
+                          example: null
+                        meta_keywords:
+                          type: string
+                          example: null
+                        total_views:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: '20-Jul-2023 07:18 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'NrisTalk Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*state_id'
       security: []
   /api/v1/get-nris-talk-reply-by-id:
     post:
@@ -3375,7 +4037,7 @@ paths:
     post:
       summary: getNrisTalk
       operationId: getNrisTalk
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"talk_id\":1,\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath/api/v1/get-nris-talk</aside>"
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"talk_id\":1,\n}\n\n<aside class=\"notice\">basepath/api/v1/get-nris-talk</aside>"
       parameters:
         -
           in: header
@@ -4363,11 +5025,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: omnis
+                  example: velit
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: quisquam
+                  example: commodi
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -4528,11 +5190,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: enim
+                  example: qui
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: dolores
+                  example: modi
       security: []
 tags:
   -

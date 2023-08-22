@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "25299ef7-4114-46d6-a5c9-ea54c9154efb",
+        "_postman_id": "d907f658-a18a-4b50-9956-6ceaf4d31540",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -217,6 +217,53 @@
                     ]
                 },
                 {
+                    "name": "getRecentAdsList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-recent-ads-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-recent-ads-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads-list<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully clasified found..\",\n\"data\": [\n{\n\"id\": 7,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690973959_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:59 AM\"\n},\n{\n\"id\": 6,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690971434_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:17 AM\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Clasified not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "getRecentAds",
                     "request": {
                         "url": {
@@ -246,7 +293,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully clasified found..\",\n\"data\": [\n{\n\"id\": 7,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690973959_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:59 AM\"\n},\n{\n\"id\": 6,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"1690971434_Ridge_post_2-1.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"02-Aug-2023 10:17 AM\"\n}\n]\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 2,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"PATH\/ADS_IMAGE\/1691047686_photo1.png\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"03-Aug-2023 07:28 AM\"\n},\n{\n\"id\": 1,\n\"user_id\": 1,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alberta\",\n\"code\": \"AB\",\n\"domain\": \"alberta\",\n\"description\": \"Alberta\",\n\"logo\": \"196066989625087bd37a4c2.18410119.jpg\",\n\"s_meta_title\": \"Indian Website for Nris in || Alberta\",\n\"s_meta_description\": \"An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc\",\n\"s_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta\",\n\"header_image\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image2\": \"1522842913625087eb594b47.13394636.jpg\",\n\"header_image3\": \"1522842913625087eb594b47.13394636.jpg\"\n},\n\"cat_id\": {\n\"id\": 1,\n\"name\": \"Auto\",\n\"slug\": \"auto\",\n\"color\": \"#846A6A\",\n\"created_at\": \"27-Jul-2023 11:35 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n},\n\"title\": \"this is simple test title\",\n\"title_slug\": \"this-is-simple-test-title\",\n\"message\": null,\n\"image\": \"PATH\/ADS_IMAGE\/1691044108_photo1.png\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"03-Aug-2023 06:28 AM\"\n}\n],\n\"first_page_url\": \"PATH\/api\/v1\/get-recent-ads?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATH\/api\/v1\/get-recent-ads\",\n\"per_page\": 4,\n\"prev_page_url\": null,\n\"to\": 2\n}\n}",
                             "name": ""
                         },
                         {
@@ -603,7 +650,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"rem\",\"*last_name\":\"magnam\",\"*email\":\"lehner.garfield@example.com\",\"*dob\":\"voluptas\",\"*mobile\":\"illum\",\"*password\":\"eaque\",\"*country_id\":\"rerum\",\"*state_id\":\"quia\"}"
+                            "raw": "{\"*first_name\":\"fuga\",\"*last_name\":\"eos\",\"*email\":\"langworth.tyrell@example.com\",\"*dob\":\"odio\",\"*mobile\":\"voluptatibus\",\"*password\":\"nihil\",\"*country_id\":\"aliquid\",\"*state_id\":\"nostrum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -653,7 +700,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"voluptate\",\"*password\":\"qui\"}"
+                            "raw": "{\"*email_id\":\"laboriosam\",\"*password\":\"impedit\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -703,7 +750,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"sint\"}"
+                            "raw": "{\"*email_id\":\"voluptatem\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -753,7 +800,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"della.marvin@example.com\",\"*new_password\":\"dolor\",\"*retype_password\":\"non\"}"
+                            "raw": "{\"*email\":\"thills@example.org\",\"*new_password\":\"nihil\",\"*retype_password\":\"voluptatem\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -812,6 +859,56 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 6,\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again2\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 07:18 AM\",\n\"its_reply\": null\n},\n{\n\"id\": 4,\n\"title\": \"this is test title\",\n\"title_slug\": \"this-is-test-title\",\n\"description\": \"This is test title description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 06:50 AM\",\n\"its_reply\": {\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n}\n],\n\"first_page_url\": \"BASE_PATH\/get-all-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_PATH\/get-all-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNrisTalkList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-nris-talk-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-nris-talk-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n      \"state_id\":1,\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk-list<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 6,\n\"title\": \"Title\",\n\"title_slug\": \"title-slug\",\n\"description\": \"Nris talk decription\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 07:18 AM\"\n}\n]\n}",
                             "name": ""
                         },
                         {
@@ -1020,7 +1117,7 @@
                             "mode": "raw",
                             "raw": "{\"*user_id\":1,\"*talk_id\":1}"
                         },
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"talk_id\":1,\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk<\/aside>"
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"talk_id\":1,\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk<\/aside>"
                     },
                     "response": [
                         {
@@ -1313,7 +1410,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"omnis\",\"*state_id\":\"quisquam\"}"
+                            "raw": "{\"*country_id\":\"velit\",\"*state_id\":\"commodi\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -1363,7 +1460,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"enim\",\"*state_id\":\"dolores\"}"
+                            "raw": "{\"*country_id\":\"qui\",\"*state_id\":\"modi\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

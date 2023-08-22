@@ -123,6 +123,104 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/v1/get-nris-talk-list
+    metadata:
+      groupName: 'NrisTalk Related'
+      groupDescription: |-
+
+        APIs for managing all nris talk and its reply related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getNrisTalkList
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        EX
+         {
+              "state_id":1,
+         }
+
+        <aside class="notice">basepath/api/v1/get-nris-talk-list</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*state_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 6,
+          "title": "Title",
+          "title_slug": "title-slug",
+          "description": "Nris talk decription",
+          "meta_title": null,
+          "meta_description": null,
+          "meta_keywords": null,
+          "total_views": null,
+          "created_at": "20-Jul-2023 07:18 AM"
+          }
+          ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/v1/get-nris-talk-reply-by-id
     metadata:
       groupName: 'NrisTalk Related'
@@ -368,7 +466,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P3ZcVefa16dv5kEa84bgh6D'
+      - 'Bearer h63afcPvdekDbV1g5a64Z8E'
     controller: null
     method: null
     route: null
@@ -510,7 +608,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 61fP8DEhb6cgvda54VkZae3'
+      - 'Bearer 66gZh1Veak4a58PfDdbEvc3'
     controller: null
     method: null
     route: null
@@ -535,9 +633,7 @@ endpoints:
         EX
          {
         "user_id":1,
-        "state_id":1,
         "talk_id":1,
-        "description":"This is test title description again2"
         }
 
         <aside class="notice">basepath/api/v1/get-nris-talk</aside>
@@ -672,7 +768,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Z6c16hgfaakePD8vdVE35b4'
+      - 'Bearer D4Zafecbh61VgP5a8vd3k6E'
     controller: null
     method: null
     route: null

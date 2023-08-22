@@ -494,7 +494,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/get-recent-ads
+    uri: api/v1/get-recent-ads-list
     metadata:
       groupName: 'ClasifiedCategory Related'
       groupDescription: |-
@@ -502,7 +502,7 @@ endpoints:
         APIs for managing all Clasified Category related
       subgroup: ''
       subgroupDescription: ''
-      title: getRecentAds
+      title: getRecentAdsList
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
@@ -510,7 +510,7 @@ endpoints:
 
 
 
-        <aside class="notice">basepath/api/v1/get-recent-ads</aside>
+        <aside class="notice">basepath/api/v1/get-recent-ads-list</aside>
       authenticated: false
       custom: []
     headers:
@@ -657,6 +657,216 @@ endpoints:
           "created_at": "02-Aug-2023 10:17 AM"
           }
           ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "Clasified not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/get-recent-ads
+    metadata:
+      groupName: 'ClasifiedCategory Related'
+      groupDescription: |-
+
+        APIs for managing all Clasified Category related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getRecentAds
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+
+
+        <aside class="notice">basepath/api/v1/get-recent-ads</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 2,
+          "user_id": 1,
+          "country_id": {
+          "id": 1,
+          "name": "USA",
+          "color": "#16b19f",
+          "code": "us",
+          "domain": "usa",
+          "image": "152194054262639fda95ac05.12411768.jpg",
+          "c_meta_title": "Indian Website for Nris in USA",
+          "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
+          "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+          "created_at": "20-Jan-2022 05:18 AM"
+          },
+          "state_id": {
+          "id": 1,
+          "name": "Alberta",
+          "code": "AB",
+          "domain": "alberta",
+          "description": "Alberta",
+          "logo": "196066989625087bd37a4c2.18410119.jpg",
+          "s_meta_title": "Indian Website for Nris in || Alberta",
+          "s_meta_description": "An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc",
+          "s_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta",
+          "header_image": "1522842913625087eb594b47.13394636.jpg",
+          "header_image2": "1522842913625087eb594b47.13394636.jpg",
+          "header_image3": "1522842913625087eb594b47.13394636.jpg"
+          },
+          "cat_id": {
+          "id": 1,
+          "name": "Auto",
+          "slug": "auto",
+          "color": "#846A6A",
+          "created_at": "27-Jul-2023 11:35 AM"
+          },
+          "sub_cat_id": {
+          "id": 1,
+          "category_id": 1,
+          "name": "Audis",
+          "slug": "audis",
+          "color": "#846A6A",
+          "created_at": "28-Jul-2023 07:03 AM"
+          },
+          "title": "this is simple test title",
+          "title_slug": "this-is-simple-test-title",
+          "message": null,
+          "image": "PATH/ADS_IMAGE/1691047686_photo1.png",
+          "contact_name": "MdSaddam",
+          "contact_email": "hussainmd@gmail.com",
+          "contact_number": "9088123678",
+          "contact_address": "address",
+          "show_email": 1,
+          "use_address_map": 0,
+          "meta_title": null,
+          "meta_description": null,
+          "meta_keywords": null,
+          "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+          "end_at": "02/08/2023",
+          "total_views": 0,
+          "created_at": "03-Aug-2023 07:28 AM"
+          },
+          {
+          "id": 1,
+          "user_id": 1,
+          "country_id": {
+          "id": 1,
+          "name": "USA",
+          "color": "#16b19f",
+          "code": "us",
+          "domain": "usa",
+          "image": "152194054262639fda95ac05.12411768.jpg",
+          "c_meta_title": "Indian Website for Nris in USA",
+          "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
+          "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+          "created_at": "20-Jan-2022 05:18 AM"
+          },
+          "state_id": {
+          "id": 1,
+          "name": "Alberta",
+          "code": "AB",
+          "domain": "alberta",
+          "description": "Alberta",
+          "logo": "196066989625087bd37a4c2.18410119.jpg",
+          "s_meta_title": "Indian Website for Nris in || Alberta",
+          "s_meta_description": "An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc",
+          "s_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta",
+          "header_image": "1522842913625087eb594b47.13394636.jpg",
+          "header_image2": "1522842913625087eb594b47.13394636.jpg",
+          "header_image3": "1522842913625087eb594b47.13394636.jpg"
+          },
+          "cat_id": {
+          "id": 1,
+          "name": "Auto",
+          "slug": "auto",
+          "color": "#846A6A",
+          "created_at": "27-Jul-2023 11:35 AM"
+          },
+          "sub_cat_id": {
+          "id": 1,
+          "category_id": 1,
+          "name": "Audis",
+          "slug": "audis",
+          "color": "#846A6A",
+          "created_at": "28-Jul-2023 07:03 AM"
+          },
+          "title": "this is simple test title",
+          "title_slug": "this-is-simple-test-title",
+          "message": null,
+          "image": "PATH/ADS_IMAGE/1691044108_photo1.png",
+          "contact_name": "MdSaddam",
+          "contact_email": "hussainmd@gmail.com",
+          "contact_number": "9088123678",
+          "contact_address": "address",
+          "show_email": 1,
+          "use_address_map": 0,
+          "meta_title": null,
+          "meta_description": null,
+          "meta_keywords": null,
+          "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+          "end_at": "02/08/2023",
+          "total_views": 0,
+          "created_at": "03-Aug-2023 06:28 AM"
+          }
+          ],
+          "first_page_url": "PATH/api/v1/get-recent-ads?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATH/api/v1/get-recent-ads",
+          "per_page": 4,
+          "prev_page_url": null,
+          "to": 2
+          }
           }
         headers: []
         description: ''
@@ -958,7 +1168,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4DvZEhgcdaba6k38feP51V6'
+      - 'Bearer 4eZkVd6f6EaabDh1g83vcP5'
     controller: null
     method: null
     route: null
@@ -1103,7 +1313,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 84D6f3dhea56EPZ1ckbVgav'
+      - 'Bearer V6gEa85bfhdeZ13c6vkPa4D'
     controller: null
     method: null
     route: null
@@ -1238,7 +1448,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vg5dcb13f4kZa6PD8ahEe6v'
+      - 'Bearer fvd1g8kZ6a6PhVae45Eb3cD'
     controller: null
     method: null
     route: null

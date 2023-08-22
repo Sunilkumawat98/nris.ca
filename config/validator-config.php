@@ -157,6 +157,14 @@ return [
             ]
         ],
 
+        "nrisTalkListFetch" => [
+            "required" => [
+                'state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
         "getAllNrisTalkReplyById" => [
             "required" => [
                 'talk_id'

@@ -83,6 +83,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="clasifiedcategory-related-POSTapi-v1-get-free-clasified-by-id">
                                 <a href="#clasifiedcategory-related-POSTapi-v1-get-free-clasified-by-id">getFreeClasifiedById</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="clasifiedcategory-related-GETapi-v1-get-recent-ads-list">
+                                <a href="#clasifiedcategory-related-GETapi-v1-get-recent-ads-list">getRecentAdsList</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="clasifiedcategory-related-GETapi-v1-get-recent-ads">
                                 <a href="#clasifiedcategory-related-GETapi-v1-get-recent-ads">getRecentAds</a>
                             </li>
@@ -140,6 +143,9 @@
                                                     <li class="tocify-item level-2" data-unique="nristalk-related-GETapi-v1-get-all-nris-talk">
                                 <a href="#nristalk-related-GETapi-v1-get-all-nris-talk">getAllNrisTalk</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-get-nris-talk-list">
+                                <a href="#nristalk-related-POSTapi-v1-get-nris-talk-list">getNrisTalkList</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-get-nris-talk-reply-by-id">
                                 <a href="#nristalk-related-POSTapi-v1-get-nris-talk-reply-by-id">getNrisTalkReplyById</a>
                             </li>
@@ -195,7 +201,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 9, 2023</li>
+        <li>Last updated: August 22, 2023</li>
     </ul>
 </div>
 
@@ -1043,29 +1049,29 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="clasifiedcategory-related-GETapi-v1-get-recent-ads">getRecentAds</h2>
+                    <h2 id="clasifiedcategory-related-GETapi-v1-get-recent-ads-list">getRecentAdsList</h2>
 
 <p>
 </p>
 
 <p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
 <p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
-<aside class="notice">basepath/api/v1/get-recent-ads</aside>
+<aside class="notice">basepath/api/v1/get-recent-ads-list</aside>
 
-<span id="example-requests-GETapi-v1-get-recent-ads">
+<span id="example-requests-GETapi-v1-get-recent-ads-list">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://stage-api.nris.ca/api/v1/get-recent-ads" \
+    --get "https://stage-api.nris.ca/api/v1/get-recent-ads-list" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://stage-api.nris.ca/api/v1/get-recent-ads"
+    "https://stage-api.nris.ca/api/v1/get-recent-ads-list"
 );
 
 const headers = {
@@ -1080,7 +1086,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-v1-get-recent-ads">
+<span id="example-responses-GETapi-v1-get-recent-ads-list">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -1216,6 +1222,287 @@ fetch(url, {
             &quot;created_at&quot;: &quot;02-Aug-2023 10:17 AM&quot;
         }
     ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;Clasified not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-get-recent-ads-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-get-recent-ads-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-get-recent-ads-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-get-recent-ads-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-get-recent-ads-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-get-recent-ads-list" data-method="GET"
+      data-path="api/v1/get-recent-ads-list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-get-recent-ads-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-get-recent-ads-list"
+                    onclick="tryItOut('GETapi-v1-get-recent-ads-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-get-recent-ads-list"
+                    onclick="cancelTryOut('GETapi-v1-get-recent-ads-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-get-recent-ads-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/get-recent-ads-list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-get-recent-ads-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-get-recent-ads-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="clasifiedcategory-related-GETapi-v1-get-recent-ads">getRecentAds</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<aside class="notice">basepath/api/v1/get-recent-ads</aside>
+
+<span id="example-requests-GETapi-v1-get-recent-ads">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://stage-api.nris.ca/api/v1/get-recent-ads" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-recent-ads"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-get-recent-ads">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully your list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;user_id&quot;: 1,
+                &quot;country_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;USA&quot;,
+                    &quot;color&quot;: &quot;#16b19f&quot;,
+                    &quot;code&quot;: &quot;us&quot;,
+                    &quot;domain&quot;: &quot;usa&quot;,
+                    &quot;image&quot;: &quot;152194054262639fda95ac05.12411768.jpg&quot;,
+                    &quot;c_meta_title&quot;: &quot;Indian Website for Nris in USA&quot;,
+                    &quot;c_meta_description&quot;: &quot;An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.&quot;,
+                    &quot;c_meta_keywords&quot;: &quot;Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website&quot;,
+                    &quot;created_at&quot;: &quot;20-Jan-2022 05:18 AM&quot;
+                },
+                &quot;state_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Alberta&quot;,
+                    &quot;code&quot;: &quot;AB&quot;,
+                    &quot;domain&quot;: &quot;alberta&quot;,
+                    &quot;description&quot;: &quot;Alberta&quot;,
+                    &quot;logo&quot;: &quot;196066989625087bd37a4c2.18410119.jpg&quot;,
+                    &quot;s_meta_title&quot;: &quot;Indian Website for Nris in || Alberta&quot;,
+                    &quot;s_meta_description&quot;: &quot;An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc&quot;,
+                    &quot;s_meta_keywords&quot;: &quot;Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta&quot;,
+                    &quot;header_image&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;,
+                    &quot;header_image2&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;,
+                    &quot;header_image3&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;
+                },
+                &quot;cat_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Auto&quot;,
+                    &quot;slug&quot;: &quot;auto&quot;,
+                    &quot;color&quot;: &quot;#846A6A&quot;,
+                    &quot;created_at&quot;: &quot;27-Jul-2023 11:35 AM&quot;
+                },
+                &quot;sub_cat_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;category_id&quot;: 1,
+                    &quot;name&quot;: &quot;Audis&quot;,
+                    &quot;slug&quot;: &quot;audis&quot;,
+                    &quot;color&quot;: &quot;#846A6A&quot;,
+                    &quot;created_at&quot;: &quot;28-Jul-2023 07:03 AM&quot;
+                },
+                &quot;title&quot;: &quot;this is simple test title&quot;,
+                &quot;title_slug&quot;: &quot;this-is-simple-test-title&quot;,
+                &quot;message&quot;: null,
+                &quot;image&quot;: &quot;PATH/ADS_IMAGE/1691047686_photo1.png&quot;,
+                &quot;contact_name&quot;: &quot;MdSaddam&quot;,
+                &quot;contact_email&quot;: &quot;hussainmd@gmail.com&quot;,
+                &quot;contact_number&quot;: &quot;9088123678&quot;,
+                &quot;contact_address&quot;: &quot;address&quot;,
+                &quot;show_email&quot;: 1,
+                &quot;use_address_map&quot;: 0,
+                &quot;meta_title&quot;: null,
+                &quot;meta_description&quot;: null,
+                &quot;meta_keywords&quot;: null,
+                &quot;other_details&quot;: &quot;[{\&quot;make\&quot;:\&quot;audi\&quot;},{\&quot;color\&quot;:\&quot;red\&quot;}, {\&quot;condition\&quot;: \&quot;1st hand\&quot;}, {\&quot;Transmission\&quot;:\&quot;Automatic\&quot;},{\&quot;Type\&quot;: \&quot;Van\&quot;} ]&quot;,
+                &quot;end_at&quot;: &quot;02/08/2023&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;03-Aug-2023 07:28 AM&quot;
+            },
+            {
+                &quot;id&quot;: 1,
+                &quot;user_id&quot;: 1,
+                &quot;country_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;USA&quot;,
+                    &quot;color&quot;: &quot;#16b19f&quot;,
+                    &quot;code&quot;: &quot;us&quot;,
+                    &quot;domain&quot;: &quot;usa&quot;,
+                    &quot;image&quot;: &quot;152194054262639fda95ac05.12411768.jpg&quot;,
+                    &quot;c_meta_title&quot;: &quot;Indian Website for Nris in USA&quot;,
+                    &quot;c_meta_description&quot;: &quot;An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.&quot;,
+                    &quot;c_meta_keywords&quot;: &quot;Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website&quot;,
+                    &quot;created_at&quot;: &quot;20-Jan-2022 05:18 AM&quot;
+                },
+                &quot;state_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Alberta&quot;,
+                    &quot;code&quot;: &quot;AB&quot;,
+                    &quot;domain&quot;: &quot;alberta&quot;,
+                    &quot;description&quot;: &quot;Alberta&quot;,
+                    &quot;logo&quot;: &quot;196066989625087bd37a4c2.18410119.jpg&quot;,
+                    &quot;s_meta_title&quot;: &quot;Indian Website for Nris in || Alberta&quot;,
+                    &quot;s_meta_description&quot;: &quot;An Indian community website for all NRIS residing in Alberta United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc&quot;,
+                    &quot;s_meta_keywords&quot;: &quot;Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website, alberta nris, nris in alberta&quot;,
+                    &quot;header_image&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;,
+                    &quot;header_image2&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;,
+                    &quot;header_image3&quot;: &quot;1522842913625087eb594b47.13394636.jpg&quot;
+                },
+                &quot;cat_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Auto&quot;,
+                    &quot;slug&quot;: &quot;auto&quot;,
+                    &quot;color&quot;: &quot;#846A6A&quot;,
+                    &quot;created_at&quot;: &quot;27-Jul-2023 11:35 AM&quot;
+                },
+                &quot;sub_cat_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;category_id&quot;: 1,
+                    &quot;name&quot;: &quot;Audis&quot;,
+                    &quot;slug&quot;: &quot;audis&quot;,
+                    &quot;color&quot;: &quot;#846A6A&quot;,
+                    &quot;created_at&quot;: &quot;28-Jul-2023 07:03 AM&quot;
+                },
+                &quot;title&quot;: &quot;this is simple test title&quot;,
+                &quot;title_slug&quot;: &quot;this-is-simple-test-title&quot;,
+                &quot;message&quot;: null,
+                &quot;image&quot;: &quot;PATH/ADS_IMAGE/1691044108_photo1.png&quot;,
+                &quot;contact_name&quot;: &quot;MdSaddam&quot;,
+                &quot;contact_email&quot;: &quot;hussainmd@gmail.com&quot;,
+                &quot;contact_number&quot;: &quot;9088123678&quot;,
+                &quot;contact_address&quot;: &quot;address&quot;,
+                &quot;show_email&quot;: 1,
+                &quot;use_address_map&quot;: 0,
+                &quot;meta_title&quot;: null,
+                &quot;meta_description&quot;: null,
+                &quot;meta_keywords&quot;: null,
+                &quot;other_details&quot;: &quot;[{\&quot;make\&quot;:\&quot;audi\&quot;},{\&quot;color\&quot;:\&quot;red\&quot;}, {\&quot;condition\&quot;: \&quot;1st hand\&quot;}, {\&quot;Transmission\&quot;:\&quot;Automatic\&quot;},{\&quot;Type\&quot;: \&quot;Van\&quot;} ]&quot;,
+                &quot;end_at&quot;: &quot;02/08/2023&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;03-Aug-2023 06:28 AM&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/api/v1/get-recent-ads?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/api/v1/get-recent-ads&quot;,
+        &quot;per_page&quot;: 4,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 2
+    }
 }</code>
  </pre>
             <blockquote>
@@ -2838,14 +3125,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"rem\",
-    \"*last_name\": \"magnam\",
-    \"*email\": \"lehner.garfield@example.com\",
-    \"*dob\": \"voluptas\",
-    \"*mobile\": \"illum\",
-    \"*password\": \"eaque\",
-    \"*country_id\": \"rerum\",
-    \"*state_id\": \"quia\"
+    \"*first_name\": \"fuga\",
+    \"*last_name\": \"eos\",
+    \"*email\": \"langworth.tyrell@example.com\",
+    \"*dob\": \"odio\",
+    \"*mobile\": \"voluptatibus\",
+    \"*password\": \"nihil\",
+    \"*country_id\": \"aliquid\",
+    \"*state_id\": \"nostrum\"
 }"
 </code></pre></div>
 
@@ -2861,14 +3148,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "rem",
-    "*last_name": "magnam",
-    "*email": "lehner.garfield@example.com",
-    "*dob": "voluptas",
-    "*mobile": "illum",
-    "*password": "eaque",
-    "*country_id": "rerum",
-    "*state_id": "quia"
+    "*first_name": "fuga",
+    "*last_name": "eos",
+    "*email": "langworth.tyrell@example.com",
+    "*dob": "odio",
+    "*mobile": "voluptatibus",
+    "*password": "nihil",
+    "*country_id": "aliquid",
+    "*state_id": "nostrum"
 };
 
 fetch(url, {
@@ -2994,10 +3281,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="rem"
+               value="fuga"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>rem</code></p>
+<p>String     Ex ('Abc') Example: <code>fuga</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -3005,10 +3292,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="magnam"
+               value="eos"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>magnam</code></p>
+<p>String     Ex ('def') Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -3016,10 +3303,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="lehner.garfield@example.com"
+               value="langworth.tyrell@example.com"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>lehner.garfield@example.com</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>langworth.tyrell@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -3027,10 +3314,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="voluptas"
+               value="odio"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>voluptas</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>odio</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -3038,10 +3325,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="illum"
+               value="voluptatibus"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>illum</code></p>
+<p>String     Ex ('9876****09') Example: <code>voluptatibus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -3049,10 +3336,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="eaque"
+               value="nihil"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>eaque</code></p>
+<p>String     Ex ('Abc') Example: <code>nihil</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -3060,10 +3347,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="rerum"
+               value="aliquid"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>rerum</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>aliquid</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -3071,10 +3358,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="quia"
+               value="nostrum"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>quia</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>nostrum</code></p>
         </div>
         </form>
 
@@ -3102,8 +3389,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"voluptate\",
-    \"*password\": \"qui\"
+    \"*email_id\": \"laboriosam\",
+    \"*password\": \"impedit\"
 }"
 </code></pre></div>
 
@@ -3119,8 +3406,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "voluptate",
-    "*password": "qui"
+    "*email_id": "laboriosam",
+    "*password": "impedit"
 };
 
 fetch(url, {
@@ -3254,10 +3541,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="voluptate"
+               value="laboriosam"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>voluptate</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>laboriosam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -3265,10 +3552,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="qui"
+               value="impedit"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>qui</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>impedit</code></p>
         </div>
         </form>
 
@@ -3291,7 +3578,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"sint\"
+    \"*email_id\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -3307,7 +3594,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "sint"
+    "*email_id": "voluptatem"
 };
 
 fetch(url, {
@@ -3430,10 +3717,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="sint"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>sint</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>voluptatem</code></p>
         </div>
         </form>
 
@@ -3456,9 +3743,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"della.marvin@example.com\",
-    \"*new_password\": \"dolor\",
-    \"*retype_password\": \"non\"
+    \"*email\": \"thills@example.org\",
+    \"*new_password\": \"nihil\",
+    \"*retype_password\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -3474,9 +3761,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "della.marvin@example.com",
-    "*new_password": "dolor",
-    "*retype_password": "non"
+    "*email": "thills@example.org",
+    "*new_password": "nihil",
+    "*retype_password": "voluptatem"
 };
 
 fetch(url, {
@@ -3588,10 +3875,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="della.marvin@example.com"
+               value="thills@example.org"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>della.marvin@example.com</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>thills@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -3599,10 +3886,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="dolor"
+               value="nihil"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>dolor</code></p>
+<p>String     Ex ('Abc@123') Example: <code>nihil</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -3610,10 +3897,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="non"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>non</code></p>
+<p>String     Ex ('Abc@123') Example: <code>voluptatem</code></p>
         </div>
         </form>
 
@@ -3807,6 +4094,189 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                    <h2 id="nristalk-related-POSTapi-v1-get-nris-talk-list">getNrisTalkList</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<p>EX
+{
+&quot;state_id&quot;:1,
+}</p>
+<aside class="notice">basepath/api/v1/get-nris-talk-list</aside>
+
+<span id="example-requests-POSTapi-v1-get-nris-talk-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-nris-talk-list" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*state_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-nris-talk-list"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*state_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-nris-talk-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully your list found..&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 6,
+            &quot;title&quot;: &quot;Title&quot;,
+            &quot;title_slug&quot;: &quot;title-slug&quot;,
+            &quot;description&quot;: &quot;Nris talk decription&quot;,
+            &quot;meta_title&quot;: null,
+            &quot;meta_description&quot;: null,
+            &quot;meta_keywords&quot;: null,
+            &quot;total_views&quot;: null,
+            &quot;created_at&quot;: &quot;20-Jul-2023 07:18 AM&quot;
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-nris-talk-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-nris-talk-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-nris-talk-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-nris-talk-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-nris-talk-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-nris-talk-list" data-method="POST"
+      data-path="api/v1/get-nris-talk-list"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-nris-talk-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-nris-talk-list"
+                    onclick="tryItOut('POSTapi-v1-get-nris-talk-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-nris-talk-list"
+                    onclick="cancelTryOut('POSTapi-v1-get-nris-talk-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-nris-talk-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-nris-talk-list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-nris-talk-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-nris-talk-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*state_id"                data-endpoint="POSTapi-v1-get-nris-talk-list"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
 
                     <h2 id="nristalk-related-POSTapi-v1-get-nris-talk-reply-by-id">getNrisTalkReplyById</h2>
 
@@ -4519,9 +4989,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>EX
 {
 &quot;user_id&quot;:1,
-&quot;state_id&quot;:1,
 &quot;talk_id&quot;:1,
-&quot;description&quot;:&quot;This is test title description again2&quot;
 }</p>
 <aside class="notice">basepath/api/v1/get-nris-talk</aside>
 
@@ -5602,8 +6070,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"omnis\",
-    \"*state_id\": \"quisquam\"
+    \"*country_id\": \"velit\",
+    \"*state_id\": \"commodi\"
 }"
 </code></pre></div>
 
@@ -5619,8 +6087,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "omnis",
-    "*state_id": "quisquam"
+    "*country_id": "velit",
+    "*state_id": "commodi"
 };
 
 fetch(url, {
@@ -5775,10 +6243,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="omnis"
+               value="velit"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>omnis</code></p>
+<p>integer     Ex 1/2/3 Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -5786,10 +6254,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="quisquam"
+               value="commodi"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>quisquam</code></p>
+<p>integer     Ex 1/2/3 Example: <code>commodi</code></p>
         </div>
         </form>
 
@@ -5812,8 +6280,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"enim\",
-    \"*state_id\": \"dolores\"
+    \"*country_id\": \"qui\",
+    \"*state_id\": \"modi\"
 }"
 </code></pre></div>
 
@@ -5829,8 +6297,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "enim",
-    "*state_id": "dolores"
+    "*country_id": "qui",
+    "*state_id": "modi"
 };
 
 fetch(url, {
@@ -5973,10 +6441,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="enim"
+               value="qui"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>enim</code></p>
+<p>integer     Ex 1/2/3 Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -5984,10 +6452,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="dolores"
+               value="modi"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>dolores</code></p>
+<p>integer     Ex 1/2/3 Example: <code>modi</code></p>
         </div>
         </form>
 
