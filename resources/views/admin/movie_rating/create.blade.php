@@ -28,16 +28,7 @@
     </section>
 
     <!-- Main content -->
-          
 
-    <?php 
-
-    // echo "<pre>";
-    // print_r($results);
-    // echo "</pre>";
-
-
-?>
         <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -55,7 +46,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('movie_rating.store') }}" method="POST">
+                <form action="{{ route('movie_rating.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
 
                   <div class="col-md-12">
@@ -65,7 +56,15 @@
                               <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Enter movie name">
                           </div>
                       </div>
-                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="card-body">             
+                          <div class="form-group">
+                              <label for="name">Image</label>
+                              <input type="file" id="image" name="image" class="form-control" placeholder="select Image" required />
+                          </div>
+                      </div>
+                  </div>
                   @foreach ($sources as $source)
                     <div class="row">
                       <div class="col-md-6">

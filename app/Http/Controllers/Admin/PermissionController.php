@@ -31,7 +31,16 @@ class PermissionController
             abort(404, 'You are not Authorised...');
         }
         // Retrieve all user using Eloquent ORM
-        $results                      = Permission::where('status', 1)->orderBy('id', 'DESC')->paginate(10); 
+        $searchQuery = $request->input('search');
+        $results                      = Permission::where('status', 1);
+        if ($searchQuery) {
+            $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
+        }
+
+        $results = $results->orderBy('id', 'DESC')->paginate(10);
+
+        // Retrieve all state using Eloquent ORM
+        
         $currentPage                    = request()->query('page', 1);
 
         // Calculate the previous and next pages for forward and backward navigation
@@ -39,8 +48,33 @@ class PermissionController
         $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
 
 
-        return view('admin.permission.index', compact('results', 'previousPage', 'nextPage'));
+        return view('admin.permission.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
     
+
+
+
+
+        // $searchQuery = $request->input('search');
+        // $results                      = Permission::where('status', 1);
+        // if ($searchQuery) {
+        //     $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
+        // }
+
+        // $results = $results->orderBy('id', 'DESC')->paginate(10);
+
+        // // Retrieve all state using Eloquent ORM
+        
+        // $currentPage                    = request()->query('page', 1);
+
+        // // Calculate the previous and next pages for forward and backward navigation
+        // $previousPage                   = ($currentPage > 1) ? $currentPage - 1 : null;
+        // $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
+
+
+        // return view('admin.desi_movies.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
+
+
+
     }
 
 

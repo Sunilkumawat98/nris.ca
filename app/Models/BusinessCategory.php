@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class MovieRating extends Model
+class BusinessCategory extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,9 +14,10 @@ class MovieRating extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'movie_rating';
+    protected $table            = 'business_category';
 
     protected $hidden           = [
+        'created_by',
         'updated_at',
         'deleted_at',
         'is_live',
@@ -36,9 +37,8 @@ class MovieRating extends Model
 
     protected $fillable         = [        
         'name',
+        'color',
         'slug',
-        'rating_data',
-        'image',
         'is_live',
         'created_at',
         'updated_at',
@@ -47,11 +47,8 @@ class MovieRating extends Model
     ];
 
 
-
-    public function getImageAttribute($value)
-    {
-        return $value ? config('app.clasified_cdn_path') .'MOVIE_RATING_IMAGE/'. $value : null;
+    public function states() {
+        return $this->belongsTo(BusinessSubCategory::class, 'category_id', 'id');
     }
-
     
 }

@@ -65,6 +65,17 @@ function getMultipleCityNamebyId($id)
 }
 
 
+function getBusinessCategoryNamebyId($id)
+{
+	return \App\Models\BusinessCategory::where('id', $id)->first();
+}
+
+
+function getAllBusinessCategory()
+{
+
+	return \App\Models\BusinessCategory::all();
+}
 
 
 function sendCommentAlert($data)

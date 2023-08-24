@@ -128,6 +128,7 @@ return [
     'clasified_cdn_path' => env('SHOW_IMG'),
 
     'upload_desi_movie_img' => env('UPLOAD_DESI_MOVIE_IMG'),
+    'upload_movie_rating_img' => env('UPLOAD_MOVIE_RATING_IMG'),
 
     'cipher' => 'AES-256-CBC',
 

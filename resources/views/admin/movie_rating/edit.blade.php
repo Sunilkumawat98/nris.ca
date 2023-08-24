@@ -51,17 +51,25 @@
                     </div>
                 @endif
 
-              <form action="{{ route('movie_rating.update', [$rating->id]) }}" method="POST">
+              <form action="{{ route('movie_rating.update', [$rating->id]) }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
-              <div class="col-md-12">
+                <div class="col-md-12">
                       <div class="card-body">             
                           <div class="form-group">
                               <label for="name">Movie Name </label>
                               <input type="text" class="form-control" id="name" name="name" value="{{ $rating->name }}" placeholder="Enter movie name">
                           </div>
                       </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-body">             
+                        <div class="form-group">
+                            <label for="name">Image</label>
+                            <input type="file" id="image" name="image" class="form-control" placeholder="select Image" required />
+                        </div>
                     </div>
+                </div>
                   @foreach ($sources as $source)
                     <div class="row">
                       <div class="col-md-6">

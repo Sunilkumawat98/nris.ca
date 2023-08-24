@@ -62,6 +62,11 @@ class DesiMovieController
 
     public function create()
     {
+        if(!auth()->user()->hasPermission('create_desi_movies'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
+
         $countries                      = Country::all();
         $states                         = State::all();
         $cities                         = City::all();
@@ -95,11 +100,11 @@ class DesiMovieController
             'state_id' => 'required',
             'city_id' => 'required',
             'name' => 'required',
-            'image' => 'required|max:1024',
+            'image' => 'required|max:512',
         ],
         [
             'image.required' => 'The image field is required.',
-            'image.max' => 'The image size should not exceed 1 MB.',
+            'image.max' => 'The image size should not exceed 512KB.',
         ]);
 
         
@@ -134,6 +139,10 @@ class DesiMovieController
 
     public function show($id)
     {
+        if(!auth()->user()->hasPermission('show_desi_movies'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
         // Find the post by its ID and pass it to the view
         $results                        = DesiMovie::findOrFail($id);
         return view('admin.desi_movies.show', compact('results'));
@@ -141,6 +150,10 @@ class DesiMovieController
 
     public function edit($id)
     {
+        if(!auth()->user()->hasPermission('edit_desi_movies'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
         // Find the post by its ID and pass it to the view for editing    
         $results                        = DesiMovie::findOrFail($id);    
         $countries                      = Country::all();

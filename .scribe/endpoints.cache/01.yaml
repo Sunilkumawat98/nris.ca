@@ -51,6 +51,7 @@ endpoints:
           "name": "Bro Telugu",
           "slug": "bro-telugu",
           "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
+          "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
           "created_at": "05-Aug-2023 10:41 AM"
           },
           {
@@ -58,6 +59,7 @@ endpoints:
           "name": "Bro Hindi",
           "slug": "bro-hindi",
           "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
+          "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
           "created_at": "05-Aug-2023 10:28 AM"
           }
           ]
@@ -230,19 +232,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: velit
+        example: consequatur
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: commodi
+        example: nihil
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': velit
-      '*state_id': commodi
+      '*country_id': consequatur
+      '*state_id': nihil
     fileParameters: []
     responses:
       -
@@ -352,19 +354,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: qui
+        example: nihil
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: modi
+        example: excepturi
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': qui
-      '*state_id': modi
+      '*country_id': nihil
+      '*state_id': excepturi
     fileParameters: []
     responses:
       -

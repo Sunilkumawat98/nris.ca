@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-use App\Models\RatingSource;
+use App\Models\BusinessCategory;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Exception;
 
-class RatingSourceController 
+class BusinessCategoryController 
 {
     public function __construct()
     {
@@ -27,13 +27,13 @@ class RatingSourceController
     
     public function index(Request $request)
     {     
-        if(!auth()->user()->hasPermission('manage_rating_source'))
+        if(!auth()->user()->hasPermission('manage_business_listing'))
         {
             abort(404, 'You are not Authorised...');
         }
 
         $searchQuery = $request->input('search');
-        $results                      = RatingSource::where('status', 1);
+        $results                      = BusinessCategory::where('status', 1);
         if ($searchQuery) {
             $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
         }
@@ -49,23 +49,23 @@ class RatingSourceController
         $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
 
 
-        return view('admin.rating_source.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
+        return view('admin.business_category.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
     
     }
 
 
     public function create()
     {
-        if(!auth()->user()->hasPermission('manage_rating_source'))
+        if(!auth()->user()->hasPermission('create_business_category'))
         {
             abort(404, 'You are not Authorised...');
         }
-        return view('admin.rating_source.create');
+        return view('admin.business_category.create');
     }
 
     public function store(Request $request)
     {
-        if(!auth()->user()->hasPermission('create_rating_source'))
+        if(!auth()->user()->hasPermission('create_business_category'))
         {
             abort(404, 'You are not Authorised...');
         }
@@ -73,42 +73,47 @@ class RatingSourceController
         // Validate the request data
         $request->validate([
             'name' => 'required',
+            'color' => 'required',
             
         ]);
 
         $all['name']                    = ucfirst($all['name']);
-
+        $all['color']                    = strtoupper($all['color']);
         $all['slug']                    = Str::slug(strtolower($all['name']));
         
         $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');
 
         // Create a new post
-        RatingSource::create($all);
+        BusinessCategory::create($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('rating_source.index')->with('success', 'Source created successfully.');
+        return redirect()->route('business_category.index')->with('success', 'Category created successfully.');
     }
 
     public function show($id)
     {
         // Find the post by its ID and pass it to the view
-        $results                        = RatingSource::findOrFail($id);
-        return view('admin.rating_source.show', compact('results'));
+        $results                        = BusinessCategory::findOrFail($id);
+        return view('admin.business_category.show', compact('results'));
     }
 
     public function edit($id)
     {
+        if(!auth()->user()->hasPermission('edit_business_category'))
+        {
+            abort(404, 'You are not Authorised...');
+        }
         // Find the post by its ID and pass it to the view for editing
-        $results                        = RatingSource::findOrFail($id);
-        return view('admin.rating_source.edit', compact('results'));
+        $results                        = BusinessCategory::findOrFail($id);
+        return view('admin.business_category.edit', compact('results'));
     }
 
     
 
     public function update(Request $request, $id)
     {
-        if(!auth()->user()->hasPermission('edit_rating_source'))
+        if(!auth()->user()->hasPermission('edit_business_category'))
         {
             abort(404, 'You are not Authorised...');
         }
@@ -116,42 +121,44 @@ class RatingSourceController
         // Validate the request data
         $request->validate([
             'name' => 'required',
+            'color' => 'required',
             
         ]);
 
         $all['name']                    = ucfirst($all['name']);
+        $all['color']                    = strtoupper($all['color']);
         $all['slug']                    = Str::slug(strtolower($all['name']));
 
         $all['updated_at']              = date('Y-m-d H:i:s');
 
-        $result                        = RatingSource::findOrFail($id);
+        $result                        = BusinessCategory::findOrFail($id);
         $result->update($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('rating_source.index')->with('success', 'Source updated successfully.');
+        return redirect()->route('business_category.index')->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(RatingSource $ratingSource)
+    public function destroy(BusinessCategory $businessCategory)
     {
-        if(!auth()->user()->hasPermission('delete_rating_source'))
+        if(!auth()->user()->hasPermission('delete_business_category'))
         {
             abort(404, 'You are not Authorised...');
         }
 
-        $ratingSource->delete();
-        return redirect()->route('rating_source.index')->with('success', 'Source deleted successfully!');
+        $businessCategory->delete();
+        return redirect()->route('business_category.index')->with('success', 'Category deleted successfully!');
     }
 
     public function livePause($id)
     {
         // Find the post by ID
-        $results = RatingSource::findOrFail($id);
+        $results = BusinessCategory::findOrFail($id);
 
         // Toggle the status between "pause" and "live"
         $results->is_live = ($results->is_live === 1) ? 0 : 1;
         $results->save();
 
-        return redirect()->route('rating_source.index')->with('success', 'Live status updated successfully.');
+        return redirect()->route('business_category.index')->with('success', 'Live status updated successfully.');
     }
     
 

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Nris Dashboard | Movie Rating')
+@section('title', 'Nris Dashboard | Business Category')
 
 @section('content')
      <!-- Content Wrapper. Contains page content -->
@@ -10,14 +10,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Movie Rating</h1>
+            <h1>Business Category</h1>
 
            
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-              <li class="breadcrumb-item active">Movie Rating</li>
+              <li class="breadcrumb-item active">Business Category</li>
             </ol>
             
 
@@ -35,12 +35,12 @@
           
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Show Movie Rating</h3>
+                    <h3 class="card-title">Show Business Category</h3>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
                   <div class="row">
-                    <div class="col-8">
+                    <div class="col-12">
                       <div class="post">
                         <div class="user-block">
                           <span class="description">{{ $results->created_at }}</span>
@@ -49,19 +49,15 @@
                         <p>
                            Name : {{ $results->name }}
                         </p>
+                        <p>
+                           Color : {{ $results->color }}
+                        </p>
                         
                         <p>
                            Live : {{ $results->is_live ? 'Live' : 'Pause' }}
                         </p>
                        
                       
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="position-relative">
-                        
-                        <img src="{{ $results->image }}" alt="{{ $results->name }}" class="img-fluid">
-                        
                       </div>
                     </div>
                   </div>

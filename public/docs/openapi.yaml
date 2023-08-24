@@ -2958,35 +2958,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: fuga
+                  example: aut
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: eos
+                  example: ea
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: langworth.tyrell@example.com
+                  example: fkemmer@example.org
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: odio
+                  example: aut
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: voluptatibus
+                  example: commodi
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: nihil
+                  example: assumenda
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: aliquid
+                  example: magni
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: nostrum
+                  example: perferendis
       security: []
   /api/v1/login:
     post:
@@ -3107,11 +3107,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: laboriosam
+                  example: atque
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: impedit
+                  example: repellendus
       security: []
   /api/v1/forgot-pass:
     post:
@@ -3196,7 +3196,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: voluptatem
+                  example: minima
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -3261,15 +3261,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: thills@example.org
+                  example: huel.domenick@example.org
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: nihil
+                  example: ullam
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: voluptatem
+                  example: tempora
       security: []
   /api/v1/get-all-nris-talk:
     get:
@@ -4642,12 +4642,14 @@ paths:
                       name: 'Bro Telugu'
                       slug: bro-telugu
                       rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                      image: 'http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png'
                       created_at: '05-Aug-2023 10:41 AM'
                     -
                       id: 1
                       name: 'Bro Hindi'
                       slug: bro-hindi
                       rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                      image: 'http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png'
                       created_at: '05-Aug-2023 10:28 AM'
                 properties:
                   status:
@@ -4667,12 +4669,14 @@ paths:
                         name: 'Bro Telugu'
                         slug: bro-telugu
                         rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        image: 'http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png'
                         created_at: '05-Aug-2023 10:41 AM'
                       -
                         id: 1
                         name: 'Bro Hindi'
                         slug: bro-hindi
                         rating_data: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        image: 'http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png'
                         created_at: '05-Aug-2023 10:28 AM'
                     items:
                       type: object
@@ -4689,6 +4693,9 @@ paths:
                         rating_data:
                           type: string
                           example: '{"1": ["4.75", "https://wwww.url2.com"], "2": ["3.25", "https://wwww.url2.com"], "3": ["4.5", "https://wwww.url5.com"]}'
+                        image:
+                          type: string
+                          example: 'http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png'
                         created_at:
                           type: string
                           example: '05-Aug-2023 10:41 AM'
@@ -5025,11 +5032,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: velit
+                  example: consequatur
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: commodi
+                  example: nihil
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -5190,11 +5197,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: qui
+                  example: nihil
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: modi
+                  example: excepturi
       security: []
 tags:
   -

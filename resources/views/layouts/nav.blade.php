@@ -193,6 +193,43 @@
                 </a>
               </li>
             @endif
+
+            <!-- manage_business_listing -->
+
+            @if(auth()->user()->hasPermission('manage_business_listing'))
+              <li class="nav-item {{ request()->is('business_category') || request()->is('business_category/*') || request()->is('business_sub_category') || request()->is('business_sub_category/*') || request()->is('business_listing') || request()->is('business_listing/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('business_category') || request()->is('business_category/*') || request()->is('business_sub_category') || request()->is('business_sub_category/*') ||  request()->is('business_listing') || request()->is('business_listing/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-wallet"></i>
+                  <p>
+                    Business Listing
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('business_category.index') }}" class="nav-link {{ request()->is('business_category') || request()->is('business_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('business_sub_category.index') }}" class="nav-link {{ request()->is('business_sub_category') || request()->is('business_sub_category/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sub Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('business_listing.index') }}" class="nav-link {{ request()->is('business_listing') || request()->is('business_listing/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Business Listing</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
+            
           
          
         </ul>

@@ -58,6 +58,7 @@ class MovieRelatedController extends BaseController
                     "name": "Bro Telugu",
                     "slug": "bro-telugu",
                     "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
+                    "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
                     "created_at": "05-Aug-2023 10:41 AM"
                 },
                 {
@@ -65,6 +66,7 @@ class MovieRelatedController extends BaseController
                     "name": "Bro Hindi",
                     "slug": "bro-hindi",
                     "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
+                    "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
                     "created_at": "05-Aug-2023 10:28 AM"
                 }
             ]

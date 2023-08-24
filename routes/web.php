@@ -16,6 +16,9 @@ use App\Http\Controllers\Admin\FreeClassifiedController;
 use App\Http\Controllers\Admin\RatingSourceController;
 use App\Http\Controllers\Admin\MovieRatingController;
 use App\Http\Controllers\Admin\DesiMovieController;
+use App\Http\Controllers\Admin\BusinessCategoryController;
+use App\Http\Controllers\Admin\BusinessSubCategoryController;
+use App\Http\Controllers\Admin\BusinessListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +95,16 @@ Route::domain(config('app.domain'))->group(function () {
         Route::resource('desi_movies', DesiMovieController::class);
         Route::post('/desi_movies/{id}/active-status', [DesiMovieController::class, 'livePause'])->name('desi_movies.activeStatus');
 
+        Route::resource('business_listing', BusinessListingController::class);
+        Route::post('/business_listing/{id}/active-status', [BusinessListingController::class, 'livePause'])->name('business_listing.activeStatus');
+
+        Route::resource('business_category', BusinessCategoryController::class);
+        Route::post('/business_category/{id}/active-status', [BusinessCategoryController::class, 'livePause'])->name('business_category.activeStatus');
+
+        Route::resource('business_sub_category', BusinessSubCategoryController::class);
+        Route::post('/business_sub_category/{id}/active-status', [BusinessSubCategoryController::class, 'livePause'])->name('business_sub_category.activeStatus');
+
+        
         
     });
     
