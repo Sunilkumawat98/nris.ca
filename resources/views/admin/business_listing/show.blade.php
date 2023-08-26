@@ -45,7 +45,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-8">
                       <div class="post">
                         <div class="user-block">
                           <span class="description">{{ $results->created_at }}</span>
@@ -55,10 +55,33 @@
                            Name : {{ $results->name }}
                         </p>
                         <p>
-                           Category : {{ getBusinessCategoryNamebyId($results->category_id)->name }}
+                           Slug : {{ $results->name_slug }}
                         </p>
                         <p>
-                           Color : {{ $results->color }}
+                           Country : {{ ($results->country_id) ? getCountryNamebyId($results->country_id)->name : 'NA' }}
+                        </p>
+                        
+                        <p>
+                           State : {{ ($results->state_id) ? getStateNamebyId($results->state_id)->name : 'NA' }}
+                        </p>
+                        <p>
+                           Category : {{ getBusinessCategoryNamebyId($results->cat_id)->name }}
+                        </p>
+                        <p>
+                           Sub Category : {{ getBusinessSubCategoryNamebyId($results->sub_cat_id)->name }}
+                        </p>
+
+                        <p>
+                           Contact Name : {{ $results->contact_name }}
+                        </p>
+                        <p>
+                           Contact Email : {{ $results->contact_email }}
+                        </p>
+                        <p>
+                           Contact Number : {{ $results->contact_number }}
+                        </p>
+                        <p>
+                           Contact Address : {{ $results->contact_address }}
                         </p>
                         
                         <p>
@@ -67,6 +90,13 @@
                         
 
                       
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="position-relative">
+                        
+                        <img src="{{ $results->image }}" alt="{{ $results->name }}" class="img-fluid">
+                        
                       </div>
                     </div>
                   </div>

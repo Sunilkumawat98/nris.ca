@@ -69,6 +69,10 @@ function getBusinessCategoryNamebyId($id)
 {
 	return \App\Models\BusinessCategory::where('id', $id)->first();
 }
+function getBusinessSubCategoryNamebyId($id)
+{
+	return \App\Models\BusinessSubCategory::where('id', $id)->first();
+}
 
 
 function getAllBusinessCategory()

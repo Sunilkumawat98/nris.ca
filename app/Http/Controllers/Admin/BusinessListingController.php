@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 use App\Models\BusinessCategory;
 use App\Models\BusinessSubCategory;
+use App\Models\BusinessListing;
+use App\Models\Country;
+use App\Models\State;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Exception;
@@ -36,7 +39,7 @@ class BusinessListingController
         }
 
         $searchQuery = $request->input('search');
-        $results                      = BusinessSubCategory::where('status', 1);
+        $results                      = BusinessListing::where('status', 1);
         if ($searchQuery) {
             $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
         }
@@ -64,7 +67,10 @@ class BusinessListingController
             abort(404, 'You are not Authorised...');
         }
         $categories                          = BusinessCategory::all();
-        return view('admin.'.$this->route.'.create', compact('categories'));
+        $subcategories                       = BusinessSubCategory::all();
+        $countries                           = Country::all();
+        $states                              = State::all();
+        return view('admin.'.$this->route.'.create', compact('categories', 'subcategories', 'countries', 'states'));
     }
 
     public function store(Request $request)
@@ -74,23 +80,44 @@ class BusinessListingController
             abort(404, 'You are not Authorised...');
         }
         $all                            = $request->all();
+
+
         // Validate the request data
         $request->validate([
             'name' => 'required',
-            'category_id' => 'required',
-            'color' => 'required',
-            
+            'country_id' => 'required',
+            'state_id' => 'required',
+            'cat_id' => 'required',
+            'image' => 'required|max:512',
+            'contact_name' => 'required|string',
+            'contact_email' => 'required|email',
+            'contact_number' => 'required|numeric',
+            'contact_address' => 'required|string',
+        ],
+        [
+            'image.required' => 'The image field is required.',
+            'image.max' => 'The image size should not exceed 512KB.',
         ]);
 
+        if ($all['image']) 
+        {
+            $image = $all['image'];
+            $imageName = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
+            $image->move(config('app.upload_business_img'), $imageName);
+        }
+        
         $all['name']                    = ucfirst($all['name']);
-        $all['color']                    = strtoupper($all['color']);
-        $all['slug']                    = Str::slug(strtolower($all['name']));
+        $all['name_slug']               = Str::slug(strtolower($all['name']));
+        $all['image']                    = $imageName ?? NULL;
         
         $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');
 
+
+
+
         // Create a new post
-        BusinessSubCategory::create($all);
+        BusinessListing::create($all);
 
         // Redirect to the index page with a success message
         return redirect()->route($this->route.'.index')->with('success', 'Sub Category created successfully.');
@@ -99,7 +126,7 @@ class BusinessListingController
     public function show($id)
     {
         // Find the post by its ID and pass it to the view
-        $results                        = BusinessSubCategory::findOrFail($id);
+        $results                        = BusinessListing::findOrFail($id);
         return view('admin.'.$this->route.'.show', compact('results'));
     }
 
@@ -110,10 +137,13 @@ class BusinessListingController
             abort(404, 'You are not Authorised...');
         }
         // Find the post by its ID and pass it to the view for editing
-        $results                        = BusinessSubCategory::findOrFail($id);
-        $categories                     = BusinessCategory::all();
-
-        return view('admin.'.$this->route.'.edit', compact('results', 'categories'));
+        $results                             = BusinessListing::findOrFail($id);
+        $categories                          = BusinessCategory::all();
+        $subcategories                       = BusinessSubCategory::all();
+        $countries                           = Country::all();
+        $states                              = State::all();
+        
+        return view('admin.'.$this->route.'.edit', compact('results', 'categories', 'subcategories', 'countries', 'states'));
     }
 
     
@@ -128,39 +158,53 @@ class BusinessListingController
         // Validate the request data
         $request->validate([
             'name' => 'required',
-            'category_id' => 'required',
-            'color' => 'required',
+            'country_id' => 'required',
+            'state_id' => 'required',
+            'cat_id' => 'required',
+            'contact_name' => 'required|string',
+            'contact_email' => 'required|email',
+            'contact_number' => 'required|numeric',
+            'contact_address' => 'required|string',
             
         ]);
+        
+        if ($request->has('image'))
+        {
+            $image = $all['image'];
+            $imageName = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
+            $image->move(config('app.upload_business_img'), $imageName);
 
-        $all['name']                    = ucfirst($all['name']);
-        $all['color']                    = strtoupper($all['color']);
-        $all['slug']                    = Str::slug(strtolower($all['name']));
+            $all['image']                       = $imageName;
+        }
 
-        $all['updated_at']              = date('Y-m-d H:i:s');
+        $all['name']                        = ucfirst($all['name']);
+        $all['name_slug']                   = Str::slug(strtolower($all['name']));
+        
 
-        $result                        = BusinessSubCategory::findOrFail($id);
+        $all['updated_at']                  = date('Y-m-d H:i:s');
+
+        $result                             = BusinessListing::findOrFail($id);
         $result->update($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route($this->route.'.index')->with('success', 'Sub Category updated successfully.');
+        return redirect()->route($this->route.'.index')->with('success', 'Record updated successfully.');
     }
 
-    public function destroy(BusinessSubCategory $businessSubCategory)
+    public function destroy(BusinessListing $businessListing)
     {
         if(!auth()->user()->hasPermission('delete_'.$this->permission))
         {
             abort(404, 'You are not Authorised...');
         }
 
-        $businessSubCategory->delete();
-        return redirect()->route($this->route.'.index')->with('success', 'Sub Category deleted successfully!');
+        $businessListing->delete();
+        return redirect()->route($this->route.'.index')->with('success', 'Record deleted successfully!');
     }
 
     public function livePause($id)
     {
         // Find the post by ID
-        $results = BusinessSubCategory::findOrFail($id);
+        $results = BusinessListing::findOrFail($id);
 
         // Toggle the status between "pause" and "live"
         $results->is_live = ($results->is_live === 1) ? 0 : 1;

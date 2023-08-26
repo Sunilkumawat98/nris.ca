@@ -66,7 +66,7 @@
                     <div class="card-body">             
                         <div class="form-group">
                             <label for="name">Image</label>
-                            <input type="file" id="image" name="image" class="form-control" placeholder="select Image" required />
+                            <input type="file" id="image" name="image" class="form-control" placeholder="select Image" />
                         </div>
                     </div>
                 </div>
