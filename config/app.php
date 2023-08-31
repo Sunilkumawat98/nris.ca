@@ -130,6 +130,7 @@ return [
     'upload_desi_movie_img' => env('UPLOAD_DESI_MOVIE_IMG'),
     'upload_movie_rating_img' => env('UPLOAD_MOVIE_RATING_IMG'),
     'upload_business_img' => env('UPLOAD_BUSINESS_IMG'),
+    'upload_business_icon' => env('UPLOAD_BUSINESS_ICON'),
 
     'cipher' => 'AES-256-CBC',
 

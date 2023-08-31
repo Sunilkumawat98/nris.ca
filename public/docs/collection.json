@@ -10,11 +10,211 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "112b94ff-3d04-470c-a3de-f8cd328f01ad",
+        "_postman_id": "2019ca52-2a1e-4889-a293-ccc9c8b212a4",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Business Listing Related",
+            "description": "\nAPIs for managing all Business listing related Category,  sub category",
+            "item": [
+                {
+                    "name": "getAllCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-business-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-business-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-business-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Resturant\",\n\"slug\": \"resturant\",\n\"icon\": \"PATH\/1693300257_WhatsApp_Image_2023-08-29_at_9.46.17_AM.jpeg\",\n\"color\": \"#652F2F\",\n\"created_at\": \"21-Aug-2023 01:53 PM\"\n},\n{\n\"id\": 1,\n\"name\": \"Casino\",\n\"slug\": \"casino\",\n\"icon\": \"PATH\/1987654357_2023-08-29_at_9.46.17_AM.jpeg\",\n\"color\": \"#654F4F\",\n\"created_at\": \"21-Aug-2023 01:59 PM\"\n}\n]\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllSubCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-business-sub-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-business-sub-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/gget-all-business-sub-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"category_id\": 1,\n\"name\": \"Halal resturants\",\n\"slug\": \"halal-resturants\",\n\"color\": \"#908989\",\n\"created_at\": \"23-Aug-2023 09:19 AM\"\n},\n{\n\"id\": 2,\n\"category_id\": 1,\n\"name\": \"halal cuisine of india 1\",\n\"slug\": \"halal-cuisine-of-india-1\",\n\"color\": \"#9FF989\",\n\"created_at\": \"23-Aug-2023 09:30 AM\"\n}\n]\n}\n\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllSubCategoryById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-business-sub-category-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-business-sub-category-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*category_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-business-sub-category-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Audis\",\n\"slug\": \"audis\",\n\"color\": \"#846A6A\",\n\"created_at\": \"28-Jul-2023 07:03 AM\"\n}\n]\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getBusinessListByCat",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-business-list-by-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-business-list-by-category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Temple\",\n\"slug\": \"temple\",\n\"icon\": \"PATH\/1693300257_WhatsApp_Image_2023-08-29_at_9.46.17_AM.jpeg\",\n\"color\": \"#DD9595\",\n\"created_at\": \"29-Aug-2023 02:23 PM\",\n\"category_data\": []\n},\n{\n\"id\": 1,\n\"name\": \"Resturants\",\n\"slug\": \"resturants\",\n\"icon\": \"PATH\/1693306855_food.180746ff7fac730c1893528fcac8f3e2.svg\",\n\"color\": \"#652F2F\",\n\"created_at\": \"21-Aug-2023 01:53 PM\",\n\"category_data\": [\n{\n\"id\": 5,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 1,\n\"sub_cat_id\": null,\n\"name\": \"Sultan's\",\n\"name_slug\": \"sultans\",\n\"image\": \"PATH\/1693308422_mailnris.png\",\n\"contact_name\": \"saddam hussain\",\n\"contact_email\": \"saddam@gmail.com\",\n\"contact_number\": \"898989899\",\n\"contact_address\": \"complete address\",\n\"meta_title\": \"title wala meta\",\n\"meta_description\": \"desction of meta\",\n\"meta_keywords\": \"keyyyyy\",\n\"other_details\": \"otehr ifno\",\n\"total_views\": 0,\n\"created_at\": \"29-Aug-2023 04:57 PM\"\n},\n{\n\"id\": 4,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 1,\n\"sub_cat_id\": null,\n\"name\": \"Curry Masala\",\n\"name_slug\": \"curry-masala\",\n\"image\": \"PATH\/1693308319_videoJs.png\",\n\"contact_name\": \"saddam hussain\",\n\"contact_email\": \"saddam@gmail.com\",\n\"contact_number\": \"898989899\",\n\"contact_address\": \"adress complete\",\n\"meta_title\": \"meta title\",\n\"meta_description\": \"meta desc\",\n\"meta_keywords\": \"meta key\",\n\"other_details\": \"otehrinfo\",\n\"total_views\": 0,\n\"created_at\": \"29-Aug-2023 04:55 PM\"\n},\n{\n\"id\": 3,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 1,\n\"sub_cat_id\": null,\n\"name\": \"China King Buffet\",\n\"name_slug\": \"china-king-buffet\",\n\"image\": \"PATH\/1693307771__turing.png\",\n\"contact_name\": \"saddam hussain\",\n\"contact_email\": \"saddam@gmail.com\",\n\"contact_number\": \"898989899\",\n\"contact_address\": \"Address\",\n\"meta_title\": \"meta\",\n\"meta_description\": \"desc\",\n\"meta_keywords\": \"keyword\",\n\"other_details\": \"info\",\n\"total_views\": 0,\n\"created_at\": \"29-Aug-2023 04:46 PM\"\n}\n]\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "ClasifiedCategory Related",
             "description": "\nAPIs for managing all Clasified Category related",
@@ -225,7 +425,7 @@
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/v1\/get-recent-ads-list"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -236,8 +436,11 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads-list<\/aside>",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nExample\n {\n\"country_id\":1,\n\"state_id\":1\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads-list<\/aside>",
                         "auth": {
                             "type": "noauth"
                         }
@@ -272,7 +475,7 @@
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/v1\/get-recent-ads"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -283,8 +486,11 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads<\/aside>",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\nExample\n {\n\"country_id\":1\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/get-recent-ads<\/aside>",
                         "auth": {
                             "type": "noauth"
                         }
@@ -650,7 +856,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"aut\",\"*last_name\":\"ea\",\"*email\":\"fkemmer@example.org\",\"*dob\":\"aut\",\"*mobile\":\"commodi\",\"*password\":\"assumenda\",\"*country_id\":\"magni\",\"*state_id\":\"perferendis\"}"
+                            "raw": "{\"*first_name\":\"autem\",\"*last_name\":\"sed\",\"*email\":\"bfarrell@example.net\",\"*dob\":\"consequuntur\",\"*mobile\":\"quasi\",\"*password\":\"ut\",\"*country_id\":\"rerum\",\"*state_id\":\"voluptates\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -700,7 +906,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"atque\",\"*password\":\"repellendus\"}"
+                            "raw": "{\"*email_id\":\"et\",\"*password\":\"qui\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -750,7 +956,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"minima\"}"
+                            "raw": "{\"*email_id\":\"rerum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -800,7 +1006,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"huel.domenick@example.org\",\"*new_password\":\"ullam\",\"*retype_password\":\"tempora\"}"
+                            "raw": "{\"*email\":\"stark.daphnee@example.org\",\"*new_password\":\"nisi\",\"*retype_password\":\"porro\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -837,7 +1043,7 @@
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/v1\/get-all-nris-talk"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -849,7 +1055,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-nris-talk<\/aside>",
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n{\n\"country_id\":1,\n\"state_id\":1\n}",
                         "auth": {
                             "type": "noauth"
                         }
@@ -858,7 +1064,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 6,\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again2\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 07:18 AM\",\n\"its_reply\": null\n},\n{\n\"id\": 4,\n\"title\": \"this is test title\",\n\"title_slug\": \"this-is-test-title\",\n\"description\": \"This is test title description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 06:50 AM\",\n\"its_reply\": {\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n}\n],\n\"first_page_url\": \"BASE_PATH\/get-all-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_PATH\/get-all-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 4,\n\"title\": \"new this is test title 3\",\n\"title_slug\": \"new-this-is-test-title-3\",\n\"description\": \"This is test title description again 3\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 0,\n\"likes_count\": 1\n},\n{\n\"id\": 3,\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again 2\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 1,\n\"likes_count\": 0\n},\n{\n\"id\": 2,\n\"title\": \"new this is test title 1\",\n\"title_slug\": \"new-this-is-test-title-1\",\n\"description\": \"This is test title description again1\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 5,\n\"likes_count\": 1\n}\n]\n}",
                             "name": ""
                         },
                         {
@@ -976,6 +1182,80 @@
                     ]
                 },
                 {
+                    "name": "likeNrisTalkById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/like-nris-talk-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/like-nris-talk-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*talk_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n EX\n {\n\"talk_id\":4,\n\"user_id\":1,\n\"country_id\":1,\n\"state_id\":1,\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/like-nris-talk-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Nris talk reply created...\",\n\"data\": {\n\"talk_id\": 4,\n\"created_at\": \"31-Aug-2023 05:10 PM\",\n\"id\": 2\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "createNrisTalk",
                     "request": {
                         "url": {
@@ -997,9 +1277,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*user_id\":1,\"*state_id\":1,\"*title\":\"'This is test title' in JSON BODY\",\"*description\":\"'This is test description' in JSON BODY\"}"
+                            "raw": "{\"*user_id\":1,\"*country_id\":1,\"*state_id\":1,\"*title\":\"'This is test title' in JSON BODY\",\"*description\":\"'This is test description' in JSON BODY\"}"
                         },
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"title\":\"new this is test title 2\",\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk<\/aside>"
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":2,\n\"country_id\":1,\n\"state_id\":1,\n\"title\":\"---------------------------\",\n\"description\":\"----------------------\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk<\/aside>"
                     },
                     "response": [
                         {
@@ -1056,9 +1336,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*user_id\":1,\"*state_id\":1,\"*talk_id\":1,\"*description\":\"'This is test description' in JSON BODY\"}"
+                            "raw": "{\"*user_id\":1,\"*country_id\":1,\"*state_id\":1,\"*talk_id\":1,\"*description\":\"'This is test description' in JSON BODY\"}"
                         },
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1,\n\"state_id\":1,\n\"talk_id\":1,\n\"description\":\"This is test title description again2\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk-reply<\/aside>"
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":2,\n\"country_id\":1,\n\"state_id\":1,\n\"talk_id\":3,\n\"description\":\"----------------------------\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/create-nris-talk-reply<\/aside>"
                     },
                     "response": [
                         {
@@ -1123,7 +1403,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 4,\n\"title\": \"this is test title\",\n\"title_slug\": \"this-is-test-title\",\n\"description\": \"This is test title description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"20-Jul-2023 06:50 AM\",\n\"its_reply\": {\n\"id\": 3,\n\"talk_id\": 4,\n\"comment\": \"this is reply of talk 1\",\n\"created_at\": \"20-Jul-2023 07:39 AM\"\n}\n}\n],\n\"first_page_url\": \"BASE_URL\/get-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_URL\/get-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 2,\n\"title\": \"new this is test title 1\",\n\"title_slug\": \"new-this-is-test-title-1\",\n\"description\": \"This is test title description again1\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 5,\n\"likes_count\": 1,\n\"comments\": [\n{\n\"id\": 3,\n\"talk_id\": 2,\n\"comment\": \"this is reply of talk 2\",\n\"created_at\": \"31-Aug-2023 05:01 PM\"\n},\n{\n\"id\": 4,\n\"talk_id\": 2,\n\"comment\": \"this is reply of again talk 2\",\n\"created_at\": \"31-Aug-2023 05:01 PM\"\n},\n{\n\"id\": 5,\n\"talk_id\": 2,\n\"comment\": \"this is reply of again 2 talk 2\",\n\"created_at\": \"31-Aug-2023 05:01 PM\"\n},\n{\n\"id\": 6,\n\"talk_id\": 2,\n\"comment\": \"this is reply of again 3 talk 2\",\n\"created_at\": \"31-Aug-2023 05:01 PM\"\n},\n{\n\"id\": 7,\n\"talk_id\": 2,\n\"comment\": \"Mast talks\",\n\"created_at\": \"31-Aug-2023 05:07 PM\"\n}\n]\n}\n],\n\"first_page_url\": \"http:\/\/local-nris.ca\/api\/v1\/get-nris-talk?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/local-nris.ca\/api\/v1\/get-nris-talk\",\n\"per_page\": 15,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
                             "name": ""
                         },
                         {
@@ -1410,7 +1690,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"consequatur\",\"*state_id\":\"nihil\"}"
+                            "raw": "{\"*country_id\":\"excepturi\",\"*state_id\":\"accusantium\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -1460,7 +1740,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"nihil\",\"*state_id\":\"excepturi\"}"
+                            "raw": "{\"*country_id\":\"hic\",\"*state_id\":\"voluptas\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

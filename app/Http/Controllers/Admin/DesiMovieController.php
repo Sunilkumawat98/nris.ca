@@ -199,13 +199,14 @@ class DesiMovieController
             $image                      = $all['image'];
             $imageName                  = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
             $image->move(config('app.upload_desi_movie_img'), $imageName);
+            $all['image']                    = $imageName ?? NULL;
         }
         
         $all['end_date']                 = $new_date_to;
         $all['name']                     = ucfirst($all['name']);
         $all['slug']                     = Str::slug(strtolower($all['name']));
         $all['start_date']               = $new_date_from;
-        $all['image']                    = $imageName ?? NULL;
+        
         $citiesList                      = implode(",", $all['city_id']);
         
         $all['city_id']                  = $citiesList;

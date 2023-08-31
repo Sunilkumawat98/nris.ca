@@ -14,20 +14,41 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::create([
-            'name' => 'Super Admin',
-            'email' => 'superadmin@nris.ca',
-            'username' => 'superadmin123',
-            'password' => Hash::make('Admin@@001233'), // Replace 'password' with the desired password
-            'role_id' => 1, // ID of the 'superadmin' role from the roles table
-        ]);
-        Admin::create([
-            'name' => 'Admin',
-            'email' => 'admin@nris.ca',
-            'username' => 'admin123',
-            'password' => Hash::make('Admin@@123'), // Replace 'password' with the desired password
-            'role_id' => 2, // ID of the 'superadmin' role from the roles table
-        ]);
+        $usersData = [
+            [
+                'name' => 'Super Admin',
+                'email' => 'superadmin@nris.ca',
+                'username' => 'superadmin123',
+                'password' => Hash::make('Admin@@001233'), // Replace 'password' with the desired password
+                'role_id' => 1, // ID of the 'superadmin' role from the roles table
+            ],
+            [
+                'name' => 'Admin',
+                'email' => 'admin@nris.ca',
+                'username' => 'admin123',
+                'password' => Hash::make('Admin@@123'), // Replace 'password' with the desired password
+                'role_id' => 2, // ID of the 'superadmin' role from the roles table
+            ],
+            [
+                'name' => 'Hr',
+                'email' => 'hr@nris.ca',
+                'username' => 'hr123',
+                'password' => Hash::make('Hr@@123'), // Replace 'password' with the desired password
+                'role_id' => 2, // ID of the 'superadmin' role from the roles table
+            ]
+            // Add more user data entries as needed
+        ];
+
+        foreach ($usersData as $userData) {
+            $existingUser = Admin::where('email', $userData['email'])->first();
+
+            if (!$existingUser) {
+                Admin::create($userData);
+                $this->command->info("User '{$userData['name']}' inserted successfully.");
+            } else {
+                $this->command->info("User '{$userData['name']}' already exists. Skipping insertion.");
+            }
+        }
 
         
     }

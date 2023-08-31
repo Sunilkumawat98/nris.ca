@@ -135,7 +135,7 @@ return [
         */
         "createNrisTalk" => [
             "required" => [
-                "user_id", 'state_id', 'title', 'description'
+                "user_id", 'country_id', 'state_id', 'title', 'description'
             ],
             "optional" => [
             ]
@@ -143,7 +143,7 @@ return [
 
         "replyNrisTalkCreate" => [
             "required" => [
-                "user_id", 'state_id', 'talk_id', 'description'
+                "user_id", 'country_id', 'state_id', 'talk_id', 'description'
             ],
             "optional" => [
             ]
@@ -157,9 +157,17 @@ return [
             ]
         ],
 
+        "allNrisTalkFetch" => [
+            "required" => [
+                'country_id','state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
         "nrisTalkListFetch" => [
             "required" => [
-                'state_id'
+                'country_id','state_id'
             ],
             "optional" => [
             ]
@@ -172,6 +180,32 @@ return [
             "optional" => [
             ]
         ],
+
+        "likeNrisTalkById" => [
+            "required" => [
+                "user_id", 'country_id', 'state_id', 'talk_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        /*
+        
+            Business Listing, Its category and Sub category
+        
+        */
+
+
+        "businessListingByCategoryGet" => [
+            "required" => [
+                'country_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
 
         /*
             Category And Sub Category
@@ -190,6 +224,25 @@ return [
             "required" => [
                 'user_id', 'country_id', 'state_id', 'contact_name', 'contact_email', 'contact_number', 'contact_address',  'show_email',
                 'use_address_map', 'end_at'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+
+        "recentAdsGet" => [
+           
+            "required" => [
+                'country_id'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+        "recentAdsListGet" => [
+           
+            "required" => [
+                'country_id', 'state_id'
             ],
             "optional" => [
                 

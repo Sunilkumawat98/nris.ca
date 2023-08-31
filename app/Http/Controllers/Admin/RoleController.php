@@ -73,7 +73,7 @@ class RoleController
         Role::create($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('role.index')->with('success', 'User created successfully.');
+        return redirect()->route('role.index')->with('success', 'Role created successfully.');
     }
 
     public function show($id)

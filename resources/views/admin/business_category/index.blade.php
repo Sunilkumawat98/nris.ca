@@ -132,6 +132,7 @@
                     <tr>
                       
                       <th>Name</th>
+                      <th>Icon</th>
                       <th>Color</th>
                       <th>Live</th>
                       <th>Date</th>
@@ -147,6 +148,7 @@
                       <tr>
                         
                         <td>{{ $result->name }}</td>
+                        <td><img src="{{ $result->icon }}" alt="{{ $result->name }}" class="img-fluid"></td>
                         <td>{{ $result->color }}</td>
                         <td>
                           

@@ -16,6 +16,7 @@ class NrisTalkReply extends Model
 
     protected $hidden           = [
         'user_id',
+        'country_id',
         'state_id',
         'updated_at',
         'deleted_at',
@@ -37,6 +38,7 @@ class NrisTalkReply extends Model
         'talk_id',
         'user_id',
         'comment',
+        'country_id',
         'state_id',
         'created_at',
         'updated_at',

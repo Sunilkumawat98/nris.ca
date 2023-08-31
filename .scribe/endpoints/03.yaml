@@ -1,28 +1,28 @@
-name: 'NrisTalk Related'
+name: 'Country State & City'
 description: |-
 
-  APIs for managing all nris talk and its reply related
+  APIs for managing all country, state, city
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/get-all-nris-talk
+    uri: api/v1/get-all-country
     metadata:
-      groupName: 'NrisTalk Related'
+      groupName: 'Country State & City'
       groupDescription: |-
 
-        APIs for managing all nris talk and its reply related
+        APIs for managing all country, state, city
       subgroup: ''
       subgroupDescription: ''
-      title: getAllNrisTalk
+      title: getAllCountry
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+        Otherwise, the request will fail with a `404` error, and a response not found!
 
-        EX
 
-        <aside class="notice">basepath/api/v1/get-all-nris-talk</aside>
+
+        <aside class="notice">basepath/api/v1/get-all-country</aside>
       authenticated: false
       custom: []
     headers:
@@ -42,144 +42,32 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully your list found..",
-          "data": {
-          "current_page": 1,
-          "data": [
+          "message": "Successfully country list get...",
+          "data":
+          [
           {
-          "id": 6,
-          "title": "new this is test title 2",
-          "title_slug": "new-this-is-test-title-2",
-          "description": "This is test title description again2",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keywords": null,
-          "total_views": null,
-          "created_at": "20-Jul-2023 07:18 AM",
-          "its_reply": null
+          "id": 1,
+          "name": "USA",
+          "color": "#16b19f",
+          "code": "us",
+          "domain": "usa",
+          "image": "152194054262639fda95ac05.12411768.jpg",
+          "c_meta_title": "Indian Website for Nris in USA",
+          "c_meta_description": "An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.",
+          "c_meta_keywords": "Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website",
+          "created_at": "20-Jan-2022 05:18 AM"
           },
           {
-          "id": 4,
-          "title": "this is test title",
-          "title_slug": "this-is-test-title",
-          "description": "This is test title description",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keywords": null,
-          "total_views": null,
-          "created_at": "20-Jul-2023 06:50 AM",
-          "its_reply": {
-          "id": 3,
-          "talk_id": 4,
-          "comment": "this is reply of talk 1",
-          "created_at": "20-Jul-2023 07:39 AM"
-          }
-          }
-          ],
-          "first_page_url": "BASE_PATH/get-all-nris-talk?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "BASE_PATH/get-all-nris-talk",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 3
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/get-nris-talk-list
-    metadata:
-      groupName: 'NrisTalk Related'
-      groupDescription: |-
-
-        APIs for managing all nris talk and its reply related
-      subgroup: ''
-      subgroupDescription: ''
-      title: getNrisTalkList
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-
-        EX
-         {
-              "state_id":1,
-         }
-
-        <aside class="notice">basepath/api/v1/get-nris-talk-list</aside>
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*state_id':
-        name: '*state_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      '*state_id': 1
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully your list found..",
-          "data": [
-          {
-          "id": 6,
-          "title": "Title",
-          "title_slug": "title-slug",
-          "description": "Nris talk decription",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keywords": null,
-          "total_views": null,
-          "created_at": "20-Jul-2023 07:18 AM"
+          "id": 2,
+          "name": "Canada",
+          "color": "#990d00",
+          "code": "ca",
+          "domain": "canada",
+          "image": "47659423262639bd6a30242.39786820.jpg",
+          "c_meta_title": "Indian Website for Nris in Canada",
+          "c_meta_description": "An Indian community website for all NRIS residing in Canada . Get information on",
+          "c_meta_keywords": "Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website",
+          "created_at": "20-Jan-2022 05:18 AM"
           }
           ]
           }
@@ -192,19 +80,7 @@ endpoints:
           {
           "status": false,
           "status_code": 404,
-          "message": "List not found...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
+          "message": "Country not found...",
           "data": []
           }
         headers: []
@@ -219,26 +95,26 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/get-nris-talk-reply-by-id
+    uri: api/v1/get-all-state-by-country
     metadata:
-      groupName: 'NrisTalk Related'
+      groupName: 'Country State & City'
       groupDescription: |-
 
-        APIs for managing all nris talk and its reply related
+        APIs for managing all country, state, city
       subgroup: ''
       subgroupDescription: ''
-      title: getNrisTalkReplyById
+      title: getAllStateByCountry
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+        Otherwise, the request will fail with a `404` error, and a response not found!
 
-         EX
+        EX
          {
-        "talk_id":4
+        "country_id":1
         }
 
-        <aside class="notice">basepath/api/v1/get-nris-talk-reply-by-id</aside>
+        <aside class="note">basepath/api/v1/get-all-state-by-country</aside>
       authenticated: false
       custom: []
     headers:
@@ -249,15 +125,15 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*talk_id':
-        name: '*talk_id'
+      '*country_id':
+        name: '*country_id'
         description: ''
         required: true
         example: 1
         type: integer
         custom: []
     cleanBodyParameters:
-      '*talk_id': 1
+      '*country_id': 1
     fileParameters: []
     responses:
       -
@@ -266,31 +142,39 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully your list found..",
-          "data": {
-          "current_page": 1,
+          "message": "Successfully state list get...",
           "data": [
           {
-          "id": 5,
-          "talk_id": 4,
-          "comment": "testing again",
-          "created_at": 20-Jul-2023 07:39 AM
+          "id": 3,
+          "name": "Aberconwy and Colwyn",
+          "code": "AC",
+          "domain": "aberconwyandcolwyn",
+          "description": "Aberconwy and Colwyn",
+          "logo": "",
+          "s_meta_title": "",
+          "s_meta_description": "",
+          "s_meta_keywords": "",
+          "header_image": "NULL",
+          "header_image2": "NULL",
+          "header_image3": "NULL",
+          "created_by": "NULL"
           },
           {
-          "id": 3,
-          "talk_id": 4,
-          "comment": "this is reply of talk 1",
-          "created_at": "20-Jul-2023 07:39 AM"
+          "id": 5,
+          "name": "Aberdeen City",
+          "code": "ADC",
+          "domain": "aberdeencity",
+          "description": "Aberdeen City",
+          "logo": "",
+          "s_meta_title": "",
+          "s_meta_description": "",
+          "s_meta_keywords": "",
+          "header_image": "NULL",
+          "header_image2": "NULL",
+          "header_image3": "NULL",
+          "created_by": "NULL"
           }
-          ],
-          "first_page_url": "BASE_PATH/get-nris-talk-reply-by-id?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "BASE_PATH/get-nris-talk-reply-by-id",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 3
-          }
+          ]
           }
         headers: []
         description: ''
@@ -301,19 +185,7 @@ endpoints:
           {
           "status": false,
           "status_code": 404,
-          "message": "List not found...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
+          "message": "State not found...",
           "data": []
           }
         headers: []
@@ -328,33 +200,28 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/create-nris-talk
+    uri: api/v1/get-all-city-by-state-and-country
     metadata:
-      groupName: 'NrisTalk Related'
+      groupName: 'Country State & City'
       groupDescription: |-
 
-        APIs for managing all nris talk and its reply related
+        APIs for managing all country, state, city
       subgroup: ''
       subgroupDescription: ''
-      title: createNrisTalk
+      title: getAllCityByStateAndCountry
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+        Otherwise, the request will fail with a `404` error, and a response not found!
 
-        EX
          {
-        "user_id":1,
-        "state_id":1,
-        "title":"new this is test title 2",
-        "description":"This is test title description again2"
+        "country_id":101,
+        "state_id":4037
         }
-
-        <aside class="notice">basepath/api/v1/create-nris-talk</aside>
-      authenticated: true
+        <aside class="notice">basepath/api/v1/get-all-city-by-state-and-country</aside>
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer _token required'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -362,8 +229,8 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*user_id':
-        name: '*user_id'
+      '*country_id':
+        name: '*country_id'
         description: ''
         required: true
         example: 1
@@ -376,25 +243,9 @@ endpoints:
         example: 1
         type: integer
         custom: []
-      '*title':
-        name: '*title'
-        description: ''
-        required: true
-        example: "'This is test title' in JSON BODY"
-        type: string
-        custom: []
-      '*description':
-        name: '*description'
-        description: ''
-        required: true
-        example: "'This is test description' in JSON BODY"
-        type: string
-        custom: []
     cleanBodyParameters:
-      '*user_id': 1
+      '*country_id': 1
       '*state_id': 1
-      '*title': "'This is test title' in JSON BODY"
-      '*description': "'This is test description' in JSON BODY"
     fileParameters: []
     responses:
       -
@@ -403,326 +254,19 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully Nris talk created...",
-          "data": {
-          "title": "new this is test title 2",
-          "title_slug": "new-this-is-test-title-2",
-          "description": "This is test title description again2",
-          "created_at": "20-Jul-2023 07:18 AM",
-          "id": 6
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 401
-        content: |-
-          {
-          "message": "Token is Invalid",
-          "status_code": 401,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 403
-        content: |-
-          {
-          "message": "Authorised Token Not Found",
-          "status_code": 403,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 419
-        content: |-
-          {
-          "message": "Token is Expired",
-          "status_code": 419,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 8VvZ4gkh3ca16dD65aEPbfe'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/create-nris-talk-reply
-    metadata:
-      groupName: 'NrisTalk Related'
-      groupDescription: |-
-
-        APIs for managing all nris talk and its reply related
-      subgroup: ''
-      subgroupDescription: ''
-      title: createNrisTalkReply
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-
-        EX
-         {
-        "user_id":1,
-        "state_id":1,
-        "talk_id":1,
-        "description":"This is test title description again2"
-        }
-
-        <aside class="notice">basepath/api/v1/create-nris-talk-reply</aside>
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer _token required'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*user_id':
-        name: '*user_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      '*state_id':
-        name: '*state_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      '*talk_id':
-        name: '*talk_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      '*description':
-        name: '*description'
-        description: ''
-        required: true
-        example: "'This is test description' in JSON BODY"
-        type: string
-        custom: []
-    cleanBodyParameters:
-      '*user_id': 1
-      '*state_id': 1
-      '*talk_id': 1
-      '*description': "'This is test description' in JSON BODY"
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully Nris talk reply created...",
-          "data": {
-          "comment": "this is reply of talk 1",
-          "created_at": "20-Jul-2023 07:39 AM",
-          "id": 3
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 401
-        content: |-
-          {
-          "message": "Token is Invalid",
-          "status_code": 401,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 403
-        content: |-
-          {
-          "message": "Authorised Token Not Found",
-          "status_code": 403,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 419
-        content: |-
-          {
-          "message": "Token is Expired",
-          "status_code": 419,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer PhDdV45cakga86Zfvb61Ee3'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/get-nris-talk
-    metadata:
-      groupName: 'NrisTalk Related'
-      groupDescription: |-
-
-        APIs for managing all nris talk and its reply related
-      subgroup: ''
-      subgroupDescription: ''
-      title: getNrisTalk
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-
-        EX
-         {
-        "user_id":1,
-        "talk_id":1,
-        }
-
-        <aside class="notice">basepath/api/v1/get-nris-talk</aside>
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer _token required'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*user_id':
-        name: '*user_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      '*talk_id':
-        name: '*talk_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      '*user_id': 1
-      '*talk_id': 1
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully your list found..",
-          "data": {
-          "current_page": 1,
+          "message": "Successfully city list get...",
           "data": [
           {
-          "id": 4,
-          "title": "this is test title",
-          "title_slug": "this-is-test-title",
-          "description": "This is test title description",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keywords": null,
-          "total_views": null,
-          "created_at": "20-Jul-2023 06:50 AM",
-          "its_reply": {
-          "id": 3,
-          "talk_id": 4,
-          "comment": "this is reply of talk 1",
-          "created_at": "20-Jul-2023 07:39 AM"
-          }
-          }
-          ],
-          "first_page_url": "BASE_URL/get-nris-talk?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "BASE_URL/get-nris-talk",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 1
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 401
-        content: |-
+          "id": 1,
+          "name": "Airdrie",
+          "state_code": "AB"
+          },
           {
-          "message": "Token is Invalid",
-          "status_code": 401,
-          "status": false
+          "id": 2,
+          "name": "Brooks",
+          "state_code": "AB"
           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 403
-        content: |-
-          {
-          "message": "Authorised Token Not Found",
-          "status_code": 403,
-          "status": false
+          ]
           }
         headers: []
         description: ''
@@ -733,40 +277,14 @@ endpoints:
           {
           "status": false,
           "status_code": 404,
-          "message": "List not found...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 419
-        content: |-
-          {
-          "message": "Token is Expired",
-          "status_code": 419,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
+          "message": "City Not Found...",
           "data": []
           }
         headers: []
         description: ''
         custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer afdg6vPV3EZ65kceah4bD81'
+    auth: []
     controller: null
     method: null
     route: null

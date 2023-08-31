@@ -97,7 +97,7 @@ class BusinessListingController
         [
             'image.required' => 'The image field is required.',
             'image.max' => 'The image size should not exceed 512KB.',
-        ]);
+        ]); 
 
         if ($all['image']) 
         {
@@ -108,7 +108,7 @@ class BusinessListingController
         
         $all['name']                    = ucfirst($all['name']);
         $all['name_slug']               = Str::slug(strtolower($all['name']));
-        $all['image']                    = $imageName ?? NULL;
+        $all['image']                   = $imageName ?? NULL;
         
         $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');

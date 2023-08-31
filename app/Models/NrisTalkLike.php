@@ -4,23 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BusinessCategory extends Model
+class NrisTalkLike extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     
     
     public $timestamps = false;
         
-    protected $table            = 'business_category';
+    protected $table            = 'nris_talk_like';
 
     protected $hidden           = [
-        'created_by',
+        'user_id',
+        'country_id',
+        'state_id',
         'updated_at',
         'deleted_at',
-        'is_live',
         'status'
     ];
 
@@ -36,31 +35,14 @@ class BusinessCategory extends Model
     ];
 
     protected $fillable         = [        
-        'name',
-        'color',
-        'icon',
-        'slug',
-        'is_live',
+        'talk_id',
+        'user_id',
+        'country_id',
+        'state_id',
         'created_at',
         'updated_at',
         'deleted_at',
         'status'
     ];
-
-
-    public function getIconAttribute($value)
-    {
-        return $value ? config('app.clasified_cdn_path') .'BUSINESS_ICON/'. $value : null;
-    }
-
-
-    public function states() {
-        return $this->belongsTo(BusinessSubCategory::class, 'category_id', 'id');
-    }
-
-    public function category_data()
-    {
-        return $this->hasMany(BusinessListing::class, 'cat_id');
-    }
-
+    
 }

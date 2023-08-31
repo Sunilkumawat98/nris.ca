@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use App\Models\NrisTalk;
 use App\Models\NrisTalkReply;
+use App\Models\NrisTalkLike;
 use App\Exceptions;
 use Illuminate\Support\Str;
 
@@ -70,6 +71,7 @@ class NrisTalkService
             $nrisTalk->title                        = $param['title'];
             $nrisTalk->title_slug                   = Str::slug($param['title']);
             $nrisTalk->description                  = $param['description'];
+            $nrisTalk->country_id                   = $param['country_id'];
             $nrisTalk->state_id                     = $param['state_id'];
             $nrisTalk->user_id                      = $param['user_id'];
             $nrisTalk->created_at                   = $created_at;
@@ -134,6 +136,7 @@ class NrisTalkService
             $nrisTalk                               = new NrisTalkReply;
             $nrisTalk->talk_id                      = $param['talk_id'];
             $nrisTalk->comment                      = $param['description'];
+            $nrisTalk->country_id                   = $param['country_id'];
             $nrisTalk->state_id                     = $param['state_id'];
             $nrisTalk->user_id                      = $param['user_id'];
             $nrisTalk->created_at                   = $created_at;
@@ -186,11 +189,13 @@ class NrisTalkService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = NrisTalk::with('itsReply')
+        $result                     = NrisTalk::with('comments')
                                         ->where('id',$param['talk_id'])
                                         ->where('user_id',$param['user_id'])
                                         ->where('is_live',1)
                                         ->where('status',1)
+                                        ->withCount('comments')
+                                        ->withCount('likes')
                                         ->orderBy('id', 'DESC');
 
 
@@ -299,14 +304,15 @@ class NrisTalkService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = NrisTalk::with('itsReply')
-                                        ->where('is_live',1)
+        $result                     = NrisTalk::where('is_live',1)
+                                        ->where('country_id',$param['country_id'])
+                                        ->where('state_id',$param['state_id'])
                                         ->where('status',1)
-                                        ->orderBy('id', 'DESC');
-
-
-        $total_count                = $result->count();
-        $result                     = $result->simplePaginate(15);
+                                        ->orderBy('id', 'DESC')
+                                        ->withCount('comments')
+                                        ->withCount('likes')
+                                        ->take(5)
+                                        ->get();
     
         if(count($result)>0)
         {
@@ -314,7 +320,6 @@ class NrisTalkService
             $return[$this->status]  = true;
             $return[$this->message] = 'Successfully your list found..';
             $return[$this->code]    = 200;
-            $return[$this->total]   = $total_count;
             $return[$this->data]    = $result;
         }
         else
@@ -381,6 +386,69 @@ class NrisTalkService
     }
 
 
+
+
+    /**
+        
+        * method nrisTalkLikeById()
+        * 
+        * @param[]
+        * user_id
+        * country_id
+        * state_id
+        * talk_id
+        * description
+        * 
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function nrisTalkLikeById($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+
+        \DB::beginTransaction();
+        try{
+           
+            $created_at                             = date("Y-m-d H:i:s");
+            $nrisTalk                               = new NrisTalkLike;
+            $nrisTalk->talk_id                      = $param['talk_id'];
+            $nrisTalk->country_id                   = $param['country_id'];
+            $nrisTalk->state_id                     = $param['state_id'];
+            $nrisTalk->user_id                      = $param['user_id'];
+            $nrisTalk->created_at                   = $created_at;
+            $nrisTalk->updated_at                   = $created_at;
+            
+            $store                                  = $nrisTalk->save();
+        }
+        catch (Exception $e) {
+            $except['status'] = false;
+            $except['error'][] = 'Exception Error...';
+            $except['message'] = $e;
+            $exception = new BaseController();
+            $exception = $exception->throwExceptionError($except, 500);
+        }
+
+        if($store)
+        {
+            $return[$this->status]                  = true;
+            $return[$this->message]                 = 'Successfully Nris talk reply created...';
+            $return[$this->code]                    = 200;
+            $return[$this->data]                    = $nrisTalk;
+        }
+        \DB::commit();
+
+        return $return;
+    }
 
 
 

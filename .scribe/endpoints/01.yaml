@@ -1,20 +1,20 @@
-name: 'allMovieRelated Related'
+name: 'Business Listing Related'
 description: |-
 
-  APIs for managing all movie related
+  APIs for managing all Business listing related Category,  sub category
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/get-movie-ratings
+    uri: api/v1/get-all-business-category
     metadata:
-      groupName: 'allMovieRelated Related'
+      groupName: 'Business Listing Related'
       groupDescription: |-
 
-        APIs for managing all movie related
+        APIs for managing all Business listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: getMovieRatings
+      title: getAllCategory
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
@@ -22,7 +22,7 @@ endpoints:
 
 
 
-        <aside class="notice">basepath/api/v1/get-movie-ratings</aside>
+        <aside class="notice">basepath/api/v1/get-all-business-category</aside>
       authenticated: false
       custom: []
     headers:
@@ -42,26 +42,26 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully ratings found..",
+          "message": "Successfully your list found..",
           "data": [
           {
           "id": 2,
-          "name": "Bro Telugu",
-          "slug": "bro-telugu",
-          "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
-          "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
-          "created_at": "05-Aug-2023 10:41 AM"
+          "name": "Resturant",
+          "slug": "resturant",
+          "icon": "PATH/1693300257_WhatsApp_Image_2023-08-29_at_9.46.17_AM.jpeg",
+          "color": "#652F2F",
+          "created_at": "21-Aug-2023 01:53 PM"
           },
           {
           "id": 1,
-          "name": "Bro Hindi",
-          "slug": "bro-hindi",
-          "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
-          "image": "http://localhost/upload/image-data/MOVIE_RATING_IMAGE/1692883260__turing.png",
-          "created_at": "05-Aug-2023 10:28 AM"
+          "name": "Casino",
+          "slug": "casino",
+          "icon": "PATH/1987654357_2023-08-29_at_9.46.17_AM.jpeg",
+          "color": "#654F4F",
+          "created_at": "21-Aug-2023 01:59 PM"
           }
           ]
-          }
+           }
         headers: []
         description: ''
         custom: []
@@ -98,15 +98,15 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/get-all-movie-ratings
+    uri: api/v1/get-all-business-sub-category
     metadata:
-      groupName: 'allMovieRelated Related'
+      groupName: 'Business Listing Related'
       groupDescription: |-
 
-        APIs for managing all movie related
+        APIs for managing all Business listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: getAllMovieRatings
+      title: getAllSubCategory
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
@@ -114,7 +114,7 @@ endpoints:
 
 
 
-        <aside class="notice">basepath/api/v1/get-all-movie-ratings</aside>
+        <aside class="notice">basepath/api/v1/gget-all-business-sub-category</aside>
       authenticated: false
       custom: []
     headers:
@@ -134,34 +134,27 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully ratings found..",
-          "data": {
-          "current_page": 1,
+          "message": "Successfully your list found..",
           "data": [
           {
           "id": 2,
-          "name": "Bro Telugu",
-          "slug": "bro-telugu",
-          "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
-          "created_at": "05-Aug-2023 10:41 AM"
+          "category_id": 1,
+          "name": "Halal resturants",
+          "slug": "halal-resturants",
+          "color": "#908989",
+          "created_at": "23-Aug-2023 09:19 AM"
           },
           {
-          "id": 1,
-          "name": "Bro Hindi",
-          "slug": "bro-hindi",
-          "rating_data": "{\"1\": [\"4.75\", \"https://wwww.url2.com\"], \"2\": [\"3.25\", \"https://wwww.url2.com\"], \"3\": [\"4.5\", \"https://wwww.url5.com\"]}",
-          "created_at": "05-Aug-2023 10:28 AM"
+          "id": 2,
+          "category_id": 1,
+          "name": "halal cuisine of india 1",
+          "slug": "halal-cuisine-of-india-1",
+          "color": "#9FF989",
+          "created_at": "23-Aug-2023 09:30 AM"
           }
           ]
-          ],
-          "first_page_url": "http://PATH/api/v1/get-all-movie-ratings?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "http://PATH/api/v1/get-all-movie-ratings",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 2
           }
+
            }
         headers: []
         description: ''
@@ -199,15 +192,15 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/get-all-desi-movies
+    uri: api/v1/get-all-business-sub-category-by-id
     metadata:
-      groupName: 'allMovieRelated Related'
+      groupName: 'Business Listing Related'
       groupDescription: |-
 
-        APIs for managing all movie related
+        APIs for managing all Business listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: getAllDesiMovies
+      title: getAllSubCategoryById
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
@@ -215,7 +208,7 @@ endpoints:
 
 
 
-        <aside class="notice">basepath/api/v1/get-all-desi-movies</aside>
+        <aside class="notice">basepath/api/v1/get-all-business-sub-category-by-id</aside>
       authenticated: false
       custom: []
     headers:
@@ -226,23 +219,15 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*country_id':
-        name: '*country_id'
-        description: 'integer     Ex 1/2/3'
-        required: false
-        example: consequatur
-        type: required
-        custom: []
-      '*state_id':
-        name: '*state_id'
-        description: 'integer     Ex 1/2/3'
-        required: false
-        example: nihil
-        type: required
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
         custom: []
     cleanBodyParameters:
-      '*country_id': consequatur
-      '*state_id': nihil
+      '*category_id': 1
     fileParameters: []
     responses:
       -
@@ -251,39 +236,17 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully Desi movies found..",
-          "data": {
-          "current_page": 1,
+          "message": "Successfully your list found..",
           "data": [
           {
-          "id": 4,
-          "country_id": 1,
-          "state_id": 1,
-          "city_id": 1,
-          "address": "ADDRESS",
-          "name": "Bro movie",
-          "slug": "bro-movie",
-          "description": null,
-          "url": "https://www.youtube.com/watch?v=L_nN1P297N0&t=19s",
-          "image": "http://PATH/DESI_MOVIE_IMAGE/1691470622_bhadmegali.jpeg",
-          "start_date": "09/08/2023",
-          "end_date": "30/09/2023",
-          "additional_info": "[{\"cast\":\"arjun rampal, rani, ajay \"},{\"director\":\"ajay\"}, {\"duaration\": \"1 ghanta\"} ]",
-          "meta_title": "META TITLE",
-          "meta_description": "META DESC",
-          "meta_keywords": "META KEY",
-          "created_at": "08-Aug-2023 04:57 AM"
+          "id": 1,
+          "category_id": 1,
+          "name": "Audis",
+          "slug": "audis",
+          "color": "#846A6A",
+          "created_at": "28-Jul-2023 07:03 AM"
           }
-          ],
-          "first_page_url": "http://PATH/api/v1/get-all-desi-movies?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "http://PATH/api/v1/get-all-desi-movies",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 1
-          }
-
+          ]
            }
         headers: []
         description: ''
@@ -294,7 +257,7 @@ endpoints:
           {
           "status": false,
           "status_code": 404,
-          "message": "Desi movies not found...",
+          "message": "List not found...",
           "data": []
            }
         headers: []
@@ -321,23 +284,23 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/get-latest-desi-movies
+    uri: api/v1/get-business-list-by-category
     metadata:
-      groupName: 'allMovieRelated Related'
+      groupName: 'Business Listing Related'
       groupDescription: |-
 
-        APIs for managing all movie related
+        APIs for managing all Business listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: getLatestDesiMovies
+      title: getBusinessListByCat
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
+        EX
+         {
+        "country_id":1
+         }
         Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-
-
-
-        <aside class="notice">basepath/api/v1/get-latest-desi-movies</aside>
       authenticated: false
       custom: []
     headers:
@@ -350,21 +313,13 @@ endpoints:
     bodyParameters:
       '*country_id':
         name: '*country_id'
-        description: 'integer     Ex 1/2/3'
-        required: false
-        example: nihil
-        type: required
-        custom: []
-      '*state_id':
-        name: '*state_id'
-        description: 'integer     Ex 1/2/3'
-        required: false
-        example: excepturi
-        type: required
+        description: ''
+        required: true
+        example: 1
+        type: integer
         custom: []
     cleanBodyParameters:
-      '*country_id': nihil
-      '*state_id': excepturi
+      '*country_id': 1
     fileParameters: []
     responses:
       -
@@ -373,29 +328,89 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully desi movies found..",
-          "data": {
+          "message": "Successfully data list found..",
+          "data": [
+          {
+          "id": 2,
+          "name": "Temple",
+          "slug": "temple",
+          "icon": "PATH/1693300257_WhatsApp_Image_2023-08-29_at_9.46.17_AM.jpeg",
+          "color": "#DD9595",
+          "created_at": "29-Aug-2023 02:23 PM",
+          "category_data": []
+          },
+          {
+          "id": 1,
+          "name": "Resturants",
+          "slug": "resturants",
+          "icon": "PATH/1693306855_food.180746ff7fac730c1893528fcac8f3e2.svg",
+          "color": "#652F2F",
+          "created_at": "21-Aug-2023 01:53 PM",
+          "category_data": [
+          {
+          "id": 5,
+          "country_id": 1,
+          "state_id": 1,
+          "cat_id": 1,
+          "sub_cat_id": null,
+          "name": "Sultan's",
+          "name_slug": "sultans",
+          "image": "PATH/1693308422_mailnris.png",
+          "contact_name": "saddam hussain",
+          "contact_email": "saddam@gmail.com",
+          "contact_number": "898989899",
+          "contact_address": "complete address",
+          "meta_title": "title wala meta",
+          "meta_description": "desction of meta",
+          "meta_keywords": "keyyyyy",
+          "other_details": "otehr ifno",
+          "total_views": 0,
+          "created_at": "29-Aug-2023 04:57 PM"
+          },
+          {
           "id": 4,
           "country_id": 1,
           "state_id": 1,
-          "city_id": 1,
-          "address": "ADDRESS",
-          "name": "Bro movie",
-          "slug": "bro-movie",
-          "description": null,
-          "url": "https://www.youtube.com/watch?v=L_nN1P297N0&t=19s",
-          "image": "http://IMAGE_PATH/1691470622_bhadmegali.jpeg",
-          "start_date": "09/08/2023",
-          "end_date": "30/09/2023",
-          "additional_info": "[{\"cast\":\"arjun rampal, rani, ajay \"},{\"director\":\"ajay\"}, {\"duaration\": \"1 ghanta\"} ]",
-          "meta_title": "META TITLE",
-          "meta_description": "META DESC",
-          "meta_keywords": "META KEY",
-          "created_at": "08-Aug-2023 04:57 AM"
+          "cat_id": 1,
+          "sub_cat_id": null,
+          "name": "Curry Masala",
+          "name_slug": "curry-masala",
+          "image": "PATH/1693308319_videoJs.png",
+          "contact_name": "saddam hussain",
+          "contact_email": "saddam@gmail.com",
+          "contact_number": "898989899",
+          "contact_address": "adress complete",
+          "meta_title": "meta title",
+          "meta_description": "meta desc",
+          "meta_keywords": "meta key",
+          "other_details": "otehrinfo",
+          "total_views": 0,
+          "created_at": "29-Aug-2023 04:55 PM"
+          },
+          {
+          "id": 3,
+          "country_id": 1,
+          "state_id": 1,
+          "cat_id": 1,
+          "sub_cat_id": null,
+          "name": "China King Buffet",
+          "name_slug": "china-king-buffet",
+          "image": "PATH/1693307771__turing.png",
+          "contact_name": "saddam hussain",
+          "contact_email": "saddam@gmail.com",
+          "contact_number": "898989899",
+          "contact_address": "Address",
+          "meta_title": "meta",
+          "meta_description": "desc",
+          "meta_keywords": "keyword",
+          "other_details": "info",
+          "total_views": 0,
+          "created_at": "29-Aug-2023 04:46 PM"
           }
-
-
-           }
+          ]
+          }
+          ]
+          }
         headers: []
         description: ''
         custom: []
@@ -405,7 +420,7 @@ endpoints:
           {
           "status": false,
           "status_code": 404,
-          "message": "Desi movies not found...",
+          "message": "List not found...",
           "data": []
            }
         headers: []

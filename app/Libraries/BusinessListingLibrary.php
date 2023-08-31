@@ -7,19 +7,19 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use App\Services\CommonService;
-use App\Services\ClasifiedCategoryService;
+use App\Services\BusinessListingService;
 
 
 use Log;
 
 
-class ClasifiedCategoryLibrary
+class BusinessListingLibrary
 {
 
     public function __construct()
     {
         $this->commonSer                        = new CommonService();        
-        $this->clasifiedCatServ                 = new ClasifiedCategoryService();        
+        $this->businessList                     = new BusinessListingService();        
         $this->status                           = 'status';
         $this->message                          = 'message';
         $this->code                             = 'status_code';
@@ -40,7 +40,7 @@ class ClasifiedCategoryLibrary
     
     public function allCategoryGet()
     {
-        $serviceResponse                        = $this->clasifiedCatServ->allCategoryGet();
+        $serviceResponse                        = $this->businessList->allCategoryGet();
         
         if($serviceResponse[$this->status])
         {
@@ -63,7 +63,7 @@ class ClasifiedCategoryLibrary
     
     public function allSubCategoryGet()
     {
-        $serviceResponse                        = $this->clasifiedCatServ->allSubCategoryGet();
+        $serviceResponse                        = $this->businessList->allSubCategoryGet();
         
         if($serviceResponse[$this->status])
         {
@@ -87,7 +87,7 @@ class ClasifiedCategoryLibrary
     public function allCategoryByIdGet($param)
     {
         $this->commonSer->inputValidators('allCategoryByIdGet', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->allSubCategoryByIdGet($param);
+        $serviceResponse                        = $this->businessList->allSubCategoryByIdGet($param);
         
         if($serviceResponse[$this->status])
         {
@@ -110,110 +110,11 @@ class ClasifiedCategoryLibrary
     
     
     
-    public function freeClasifiedCreate($param)
+    
+    public function businessListingByCategoryGet($param)
     {
-        $this->commonSer->inputValidators('freeClasifiedCreate', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->storeFreeClasified($param);
-        
-        if($serviceResponse[$this->status])
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = $serviceResponse[$this->data];
-        }
-        else
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = [];
-        }
-        return $return;
-    }
-    
-    
-    
-    
-    public function freeClasifiedBidCreate($param)
-    {
-        $this->commonSer->inputValidators('freeClasifiedBidCreate', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->storeFreeClasifiedBid($param);
-        
-        if($serviceResponse[$this->status])
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = $serviceResponse[$this->data];
-        }
-        else
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = [];
-        }
-        return $return;
-    }
-    
-
-    
-    public function freeClasifiedCommentCreate($param)
-    {
-        $this->commonSer->inputValidators('freeClasifiedCommentCreate', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->storeFreeClasifiedComment($param);
-        
-        if($serviceResponse[$this->status])
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = $serviceResponse[$this->data];
-        }
-        else
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = [];
-        }
-        return $return;
-    }
-    
-
-
-
-    
-    public function getFreeClasifiedById($param)
-    {
-        $this->commonSer->inputValidators('getFreeClasifiedById', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->freeClasifiedGetById($param);
-        
-        if($serviceResponse[$this->status])
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = $serviceResponse[$this->data];
-        }
-        else
-        {
-            $return[$this->code]                = $serviceResponse[$this->code];
-            $return[$this->status]              = $serviceResponse[$this->status];
-            $return[$this->message]             = $serviceResponse[$this->message];
-            $return[$this->data]                = [];
-        }
-        return $return;
-    }
-    
-
-
-    
-    public function recentAdsGet($param)
-    {
-        $this->commonSer->inputValidators('recentAdsGet', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->getRecentAds($param);
+        $this->commonSer->inputValidators('businessListingByCategoryGet', $param);
+        $serviceResponse                        = $this->businessList->getBusinessListingByCategoryId($param);
         
         if($serviceResponse[$this->status])
         {
@@ -237,8 +138,7 @@ class ClasifiedCategoryLibrary
     
     public function recentAdsListGet($param)
     {
-        $this->commonSer->inputValidators('recentAdsListGet', $param);
-        $serviceResponse                        = $this->clasifiedCatServ->getRecentAdsList($param);
+        $serviceResponse                        = $this->businessList->getRecentAdsList($param);
         
         if($serviceResponse[$this->status])
         {

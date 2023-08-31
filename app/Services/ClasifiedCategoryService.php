@@ -343,6 +343,8 @@ class ClasifiedCategoryService
         $return[$this->data]                        = [];
         
         $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id')
+                                        ->where('country_id',$param['country_id'])
+                                        ->where('state_id',$param['state_id'])
                                         ->where('is_live',1)
                                         ->where('display_status',1)
                                         ->where('status',1)
@@ -395,6 +397,7 @@ class ClasifiedCategoryService
         $return[$this->data]                        = [];
         
         $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id')
+                                        ->where('country_id',$param['country_id'])
                                         ->where('is_live',1)
                                         ->where('display_status',1)
                                         ->where('status',1)

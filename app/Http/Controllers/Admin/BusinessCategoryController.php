@@ -74,12 +74,21 @@ class BusinessCategoryController
         $request->validate([
             'name' => 'required',
             'color' => 'required',
+            'icon' => 'required',
             
         ]);
 
+        if ($all['icon']) 
+        {
+            $image = $all['icon'];
+            $imageName = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
+            $image->move(config('app.upload_business_icon'), $imageName);
+        }
+
         $all['name']                    = ucfirst($all['name']);
-        $all['color']                    = strtoupper($all['color']);
+        $all['color']                   = strtoupper($all['color']);
         $all['slug']                    = Str::slug(strtolower($all['name']));
+        $all['icon']                    = $imageName ?? NULL;
         
         $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');
@@ -125,14 +134,35 @@ class BusinessCategoryController
             
         ]);
 
+
         $all['name']                    = ucfirst($all['name']);
-        $all['color']                    = strtoupper($all['color']);
+        $all['color']                   = strtoupper($all['color']);
         $all['slug']                    = Str::slug(strtolower($all['name']));
-
         $all['updated_at']              = date('Y-m-d H:i:s');
+        $result                         = BusinessCategory::findOrFail($id);
+        
+        if (isset($all['icon'])) {
 
-        $result                        = BusinessCategory::findOrFail($id);
-        $result->update($all);
+            $image                      = $all['icon'];
+            $imageName                  = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
+            $image->move(config('app.upload_business_icon'), $imageName);
+            
+            $result->update([
+                'name'                  => $all['name'],
+                'color'                 => $all['color'],
+                'slug'                  => $all['slug'],
+                'updated_at'            => $all['updated_at'],
+                'icon'                  => $imageName
+            ]);
+
+        } else {
+            $result->update([
+                'name'                  => $all['name'],
+                'color'                 => $all['color'],
+                'slug'                  => $all['slug'],
+                'updated_at'            => $all['updated_at']
+            ]);
+        }
 
         // Redirect to the index page with a success message
         return redirect()->route('business_category.index')->with('success', 'Category updated successfully.');

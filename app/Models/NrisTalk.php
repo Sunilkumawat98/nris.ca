@@ -15,6 +15,7 @@ class NrisTalk extends Model
     protected $table            = 'nris_talk';
 
     protected $hidden           = [
+        'country_id',
         'state_id',
         'user_id',
         'updated_at',
@@ -38,6 +39,7 @@ class NrisTalk extends Model
         'title',
         'title-slug',
         'description',
+        'country_id',
         'state_id',
         'user_id',
         'meta_title',
@@ -52,8 +54,14 @@ class NrisTalk extends Model
     ];
 
 
-    public function itsReply() {
-        return $this->belongsTo(NrisTalkReply::class, 'id', 'talk_id');
+    public function comments() {
+        return $this->hasMany(NrisTalkReply::class, 'talk_id', 'id');
     }
+
+    public function likes() {
+        return $this->hasMany(NrisTalkLike::class, 'talk_id', 'id');
+    }
+
+
     
 }

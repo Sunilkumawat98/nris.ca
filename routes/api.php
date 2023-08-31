@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\V1\LoginRegisterController;
 use App\Http\Controllers\Api\V1\NrisTalkController;
 use App\Http\Controllers\Api\V1\ClasifiedCategoryController;
 use App\Http\Controllers\Api\V1\MovieRelatedController;
+use App\Http\Controllers\Api\V1\BusinessListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,11 +44,22 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     
     Route::post('/get-free-clasified-by-id', [ClasifiedCategoryController::class,'getFreeClasifiedById']);
     
-    Route::get('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);
+    Route::post('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);
 
-    Route::get('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
+    Route::post('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
     
 
+ /*
+       Business Listing category & Sub Category
+
+
+    */
+
+    Route::get('/get-all-business-category', [BusinessListingController::class,'getAllCategory']);
+    Route::get('/get-all-business-sub-category', [BusinessListingController::class,'getAllSubCategory']);
+    Route::post('/get-all-business-sub-category-by-id', [BusinessListingController::class,'getAllSubCategoryById']);
+    Route::post('/get-business-list-by-category', [BusinessListingController::class,'getBusinessListByCat']);
+    Route::post('/get-business-list-by-category-id', [BusinessListingController::class,'getBusinessListByCategoryId']);
 
 
     /*
@@ -84,9 +96,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         Its Reply
 
     */
-    Route::get('/get-all-nris-talk', [NrisTalkController::class,'getAllNrisTalk']);
+    Route::post('/get-all-nris-talk', [NrisTalkController::class,'getAllNrisTalk']);
     Route::post('/get-nris-talk-list', [NrisTalkController::class,'getNrisTalkList']);
     Route::post('/get-nris-talk-reply-by-id', [NrisTalkController::class,'getNrisTalkReplyById']);
+    Route::post('/like-nris-talk-by-id', [NrisTalkController::class,'likeNrisTalkById']);
 
 
 

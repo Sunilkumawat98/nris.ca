@@ -495,7 +495,7 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
+      - POST
     uri: api/v1/get-recent-ads-list
     metadata:
       groupName: 'ClasifiedCategory Related'
@@ -510,7 +510,11 @@ endpoints:
 
         Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
 
-
+        Example
+         {
+        "country_id":1,
+        "state_id":1
+         }
 
         <aside class="notice">basepath/api/v1/get-recent-ads-list</aside>
       authenticated: false
@@ -522,8 +526,24 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
     fileParameters: []
     responses:
       -
@@ -695,7 +715,7 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
+      - POST
     uri: api/v1/get-recent-ads
     metadata:
       groupName: 'ClasifiedCategory Related'
@@ -711,6 +731,10 @@ endpoints:
         Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
 
 
+        Example
+         {
+        "country_id":1
+         }
 
         <aside class="notice">basepath/api/v1/get-recent-ads</aside>
       authenticated: false
@@ -722,8 +746,16 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
     fileParameters: []
     responses:
       -
@@ -1170,7 +1202,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gDa54668ekEhvacf13PbdZV'
+      - 'Bearer 8V1D56vhgfPkcE3da4baeZ6'
     controller: null
     method: null
     route: null
@@ -1315,7 +1347,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6EgD5b8akdPave6ZVhf34c1'
+      - 'Bearer kgd3VeZ168Ecba45P6vDfha'
     controller: null
     method: null
     route: null
@@ -1450,7 +1482,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer D64d3cg16ahPaZfbve5VEk8'
+      - 'Bearer bEcPa4hk6dVa36Zvf8ge51D'
     controller: null
     method: null
     route: null

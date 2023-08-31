@@ -50,7 +50,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('business_category.update', $results->id) }}" method="POST">
+                <form action="{{ route('business_category.update', $results->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
                 <!-- /.card-header -->
@@ -61,6 +61,14 @@
                       <label for="name">Name</label>
                       <input type="text" class="form-control" id="name" name="name" value="{{ $results->name }}" placeholder="Enter category name">
                   </div>
+
+                  <div class="form-group">
+                      <label for="name">Icon</label>
+                      <div class="col-sm-9">
+                          <input type="file" id="icon" name="icon" class="form-control" placeholder="select Icon"/>
+                      </div>
+                  </div>
+
                   <div class="form-group">
                       <label>Color</label>
                       <input type="text" class="form-control my-colorpicker1" id="code" name="color" value="{{ $results->color }}" placeholder="Select color code">
