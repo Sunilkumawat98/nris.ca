@@ -4136,35 +4136,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: et
+                  example: qui
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: neque
+                  example: odio
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: udare@example.com
+                  example: meaghan.goodwin@example.net
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: ullam
+                  example: delectus
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: ea
+                  example: est
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: sit
+                  example: omnis
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: voluptatum
+                  example: quisquam
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: ut
+                  example: unde
       security: []
   /api/v1/login:
     post:
@@ -4285,11 +4285,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: quidem
+                  example: omnis
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: praesentium
+                  example: dicta
       security: []
   /api/v1/forgot-pass:
     post:
@@ -4374,7 +4374,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: illum
+                  example: sit
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -4439,15 +4439,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: christop.kulas@example.org
+                  example: aimee81@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: iusto
+                  example: aperiam
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: tempore
+                  example: voluptas
       security: []
   /api/v1/get-all-nris-talk:
     post:
@@ -5058,8 +5058,23 @@ paths:
                   type: integer
                   description: ''
                   example: 1
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
               required:
                 - '*talk_id'
+                - '*user_id'
+                - '*country_id'
+                - '*state_id'
       security: []
   /api/v1/create-nris-talk:
     post:
@@ -6486,11 +6501,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: voluptate
+                  example: sunt
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: autem
+                  example: incidunt
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -6651,11 +6666,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: nihil
+                  example: aut
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: nihil
+                  example: omnis
       security: []
 tags:
   -

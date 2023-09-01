@@ -398,8 +398,32 @@ endpoints:
         example: 1
         type: integer
         custom: []
+      '*user_id':
+        name: '*user_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
     cleanBodyParameters:
       '*talk_id': 1
+      '*user_id': 1
+      '*country_id': 1
+      '*state_id': 1
     fileParameters: []
     responses:
       -
@@ -641,7 +665,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VZdD3Ea8fcvb4k51e66agPh'
+      - 'Bearer V6kdca143a8vgDE6Pbf5Zhe'
     controller: null
     method: null
     route: null
@@ -792,7 +816,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Vk6hg36D8Z51vPba4Efdace'
+      - 'Bearer c6kZ4ev165VDdaa38EgPbfh'
     controller: null
     method: null
     route: null
@@ -980,7 +1004,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cVdbkgDEZe664Phaa81f5v3'
+      - 'Bearer Ze8ah6b4df6caPDvkV315Eg'
     controller: null
     method: null
     route: null

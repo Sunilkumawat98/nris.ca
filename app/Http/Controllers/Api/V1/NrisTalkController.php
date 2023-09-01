@@ -671,6 +671,9 @@ class NrisTalkController extends BaseController
      *
      * <aside class="notice">basepath/api/v1/like-nris-talk-by-id</aside>
      * @bodyParam *talk_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *user_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
      * @return \Illuminate\Http\Response
      *
      * @response 200
