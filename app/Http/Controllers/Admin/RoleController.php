@@ -125,7 +125,7 @@ class RoleController
 
     public function destroy(Role $role)
     {
-        if(!auth()->user()->hasPermission('delete_users'))
+        if(!auth()->user()->hasPermission('delete_roles'))
         {
             abort(404, 'You are not Authorised...');
         }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BusinessCategory extends Model
+class BusinessListingReview extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,7 +14,7 @@ class BusinessCategory extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'business_category';
+    protected $table            = 'business_listing_reviews';
 
     protected $hidden           = [
         'created_by',
@@ -36,10 +36,12 @@ class BusinessCategory extends Model
     ];
 
     protected $fillable         = [        
-        'name',
-        'color',
-        'icon',
-        'slug',
+        'user_id',
+        'business_list_id',
+        'country_id',
+        'state_id',
+        'rating',
+        'comment',
         'is_live',
         'created_at',
         'updated_at',
@@ -48,19 +50,9 @@ class BusinessCategory extends Model
     ];
 
 
-    public function getIconAttribute($value)
+    public function user()
     {
-        return $value ? config('app.clasified_cdn_path') .'BUSINESS_ICON/'. $value : null;
-    }
-
-
-    public function states() {
-        return $this->belongsTo(BusinessSubCategory::class, 'category_id', 'id');
-    }
-
-    public function category_data()
-    {
-        return $this->hasMany(BusinessListing::class, 'cat_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
 

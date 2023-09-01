@@ -13,11 +13,33 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::create(['name' => 'Super Admin', 'name_slug'=>'super-admin']);
-        Role::create(['name' => 'admin','name_slug'=>'admin']);
-        Role::create(['name' => 'Hr','name_slug'=>'hr']);
-        Role::create(['name' => 'Accounts','name_slug'=>'accounts']);
-        Role::create(['name' => 'Manager','name_slug'=>'manager']);
-        Role::create(['name' => 'Php Developer','name_slug'=>'php-developer']);
+       
+
+
+        $insertsData = [
+            ['name' => 'Super Admin', 'name_slug'=>'super-admin'],
+            ['name' => 'Hr','name_slug'=>'hr'],
+            ['name' => 'Accounts','name_slug'=>'accounts'],
+            ['name' => 'Manager','name_slug'=>'manager'],
+            ['name' => 'Developer','name_slug'=>'developer'],
+            ['name' => 'Sr Developer','name_slug'=>'sr-developer'],
+            
+
+            // Add more user data entries as needed
+        ];
+
+
+        
+
+        foreach ($insertsData as $insertData) {
+            $existingData = Role::where('name', $insertData['name'])->first();
+
+            if (!$existingData) {
+                Role::create($insertData);
+                $this->command->info("Role '{$insertData['name']}' inserted successfully.");
+            } else {
+                $this->command->info("Role '{$insertData['name']}' already exists. Skipping insertion.");
+            }
+        }
     }
 }

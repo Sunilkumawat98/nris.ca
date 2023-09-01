@@ -134,7 +134,28 @@ class BusinessListingLibrary
     }
     
     
-
+    public function businessListingByIdGet($param)
+    {
+        $this->commonSer->inputValidators('businessListingByIdGet', $param);
+        $serviceResponse                        = $this->businessList->getBusinessListingById($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
     
     public function recentAdsListGet($param)
     {
@@ -158,6 +179,30 @@ class BusinessListingLibrary
     }
     
     
+    
+    public function reviewBusinessListing($param)
+    {
+        $this->commonSer->inputValidators('reviewBusinessListing', $param);
+        $serviceResponse                        = $this->businessList->storeBusinessListingReview($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+
 
 
 }

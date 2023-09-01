@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "2019ca52-2a1e-4889-a293-ccc9c8b212a4",
+        "_postman_id": "197f1b2e-20d1-45b2-a05d-2d8237d23404",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -209,6 +209,115 @@
                             "header": [],
                             "code": 500,
                             "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getBusinessById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-business-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-business-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1,\"*business_list_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1,\n\"state_id\":1,\n\"business_list_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"listing\": {\n\"id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 1,\n\"sub_cat_id\": 1,\n\"name\": \"Halal chiken shop\",\n\"name_slug\": \"halal-chiken-shop\",\n\"image\": \"PATH\/1693550779__turing.png\",\n\"contact_name\": \"saddam hussain\",\n\"contact_email\": \"saddam@gmail.com\",\n\"contact_number\": \"898989899\",\n\"contact_address\": \"Address\",\n\"meta_title\": \"meta title\",\n\"meta_description\": \"meta desc\",\n\"meta_keywords\": \"meta key\",\n\"other_details\": \"other info\",\n\"total_views\": 0,\n\"created_at\": \"01-Sep-2023 12:16 PM\",\n\"total_rating\": 8,\n\"total_comments\": 6,\n\"reviews\": [\n{\n\"id\": 4,\n\"user_id\": 2,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 1,\n\"comment\": \"Nice.......\",\n\"created_at\": \"01-Sep-2023 12:18 PM\",\n\"name\": \"User 2\"\n},\n{\n\"id\": 5,\n\"user_id\": 6,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 5,\n\"comment\": \"Awesome resturants.......\",\n\"created_at\": \"01-Sep-2023 12:18 PM\",\n\"name\": \"User 6\"\n},\n{\n\"id\": 6,\n\"user_id\": 17,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 4,\n\"comment\": \"fantastic resturants.......\",\n\"created_at\": \"01-Sep-2023 12:18 PM\",\n\"name\": \"User 17\"\n},\n{\n\"id\": 7,\n\"user_id\": 16,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 3,\n\"comment\": \"great resturants.......\",\n\"created_at\": \"01-Sep-2023 12:18 PM\",\n\"name\": \"User 16\"\n},\n{\n\"id\": 8,\n\"user_id\": 18,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 2,\n\"comment\": \"gooood service.......\",\n\"created_at\": \"01-Sep-2023 12:19 PM\",\n\"name\": \"User 18\"\n},\n{\n\"id\": 9,\n\"user_id\": 3,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 2,\n\"comment\": \"awesome service.......\",\n\"created_at\": \"01-Sep-2023 12:19 PM\",\n\"name\": \"User 3\"\n},\n{\n\"id\": 10,\n\"user_id\": 4,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 4,\n\"comment\": null,\n\"created_at\": \"01-Sep-2023 12:19 PM\",\n\"name\": \"User 4\"\n},\n{\n\"id\": 11,\n\"user_id\": 5,\n\"business_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"rating\": 4,\n\"comment\": null,\n\"created_at\": \"01-Sep-2023 12:19 PM\",\n\"name\": \"User 5\"\n}\n]\n},\n\"average_rating\": 3.125,\n\"reviews_by_rating\": {\n\"5\": 1,\n\"4\": 3,\n\"3\": 1,\n\"2\": 2,\n\"1\": 1\n}\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "reviewBusinessList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/review-business-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/review-business-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*business_list_id\":1,\"*country_id\":1,\"*state_id\":1,\"*rating\":0,\"comment\":\"This is good 5in JSON BODY\\n\\n<aside class=\\\"notice\\\">basepath\\\/api\\\/v1\\\/review-business-list<\\\/aside>\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"user_id\":1,\n\"business_list_id\":1,\n\"country_id\":1,\n\"state_id\":1,\n\"rating\":1,\n\"comment\":\"Nice.......\",\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
                             "name": ""
                         }
                     ]
@@ -856,7 +965,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"autem\",\"*last_name\":\"sed\",\"*email\":\"bfarrell@example.net\",\"*dob\":\"consequuntur\",\"*mobile\":\"quasi\",\"*password\":\"ut\",\"*country_id\":\"rerum\",\"*state_id\":\"voluptates\"}"
+                            "raw": "{\"*first_name\":\"et\",\"*last_name\":\"neque\",\"*email\":\"udare@example.com\",\"*dob\":\"ullam\",\"*mobile\":\"ea\",\"*password\":\"sit\",\"*country_id\":\"voluptatum\",\"*state_id\":\"ut\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -906,7 +1015,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"et\",\"*password\":\"qui\"}"
+                            "raw": "{\"*email_id\":\"quidem\",\"*password\":\"praesentium\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -956,7 +1065,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"rerum\"}"
+                            "raw": "{\"*email_id\":\"illum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -1006,7 +1115,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"stark.daphnee@example.org\",\"*new_password\":\"nisi\",\"*retype_password\":\"porro\"}"
+                            "raw": "{\"*email\":\"christop.kulas@example.org\",\"*new_password\":\"iusto\",\"*retype_password\":\"tempore\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -1054,7 +1163,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n{\n\"country_id\":1,\n\"state_id\":1\n}",
                         "auth": {
                             "type": "noauth"
@@ -1103,9 +1215,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*state_id\":1}"
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
                         },
-                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n      \"state_id\":1,\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk-list<\/aside>",
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"country_id\":1,\n\"state_id\":1\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-nris-talk-list<\/aside>",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1690,7 +1802,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"excepturi\",\"*state_id\":\"accusantium\"}"
+                            "raw": "{\"*country_id\":\"voluptate\",\"*state_id\":\"autem\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -1740,7 +1852,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"hic\",\"*state_id\":\"voluptas\"}"
+                            "raw": "{\"*country_id\":\"nihil\",\"*state_id\":\"nihil\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

@@ -156,4 +156,46 @@ class RoleControllerUnitTest extends TestCase
 
 
 
+    public function testRoleCanBeDeleted()
+    {
+        $this->withoutMiddleware();
+        
+        // Create a mock user with mock permissions
+        $user = Mockery::mock(User::class);
+        $user->shouldReceive('hasPermission')->with('delete_roles')->andReturn(true);
+        $this->actingAs($user);
+        
+        $role = Role::factory()->create();
+
+        // Create an instance of the controller
+        $controller = new RoleController();
+
+        // Call the destroy method
+        $response = $controller->destroy($role);
+
+        // Assertions
+        $this->assertEquals(Response::HTTP_FOUND, $response->getStatusCode());
+
+        // $response->assertRedirect(route('role.index')); // Make sure 'role.index' matches your route name
+        $this->assertSoftDeleted('roles', ['id' => $role->id]);
+    }
+
+    public function testLiveStatusCanBeToggled()
+    {
+        $this->withoutMiddleware(); // Disable middleware for this test
+        $this->actingAs(User::factory()->create());
+
+        $role = Role::factory()->create();
+
+        $initialStatus = $role->is_active;
+        $expectedStatus = ($initialStatus === 1) ? 0 : 1;
+
+        $response = $this->post(route('role.activeStatus', $role));
+
+        $response->assertRedirect(route('role.index'));
+        $this->assertEquals($expectedStatus, $role->fresh()->is_active);
+    }
+
+
+
 }

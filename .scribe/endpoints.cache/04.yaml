@@ -36,8 +36,24 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
     fileParameters: []
     responses:
       -
@@ -144,8 +160,9 @@ endpoints:
 
         EX
          {
-              "state_id":1,
-         }
+        "country_id":1,
+        "state_id":1
+        }
 
         <aside class="notice">basepath/api/v1/get-nris-talk-list</aside>
       authenticated: false
@@ -158,6 +175,13 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
       '*state_id':
         name: '*state_id'
         description: ''
@@ -166,6 +190,7 @@ endpoints:
         type: integer
         custom: []
     cleanBodyParameters:
+      '*country_id': 1
       '*state_id': 1
     fileParameters: []
     responses:
@@ -618,7 +643,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer gZPkDe63vb5hdaafVEc1486'
+      - 'Bearer VZdD3Ea8fcvb4k51e66agPh'
     controller: null
     method: null
     route: null
@@ -769,7 +794,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer d5ac6vhafVkDgZEb61e834P'
+      - 'Bearer Vk6hg36D8Z51vPba4Efdace'
     controller: null
     method: null
     route: null
@@ -957,7 +982,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VPa4Z6e3hEfkagb81d5vDc6'
+      - 'Bearer cVdbkgDEZe664Phaa81f5v3'
     controller: null
     method: null
     route: null

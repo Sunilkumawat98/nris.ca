@@ -60,6 +60,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-all-business-sub-category-by-id', [BusinessListingController::class,'getAllSubCategoryById']);
     Route::post('/get-business-list-by-category', [BusinessListingController::class,'getBusinessListByCat']);
     Route::post('/get-business-list-by-category-id', [BusinessListingController::class,'getBusinessListByCategoryId']);
+    Route::post('/get-business-by-id', [BusinessListingController::class,'getBusinessById']);
+    
 
 
     /*
@@ -131,6 +133,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/create-free-clasified', [ClasifiedCategoryController::class,'createFreeClasified']);
         $router->post('/create-free-clasified-bid', [ClasifiedCategoryController::class,'createFreeClasifiedBid']);
         $router->post('/create-free-clasified-comment', [ClasifiedCategoryController::class,'createFreeClasifiedComment']);
+        $router->post('/review-business-list', [BusinessListingController::class,'reviewBusinessList']);
     
     });
 

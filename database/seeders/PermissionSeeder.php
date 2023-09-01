@@ -113,9 +113,9 @@ class PermissionSeeder extends Seeder
 
             if (!$existingData) {
                 Permission::create($insertData);
-                $this->command->info("User '{$insertData['name']}' inserted successfully.");
+                $this->command->info("Permission '{$insertData['name']}' inserted successfully.");
             } else {
-                $this->command->info("User '{$insertData['name']}' already exists. Skipping insertion.");
+                $this->command->info("Permission '{$insertData['name']}' already exists. Skipping insertion.");
             }
         }
     }

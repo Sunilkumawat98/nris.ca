@@ -87,7 +87,7 @@ class BusinessListing extends Model
     //     return $this->hasMany(FreeClassifiedBid::class, 'classified_id', 'id');
     // }
     
-    // public function comments() {
-    //     return $this->hasMany(FreeClassifiedComment::class, 'classified_id', 'id');
-    // }
+    public function reviews() {
+        return $this->hasMany(BusinessListingReview::class, 'business_list_id', 'id');
+    }
 }

@@ -39,6 +39,8 @@ return [
         'use_address_map'       => "required|boolean",
         'image'                 => 'required|image|mimes:jpeg,png,jpg,gif',
         'classified_id'         => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'business_list_id'      => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
         'comment'               => "bail|required|string",
         
@@ -200,6 +202,22 @@ return [
         "businessListingByCategoryGet" => [
             "required" => [
                 'country_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "reviewBusinessListing" => [
+            "required" => [
+                'country_id', 'state_id', 'user_id', 'business_list_id', 'rating'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "businessListingByIdGet" => [
+            "required" => [
+                'country_id', 'state_id', 'business_list_id'
             ],
             "optional" => [
             ]
