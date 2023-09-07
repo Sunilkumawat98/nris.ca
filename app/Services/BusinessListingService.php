@@ -240,6 +240,66 @@ class BusinessListingService
     }
 
 
+
+
+    /**
+        
+        * method getAllBusinessListingByCategoryId()
+        * 
+        * @param
+        * country_id
+        * category_id
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function getAllBusinessListingByCategoryId($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                                     = BusinessListing::where('country_id', $param['country_id'])
+                                                        ->where('state_id', $param['state_id'])
+                                                        ->where('cat_id',$param['category_id'])
+                                                        ->where('is_live',1)
+                                                        ->where('status',1)
+                                                        ->orderBy('id', 'DESC');
+
+        $total_count                                = $result->count();
+        $result                                     = $result->simplePaginate(10);
+    
+    
+        if(count($result)>0)
+        {
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully data list found..';
+            $return[$this->code]    = 200;
+            $return[$this->total]   = $total_count;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'List not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
+
+
+
+
     /**
         
         * method getBusinessListingById()

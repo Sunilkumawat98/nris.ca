@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FreeClassified extends Model
+class NationalEvent extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,7 +14,7 @@ class FreeClassified extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'free_classified';
+    protected $table            = 'national_events';
 
     protected $hidden           = [
         'updated_at',
@@ -37,29 +37,25 @@ class FreeClassified extends Model
     ];
 
     protected $fillable         = [        
-        'user_id',
         'country_id',
         'state_id',
         'city_id',
         'cat_id',
-        'sub_cat_id',
         'title',
         'title_slug',
-        'message',
         'image',
-        'contact_name',
-        'contact_email',
-        'contact_number',
-        'contact_address',
+        'url',
+        'address',
+        'start_date',
+        'end_date',
+        'details',
         'meta_title',
         'meta_description',
         'meta_keywords',
         'meta_keywords',
         'other_details',
-        'end_at',
         'total_views',
         'is_live',
-        'display_status',
         'created_at',
         'updated_at',
         'status'
@@ -68,14 +64,8 @@ class FreeClassified extends Model
 
     public function getImageAttribute($value)
     {
-        return $value ? config('app.clasified_cdn_path').'ADS_IMAGE/'.$value : null;
+        return $value ? config('app.image_url').'EVENTS_IMG/'.$value : null;
     }
-
-    public function getEndAtAttribute($value)
-    {
-        return $value ? date('d/m/Y', strtotime($value)) : null;
-    }
-
 
     public function country_id() {
         return $this->belongsTo(Country::class, 'country_id', 'id');
@@ -85,23 +75,17 @@ class FreeClassified extends Model
         return $this->belongsTo(State::class, 'state_id', 'id');
     }
 
+
     public function city_id() {
-        return $this->belongsTo(City::class, 'city_id', 'id');
+        return $this->belongsTo(City::class, 'state_id', 'id');
     }
 
     public function cat_id() {
-        return $this->belongsTo(ClassifiedCategory::class, 'cat_id', 'id');
+        return $this->belongsTo(EventCategory::class, 'cat_id', 'id');
     }
-    
-    public function sub_cat_id() {
-        return $this->belongsTo(ClassifiedSubCategory::class, 'sub_cat_id', 'id');
-    }
-    
-    public function bids() {
-        return $this->hasMany(FreeClassifiedBid::class, 'classified_id', 'id');
-    }
-    
-    public function comments() {
-        return $this->hasMany(FreeClassifiedComment::class, 'classified_id', 'id');
-    }
+
+   
+    // public function comments() {
+    //     return $this->hasMany(BusinessListingReview::class, 'business_list_id', 'id');
+    // }
 }

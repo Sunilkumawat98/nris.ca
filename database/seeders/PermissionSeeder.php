@@ -102,6 +102,18 @@ class PermissionSeeder extends Seeder
 
 
 
+            ['name' => 'manage_national_event', 'name_slug'=>'manage-national-event'],
+            ['name' => 'create_events_category', 'name_slug'=>'create-events-category'],
+            ['name' => 'edit_events_category', 'name_slug'=>'edit-events-category'],
+            ['name' => 'show_events_category', 'name_slug'=>'show-events-category'],
+            ['name' => 'delete_events_category', 'name_slug'=>'delete-events-category'],
+            ['name' => 'create_national_events', 'name_slug'=>'create-national-events'],
+            ['name' => 'edit_national_events', 'name_slug'=>'edit-national-events'],
+            ['name' => 'show_national_events', 'name_slug'=>'show-national-events'],
+            ['name' => 'delete_national_events', 'name_slug'=>'delete-national-events'],
+
+
+
             // Add more user data entries as needed
         ];
 

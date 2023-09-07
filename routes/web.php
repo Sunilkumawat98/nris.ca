@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\DesiMovieController;
 use App\Http\Controllers\Admin\BusinessCategoryController;
 use App\Http\Controllers\Admin\BusinessSubCategoryController;
 use App\Http\Controllers\Admin\BusinessListingController;
+use App\Http\Controllers\Admin\EventCategoryController;
+use App\Http\Controllers\Admin\NationalEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,6 +107,14 @@ Route::domain(config('app.domain'))->group(function () {
         Route::post('/business_sub_category/{id}/active-status', [BusinessSubCategoryController::class, 'livePause'])->name('business_sub_category.activeStatus');
 
         
+
+
+        Route::resource('events_category', EventCategoryController::class);
+        Route::post('/events_category/{id}/active-status', [EventCategoryController::class, 'livePause'])->name('events_category.activeStatus');
+
+        Route::resource('national_events', NationalEventController::class);
+        Route::post('/national_events/{id}/active-status', [NationalEventController::class, 'livePause'])->name('national_events.activeStatus');
+
         
     });
     

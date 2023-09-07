@@ -273,6 +273,7 @@ class ClasifiedCategoryController extends BaseController
             "user_id":1,
             "country_id":1,
             "state_id":1,
+            "city_id":1,
             "category_id":1,
             "sub_cat_id":1,
             "contact_name":"Abc",
@@ -295,6 +296,7 @@ class ClasifiedCategoryController extends BaseController
      * @bodyParam *user_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *city_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam category_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam sub_cat_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam title string  Example: "title text " in JSON BODY
@@ -637,6 +639,11 @@ class ClasifiedCategoryController extends BaseController
                     "header_image2": "1522842913625087eb594b47.13394636.jpg",
                     "header_image3": "1522842913625087eb594b47.13394636.jpg"
                 },
+                 "city_id": {
+                    "id": 1,
+                    "name": "CityName",
+                    "state_code": "AL"
+                },
                 "cat_id": {
                     "id": 1,
                     "name": "Auto",
@@ -802,6 +809,11 @@ class ClasifiedCategoryController extends BaseController
                             "header_image2": "1522842913625087eb594b47.13394636.jpg",
                             "header_image3": "1522842913625087eb594b47.13394636.jpg"
                         },
+                        "city_id": {
+                            "id": 1,
+                            "name": "CityName",
+                            "state_code": "AL"
+                        },
                         "cat_id": {
                             "id": 1,
                             "name": "Auto",
@@ -863,6 +875,11 @@ class ClasifiedCategoryController extends BaseController
                             "header_image": "1522842913625087eb594b47.13394636.jpg",
                             "header_image2": "1522842913625087eb594b47.13394636.jpg",
                             "header_image3": "1522842913625087eb594b47.13394636.jpg"
+                        },
+                        "city_id": {
+                            "id": 1,
+                            "name": "CityName",
+                            "state_code": "AL"
                         },
                         "cat_id": {
                             "id": 1,
@@ -1001,6 +1018,11 @@ class ClasifiedCategoryController extends BaseController
                         "header_image2": "1522842913625087eb594b47.13394636.jpg",
                         "header_image3": "1522842913625087eb594b47.13394636.jpg"
                     },
+                    "city_id": {
+                        "id": 1,
+                        "name": "CityName",
+                        "state_code": "AL"
+                    },
                     "cat_id": {
                         "id": 1,
                         "name": "Auto",
@@ -1062,6 +1084,11 @@ class ClasifiedCategoryController extends BaseController
                         "header_image": "1522842913625087eb594b47.13394636.jpg",
                         "header_image2": "1522842913625087eb594b47.13394636.jpg",
                         "header_image3": "1522842913625087eb594b47.13394636.jpg"
+                    },
+                    "city_id": {
+                        "id": 1,
+                        "name": "CityName",
+                        "state_code": "AL"
                     },
                     "cat_id": {
                         "id": 1,

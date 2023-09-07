@@ -447,6 +447,138 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/v1/get-all-business-list-by-category-id
+    metadata:
+      groupName: 'Business Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Business listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllBusinessListByCategoryId
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        EX
+         {
+        "country_id":1,
+        "state_id":1,
+        "category_id":1,
+         }
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
+      '*category_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully data list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 1,
+          "country_id": 1,
+          "state_id": 1,
+          "cat_id": 1,
+          "sub_cat_id": 1,
+          "name": "Halal chiken shop",
+          "name_slug": "halal-chiken-shop",
+          "image": "PATH/1693550779__turing.png",
+          "contact_name": "saddam hussain",
+          "contact_email": "saddam@gmail.com",
+          "contact_number": "898989899",
+          "contact_address": "Address",
+          "meta_title": "meta title",
+          "meta_description": "meta desc",
+          "meta_keywords": "meta key",
+          "other_details": "other info",
+          "total_views": 0,
+          "created_at": "01-Sep-2023 12:16 PM"
+          }
+          ],
+          "first_page_url": "PATH/api/v1/get-all-business-list-by-category-id?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATH/api/v1/get-all-business-list-by-category-id",
+          "per_page": 10,
+          "prev_page_url": null,
+          "to": 1
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/v1/get-business-by-id
     metadata:
       groupName: 'Business Listing Related'
@@ -814,7 +946,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer hgdeVafEab341D5Z6ckvP68'
+      - 'Bearer ah3bkdaEPVDgfv6e584Zc16'
     controller: null
     method: null
     route: null

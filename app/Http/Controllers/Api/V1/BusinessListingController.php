@@ -401,6 +401,106 @@ class BusinessListingController extends BaseController
     }
     
     
+
+
+
+
+
+     
+    /**
+     * getAllBusinessListByCategoryId
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * EX
+     *  {
+            "country_id":1,
+            "state_id":1,
+            "category_id":1,
+     *  }
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * @method POST
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
+     *
+     * <aside class="notice">basepath/api/v1/get-business-list-by-category</aside>
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     *  
+     *{
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully data list found..",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 1,
+                        "country_id": 1,
+                        "state_id": 1,
+                        "cat_id": 1,
+                        "sub_cat_id": 1,
+                        "name": "Halal chiken shop",
+                        "name_slug": "halal-chiken-shop",
+                        "image": "PATH/1693550779__turing.png",
+                        "contact_name": "saddam hussain",
+                        "contact_email": "saddam@gmail.com",
+                        "contact_number": "898989899",
+                        "contact_address": "Address",
+                        "meta_title": "meta title",
+                        "meta_description": "meta desc",
+                        "meta_keywords": "meta key",
+                        "other_details": "other info",
+                        "total_views": 0,
+                        "created_at": "01-Sep-2023 12:16 PM"
+                    }
+                ],
+                "first_page_url": "PATH/api/v1/get-all-business-list-by-category-id?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "PATH/api/v1/get-all-business-list-by-category-id",
+                "per_page": 10,
+                "prev_page_url": null,
+                "to": 1
+            }
+        }
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+     public function getAllBusinessListByCategoryId(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->businessListLib->allBusinessListingByCategoryGet($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
    
       
     /**

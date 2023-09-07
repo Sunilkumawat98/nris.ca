@@ -207,6 +207,14 @@ return [
             ]
         ],
 
+        "allBusinessListingByCategoryGet" => [
+            "required" => [
+                'country_id', 'state_id', 'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
         "reviewBusinessListing" => [
             "required" => [
                 'country_id', 'state_id', 'user_id', 'business_list_id', 'rating'
@@ -240,7 +248,7 @@ return [
         "freeClasifiedCreate" => [
            
             "required" => [
-                'user_id', 'country_id', 'state_id', 'contact_name', 'contact_email', 'contact_number', 'contact_address',  'show_email',
+                'user_id', 'country_id', 'state_id', 'city_id', 'contact_name', 'contact_email', 'contact_number', 'contact_address',  'show_email',
                 'use_address_map', 'end_at'
             ],
             "optional" => [

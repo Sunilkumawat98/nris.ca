@@ -229,7 +229,37 @@
                 </ul>
               </li>
             @endif
+
             
+
+            <!-- manage_national_events -->
+
+            @if(auth()->user()->hasPermission('manage_national_event'))
+              <li class="nav-item {{ request()->is('events_category') || request()->is('events_category/*')  || request()->is('national_events') || request()->is('national_events/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('events_category') || request()->is('events_category/*') ||  request()->is('national_events') || request()->is('national_events/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    National Events
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('events_category.index') }}" class="nav-link {{ request()->is('events_category') || request()->is('events_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('national_events.index') }}" class="nav-link {{ request()->is('national_events') || request()->is('national_events/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Events Listing</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
           
          
         </ul>

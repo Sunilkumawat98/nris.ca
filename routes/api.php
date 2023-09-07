@@ -45,7 +45,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-free-clasified-by-id', [ClasifiedCategoryController::class,'getFreeClasifiedById']);
     
     Route::post('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);
-
     Route::post('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
     
 
@@ -59,7 +58,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::get('/get-all-business-sub-category', [BusinessListingController::class,'getAllSubCategory']);
     Route::post('/get-all-business-sub-category-by-id', [BusinessListingController::class,'getAllSubCategoryById']);
     Route::post('/get-business-list-by-category', [BusinessListingController::class,'getBusinessListByCat']);
-    Route::post('/get-business-list-by-category-id', [BusinessListingController::class,'getBusinessListByCategoryId']);
+    Route::post('/get-all-business-list-by-category-id', [BusinessListingController::class,'getAllBusinessListByCategoryId']);
     Route::post('/get-business-by-id', [BusinessListingController::class,'getBusinessById']);
     
 

@@ -75,23 +75,26 @@ class ClasifiedCategoryService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
 
-        
-        try{
+        try{         
 
-            
+            \DB::beginTransaction();
 
-            if ($param['image']) 
+            if (isset($param['image'])) 
             {
                 $image = $param['image'];
                 $imageName = str_replace(' ', '_', time() . '_' . $image->getClientOriginalName());
                 $image->move(config('app.upload_ads_img'), $imageName);
             }
-            \DB::beginTransaction();
+            else {
+                $imageName = null; // Set it to null if 'image' key is not present
+            }
+            
             $created_at                             = date("Y-m-d H:i:s");
             $freeClassified                         = new FreeClassified;
             $freeClassified->user_id                = $param['user_id'];
             $freeClassified->country_id             = $param['country_id'];
             $freeClassified->state_id               = $param['state_id'];
+            $freeClassified->city_id                = $param['city_id'];
             $freeClassified->cat_id                 = $param['category_id'] ?? NULL;
             $freeClassified->sub_cat_id             = $param['sub_cat_id'] ?? NULL;
             $freeClassified->title                  = $param['title'] ?? NULL;
@@ -114,11 +117,11 @@ class ClasifiedCategoryService
 
         }
         catch (Exception $e) {
-            $except['status'] = false;
-            $except['error'][] = 'Exception Error...';
-            $except['message'] = $e;
-            $exception = new BaseController();
-            $exception = $exception->throwExceptionError($except, 500);
+            $except['status']                       = false;
+            $except['error'][]                      = 'Exception Error...';
+            $except['message']                      = $e;
+            $exception                              = new BaseController();
+            $exception                              = $exception->throwExceptionError($except, 500);
         }
         
 
@@ -291,7 +294,7 @@ class ClasifiedCategoryService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id', 'bids', 'comments')
+        $result                     = FreeClassified::with('country_id', 'state_id', 'city_id', 'cat_id', 'sub_cat_id', 'bids', 'comments')
                                         ->where('id', $param['id'])
                                         ->where('is_live',1)
                                         ->where('status',1)
@@ -342,7 +345,7 @@ class ClasifiedCategoryService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id')
+        $result                     = FreeClassified::with('country_id', 'state_id', 'city_id',  'cat_id', 'sub_cat_id')
                                         ->where('country_id',$param['country_id'])
                                         ->where('state_id',$param['state_id'])
                                         ->where('is_live',1)
@@ -396,7 +399,7 @@ class ClasifiedCategoryService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = FreeClassified::with('country_id', 'state_id', 'cat_id', 'sub_cat_id')
+        $result                     = FreeClassified::with('country_id', 'state_id', 'city_id', 'cat_id', 'sub_cat_id')
                                         ->where('country_id',$param['country_id'])
                                         ->where('is_live',1)
                                         ->where('display_status',1)

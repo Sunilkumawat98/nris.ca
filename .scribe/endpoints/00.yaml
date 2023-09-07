@@ -387,6 +387,11 @@ endpoints:
           "header_image2": "1522842913625087eb594b47.13394636.jpg",
           "header_image3": "1522842913625087eb594b47.13394636.jpg"
           },
+          "city_id": {
+          "id": 1,
+          "name": "CityName",
+          "state_code": "AL"
+          },
           "cat_id": {
           "id": 1,
           "name": "Auto",
@@ -581,6 +586,11 @@ endpoints:
           "header_image2": "1522842913625087eb594b47.13394636.jpg",
           "header_image3": "1522842913625087eb594b47.13394636.jpg"
           },
+          "city_id": {
+          "id": 1,
+          "name": "CityName",
+          "state_code": "AL"
+          },
           "cat_id": {
           "id": 1,
           "name": "Auto",
@@ -642,6 +652,11 @@ endpoints:
           "header_image": "1522842913625087eb594b47.13394636.jpg",
           "header_image2": "1522842913625087eb594b47.13394636.jpg",
           "header_image3": "1522842913625087eb594b47.13394636.jpg"
+          },
+          "city_id": {
+          "id": 1,
+          "name": "CityName",
+          "state_code": "AL"
           },
           "cat_id": {
           "id": 1,
@@ -795,6 +810,11 @@ endpoints:
           "header_image2": "1522842913625087eb594b47.13394636.jpg",
           "header_image3": "1522842913625087eb594b47.13394636.jpg"
           },
+          "city_id": {
+          "id": 1,
+          "name": "CityName",
+          "state_code": "AL"
+          },
           "cat_id": {
           "id": 1,
           "name": "Auto",
@@ -856,6 +876,11 @@ endpoints:
           "header_image": "1522842913625087eb594b47.13394636.jpg",
           "header_image2": "1522842913625087eb594b47.13394636.jpg",
           "header_image3": "1522842913625087eb594b47.13394636.jpg"
+          },
+          "city_id": {
+          "id": 1,
+          "name": "CityName",
+          "state_code": "AL"
           },
           "cat_id": {
           "id": 1,
@@ -955,6 +980,7 @@ endpoints:
         "user_id":1,
         "country_id":1,
         "state_id":1,
+        "city_id":1,
         "category_id":1,
         "sub_cat_id":1,
         "contact_name":"Abc",
@@ -998,6 +1024,13 @@ endpoints:
         custom: []
       '*state_id':
         name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*city_id':
+        name: '*city_id'
         description: ''
         required: true
         example: 1
@@ -1101,6 +1134,7 @@ endpoints:
       '*user_id': 1
       '*country_id': 1
       '*state_id': 1
+      '*city_id': 1
       category_id: 1
       sub_cat_id: 1
       title: '"title text " in JSON BODY'
@@ -1200,7 +1234,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer kca6d83E4VbZvgDef5a16Ph'
+      - 'Bearer P8abd1Z5c3EDekv6gV4f6ah'
     controller: null
     method: null
     route: null
@@ -1345,7 +1379,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 4adkZbfeEh61Pv5a3VD6cg8'
+      - 'Bearer kh48cDEvP163d5a6baefVgZ'
     controller: null
     method: null
     route: null
@@ -1480,7 +1514,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ageP3fd8D6ZavkE6514cbhV'
+      - 'Bearer 65eZa4VakfgcvP6h1dD3bE8'
     controller: null
     method: null
     route: null
