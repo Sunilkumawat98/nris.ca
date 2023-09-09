@@ -84,8 +84,9 @@ class NationalEvent extends Model
         return $this->belongsTo(EventCategory::class, 'cat_id', 'id');
     }
 
-   
-    // public function comments() {
-    //     return $this->hasMany(BusinessListingReview::class, 'business_list_id', 'id');
-    // }
+    public function comments() {
+        return $this->hasMany(EventComment::class, 'event_list_id', 'id');
+    }
+
+
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\NrisTalkController;
 use App\Http\Controllers\Api\V1\ClasifiedCategoryController;
 use App\Http\Controllers\Api\V1\MovieRelatedController;
 use App\Http\Controllers\Api\V1\BusinessListingController;
+use App\Http\Controllers\Api\V1\NationalEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,23 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-all-business-list-by-category-id', [BusinessListingController::class,'getAllBusinessListByCategoryId']);
     Route::post('/get-business-by-id', [BusinessListingController::class,'getBusinessById']);
     
+
+
+
+
+    /*
+    
+    National Event & Category
+    
+    
+    */
+
+
+
+    Route::get('/get-all-events-category', [NationalEventController::class,'getAllCategory']);
+    Route::post('/get-events-list-by-category', [NationalEventController::class,'getEventListByCat']);
+    Route::post('/get-all-events-list-by-category-id', [NationalEventController::class,'getAllEventListByCategoryId']);
+    Route::post('/get-event-by-id', [NationalEventController::class,'geteventById']);
 
 
     /*
@@ -133,6 +151,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/create-free-clasified-bid', [ClasifiedCategoryController::class,'createFreeClasifiedBid']);
         $router->post('/create-free-clasified-comment', [ClasifiedCategoryController::class,'createFreeClasifiedComment']);
         $router->post('/review-business-list', [BusinessListingController::class,'reviewBusinessList']);
+        $router->post('/comment-event-list', [NationalEventController::class,'commentEventList']);
     
     });
 

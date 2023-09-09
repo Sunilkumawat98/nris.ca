@@ -7,6 +7,7 @@ return [
         'country_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'state_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'city_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'event_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'talk_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'category_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'sub_cat_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
@@ -230,6 +231,57 @@ return [
             "optional" => [
             ]
         ],
+
+
+
+
+
+        /*
+        
+            Events Listing & Its category
+        
+        */
+
+
+        "eventListingByCategoryGet" => [
+            "required" => [
+                'country_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "allEventListingByCategoryGet" => [
+            "required" => [
+                'country_id', 'state_id', 'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "eventListingByIdGet" => [
+            "required" => [
+                'country_id', 'state_id', 'event_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "commentEventListing" => [
+            "required" => [
+                'country_id', 'state_id', 'user_id', 'event_id', 'comment'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+
+
+
 
 
 

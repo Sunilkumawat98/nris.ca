@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class EventCategory extends Model
+class EventComment extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,7 +14,7 @@ class EventCategory extends Model
     
     public $timestamps = false;
         
-    protected $table            = 'event_category';
+    protected $table            = 'event_comments';
 
     protected $hidden           = [
         'created_by',
@@ -36,10 +36,11 @@ class EventCategory extends Model
     ];
 
     protected $fillable         = [        
-        'name',
-        'color',
-        'icon',
-        'slug',
+        'user_id',
+        'event_list_id',
+        'country_id',
+        'state_id',
+        'comment',
         'is_live',
         'created_at',
         'updated_at',
@@ -48,10 +49,10 @@ class EventCategory extends Model
     ];
 
 
-
-    public function category_data()
+    public function user()
     {
-        return $this->hasMany(NationalEvent::class, 'cat_id')
-        ->with('state_id', 'city_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+
 }
