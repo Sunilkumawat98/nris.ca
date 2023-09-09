@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "1ebd2975-c48f-40a4-a1fa-62b3b1b6c3c1",
+        "_postman_id": "a8853000-3471-43e5-9842-d10637baf30e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -990,6 +990,268 @@
             ]
         },
         {
+            "name": "Event Listing Related",
+            "description": "\nAPIs for managing all Events listing related and its Category",
+            "item": [
+                {
+                    "name": "getAllCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-events-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-events-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-events-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 5,\n\"name\": \"Movie\",\n\"slug\": \"movie\",\n\"color\": \"#F7EDED\",\n\"created_at\": \"04-Sep-2023 04:45 PM\"\n},\n{\n\"id\": 4,\n\"name\": \"Cultural\",\n\"slug\": \"cultural\",\n\"color\": \"#240808\",\n\"created_at\": \"04-Sep-2023 04:44 PM\"\n},\n{\n\"id\": 3,\n\"name\": \"Religious\",\n\"slug\": \"religious\",\n\"color\": \"#E3D4D4\",\n\"created_at\": \"04-Sep-2023 04:44 PM\"\n},\n{\n\"id\": 2,\n\"name\": \"Community\",\n\"slug\": \"community\",\n\"color\": \"#DD3636\",\n\"created_at\": \"04-Sep-2023 04:44 PM\"\n},\n{\n\"id\": 1,\n\"name\": \"Personal\",\n\"slug\": \"personal\",\n\"color\": \"#E9C7C7\",\n\"created_at\": \"04-Sep-2023 04:37 PM\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getEventListByCat",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-events-list-by-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-events-list-by-category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 5,\n\"name\": \"Movie\",\n\"slug\": \"movie\",\n\"color\": \"#F7EDED\",\n\"created_at\": \"04-Sep-2023 04:45 PM\",\n\"category_data\": []\n},\n{\n\"id\": 3,\n\"name\": \"Religious\",\n\"slug\": \"religious\",\n\"color\": \"#E3D4D4\",\n\"created_at\": \"04-Sep-2023 04:44 PM\",\n\"category_data\": [\n{\n\"id\": 2,\n\"country_id\": 1,\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n},\n\"city_id\": {\n\"id\": 1,\n\"name\": \"New City\",\n\"state_code\": \"AL\"\n},\n\"cat_id\": 3,\n\"title\": \"Boosting Level\",\n\"title_slug\": \"boosting-level\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/EVENTS_IMG\/1694082997__turing.png\",\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"address\": \"addresssssss\",\n\"start_date\": \"2023-09-07\",\n\"end_date\": \"2023-09-07\",\n\"details\": \"detaoils of newwwwww\",\n\"meta_title\": \"meta titlleeeeeeee\",\n\"meta_description\": \"meta descriptionnnnnnnn\",\n\"meta_keywords\": \"meta keyworddddddddd\",\n\"other_details\": \"other inforrrrrr\",\n\"total_views\": 0,\n\"created_at\": \"07-Sep-2023 05:00 PM\"\n}\n]\n},\n{\n\"id\": 2,\n\"name\": \"Community\",\n\"slug\": \"community\",\n\"color\": \"#DD3636\",\n\"created_at\": \"04-Sep-2023 04:44 PM\",\n\"category_data\": []\n},\n{\n\"id\": 1,\n\"name\": \"Personal\",\n\"slug\": \"personal\",\n\"color\": \"#E9C7C7\",\n\"created_at\": \"04-Sep-2023 04:37 PM\",\n\"category_data\": [\n{\n\"id\": 1,\n\"country_id\": 1,\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n},\n\"city_id\": {\n\"id\": 1,\n\"name\": \"New City\",\n\"state_code\": \"AL\"\n},\n\"cat_id\": 1,\n\"title\": \"This is new title\",\n\"title_slug\": \"this-is-new-title\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/EVENTS_IMG\/1694082841__turing.png\",\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"address\": \"this is address\",\n\"start_date\": \"2023-09-07\",\n\"end_date\": \"2023-09-07\",\n\"details\": \"this is details\",\n\"meta_title\": \"meta title\",\n\"meta_description\": \"mata desc\",\n\"meta_keywords\": \"meta key\",\n\"other_details\": \"this is other infor\",\n\"total_views\": 0,\n\"created_at\": \"07-Sep-2023 04:04 PM\"\n}\n]\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllEventListByCategoryId",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-events-list-by-category-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-events-list-by-category-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1,\"*category_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1,\n\"state_id\":1,\n\"category_id\":1,\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"city_id\": 1,\n\"cat_id\": 1,\n\"title\": \"This is new title\",\n\"title_slug\": \"this-is-new-title\",\n\"image\": \"PATH\/EVENTS_IMG\/1694082841__turing.png\",\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"address\": \"this is address\",\n\"start_date\": \"2023-09-07\",\n\"end_date\": \"2023-09-07\",\n\"details\": \"this is details\",\n\"meta_title\": \"meta title\",\n\"meta_description\": \"mata desc\",\n\"meta_keywords\": \"meta key\",\n\"other_details\": \"this is other infor\",\n\"total_views\": 0,\n\"created_at\": \"07-Sep-2023 04:04 PM\"\n}\n],\n\"first_page_url\": \"PATH\/api\/v1\/get-all-events-list-by-category-id?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATH\/api\/v1\/get-all-events-list-by-category-id\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "geteventById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-event-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-event-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1,\"*event_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1,\n\"state_id\":1,\n\"event_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"city_id\": 1,\n\"cat_id\": 1,\n\"title\": \"Title\",\n\"title_slug\": \"title\",\n\"image\": \"PATH\/EVENTS_IMG\/1694262538_Screenshot_from_2023-08-02_15-19-33.png\",\n\"url\": \"https:\/\/www.youtube.com\/watch?v=L_nN1P297N0&t=19s\",\n\"address\": \"address\",\n\"start_date\": \"2023-09-09\",\n\"end_date\": \"2023-09-09\",\n\"details\": \"detauils\",\n\"meta_title\": \"meta title\",\n\"meta_description\": \"meta desc\",\n\"meta_keywords\": \"meta keyword\",\n\"other_details\": \"oitehr detail\",\n\"total_views\": 0,\n\"created_at\": \"09-Sep-2023 05:58 PM\",\n\"comments\": [\n{\n\"id\": 2,\n\"user_id\": 2,\n\"event_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"comment\": \"Nice....\",\n\"created_at\": \"09-Sep-2023 06:28 PM\",\n\"user\": {\n\"id\": 2,\n\"first_name\": \"Md Saddam\",\n\"last_name\": \"Hussain\",\n\"email\": \"mdsaddamhussain595@gmail.com\",\n\"dob\": \"2023-02-02\",\n\"mobile\": \"9899899854\"\n}\n}\n]\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "commentEventList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/comment-event-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/comment-event-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*event_id\":1,\"*country_id\":1,\"*state_id\":1,\"*comment\":\"This is good 5in JSON BODY\\n\\n<aside class=\\\"notice\\\">basepath\\\/api\\\/v1\\\/comment-event-list<\\\/aside>\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"user_id\":1,\n\"business_list_id\":1,\n\"country_id\":1,\n\"state_id\":1,\n\"comment\":\"Nice.......\",\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully comment done...\",\n\"data\": {\n\"user_id\": 2,\n\"event_list_id\": 1,\n\"country_id\": 1,\n\"state_id\": 1,\n\"comment\": \"Nice....\",\n\"created_at\": \"09-Sep-2023 06:28 PM\",\n\"id\": 2\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 403,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 419,
+                            "body": "{\n\"message\": \"Token is Expired\",\n\"status_code\": 419,\n\"status\": false\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Login, Register",
             "description": "\nAPIs for managing all Auth Related",
             "item": [
@@ -1015,7 +1277,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"atque\",\"*last_name\":\"aut\",\"*email\":\"breana.kuphal@example.com\",\"*dob\":\"iste\",\"*mobile\":\"nihil\",\"*password\":\"animi\",\"*country_id\":\"dolor\",\"*state_id\":\"natus\"}"
+                            "raw": "{\"*first_name\":\"inventore\",\"*last_name\":\"commodi\",\"*email\":\"brown91@example.net\",\"*dob\":\"odit\",\"*mobile\":\"voluptatem\",\"*password\":\"voluptatem\",\"*country_id\":\"quis\",\"*state_id\":\"rerum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register-mobile-no<\/aside>",
                         "auth": {
@@ -1065,7 +1327,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"qui\",\"*password\":\"est\"}"
+                            "raw": "{\"*email_id\":\"fugit\",\"*password\":\"culpa\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -1115,7 +1377,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"quasi\"}"
+                            "raw": "{\"*email_id\":\"necessitatibus\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -1165,7 +1427,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"griffin20@example.com\",\"*new_password\":\"explicabo\",\"*retype_password\":\"rerum\"}"
+                            "raw": "{\"*email\":\"russel.karlie@example.org\",\"*new_password\":\"provident\",\"*retype_password\":\"in\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -1852,7 +2114,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"et\",\"*state_id\":\"labore\"}"
+                            "raw": "{\"*country_id\":\"cupiditate\",\"*state_id\":\"quo\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -1902,7 +2164,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"a\",\"*state_id\":\"natus\"}"
+                            "raw": "{\"*country_id\":\"amet\",\"*state_id\":\"aliquam\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

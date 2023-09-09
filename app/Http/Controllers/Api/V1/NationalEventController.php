@@ -8,9 +8,9 @@ use App\Libraries\NationaEventLibrary;
 use App\Http\Controllers\Api\V1\BaseController;
 
 /**
- * @group Business Listing Related
+ * @group Event Listing Related
  *
- * APIs for managing all Business listing related Category,  sub category
+ * APIs for managing all Events listing related and its Category
  */
 
 
@@ -514,7 +514,7 @@ class NationalEventController extends BaseController
    
       
     /**
-    * reviewEventList
+    * commentEventList
     * 
     * If everything is okay, you'll get a `200` OK response with data.
     *
