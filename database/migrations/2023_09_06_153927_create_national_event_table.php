@@ -36,8 +36,8 @@ return new class extends Migration
             $table->tinyInteger('status')->default(1);
             $table->foreign('country_id', 'FK_CountryIdWithNaitionalEvents')->references('id')->on('countries')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('state_id', 'FK_StateIdWithNaitionalEvents')->references('id')->on('states')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('state_id', 'FK_CityIdWithNaitionalEvents')->references('id')->on('cities')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('cat_id', 'FK_cat_idWithNaitionalEvents')->references('id')->on('business_category')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('city_id', 'FK_CityIdWithNaitionalEvents')->references('id')->on('cities')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('cat_id', 'FK_cat_idWithNaitionalEvents')->references('id')->on('event_category')->onDelete('restrict')->onUpdate('restrict');
             
         });
     }
