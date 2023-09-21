@@ -93,7 +93,22 @@ class PermissionRoleSeeder extends Seeder
             ['role_id' => 1, 'permission_id'=>77, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>78, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>79, 'is_active' => 1],
-            
+            ['role_id' => 1, 'permission_id'=>80, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>81, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>82, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>83, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>84, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>85, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>86, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>87, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>88, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>89, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>90, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>91, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>92, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>93, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>94, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>95, 'is_active' => 1],
             
             
 

@@ -90,10 +90,10 @@ class NationalEventService
 
     /**
         
-        * method allSubCategoryByIdGet()
+        * method getEventListingByCategoryId()
         * 
         * @param
-        * category_id
+        * country_id
         *
         * @return 
         * 200

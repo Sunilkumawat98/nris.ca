@@ -21,6 +21,9 @@ use App\Http\Controllers\Admin\BusinessSubCategoryController;
 use App\Http\Controllers\Admin\BusinessListingController;
 use App\Http\Controllers\Admin\EventCategoryController;
 use App\Http\Controllers\Admin\NationalEventController;
+use App\Http\Controllers\Admin\StudentTalkCategoryController;
+use App\Http\Controllers\Admin\UniversityController;
+use App\Http\Controllers\Admin\StudentTalkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +117,38 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('national_events', NationalEventController::class);
         Route::post('/national_events/{id}/active-status', [NationalEventController::class, 'livePause'])->name('national_events.activeStatus');
+
+
+
+
+
+        Route::resource('student_talk_category', StudentTalkCategoryController::class);
+        Route::post('/student_talk_category/{id}/active-status', [StudentTalkCategoryController::class, 'livePause'])->name('student_talk_category.activeStatus');
+
+
+
+        Route::resource('university', UniversityController::class);
+        Route::post('/university/{id}/active-status', [UniversityController::class, 'livePause'])->name('university.activeStatus');
+
+
+
+
+        Route::resource('student_talk', StudentTalkController::class);
+        Route::post('/student_talk/{id}/active-status', [StudentTalkController::class, 'livePause'])->name('student_talk.activeStatus');
+
+
+
+
+
+
+
+        
+        Route::get('/get-state-by-country-id', [StateController::class, 'getStateByCountryId']);
+        Route::get('/get-city-by-state-id', [CityController::class, 'getCityByStateId']);
+
+
+
+
 
         
     });

@@ -3,6 +3,46 @@
 @section('title', 'Nris Dashboard | Desi Movie Edit')
 
 
+<style type="text/css">
+  /* Custom styles for the card height */
+  .custom-card-height {
+    height: 1000px; /* Adjust the height as per your requirement */
+  }
+
+
+/* Full-page loader overlay styles */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the loader is on top of all content */
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+</style>
+
 @section('content')
      
     <!-- Main content -->
@@ -28,6 +68,10 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
+          <div id="loader-overlay" >
+              <!-- You can customize the loader animation or message here -->
+              <div class="loader"></div>
+          </div>
           <!-- general form elements -->
           <!-- Horizontal Form -->
           <div class="card card-info">
@@ -195,3 +239,75 @@
     </div><!-- /.container-fluid -->
 </section>
 @endsection
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var loader = document.getElementById("loader-overlay");       
+        
+        loader.style.display = "none";
+        
+        $('#country_id').on('change', function() {
+              
+            loader.style.display = "block";
+          
+            var country_id = $(this).val();
+            $('#state_id').html('<option value="">Loading...</option>');
+            
+            axios.get('/get-state-by-country-id', {
+                params: {
+                    country_id: country_id
+                }
+            })
+            .then(function(response) {
+                loader.style.display = "none";
+                var states = response.data;
+                var stateDropdown = $('#state_id');
+                stateDropdown.empty();
+                stateDropdown.append('<option value="">Select state</option>');
+
+                $.each(states, function(index, state) {
+                    stateDropdown.append('<option value="' + state.id + '">' + state.name + '</option>');
+                });
+            })
+            .catch(function(error) {
+              loader.style.display = "none";
+                console.error(error);
+            });
+        });
+
+
+
+        $('#state_id').on('change', function() {
+              
+              loader.style.display = "block";
+            
+              var state_id = $(this).val();
+              $('#city_id').html('<option value="">Loading...</option>');
+              
+              axios.get('/get-city-by-state-id', {
+                  params: {
+                    state_id: state_id
+                  }
+              })
+              .then(function(response) {
+                  loader.style.display = "none";
+                  var cities = response.data;
+                  var cityDropdown = $('#city_id');
+                  cityDropdown.empty();
+                  cityDropdown.append('<option value="">Select city</option>');
+  
+                  $.each(cities, function(index, city) {
+                    cityDropdown.append('<option value="' + city.id + '">' + city.name + '</option>');
+                  });
+              })
+              .catch(function(error) {
+                loader.style.display = "none";
+                  console.error(error);
+              });
+          });
+    });
+</script>
+

@@ -5,6 +5,7 @@ return [
         'id'                    => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'user_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'country_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'university_id'         => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'state_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'city_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'event_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
@@ -14,6 +15,7 @@ return [
         'contact_name'          => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'first_name'            => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'last_name'             => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
+        'name'                  => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'address'               => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'contact_address'       => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'keyword'               => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
@@ -44,6 +46,9 @@ return [
         'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
         'comment'               => "bail|required|string",
+        'message'               => "bail|required|string",
+        'website'               => "bail|required|string",
+        'education_field'       => "bail|required|string",
         
     ],
 
@@ -191,6 +196,54 @@ return [
             "optional" => [
             ]
         ],
+
+
+
+
+        /*
+            Create University, Student talk and Its Reply
+        
+        */
+        "allUniversityGet" => [
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+        "studentUniversityCreate" => [
+            "required" => [
+                "user_id", 'country_id', 'state_id', 'category_id', 'name', 
+                'website', 'education_field', 'message'
+            ],
+            "optional" => [
+            ]
+        ],
+        "studentTalkCreate" => [
+            "required" => [
+                "user_id", 'country_id', 'state_id', 'category_id', 'university_id','title', 
+                'email', 'mobile', 'address'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "allStudentTalkFetch" => [
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+        "studentTalkFetchByCategory" => [
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
 
 
         /*

@@ -112,6 +112,27 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_national_events', 'name_slug'=>'show-national-events'],
             ['name' => 'delete_national_events', 'name_slug'=>'delete-national-events'],
 
+            ['name' => 'dashboard_total_admin_user', 'name_slug'=>'dashboard-total-admin-user'],
+            ['name' => 'dashboard_total_user', 'name_slug'=>'dashboard-total-user'],
+
+
+            ['name' => 'manage_student_talk', 'name_slug'=>'manage-student-talk'],
+            ['name' => 'create_student_talk_category', 'name_slug'=>'create-student-talk-category'],
+            ['name' => 'edit_student_talk_category', 'name_slug'=>'edit-student-talk-category'],
+            ['name' => 'show_student_talk_category', 'name_slug'=>'show-student-talk-category'],
+            ['name' => 'delete_student_talk_category', 'name_slug'=>'delete-student-talk-category'],
+
+            ['name' => 'create_university', 'name_slug'=>'create-university'],
+            ['name' => 'edit_university', 'name_slug'=>'edit-university'],
+            ['name' => 'show_university', 'name_slug'=>'show-university'],
+            ['name' => 'delete_university', 'name_slug'=>'delete-university'],
+
+            ['name' => 'create_student_talk', 'name_slug'=>'create-student-talk'],
+            ['name' => 'edit_student_talk', 'name_slug'=>'edit-student-talk'],
+            ['name' => 'show_student_talk', 'name_slug'=>'show-student-talk'],
+            ['name' => 'delete_student_talk', 'name_slug'=>'delete-student-talk'],
+
+            
 
 
             // Add more user data entries as needed

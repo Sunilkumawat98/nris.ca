@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\V1\ClasifiedCategoryController;
 use App\Http\Controllers\Api\V1\MovieRelatedController;
 use App\Http\Controllers\Api\V1\BusinessListingController;
 use App\Http\Controllers\Api\V1\NationalEventController;
+use App\Http\Controllers\Api\V1\StudentTalkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,22 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
 
+        /*
+        Student talk, university
+        &
+        Its Reply
+
+    */
+    
+    Route::get('/get-all-student-talk-category', [StudentTalkController::class,'getAllStudentTalkCategory']);
+    Route::post('/get-all-university', [StudentTalkController::class,'getAllUniversity']);
+    Route::post('/get-all-student-talk', [StudentTalkController::class,'getAllStudentTalk']);
+    Route::post('/get-student-talk-by-category', [StudentTalkController::class,'getStudentTalkByCategory']);
+    
+
+
+
+
 
     /*
         Login & Register
@@ -152,7 +169,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/create-free-clasified-comment', [ClasifiedCategoryController::class,'createFreeClasifiedComment']);
         $router->post('/review-business-list', [BusinessListingController::class,'reviewBusinessList']);
         $router->post('/comment-event-list', [NationalEventController::class,'commentEventList']);
-    
+
+        $router->post('/add-student-university', [StudentTalkController::class,'addUniversityStudent']);
+        $router->post('/create-student-talk', [StudentTalkController::class,'createStudentTalk']);
     });
 
     

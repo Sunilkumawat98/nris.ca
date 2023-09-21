@@ -35,36 +35,44 @@
 
       <!-- Default box -->
       <div class="card">
-        
+        <div class="card-body" style="background:#cccccc">
+          <div class="row">
+            <select class="form-control" name="country_id" id="country_id" style="width: 100%;">
+                <option value="" >Select Country</option>
+                @foreach($countries as $item)
+                      <option value="{{ $item->id }}" {{ old('country_id') == $item->id ? 'selected' : '' }} >{{ $item->name }}</option>
+                @endforeach
+            </select>
+            </hr>
+          </div>
+        </div>
         <div class="card-body" style="background:#c0c1c7">
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
-
-                <div class="info-box-content">
-                  <span class="info-box-text">Messages</span>
-                  <span class="info-box-number">1,410</span>
+            @if(auth()->user()->hasPermission('dashboard_total_admin_user'))
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-info"><i class="far fa-user"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Total Admin User</span>
+                    <span class="info-box-number">{{ $adminCount }}</span>
+                  </div>
                 </div>
-                <!-- /.info-box-content -->
               </div>
-              <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+            @endif
 
-                <div class="info-box-content">
-                  <span class="info-box-text">Bookmarks</span>
-                  <span class="info-box-number">410</span>
+            @if(auth()->user()->hasPermission('dashboard_total_user'))
+              <div class="col-md-3 col-sm-6 col-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-success"><i class="far fa-user"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Total User</span>
+                    <span class="info-box-number">{{ $userCount }}</span>
+                  </div>
                 </div>
-                <!-- /.info-box-content -->
               </div>
-              <!-- /.info-box -->
-            </div>
+            @endif
             <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
+            <!-- <div class="col-md-3 col-sm-6 col-12">
               <div class="info-box">
                 <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
 
@@ -72,12 +80,10 @@
                   <span class="info-box-text">Uploads</span>
                   <span class="info-box-number">13,648</span>
                 </div>
-                <!-- /.info-box-content -->
               </div>
-              <!-- /.info-box -->
-            </div>
+            </div> -->
             <!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-12">
+            <!-- <div class="col-md-3 col-sm-6 col-12">
               <div class="info-box">
                 <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
 
@@ -85,10 +91,8 @@
                   <span class="info-box-text">Likes</span>
                   <span class="info-box-number">93,139</span>
                 </div>
-                <!-- /.info-box-content -->
               </div>
-              <!-- /.info-box -->
-            </div>
+            </div> -->
             <!-- /.col -->
           </div>
         </div>

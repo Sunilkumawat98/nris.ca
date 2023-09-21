@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Country;
-use App\Models\State;
+
+use App\Models\StudentTalkCategory;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Str;
 use Exception;
 
-class StateController 
+class StudentTalkCategoryController 
 {
     public function __construct()
     {
@@ -21,19 +21,21 @@ class StateController
         $this->message                  = 'message';
         $this->data                     = 'data';
         $this->total                    = 'total_count';
+        $this->permission               = 'student_talk_category';
+        $this->route                    = 'student_talk_category';
         
     }
     
     
     public function index(Request $request)
     {     
-        if(!auth()->user()->hasPermission('manage_location'))
+        if(!auth()->user()->hasPermission('manage_student_talk'))
         {
             abort(404, 'You are not Authorised...');
         }
 
         $searchQuery = $request->input('search');
-        $results                      = State::where('status', 1);
+        $results                      = StudentTalkCategory::where('status', 1);
         if ($searchQuery) {
             $results->where('name', 'like', '%' . $searchQuery . '%'); // Modify 'name' to your actual column for the search
         }
@@ -49,69 +51,69 @@ class StateController
         $nextPage                       = ($currentPage < $results->lastPage()) ? $currentPage + 1 : null;
 
 
-        return view('admin.state.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
+        return view('admin.'.$this->route.'.index', compact('results', 'previousPage', 'nextPage', 'searchQuery'));
     
     }
 
 
     public function create()
     {
-        $countries                      = Country::all();
-        return view('admin.state.create', compact('countries'));
+        if(!auth()->user()->hasPermission('create_'.$this->permission))
+        {
+            abort(404, 'You are not Authorised...');
+        }
+        return view('admin.'.$this->route.'.create');
     }
 
     public function store(Request $request)
     {
-        if(!auth()->user()->hasPermission('create_state'))
+        if(!auth()->user()->hasPermission('create_'.$this->permission))
         {
             abort(404, 'You are not Authorised...');
         }
         $all                            = $request->all();
         // Validate the request data
         $request->validate([
-            'name' => 'required',
-            'country_id' => 'required',
-            'code' => 'required',
-            'description' => 'required',
-            's_meta_title' => 'required',
-            's_meta_description' => 'required',
-            's_meta_keywords' => 'required',
+            'name' => 'required',            
         ]);
 
         $all['name']                    = ucfirst($all['name']);
-        $all['code']                    = strtoupper($all['code']);
-        $all['domain']                  = Str::slug(strtolower($all['name']));
-        $all['logo']                    = 'NA';
+        $all['slug']                    = Str::slug(strtolower($all['name']));
+        
         $all['created_at']              = date('Y-m-d H:i:s');
         $all['updated_at']              = date('Y-m-d H:i:s');
 
         // Create a new post
-        State::create($all);
+        StudentTalkCategory::create($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('state.index')->with('success', 'State created successfully.');
+        return redirect()->route($this->route.'.index')->with('success', 'Category created successfully.');
     }
 
     public function show($id)
     {
         // Find the post by its ID and pass it to the view
-        $results                        = State::findOrFail($id);
-        return view('admin.state.show', compact('results'));
+        $results                        = StudentTalkCategory::findOrFail($id);
+        return view('admin.'.$this->route.'.show', compact('results'));
     }
 
     public function edit($id)
     {
+        if(!auth()->user()->hasPermission('edit_'.$this->permission))
+        {
+            abort(404, 'You are not Authorised...');
+        }
         // Find the post by its ID and pass it to the view for editing
-        $results                        = State::findOrFail($id);
-        $countries                      = Country::all();
-        return view('admin.state.edit', compact('results', 'countries'));
+        $results                        = StudentTalkCategory::findOrFail($id);
+        
+        return view('admin.'.$this->route.'.edit', compact('results'));
     }
 
     
 
     public function update(Request $request, $id)
     {
-        if(!auth()->user()->hasPermission('edit_state'))
+        if(!auth()->user()->hasPermission('edit_'.$this->permission))
         {
             abort(404, 'You are not Authorised...');
         }
@@ -119,62 +121,44 @@ class StateController
         // Validate the request data
         $request->validate([
             'name' => 'required',
-            'country_id' => 'required',
-            'code' => 'required',
-            'description' => 'required',
-            's_meta_title' => 'required',
-            's_meta_description' => 'required',
-            's_meta_keywords' => 'required',
+            
         ]);
 
         $all['name']                    = ucfirst($all['name']);
-        $all['code']                    = strtoupper($all['code']);
-        $all['domain']                  = Str::slug(strtolower($all['name']));
-        $all['logo']                    = 'NA';
+        $all['slug']                    = Str::slug(strtolower($all['name']));
+
         $all['updated_at']              = date('Y-m-d H:i:s');
 
-        $states                        = State::findOrFail($id);
-        $states->update($all);
+        $result                        = StudentTalkCategory::findOrFail($id);
+        $result->update($all);
 
         // Redirect to the index page with a success message
-        return redirect()->route('state.index')->with('success', 'State updated successfully.');
+        return redirect()->route($this->route.'.index')->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(State $state)
+    public function destroy(StudentTalkCategory $studentTalkCategory)
     {
-        if(!auth()->user()->hasPermission('delete_state'))
+        if(!auth()->user()->hasPermission('delete_'.$this->permission))
         {
             abort(404, 'You are not Authorised...');
         }
-
-        $state->delete();
-        return redirect()->route('state.index')->with('success', 'State deleted successfully!');
+        $studentTalkCategory->delete();
+        return redirect()->route($this->route.'.index')->with('success', 'Category deleted successfully!');
     }
 
     public function livePause($id)
     {
         // Find the post by ID
-        $results = State::findOrFail($id);
+        $results = StudentTalkCategory::findOrFail($id);
 
         // Toggle the status between "pause" and "live"
         $results->is_live = ($results->is_live === 1) ? 0 : 1;
         $results->save();
 
-        return redirect()->route('state.index')->with('success', 'Live status updated successfully.');
-    }
-
-    public function getStateByCountryId(Request $request)
-    {
-        $country_id = $request->input('country_id');
-        $states = State::where('country_id', $country_id)->get();
-    
-        return response()->json($states);
+        return redirect()->route($this->route.'.index')->with('success', 'Live status updated successfully.');
     }
     
 
-
-
-    
     
     
     

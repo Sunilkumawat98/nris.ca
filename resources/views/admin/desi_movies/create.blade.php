@@ -7,6 +7,38 @@
     height: 1000px; /* Adjust the height as per your requirement */
   }
 
+
+/* Full-page loader overlay styles */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the loader is on top of all content */
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
 </style>
 
 @section('content')
@@ -32,6 +64,10 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-12">
+            <div id="loader-overlay" >
+                <!-- You can customize the loader animation or message here -->
+                <div class="loader"></div>
+            </div>
           <!-- general form elements -->
           <!-- Horizontal Form -->
           <div class="card card-info">
@@ -95,7 +131,7 @@
                                 <select class="form-control select2 select2-danger" name="country_id" id="country_id" data-dropdown-css-class="select2-danger" >
                                     <option value="" >Select Country</option>
                                     @foreach($countries as $item)
-                                          <option value="{{ $item->id }}" {{ old('country_id') == $item->id ? 'selected' : '' }} >{{ $item->name }}</option>
+                                          <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -107,11 +143,11 @@
                             <label for="inputPassword3" class="col-sm-3 col-form-label">State</label>
                             <div class="col-sm-9">
                                 <select class="form-control select2 select2-danger" name="state_id" id="state_id" data-dropdown-css-class="select2-danger">
-                                  <option value="" >Select State</option>
-                                  @foreach($states as $item)
-                                        <option value="{{ $item->id }}" {{ old('state_id') == $item->id ? 'selected' : '' }} >{{ $item->name }}</option>
-                                  @endforeach
-                              </select> 
+                                    <option value="" >Select State</option>
+                                    
+                                </select> 
+
+                              
                             </div>
                           </div>
                         </div>
@@ -121,9 +157,7 @@
                             <div class="col-sm-9 select2-purple">
                                 <select class="form-control select2 select2-danger" multiple="multiple" name="city_id[]" id="city_id" data-dropdown-css-class="select2-danger" >
                                     <option value="" >Select City</option>
-                                    @foreach($cities as $item)
-                                          <option value="{{ $item->id }}" {{ in_array($item->id, old('city_id', [])) ? 'selected' : '' }} >{{ $item->name }}</option>
-                                    @endforeach
+                                    
                                 </select>   
                             </div>
                           </div>
@@ -203,5 +237,75 @@
 </div>
 
 
-
 @endsection
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var loader = document.getElementById("loader-overlay");       
+        
+        loader.style.display = "none";
+        
+        $('#country_id').on('change', function() {
+              
+            loader.style.display = "block";
+          
+            var country_id = $(this).val();
+            $('#state_id').html('<option value="">Loading...</option>');
+            
+            axios.get('/get-state-by-country-id', {
+                params: {
+                    country_id: country_id
+                }
+            })
+            .then(function(response) {
+                loader.style.display = "none";
+                var states = response.data;
+                var stateDropdown = $('#state_id');
+                stateDropdown.empty();
+                stateDropdown.append('<option value="">Select state</option>');
+
+                $.each(states, function(index, state) {
+                    stateDropdown.append('<option value="' + state.id + '">' + state.name + '</option>');
+                });
+            })
+            .catch(function(error) {
+              loader.style.display = "none";
+                console.error(error);
+            });
+        });
+
+
+
+        $('#state_id').on('change', function() {
+              
+              loader.style.display = "block";
+            
+              var state_id = $(this).val();
+              $('#city_id').html('<option value="">Loading...</option>');
+              
+              axios.get('/get-city-by-state-id', {
+                  params: {
+                    state_id: state_id
+                  }
+              })
+              .then(function(response) {
+                  loader.style.display = "none";
+                  var cities = response.data;
+                  var cityDropdown = $('#city_id');
+                  cityDropdown.empty();
+                  cityDropdown.append('<option value="">Select city</option>');
+  
+                  $.each(cities, function(index, city) {
+                    cityDropdown.append('<option value="' + city.id + '">' + city.name + '</option>');
+                  });
+              })
+              .catch(function(error) {
+                loader.style.display = "none";
+                  console.error(error);
+              });
+          });
+    });
+</script>
+

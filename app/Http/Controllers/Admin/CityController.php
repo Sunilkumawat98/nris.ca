@@ -164,6 +164,17 @@ class CityController
     }
     
 
+
+    public function getCityByStateId(Request $request)
+    {
+        $id = $request->input('state_id');
+        $states = City::where('state_id', $id)->get();
+    
+        return response()->json($states);
+    }
+    
+
+    
     
     
     

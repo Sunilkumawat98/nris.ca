@@ -67,12 +67,9 @@ class DesiMovieController
             abort(404, 'You are not Authorised...');
         }
 
-        $countries                      = Country::all();
-        $states                         = State::all();
-        $cities                         = City::all();
-        
+        $countries                      = Country::all();        
 
-        return view('admin.desi_movies.create', compact('countries', 'states', 'cities'));
+        return view('admin.desi_movies.create', compact('countries'));
     }
 
     public function store(Request $request)
@@ -156,9 +153,12 @@ class DesiMovieController
         }
         // Find the post by its ID and pass it to the view for editing    
         $results                        = DesiMovie::findOrFail($id);    
+
         $countries                      = Country::all();
-        $states                         = State::all();
-        $cities                         = City::all();
+        $states                         = State::where('country_id', $results->country_id)->get();
+        $cities                         = City::where('state_id', $results->state_id)->get();
+        // $states                         = State::all();
+        // $cities                         = City::all();
         
 
         return view('admin.desi_movies.edit', compact('countries', 'states', 'cities', 'results'));

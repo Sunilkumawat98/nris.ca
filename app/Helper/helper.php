@@ -87,6 +87,21 @@ function getAllBusinessCategory()
 }
 
 
+function getUniversityNamebyId($id)
+{
+	return \App\Models\University::where('id', $id)->first();
+}
+
+function getAllUniversity()
+{
+	return \App\Models\University::all();
+}
+
+function getAllStudentTalkCategory()
+{
+	return \App\Models\StudentTalkCategory::all();
+}
+
 function sendCommentAlert($data)
 {
 

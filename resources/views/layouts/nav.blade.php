@@ -260,6 +260,41 @@
                 </ul>
               </li>
             @endif
+
+
+            @if(auth()->user()->hasPermission('manage_student_talk'))
+              <li class="nav-item {{ request()->is('student_talk_category') || request()->is('student_talk_category/*') || request()->is('university') || request()->is('university/*') || request()->is('student_talk') || request()->is('student_talk/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('student_talk_category') || request()->is('student_talk_category/*') || request()->is('university') || request()->is('university/*') ||  request()->is('student_talk') || request()->is('student_talk/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Student talk
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('student_talk_category.index') }}" class="nav-link {{ request()->is('student_talk_category') || request()->is('student_talk_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('university.index') }}" class="nav-link {{ request()->is('university') || request()->is('university/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>University Listing</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{ route('student_talk.index') }}" class="nav-link {{ request()->is('student_talk') || request()->is('student_talk/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Studnet talk Listing</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
           
          
         </ul>
