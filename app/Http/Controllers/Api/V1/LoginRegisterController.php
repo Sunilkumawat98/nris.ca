@@ -49,7 +49,7 @@ class LoginRegisterController extends BaseController
             "country_id":1,
             "state_id":1
         }
-     * <aside class="notice">basepath/api/v1/register-mobile-no</aside>
+     * <aside class="notice">basepath/api/v1/register</aside>
      *
      * @method POST
      * @bodyParam *first_name     required String     Ex ('Abc')

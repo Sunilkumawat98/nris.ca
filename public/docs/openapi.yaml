@@ -5519,7 +5519,7 @@ paths:
     post:
       summary: register
       operationId: register
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath/api/v1/register-mobile-no</aside>"
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath/api/v1/register</aside>"
       parameters: []
       responses:
         200:
@@ -5606,35 +5606,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: illum
+                  example: occaecati
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: quia
+                  example: autem
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: mhayes@example.net
+                  example: joanie.beier@example.org
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: quod
+                  example: autem
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: aperiam
+                  example: delectus
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: ullam
+                  example: in
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: modi
+                  example: temporibus
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: omnis
+                  example: rerum
       security: []
   /api/v1/login:
     post:
@@ -5755,11 +5755,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: quisquam
+                  example: quis
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: eius
+                  example: dignissimos
       security: []
   /api/v1/forgot-pass:
     post:
@@ -5844,7 +5844,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: voluptas
+                  example: sunt
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -5909,15 +5909,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: dianna.bednar@example.com
+                  example: quitzon.joanne@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: voluptatem
+                  example: error
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: aliquam
+                  example: quos
       security: []
   /api/v1/get-all-nris-talk:
     post:
@@ -9075,11 +9075,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: totam
+                  example: nihil
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: tenetur
+                  example: minima
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -9240,11 +9240,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: corporis
+                  example: quae
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: accusantium
+                  example: quam
       security: []
 tags:
   -
