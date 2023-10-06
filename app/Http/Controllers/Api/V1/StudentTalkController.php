@@ -233,8 +233,8 @@ class StudentTalkController extends BaseController
                 "state_id": 1,
                 "user_id": 2,
                 "cat_id": 1,
-                "name": "King Salman University",
-                "slug": "king-salman-university",
+                "name": "Test University",
+                "slug": "test-university",
                 "website": "www.websitelink.com",
                 "education_field": "BCA",
                 "message": "Nice university",
@@ -343,7 +343,7 @@ class StudentTalkController extends BaseController
      * @return \Illuminate\Http\Response
      *
      * @response 200
-     *  {
+     * {
             "status": true,
             "status_code": 200,
             "message": "Successfully student talk created...",

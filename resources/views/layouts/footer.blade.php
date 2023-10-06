@@ -34,8 +34,9 @@
 <!-- date-range-picker -->
 <script src="{{ URL::asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script> -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <script>
     $(function () {
@@ -59,6 +60,12 @@
           format: 'MM/DD/YYYY'
         }
     })
+    
+    $('#datepicker').datepicker({
+        format: 'yyyy-mm-dd',
+        autoclose: true,
+        todayHighlight: true,
+    });
 
 
 

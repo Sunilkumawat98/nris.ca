@@ -296,6 +296,33 @@
               </li>
             @endif
           
+            
+            @if(auth()->user()->hasPermission('manage_training_placement'))
+              <li class="nav-item {{ request()->is('training_placement_category') || request()->is('training_placement_category/*') || request()->is('training_placement') || request()->is('training_placement/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('training_placement_category') || request()->is('training_placement_category/*') || request()->is('training_placement') || request()->is('training_placement/*')  ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Tranning & Placement
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('training_placement_category.index') }}" class="nav-link {{ request()->is('training_placement_category') || request()->is('training_placement_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('training_placement.index') }}" class="nav-link {{ request()->is('training_placement') || request()->is('training_placement/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Tranning & Placement Listing</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
+          
          
         </ul>
       </nav>

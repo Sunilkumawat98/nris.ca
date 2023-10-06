@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Libraries\NationaEventLibrary;
+use App\Libraries\TrainingPlacementLibrary;
 use App\Http\Controllers\Api\V1\BaseController;
 
 /**
- * @group Event Listing Related
+ * @group Training & Placement Related 
  *
- * APIs for managing all Events listing related and its Category
+ * APIs for managing all Training & Placement related listing and its Category
  */
 
 
-class NationalEventController extends BaseController
+class TrainingPlacementController extends BaseController
 {
     public function __construct()
     {
@@ -28,7 +28,7 @@ class NationalEventController extends BaseController
         $this->message                          = 'message';
         $this->data                             = 'data';
         $this->total                            = 'total_count';
-        $this->eventLib                         = new NationaEventLibrary();
+        $this->traningLib                         = new TrainingPlacementLibrary();
         
         
     }
@@ -43,50 +43,27 @@ class NationalEventController extends BaseController
      * 
      * 
      *
-     * <aside class="notice">basepath/api/v1/get-all-events-category</aside>
+     * <aside class="notice">basepath/api/v1/get-all-training-category</aside>
      * @method GET
      * @return \Illuminate\Http\Response
      *
      * @response 200
      *  {
-    "status": true,
-    "status_code": 200,
-    "message": "Successfully your list found..",
-    "data": [
-                {
-                    "id": 5,
-                    "name": "Movie",
-                    "slug": "movie",
-                    "color": "#F7EDED",
-                    "created_at": "04-Sep-2023 04:45 PM"
-                },
-                {
-                    "id": 4,
-                    "name": "Cultural",
-                    "slug": "cultural",
-                    "color": "#240808",
-                    "created_at": "04-Sep-2023 04:44 PM"
-                },
-                {
-                    "id": 3,
-                    "name": "Religious",
-                    "slug": "religious",
-                    "color": "#E3D4D4",
-                    "created_at": "04-Sep-2023 04:44 PM"
-                },
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
                 {
                     "id": 2,
-                    "name": "Community",
-                    "slug": "community",
-                    "color": "#DD3636",
-                    "created_at": "04-Sep-2023 04:44 PM"
+                    "name": "Oracle",
+                    "slug": "oracle",
+                    "created_at": "28-Sep-2023 05:37 PM"
                 },
                 {
                     "id": 1,
-                    "name": "Personal",
-                    "slug": "personal",
-                    "color": "#E9C7C7",
-                    "created_at": "04-Sep-2023 04:37 PM"
+                    "name": "Java",
+                    "slug": "java",
+                    "created_at": "28-Sep-2023 05:27 PM"
                 }
             ]
         }
@@ -116,8 +93,7 @@ class NationalEventController extends BaseController
     
     public function getAllCategory()
     {
-        // $all = $request->all();
-        $response = $this->eventLib->allCategoryGet();
+        $response = $this->traningLib->allCategoryGet();
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);
@@ -132,7 +108,7 @@ class NationalEventController extends BaseController
    
       
     /**
-     * getEventListByCat
+     * getTraningPlacementListByCat
      * 
      * If everything is okay, you'll get a `200` OK response with data.
      *
@@ -144,86 +120,57 @@ class NationalEventController extends BaseController
      * @method POST
      * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
      *
-     * <aside class="notice">basepath/api/v1/get-events-list-by-category</aside>
+     * <aside class="notice">basepath/api/v1/get-training-list-by-category</aside>
      * @return \Illuminate\Http\Response
      * 
      *
      * @response 200
-     *  {
+     * {
             "status": true,
             "status_code": 200,
             "message": "Successfully data list found..",
             "data": [
                 {
-                    "id": 5,
-                    "name": "Movie",
-                    "slug": "movie",
-                    "color": "#F7EDED",
-                    "created_at": "04-Sep-2023 04:45 PM",
+                    "id": 2,
+                    "name": "Oracle",
+                    "slug": "oracle",
+                    "created_at": "28-Sep-2023 05:37 PM",
                     "category_data": []
                 },
                 {
-                    "id": 3,
-                    "name": "Religious",
-                    "slug": "religious",
-                    "color": "#E3D4D4",
-                    "created_at": "04-Sep-2023 04:44 PM",
+                    "id": 1,
+                    "name": "Java",
+                    "slug": "java",
+                    "created_at": "28-Sep-2023 05:27 PM",
                     "category_data": [
                         {
                             "id": 2,
                             "country_id": 1,
                             "state_id": {
-                                "id": 1,
-                                "name": "Alaska",
+                                "id": 3,
+                                "name": "Alabama",
                                 "code": "AL",
-                                "domain": "alaska",
-                                "description": "AL desc",
+                                "domain": "alabama",
+                                "description": "alabama",
                                 "logo": "NA",
-                                "s_meta_title": "Al title",
-                                "s_meta_description": "AL META",
-                                "s_meta_keywords": "AL key",
+                                "s_meta_title": "meta",
+                                "s_meta_description": "desc",
+                                "s_meta_keywords": "key",
                                 "header_image": "NULL",
                                 "header_image2": "NULL",
                                 "header_image3": "NULL"
                             },
-                            "city_id": {
-                                "id": 1,
-                                "name": "New City",
-                                "state_code": "AL"
-                            },
-                            "cat_id": 3,
-                            "title": "Boosting Level",
-                            "title_slug": "boosting-level",
-                            "image": "http://localhost/upload/image-data/EVENTS_IMG/1694082997__turing.png",
-                            "url": "https://www.youtube.com/watch?v=L_nN1P297N0&t=19s",
-                            "address": "addresssssss",
-                            "start_date": "2023-09-07",
-                            "end_date": "2023-09-07",
-                            "details": "detaoils of newwwwww",
-                            "meta_title": "meta titlleeeeeeee",
-                            "meta_description": "meta descriptionnnnnnnn",
-                            "meta_keywords": "meta keyworddddddddd",
-                            "other_details": "other inforrrrrr",
-                            "total_views": 0,
-                            "created_at": "07-Sep-2023 05:00 PM"
-                        }
-                    ]
-                },
-                {
-                    "id": 2,
-                    "name": "Community",
-                    "slug": "community",
-                    "color": "#DD3636",
-                    "created_at": "04-Sep-2023 04:44 PM",
-                    "category_data": []
-                },
-                {
-                    "id": 1,
-                    "name": "Personal",
-                    "slug": "personal",
-                    "color": "#E9C7C7",
-                    "created_at": "04-Sep-2023 04:37 PM",
-                    "category_data": [
+                            "cat_id": 1,
+                            "user_id": null,
+                            "admin_id": 1,
+                            "title": "title",
+                            "slug": "title",
+                            "description": null,
+                            "image": "PATH/1695983823.png",
+                            "expire_at": "2023-09-27",
+                            "total_views": null,
+                            "created_at": "29-Sep-2023 04:23 PM"
+                        },
                         {
                             "id": 1,
                             "country_id": 1,
@@ -241,32 +188,22 @@ class NationalEventController extends BaseController
                                 "header_image2": "NULL",
                                 "header_image3": "NULL"
                             },
-                            "city_id": {
-                                "id": 1,
-                                "name": "New City",
-                                "state_code": "AL"
-                            },
                             "cat_id": 1,
-                            "title": "This is new title",
-                            "title_slug": "this-is-new-title",
-                            "image": "http://localhost/upload/image-data/EVENTS_IMG/1694082841__turing.png",
-                            "url": "https://www.youtube.com/watch?v=L_nN1P297N0&t=19s",
-                            "address": "this is address",
-                            "start_date": "2023-09-07",
-                            "end_date": "2023-09-07",
-                            "details": "this is details",
-                            "meta_title": "meta title",
-                            "meta_description": "mata desc",
-                            "meta_keywords": "meta key",
-                            "other_details": "this is other infor",
-                            "total_views": 0,
-                            "created_at": "07-Sep-2023 04:04 PM"
+                            "user_id": null,
+                            "admin_id": null,
+                            "title": "Boosting Level",
+                            "slug": "boosting-level",
+                            "description": null,
+                            "image": "PATH/1695982951_Stone.png",
+                            "expire_at": "2023-10-05",
+                            "total_views": null,
+                            "created_at": "29-Sep-2023 03:52 PM"
                         }
                     ]
                 }
             ]
-        }
-     *
+        } 
+     *  
      *
      * @response 404
      *  {
@@ -290,10 +227,10 @@ class NationalEventController extends BaseController
     
     
     
-    public function getEventListByCat(Request $request)
+    public function getTraningPlacementListByCat(Request $request)
     {
         $all = $request->all();
-        $response = $this->eventLib->eventListingByCategoryGet($all);
+        $response = $this->traningLib->trainingPlacementListingByCategoryGet($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);
@@ -310,7 +247,7 @@ class NationalEventController extends BaseController
 
      
     /**
-     * getAllEventListByCategoryId
+     * getAllTrainingPlacementListByCategoryId
      * 
      * If everything is okay, you'll get a `200` OK response with data.
      *
@@ -326,7 +263,7 @@ class NationalEventController extends BaseController
      * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
      *
-     * <aside class="notice">basepath/api/v1/get-all-events-list-by-category-id</aside>
+     * <aside class="notice">basepath/api/v1/get-all-training-list-by-category-id</aside>
      * @return \Illuminate\Http\Response
      * 
      *
@@ -393,10 +330,10 @@ class NationalEventController extends BaseController
     
     
     
-    public function getAllEventListByCategoryId(Request $request)
+    public function getAllTrainingPlacementListByCategoryId(Request $request)
     {
         $all = $request->all();
-        $response = $this->eventLib->allEventListingByCategoryGet($all);
+        $response = $this->traningLib->allTrainingPlacementListingByCategoryGet($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);
@@ -407,7 +344,7 @@ class NationalEventController extends BaseController
    
       
     /**
-     * geteventById
+     * getTrainingPlacementById
      * 
      * If everything is okay, you'll get a `200` OK response with data.
      *
@@ -415,15 +352,15 @@ class NationalEventController extends BaseController
      *  {
             "country_id":1,
             "state_id":1,
-            "event_id":1
+            "training_id":1
      *  }
      * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
      * @method POST
      * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
-     * @bodyParam *event_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *training_id integer required Example: 1,2,3 in JSON BODY
      *
-     * <aside class="notice">basepath/api/v1/get-business-by-id</aside>
+     * <aside class="notice">basepath/api/v1/get-training-by-id</aside>
      * @return \Illuminate\Http\Response
      * 
      *
@@ -436,38 +373,32 @@ class NationalEventController extends BaseController
                 "id": 1,
                 "country_id": 1,
                 "state_id": 1,
-                "city_id": 1,
                 "cat_id": 1,
-                "title": "Title",
-                "title_slug": "title",
-                "image": "PATH/EVENTS_IMG/1694262538_Screenshot_from_2023-08-02_15-19-33.png",
-                "url": "https://www.youtube.com/watch?v=L_nN1P297N0&t=19s",
-                "address": "address",
-                "start_date": "2023-09-09",
-                "end_date": "2023-09-09",
-                "details": "detauils",
-                "meta_title": "meta title",
-                "meta_description": "meta desc",
-                "meta_keywords": "meta keyword",
-                "other_details": "oitehr detail",
-                "total_views": 0,
-                "created_at": "09-Sep-2023 05:58 PM",
+                "user_id": null,
+                "admin_id": 1,
+                "title": "Java training",
+                "slug": "java-training",
+                "description": null,
+                "image": "PATH/1695982951_Stone.png",
+                "expire_at": "2023-10-05",
+                "total_views": null,
+                "created_at": "03-Oct-2023 04:08 PM",
                 "comments": [
                     {
-                        "id": 2,
-                        "user_id": 2,
-                        "event_list_id": 1,
+                        "id": 1,
+                        "user_id": 6,
+                        "training_list_id": 1,
                         "country_id": 1,
                         "state_id": 1,
-                        "comment": "Nice....",
-                        "created_at": "09-Sep-2023 06:28 PM",
+                        "comment": "mast",
+                        "created_at": null,
                         "user": {
-                            "id": 2,
-                            "first_name": "Md Saddam",
-                            "last_name": "Hussain",
-                            "email": "mdsaddamhussain595@gmail.com",
-                            "dob": "2023-02-02",
-                            "mobile": "9899899854"
+                            "id": 6,
+                            "first_name": "Grant Renner",
+                            "last_name": "Abelardo Konopelski Sr.",
+                            "email": "spredovic@example.org",
+                            "dob": "2023-08-31",
+                            "mobile": "7702298725"
                         }
                     }
                 ]
@@ -497,10 +428,10 @@ class NationalEventController extends BaseController
     
     
     
-    public function geteventById(Request $request)
+    public function getTrainingPlacementById(Request $request)
     {
         $all = $request->all();
-        $response = $this->eventLib->eventListingByIdGet($all);
+        $response = $this->traningLib->trainingPlacementListingByIdGet($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);
@@ -514,14 +445,14 @@ class NationalEventController extends BaseController
    
       
     /**
-    * commentEventList
+    * commentTrainingList
     * 
     * If everything is okay, you'll get a `200` OK response with data.
     *
     * EX
     *  {
             "user_id":1,
-            "event_id":1,
+            "training_id":1,
             "country_id":1,
             "state_id":1,
             "comment":"Nice.......",
@@ -531,29 +462,141 @@ class NationalEventController extends BaseController
     * @authenticated
     * @header      Authorization Bearer _token required  
     * @bodyParam *user_id integer required Example: 1,2,3 in JSON BODY
-    * @bodyParam *event_id integer required Example: 1,2,3 in JSON BODY
+    * @bodyParam *training_id integer required Example: 1,2,3 in JSON BODY
     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
     * @bodyParam *comment string Example: This is good 5in JSON BODY
     *
-    * <aside class="notice">basepath/api/v1/comment-event-list</aside>
+    * <aside class="notice">basepath/api/v1/comment-training-list</aside>
     * @return \Illuminate\Http\Response
     * 
     *
     * @response 200
-    *  
-    *{
+    * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully comment done...",
+            "data": {
+                "user_id": 2,
+                "training_list_id": 1,
+                "country_id": 1,
+                "state_id": 1,
+                "comment": "this is nice",
+                "created_at": "05-Oct-2023 02:20 PM",
+                "id": 3
+            }
+        }
+    *
+    *
+    * @response 401
+    *  {
+            "message": "Token is Invalid",
+            "status_code": 401,
+            "status": false
+        }
+    *
+    *
+    * @response 419
+    *  {
+            "message": "Token is Expired",
+            "status_code": 419,
+            "status": false
+        }
+    *
+    *
+    *
+    * @response 403
+    *  {
+            "message": "Authorised Token Not Found",
+            "status_code": 403,
+            "status": false
+        }
+       
+    * @response 500
+    *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+       }
+    * 
+    *
+    */
+    
+    
+    
+    
+    public function commentTrainingList(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->traningLib->commentTrainingListing($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+    
+    
+
+   
+      
+    /**
+    * getTrainingListByUserId
+    * 
+    * If everything is okay, you'll get a `200` OK response with data.
+    *
+    * EX
+    *  {
+            "user_id":1
+    *  }
+    * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+    * @method POST
+    * @authenticated
+    * @header      Authorization Bearer _token required  
+    * @bodyParam *user_id integer required Example: 1,2,3 in JSON BODY
+    *
+    * <aside class="notice">basepath/api/v1/get-training-list-by-user-id</aside>
+    * @return \Illuminate\Http\Response
+    * 
+    *
+    * @response 200
+    * {
         "status": true,
         "status_code": 200,
-        "message": "Successfully comment done...",
+        "message": "Successfully data list found..",
         "data": {
-            "user_id": 2,
-            "event_list_id": 1,
-            "country_id": 1,
-            "state_id": 1,
-            "comment": "Nice....",
-            "created_at": "09-Sep-2023 06:28 PM",
-            "id": 2
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 1,
+                    "country_id": 1,
+                    "state_id": 1,
+                    "cat_id": {
+                        "id": 1,
+                        "name": "Java",
+                        "slug": "java",
+                        "created_at": "28-Sep-2023 05:27 PM"
+                    },
+                    "user_id": 2,
+                    "admin_id": null,
+                    "title": "Java training",
+                    "slug": "java-training",
+                    "description": null,
+                    "image": "PATH/1695982951_Stone.png",
+                    "expire_at": "2023-10-05",
+                    "total_views": null,
+                    "created_at": "03-Oct-2023 04:08 PM"
+                }
+            ],
+            "first_page_url": "PATH/api/v1/get-training-list-by-user-id?page=1",
+            "from": 1,
+            "next_page_url": null,
+            "path": "PATH/api/v1/get-training-list-by-user-id",
+            "per_page": 10,
+            "prev_page_url": null,
+            "to": 1
         }
     }
     *
@@ -596,10 +639,10 @@ class NationalEventController extends BaseController
     
     
     
-    public function commentEventList(Request $request)
+    public function getTrainingListByUserId(Request $request)
     {
         $all = $request->all();
-        $response = $this->eventLib->commentEventListing($all);
+        $response = $this->traningLib->trainingListGetByUserId($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);

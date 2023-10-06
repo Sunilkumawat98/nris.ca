@@ -24,6 +24,8 @@ use App\Http\Controllers\Admin\NationalEventController;
 use App\Http\Controllers\Admin\StudentTalkCategoryController;
 use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\Admin\StudentTalkController;
+use App\Http\Controllers\Admin\TrainingPlacementCategoryController;
+use App\Http\Controllers\Admin\TrainingPlacementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,18 +111,11 @@ Route::domain(config('app.domain'))->group(function () {
         Route::resource('business_sub_category', BusinessSubCategoryController::class);
         Route::post('/business_sub_category/{id}/active-status', [BusinessSubCategoryController::class, 'livePause'])->name('business_sub_category.activeStatus');
 
-        
-
-
         Route::resource('events_category', EventCategoryController::class);
         Route::post('/events_category/{id}/active-status', [EventCategoryController::class, 'livePause'])->name('events_category.activeStatus');
 
         Route::resource('national_events', NationalEventController::class);
         Route::post('/national_events/{id}/active-status', [NationalEventController::class, 'livePause'])->name('national_events.activeStatus');
-
-
-
-
 
         Route::resource('student_talk_category', StudentTalkCategoryController::class);
         Route::post('/student_talk_category/{id}/active-status', [StudentTalkCategoryController::class, 'livePause'])->name('student_talk_category.activeStatus');
@@ -130,11 +125,17 @@ Route::domain(config('app.domain'))->group(function () {
         Route::resource('university', UniversityController::class);
         Route::post('/university/{id}/active-status', [UniversityController::class, 'livePause'])->name('university.activeStatus');
 
-
-
-
         Route::resource('student_talk', StudentTalkController::class);
         Route::post('/student_talk/{id}/active-status', [StudentTalkController::class, 'livePause'])->name('student_talk.activeStatus');
+
+
+
+        
+        Route::resource('training_placement_category', TrainingPlacementCategoryController::class);
+        Route::post('/training_placement_category/{id}/active-status', [TrainingPlacementCategoryController::class, 'livePause'])->name('training_placement_category.activeStatus');
+
+        Route::resource('training_placement', TrainingPlacementController::class);
+        Route::post('/training_placement/{id}/active-status', [TrainingPlacementController::class, 'livePause'])->name('training_placement.activeStatus');
 
 
 

@@ -123,17 +123,18 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
-    'upload_ads_img' => env('UPLOAD_ADS_IMG'),
-    'clasified_cdn_path' => env('SHOW_IMG'),
-    'image_url' => env('SHOW_IMG'),
+    'key'                       => env('APP_KEY'),
+    'upload_ads_img'            => env('UPLOAD_ADS_IMG'),
+    'clasified_cdn_path'        => env('SHOW_IMG'),
+    'image_url'                 => env('SHOW_IMG'),
     
 
-    'upload_desi_movie_img' => env('UPLOAD_DESI_MOVIE_IMG'),
-    'upload_movie_rating_img' => env('UPLOAD_MOVIE_RATING_IMG'),
-    'upload_business_img' => env('UPLOAD_BUSINESS_IMG'),
-    'upload_business_icon' => env('UPLOAD_BUSINESS_ICON'),
-    'upload_events_img' => env('UPLOAD_EVENTS_IMG'),
+    'upload_desi_movie_img'     => env('UPLOAD_DESI_MOVIE_IMG'),
+    'upload_movie_rating_img'   => env('UPLOAD_MOVIE_RATING_IMG'),
+    'upload_business_img'       => env('UPLOAD_BUSINESS_IMG'),
+    'upload_business_icon'      => env('UPLOAD_BUSINESS_ICON'),
+    'upload_events_img'         => env('UPLOAD_EVENTS_IMG'),
+    'training_img'              => env('TRAINING_IMG'),
 
     'cipher' => 'AES-256-CBC',
 

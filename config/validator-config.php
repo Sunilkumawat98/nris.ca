@@ -43,6 +43,7 @@ return [
         'image'                 => 'required|image|mimes:jpeg,png,jpg,gif',
         'classified_id'         => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'business_list_id'      => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'training_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
         'comment'               => "bail|required|string",
@@ -336,6 +337,75 @@ return [
 
 
 
+
+        /*
+        
+            Traning & Placement Listing & Its category
+        
+        */
+
+
+        "trainingPlacementListingByCategoryGet" => [
+            "required" => [
+                'country_id'
+            ],
+            "optional" => [
+            ]
+        ],
+        "allTrainingPlacementListingByCategoryGet" => [
+            "required" => [
+                'country_id', 'state_id', 'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+        "trainingPlacementListingByIdGet" => [
+            "required" => [
+                'country_id', 'state_id', 'training_id'
+            ],
+            "optional" => [
+            ]
+        ],
+        "commentTrainingListing" => [
+            "required" => [
+                'country_id', 'state_id', 'user_id', 'training_id', 'comment'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "trainingListGetByUserId" => [
+            "required" => [
+                'user_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+
+
+        /*
+        
+            search
+        
+        */
+
+        
+        "searchCountry" => [
+            "required" => [
+                'country_id',"keyword"
+            ],
+            "optional" => [
+            ]
+        ],
+        "searchState" => [
+            "required" => [
+                'country_id', 'state_id', "keyword"
+            ],
+            "optional" => [
+            ]
+        ],
 
 
         /*

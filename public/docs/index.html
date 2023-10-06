@@ -213,6 +213,19 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-search-related" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="search-related">
+                    <a href="#search-related">Search Related</a>
+                </li>
+                                    <ul id="tocify-subheader-search-related" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="search-related-POSTapi-v1-country-search">
+                                <a href="#search-related-POSTapi-v1-country-search">getCountrySearch</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="search-related-POSTapi-v1-state-search">
+                                <a href="#search-related-POSTapi-v1-state-search">getStateSearch</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-studenttalk-related" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="studenttalk-related">
                     <a href="#studenttalk-related">StudentTalk Related</a>
@@ -235,6 +248,31 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="studenttalk-related-POSTapi-v1-create-student-talk">
                                 <a href="#studenttalk-related-POSTapi-v1-create-student-talk">createStudentTalk</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-training-placement-related" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="training-placement-related">
+                    <a href="#training-placement-related">Training & Placement Related </a>
+                </li>
+                                    <ul id="tocify-subheader-training-placement-related" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="training-placement-related-GETapi-v1-get-all-training-category">
+                                <a href="#training-placement-related-GETapi-v1-get-all-training-category">getAllCategory</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="training-placement-related-POSTapi-v1-get-training-list-by-category">
+                                <a href="#training-placement-related-POSTapi-v1-get-training-list-by-category">getTraningPlacementListByCat</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="training-placement-related-POSTapi-v1-get-all-training-list-by-category-id">
+                                <a href="#training-placement-related-POSTapi-v1-get-all-training-list-by-category-id">getAllTrainingPlacementListByCategoryId</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="training-placement-related-POSTapi-v1-get-training-by-id">
+                                <a href="#training-placement-related-POSTapi-v1-get-training-by-id">getTrainingPlacementById</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="training-placement-related-POSTapi-v1-comment-training-list">
+                                <a href="#training-placement-related-POSTapi-v1-comment-training-list">commentTrainingList</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="training-placement-related-POSTapi-v1-get-training-list-by-user-id">
+                                <a href="#training-placement-related-POSTapi-v1-get-training-list-by-user-id">getTrainingListByUserId</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -279,7 +317,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 22, 2023</li>
+        <li>Last updated: October 6, 2023</li>
     </ul>
 </div>
 
@@ -5795,7 +5833,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>EX
 {
 &quot;user_id&quot;:1,
-&quot;business_list_id&quot;:1,
+&quot;event_id&quot;:1,
 &quot;country_id&quot;:1,
 &quot;state_id&quot;:1,
 &quot;comment&quot;:&quot;Nice.......&quot;,
@@ -6091,14 +6129,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"occaecati\",
-    \"*last_name\": \"autem\",
-    \"*email\": \"joanie.beier@example.org\",
-    \"*dob\": \"autem\",
-    \"*mobile\": \"delectus\",
-    \"*password\": \"in\",
-    \"*country_id\": \"temporibus\",
-    \"*state_id\": \"rerum\"
+    \"*first_name\": \"incidunt\",
+    \"*last_name\": \"dolorum\",
+    \"*email\": \"rwalter@example.org\",
+    \"*dob\": \"fugit\",
+    \"*mobile\": \"velit\",
+    \"*password\": \"ratione\",
+    \"*country_id\": \"qui\",
+    \"*state_id\": \"molestiae\"
 }"
 </code></pre></div>
 
@@ -6114,14 +6152,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "occaecati",
-    "*last_name": "autem",
-    "*email": "joanie.beier@example.org",
-    "*dob": "autem",
-    "*mobile": "delectus",
-    "*password": "in",
-    "*country_id": "temporibus",
-    "*state_id": "rerum"
+    "*first_name": "incidunt",
+    "*last_name": "dolorum",
+    "*email": "rwalter@example.org",
+    "*dob": "fugit",
+    "*mobile": "velit",
+    "*password": "ratione",
+    "*country_id": "qui",
+    "*state_id": "molestiae"
 };
 
 fetch(url, {
@@ -6247,10 +6285,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="occaecati"
+               value="incidunt"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>occaecati</code></p>
+<p>String     Ex ('Abc') Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -6258,10 +6296,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="autem"
+               value="dolorum"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>autem</code></p>
+<p>String     Ex ('def') Example: <code>dolorum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -6269,10 +6307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="joanie.beier@example.org"
+               value="rwalter@example.org"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>joanie.beier@example.org</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>rwalter@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -6280,10 +6318,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="autem"
+               value="fugit"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>autem</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>fugit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -6291,10 +6329,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="delectus"
+               value="velit"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>delectus</code></p>
+<p>String     Ex ('9876****09') Example: <code>velit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -6302,10 +6340,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="in"
+               value="ratione"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>in</code></p>
+<p>String     Ex ('Abc') Example: <code>ratione</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -6313,10 +6351,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="temporibus"
+               value="qui"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>temporibus</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -6324,10 +6362,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="rerum"
+               value="molestiae"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>rerum</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>molestiae</code></p>
         </div>
         </form>
 
@@ -6355,8 +6393,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"quis\",
-    \"*password\": \"dignissimos\"
+    \"*email_id\": \"quas\",
+    \"*password\": \"culpa\"
 }"
 </code></pre></div>
 
@@ -6372,8 +6410,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "quis",
-    "*password": "dignissimos"
+    "*email_id": "quas",
+    "*password": "culpa"
 };
 
 fetch(url, {
@@ -6507,10 +6545,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="quis"
+               value="quas"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>quis</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>quas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -6518,10 +6556,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="dignissimos"
+               value="culpa"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>dignissimos</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>culpa</code></p>
         </div>
         </form>
 
@@ -6544,7 +6582,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"sunt\"
+    \"*email_id\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -6560,7 +6598,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "sunt"
+    "*email_id": "voluptatem"
 };
 
 fetch(url, {
@@ -6683,10 +6721,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="sunt"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>sunt</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>voluptatem</code></p>
         </div>
         </form>
 
@@ -6709,9 +6747,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"quitzon.joanne@example.com\",
-    \"*new_password\": \"error\",
-    \"*retype_password\": \"quos\"
+    \"*email\": \"oren.kuhic@example.net\",
+    \"*new_password\": \"minus\",
+    \"*retype_password\": \"voluptas\"
 }"
 </code></pre></div>
 
@@ -6727,9 +6765,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "quitzon.joanne@example.com",
-    "*new_password": "error",
-    "*retype_password": "quos"
+    "*email": "oren.kuhic@example.net",
+    "*new_password": "minus",
+    "*retype_password": "voluptas"
 };
 
 fetch(url, {
@@ -6841,10 +6879,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="quitzon.joanne@example.com"
+               value="oren.kuhic@example.net"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>quitzon.joanne@example.com</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>oren.kuhic@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -6852,10 +6890,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="error"
+               value="minus"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>error</code></p>
+<p>String     Ex ('Abc@123') Example: <code>minus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -6863,10 +6901,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="quos"
+               value="voluptas"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>quos</code></p>
+<p>String     Ex ('Abc@123') Example: <code>voluptas</code></p>
         </div>
         </form>
 
@@ -8576,6 +8614,456 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                <h1 id="search-related">Search Related</h1>
+
+    <p>APIs for managing all Search related listing</p>
+
+                                <h2 id="search-related-POSTapi-v1-country-search">getCountrySearch</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<p>EX
+{
+&quot;country_id&quot;:1,
+&quot;keyword&quot;:&quot;chiken&quot;
+}</p>
+<aside class="notice">basepath/api/v1/country-search</aside>
+
+<span id="example-requests-POSTapi-v1-country-search">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/country-search" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*country_id\": 1,
+    \"*keyword\": \"chiken shop in JSON BODY\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/country-search"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*country_id": 1,
+    "*keyword": "chiken shop in JSON BODY"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-country-search">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;country_id&quot;: 1,
+                &quot;state_id&quot;: 1,
+                &quot;cat_id&quot;: 1,
+                &quot;sub_cat_id&quot;: 1,
+                &quot;name&quot;: &quot;Halal chiken shop&quot;,
+                &quot;name_slug&quot;: &quot;halal-chiken-shop&quot;,
+                &quot;image&quot;: &quot;PATH/1693550779__turing.png&quot;,
+                &quot;contact_name&quot;: &quot;saddam hussain&quot;,
+                &quot;contact_email&quot;: &quot;saddam@gmail.com&quot;,
+                &quot;contact_number&quot;: &quot;898989899&quot;,
+                &quot;contact_address&quot;: &quot;Address&quot;,
+                &quot;meta_title&quot;: &quot;meta title&quot;,
+                &quot;meta_description&quot;: &quot;meta desc&quot;,
+                &quot;meta_keywords&quot;: &quot;meta key&quot;,
+                &quot;other_details&quot;: &quot;other info&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;01-Sep-2023 12:16 PM&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/api/v1/country-search?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/api/v1/country-search&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-country-search" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-country-search"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-country-search"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-country-search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-country-search">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-country-search" data-method="POST"
+      data-path="api/v1/country-search"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-country-search', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-country-search"
+                    onclick="tryItOut('POSTapi-v1-country-search');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-country-search"
+                    onclick="cancelTryOut('POSTapi-v1-country-search');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-country-search"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/country-search</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-country-search"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-country-search"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-country-search"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*keyword</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*keyword"                data-endpoint="POSTapi-v1-country-search"
+               value="chiken shop in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>chiken shop in JSON BODY</code></p>
+        </div>
+        </form>
+
+                    <h2 id="search-related-POSTapi-v1-state-search">getStateSearch</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<p>EX
+{
+&quot;country_id&quot;:1,
+&quot;state_id&quot;:1,
+&quot;keyword&quot;:&quot;chiken&quot;
+}</p>
+<aside class="notice">basepath/api/v1/state-search</aside>
+
+<span id="example-requests-POSTapi-v1-state-search">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/state-search" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*country_id\": 1,
+    \"*state_id\": 1,
+    \"*keyword\": \"chiken shop in JSON BODY\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/state-search"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*country_id": 1,
+    "*state_id": 1,
+    "*keyword": "chiken shop in JSON BODY"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-state-search">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;country_id&quot;: 1,
+                &quot;state_id&quot;: 1,
+                &quot;cat_id&quot;: 1,
+                &quot;sub_cat_id&quot;: 1,
+                &quot;name&quot;: &quot;Halal chiken shop&quot;,
+                &quot;name_slug&quot;: &quot;halal-chiken-shop&quot;,
+                &quot;image&quot;: &quot;PATH/1693550779__turing.png&quot;,
+                &quot;contact_name&quot;: &quot;saddam hussain&quot;,
+                &quot;contact_email&quot;: &quot;saddam@gmail.com&quot;,
+                &quot;contact_number&quot;: &quot;898989899&quot;,
+                &quot;contact_address&quot;: &quot;Address&quot;,
+                &quot;meta_title&quot;: &quot;meta title&quot;,
+                &quot;meta_description&quot;: &quot;meta desc&quot;,
+                &quot;meta_keywords&quot;: &quot;meta key&quot;,
+                &quot;other_details&quot;: &quot;other info&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;01-Sep-2023 12:16 PM&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/api/v1/country-search?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/api/v1/country-search&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-state-search" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-state-search"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-state-search"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-state-search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-state-search">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-state-search" data-method="POST"
+      data-path="api/v1/state-search"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-state-search', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-state-search"
+                    onclick="tryItOut('POSTapi-v1-state-search');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-state-search"
+                    onclick="cancelTryOut('POSTapi-v1-state-search');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-state-search"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/state-search</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-state-search"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-state-search"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-state-search"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*state_id"                data-endpoint="POSTapi-v1-state-search"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*keyword</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*keyword"                data-endpoint="POSTapi-v1-state-search"
+               value="chiken shop in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>chiken shop in JSON BODY</code></p>
+        </div>
+        </form>
+
                 <h1 id="studenttalk-related">StudentTalk Related</h1>
 
     <p>APIs for managing all student talk and its reply related</p>
@@ -9449,8 +9937,8 @@ fetch(url, {
         &quot;state_id&quot;: 1,
         &quot;user_id&quot;: 2,
         &quot;cat_id&quot;: 1,
-        &quot;name&quot;: &quot;King Salman University&quot;,
-        &quot;slug&quot;: &quot;king-salman-university&quot;,
+        &quot;name&quot;: &quot;Test University&quot;,
+        &quot;slug&quot;: &quot;test-university&quot;,
         &quot;website&quot;: &quot;www.websitelink.com&quot;,
         &quot;education_field&quot;: &quot;BCA&quot;,
         &quot;message&quot;: &quot;Nice university&quot;,
@@ -10047,6 +10535,1380 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>'This is test meta_keywords' in JSON BODY</code></p>
+        </div>
+        </form>
+
+                <h1 id="training-placement-related">Training & Placement Related </h1>
+
+    <p>APIs for managing all Training &amp; Placement related listing and its Category</p>
+
+                                <h2 id="training-placement-related-GETapi-v1-get-all-training-category">getAllCategory</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<aside class="notice">basepath/api/v1/get-all-training-category</aside>
+
+<span id="example-requests-GETapi-v1-get-all-training-category">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://stage-api.nris.ca/api/v1/get-all-training-category" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-all-training-category"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-get-all-training-category">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully your list found..&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Oracle&quot;,
+            &quot;slug&quot;: &quot;oracle&quot;,
+            &quot;created_at&quot;: &quot;28-Sep-2023 05:37 PM&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Java&quot;,
+            &quot;slug&quot;: &quot;java&quot;,
+            &quot;created_at&quot;: &quot;28-Sep-2023 05:27 PM&quot;
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-get-all-training-category" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-get-all-training-category"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-get-all-training-category"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-get-all-training-category" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-get-all-training-category">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-get-all-training-category" data-method="GET"
+      data-path="api/v1/get-all-training-category"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-get-all-training-category', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-get-all-training-category"
+                    onclick="tryItOut('GETapi-v1-get-all-training-category');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-get-all-training-category"
+                    onclick="cancelTryOut('GETapi-v1-get-all-training-category');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-get-all-training-category"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/get-all-training-category</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-get-all-training-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-get-all-training-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="training-placement-related-POSTapi-v1-get-training-list-by-category">getTraningPlacementListByCat</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;country_id&quot;:1
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-training-list-by-category">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-training-list-by-category" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*country_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-training-list-by-category"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*country_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-training-list-by-category">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Oracle&quot;,
+            &quot;slug&quot;: &quot;oracle&quot;,
+            &quot;created_at&quot;: &quot;28-Sep-2023 05:37 PM&quot;,
+            &quot;category_data&quot;: []
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Java&quot;,
+            &quot;slug&quot;: &quot;java&quot;,
+            &quot;created_at&quot;: &quot;28-Sep-2023 05:27 PM&quot;,
+            &quot;category_data&quot;: [
+                {
+                    &quot;id&quot;: 2,
+                    &quot;country_id&quot;: 1,
+                    &quot;state_id&quot;: {
+                        &quot;id&quot;: 3,
+                        &quot;name&quot;: &quot;Alabama&quot;,
+                        &quot;code&quot;: &quot;AL&quot;,
+                        &quot;domain&quot;: &quot;alabama&quot;,
+                        &quot;description&quot;: &quot;alabama&quot;,
+                        &quot;logo&quot;: &quot;NA&quot;,
+                        &quot;s_meta_title&quot;: &quot;meta&quot;,
+                        &quot;s_meta_description&quot;: &quot;desc&quot;,
+                        &quot;s_meta_keywords&quot;: &quot;key&quot;,
+                        &quot;header_image&quot;: &quot;NULL&quot;,
+                        &quot;header_image2&quot;: &quot;NULL&quot;,
+                        &quot;header_image3&quot;: &quot;NULL&quot;
+                    },
+                    &quot;cat_id&quot;: 1,
+                    &quot;user_id&quot;: null,
+                    &quot;admin_id&quot;: 1,
+                    &quot;title&quot;: &quot;title&quot;,
+                    &quot;slug&quot;: &quot;title&quot;,
+                    &quot;description&quot;: null,
+                    &quot;image&quot;: &quot;PATH/1695983823.png&quot;,
+                    &quot;expire_at&quot;: &quot;2023-09-27&quot;,
+                    &quot;total_views&quot;: null,
+                    &quot;created_at&quot;: &quot;29-Sep-2023 04:23 PM&quot;
+                },
+                {
+                    &quot;id&quot;: 1,
+                    &quot;country_id&quot;: 1,
+                    &quot;state_id&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;Alaska&quot;,
+                        &quot;code&quot;: &quot;AL&quot;,
+                        &quot;domain&quot;: &quot;alaska&quot;,
+                        &quot;description&quot;: &quot;AL desc&quot;,
+                        &quot;logo&quot;: &quot;NA&quot;,
+                        &quot;s_meta_title&quot;: &quot;Al title&quot;,
+                        &quot;s_meta_description&quot;: &quot;AL META&quot;,
+                        &quot;s_meta_keywords&quot;: &quot;AL key&quot;,
+                        &quot;header_image&quot;: &quot;NULL&quot;,
+                        &quot;header_image2&quot;: &quot;NULL&quot;,
+                        &quot;header_image3&quot;: &quot;NULL&quot;
+                    },
+                    &quot;cat_id&quot;: 1,
+                    &quot;user_id&quot;: null,
+                    &quot;admin_id&quot;: null,
+                    &quot;title&quot;: &quot;Boosting Level&quot;,
+                    &quot;slug&quot;: &quot;boosting-level&quot;,
+                    &quot;description&quot;: null,
+                    &quot;image&quot;: &quot;PATH/1695982951_Stone.png&quot;,
+                    &quot;expire_at&quot;: &quot;2023-10-05&quot;,
+                    &quot;total_views&quot;: null,
+                    &quot;created_at&quot;: &quot;29-Sep-2023 03:52 PM&quot;
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-training-list-by-category" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-training-list-by-category"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-training-list-by-category"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-training-list-by-category" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-training-list-by-category">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-training-list-by-category" data-method="POST"
+      data-path="api/v1/get-training-list-by-category"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-training-list-by-category', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-training-list-by-category"
+                    onclick="tryItOut('POSTapi-v1-get-training-list-by-category');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-training-list-by-category"
+                    onclick="cancelTryOut('POSTapi-v1-get-training-list-by-category');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-training-list-by-category"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-training-list-by-category</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-training-list-by-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-training-list-by-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-get-training-list-by-category"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="training-placement-related-POSTapi-v1-get-all-training-list-by-category-id">getAllTrainingPlacementListByCategoryId</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;country_id&quot;:1,
+&quot;state_id&quot;:1,
+&quot;category_id&quot;:1,
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-all-training-list-by-category-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-all-training-list-by-category-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*country_id\": 1,
+    \"*state_id\": 1,
+    \"*category_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-all-training-list-by-category-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*country_id": 1,
+    "*state_id": 1,
+    "*category_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-all-training-list-by-category-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;country_id&quot;: 1,
+                &quot;state_id&quot;: 1,
+                &quot;city_id&quot;: 1,
+                &quot;cat_id&quot;: 1,
+                &quot;title&quot;: &quot;This is new title&quot;,
+                &quot;title_slug&quot;: &quot;this-is-new-title&quot;,
+                &quot;image&quot;: &quot;PATH/EVENTS_IMG/1694082841__turing.png&quot;,
+                &quot;url&quot;: &quot;https://www.youtube.com/watch?v=L_nN1P297N0&amp;t=19s&quot;,
+                &quot;address&quot;: &quot;this is address&quot;,
+                &quot;start_date&quot;: &quot;2023-09-07&quot;,
+                &quot;end_date&quot;: &quot;2023-09-07&quot;,
+                &quot;details&quot;: &quot;this is details&quot;,
+                &quot;meta_title&quot;: &quot;meta title&quot;,
+                &quot;meta_description&quot;: &quot;mata desc&quot;,
+                &quot;meta_keywords&quot;: &quot;meta key&quot;,
+                &quot;other_details&quot;: &quot;this is other infor&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;07-Sep-2023 04:04 PM&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/api/v1/get-all-events-list-by-category-id?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/api/v1/get-all-events-list-by-category-id&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-all-training-list-by-category-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-all-training-list-by-category-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-all-training-list-by-category-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-all-training-list-by-category-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-all-training-list-by-category-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-all-training-list-by-category-id" data-method="POST"
+      data-path="api/v1/get-all-training-list-by-category-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-all-training-list-by-category-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-all-training-list-by-category-id"
+                    onclick="tryItOut('POSTapi-v1-get-all-training-list-by-category-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-all-training-list-by-category-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-all-training-list-by-category-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-all-training-list-by-category-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-all-training-list-by-category-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-all-training-list-by-category-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-all-training-list-by-category-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-get-all-training-list-by-category-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*state_id"                data-endpoint="POSTapi-v1-get-all-training-list-by-category-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*category_id"                data-endpoint="POSTapi-v1-get-all-training-list-by-category-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="training-placement-related-POSTapi-v1-get-training-by-id">getTrainingPlacementById</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;country_id&quot;:1,
+&quot;state_id&quot;:1,
+&quot;training_id&quot;:1
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-training-by-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-training-by-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*country_id\": 1,
+    \"*state_id\": 1,
+    \"*training_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-training-by-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*country_id": 1,
+    "*state_id": 1,
+    "*training_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-training-by-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;country_id&quot;: 1,
+        &quot;state_id&quot;: 1,
+        &quot;cat_id&quot;: 1,
+        &quot;user_id&quot;: null,
+        &quot;admin_id&quot;: 1,
+        &quot;title&quot;: &quot;Java training&quot;,
+        &quot;slug&quot;: &quot;java-training&quot;,
+        &quot;description&quot;: null,
+        &quot;image&quot;: &quot;PATH/1695982951_Stone.png&quot;,
+        &quot;expire_at&quot;: &quot;2023-10-05&quot;,
+        &quot;total_views&quot;: null,
+        &quot;created_at&quot;: &quot;03-Oct-2023 04:08 PM&quot;,
+        &quot;comments&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;training_list_id&quot;: 1,
+                &quot;country_id&quot;: 1,
+                &quot;state_id&quot;: 1,
+                &quot;comment&quot;: &quot;mast&quot;,
+                &quot;created_at&quot;: null,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 6,
+                    &quot;first_name&quot;: &quot;Grant Renner&quot;,
+                    &quot;last_name&quot;: &quot;Abelardo Konopelski Sr.&quot;,
+                    &quot;email&quot;: &quot;spredovic@example.org&quot;,
+                    &quot;dob&quot;: &quot;2023-08-31&quot;,
+                    &quot;mobile&quot;: &quot;7702298725&quot;
+                }
+            }
+        ]
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-training-by-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-training-by-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-training-by-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-training-by-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-training-by-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-training-by-id" data-method="POST"
+      data-path="api/v1/get-training-by-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-training-by-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-training-by-id"
+                    onclick="tryItOut('POSTapi-v1-get-training-by-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-training-by-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-training-by-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-training-by-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-training-by-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-training-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-training-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-get-training-by-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*state_id"                data-endpoint="POSTapi-v1-get-training-by-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*training_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*training_id"                data-endpoint="POSTapi-v1-get-training-by-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="training-placement-related-POSTapi-v1-comment-training-list">commentTrainingList</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;user_id&quot;:1,
+&quot;training_id&quot;:1,
+&quot;country_id&quot;:1,
+&quot;state_id&quot;:1,
+&quot;comment&quot;:&quot;Nice.......&quot;,
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-comment-training-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/comment-training-list" \
+    --header "Authorization: Bearer _token required" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*user_id\": 1,
+    \"*training_id\": 1,
+    \"*country_id\": 1,
+    \"*state_id\": 1,
+    \"*comment\": \"This is good 5in JSON BODY\\n\\n&lt;aside class=\\\"notice\\\"&gt;basepath\\/api\\/v1\\/comment-training-list&lt;\\/aside&gt;\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/comment-training-list"
+);
+
+const headers = {
+    "Authorization": "Bearer _token required",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*user_id": 1,
+    "*training_id": 1,
+    "*country_id": 1,
+    "*state_id": 1,
+    "*comment": "This is good 5in JSON BODY\n\n&lt;aside class=\"notice\"&gt;basepath\/api\/v1\/comment-training-list&lt;\/aside&gt;"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-comment-training-list">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully comment done...&quot;,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: 2,
+        &quot;training_list_id&quot;: 1,
+        &quot;country_id&quot;: 1,
+        &quot;state_id&quot;: 1,
+        &quot;comment&quot;: &quot;this is nice&quot;,
+        &quot;created_at&quot;: &quot;05-Oct-2023 02:20 PM&quot;,
+        &quot;id&quot;: 3
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Invalid&quot;,
+    &quot;status_code&quot;: 401,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Authorised Token Not Found&quot;,
+    &quot;status_code&quot;: 403,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (419):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Expired&quot;,
+    &quot;status_code&quot;: 419,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-comment-training-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-comment-training-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-comment-training-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-comment-training-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-comment-training-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-comment-training-list" data-method="POST"
+      data-path="api/v1/comment-training-list"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-comment-training-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-comment-training-list"
+                    onclick="tryItOut('POSTapi-v1-comment-training-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-comment-training-list"
+                    onclick="cancelTryOut('POSTapi-v1-comment-training-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-comment-training-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/comment-training-list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-comment-training-list"
+               value="Bearer _token required"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer _token required</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*user_id"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*training_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*training_id"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*country_id"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*state_id"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*comment</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*comment"                data-endpoint="POSTapi-v1-comment-training-list"
+               value="This is good 5in JSON BODY
+
+<aside class="notice">basepath/api/v1/comment-training-list</aside>"
+               data-component="body">
+    <br>
+<p>Example: `This is good 5in JSON BODY</p>
+<aside class="notice">basepath/api/v1/comment-training-list</aside>`
+        </div>
+        </form>
+
+                    <h2 id="training-placement-related-POSTapi-v1-get-training-list-by-user-id">getTrainingListByUserId</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;user_id&quot;:1
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-training-list-by-user-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-training-list-by-user-id" \
+    --header "Authorization: Bearer _token required" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*user_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-training-list-by-user-id"
+);
+
+const headers = {
+    "Authorization": "Bearer _token required",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*user_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-training-list-by-user-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;country_id&quot;: 1,
+                &quot;state_id&quot;: 1,
+                &quot;cat_id&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Java&quot;,
+                    &quot;slug&quot;: &quot;java&quot;,
+                    &quot;created_at&quot;: &quot;28-Sep-2023 05:27 PM&quot;
+                },
+                &quot;user_id&quot;: 2,
+                &quot;admin_id&quot;: null,
+                &quot;title&quot;: &quot;Java training&quot;,
+                &quot;slug&quot;: &quot;java-training&quot;,
+                &quot;description&quot;: null,
+                &quot;image&quot;: &quot;PATH/1695982951_Stone.png&quot;,
+                &quot;expire_at&quot;: &quot;2023-10-05&quot;,
+                &quot;total_views&quot;: null,
+                &quot;created_at&quot;: &quot;03-Oct-2023 04:08 PM&quot;
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/api/v1/get-training-list-by-user-id?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/api/v1/get-training-list-by-user-id&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Invalid&quot;,
+    &quot;status_code&quot;: 401,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Authorised Token Not Found&quot;,
+    &quot;status_code&quot;: 403,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (419):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Expired&quot;,
+    &quot;status_code&quot;: 419,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-training-list-by-user-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-training-list-by-user-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-training-list-by-user-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-training-list-by-user-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-training-list-by-user-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-training-list-by-user-id" data-method="POST"
+      data-path="api/v1/get-training-list-by-user-id"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-training-list-by-user-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-training-list-by-user-id"
+                    onclick="tryItOut('POSTapi-v1-get-training-list-by-user-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-training-list-by-user-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-training-list-by-user-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-training-list-by-user-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-training-list-by-user-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-get-training-list-by-user-id"
+               value="Bearer _token required"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer _token required</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-training-list-by-user-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-training-list-by-user-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*user_id"                data-endpoint="POSTapi-v1-get-training-list-by-user-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
         </div>
         </form>
 
@@ -10884,8 +12746,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"nihil\",
-    \"*state_id\": \"minima\"
+    \"*country_id\": \"libero\",
+    \"*state_id\": \"omnis\"
 }"
 </code></pre></div>
 
@@ -10901,8 +12763,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "nihil",
-    "*state_id": "minima"
+    "*country_id": "libero",
+    "*state_id": "omnis"
 };
 
 fetch(url, {
@@ -11057,10 +12919,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="nihil"
+               value="libero"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>nihil</code></p>
+<p>integer     Ex 1/2/3 Example: <code>libero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -11068,10 +12930,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="minima"
+               value="omnis"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>minima</code></p>
+<p>integer     Ex 1/2/3 Example: <code>omnis</code></p>
         </div>
         </form>
 
@@ -11094,8 +12956,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"quae\",
-    \"*state_id\": \"quam\"
+    \"*country_id\": \"eius\",
+    \"*state_id\": \"atque\"
 }"
 </code></pre></div>
 
@@ -11111,8 +12973,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "quae",
-    "*state_id": "quam"
+    "*country_id": "eius",
+    "*state_id": "atque"
 };
 
 fetch(url, {
@@ -11255,10 +13117,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="quae"
+               value="eius"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>quae</code></p>
+<p>integer     Ex 1/2/3 Example: <code>eius</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -11266,10 +13128,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="quam"
+               value="atque"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>quam</code></p>
+<p>integer     Ex 1/2/3 Example: <code>atque</code></p>
         </div>
         </form>
 

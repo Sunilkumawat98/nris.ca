@@ -232,19 +232,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: nihil
+        example: libero
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: minima
+        example: omnis
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': nihil
-      '*state_id': minima
+      '*country_id': libero
+      '*state_id': omnis
     fileParameters: []
     responses:
       -
@@ -354,19 +354,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: quae
+        example: eius
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: quam
+        example: atque
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': quae
-      '*state_id': quam
+      '*country_id': eius
+      '*state_id': atque
     fileParameters: []
     responses:
       -

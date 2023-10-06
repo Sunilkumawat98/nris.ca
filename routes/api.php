@@ -12,6 +12,8 @@ use App\Http\Controllers\Api\V1\MovieRelatedController;
 use App\Http\Controllers\Api\V1\BusinessListingController;
 use App\Http\Controllers\Api\V1\NationalEventController;
 use App\Http\Controllers\Api\V1\StudentTalkController;
+use App\Http\Controllers\Api\V1\TrainingPlacementController;
+use App\Http\Controllers\Api\V1\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +154,37 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
 
+
+
+    /*
+    
+    Training & Placements and itsCategory
+    
+    
+    */
+
+
+
+    Route::get('/get-all-training-category', [TrainingPlacementController::class,'getAllCategory']);
+    Route::post('/get-training-list-by-category', [TrainingPlacementController::class,'getTraningPlacementListByCat']);
+    Route::post('/get-all-training-list-by-category-id', [TrainingPlacementController::class,'getAllTrainingPlacementListByCategoryId']);
+    Route::post('/get-training-by-id', [TrainingPlacementController::class,'getTrainingPlacementById']);
+
+
+
+    /*
+
+        Search 
+
+        
+
+    */
+    Route::post('/country-search', [SearchController::class,'getCountrySearch']);
+    Route::post('/state-search', [SearchController::class,'getStateSearch']);
+
+
+
+
     /*
         After Login Start
     */
@@ -169,6 +202,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/create-free-clasified-comment', [ClasifiedCategoryController::class,'createFreeClasifiedComment']);
         $router->post('/review-business-list', [BusinessListingController::class,'reviewBusinessList']);
         $router->post('/comment-event-list', [NationalEventController::class,'commentEventList']);
+        $router->post('/comment-training-list', [TrainingPlacementController::class,'commentTrainingList']);
+        $router->post('/get-training-list-by-user-id', [TrainingPlacementController::class,'getTrainingListByUserId']);
 
         $router->post('/add-student-university', [StudentTalkController::class,'addUniversityStudent']);
         $router->post('/create-student-talk', [StudentTalkController::class,'createStudentTalk']);

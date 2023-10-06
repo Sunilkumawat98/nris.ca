@@ -132,6 +132,17 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_student_talk', 'name_slug'=>'show-student-talk'],
             ['name' => 'delete_student_talk', 'name_slug'=>'delete-student-talk'],
 
+            ['name' => 'manage_training_placement', 'name_slug'=>'manage-training-placement'],
+            ['name' => 'create_training_placement_category', 'name_slug'=>'create-training-placement-category'],
+            ['name' => 'edit_training_placement_category', 'name_slug'=>'edit-training-placement-category'],
+            ['name' => 'show_training_placement_category', 'name_slug'=>'show-training-placement-category'],
+            ['name' => 'delete_training_placement_category', 'name_slug'=>'delete-training-placement-category'],
+
+            ['name' => 'create_training_placement', 'name_slug'=>'create-training-placement'],
+            ['name' => 'edit_training_placement', 'name_slug'=>'edit-training-placement'],
+            ['name' => 'show_training_placement', 'name_slug'=>'show-training-placement'],
+            ['name' => 'delete_training_placement', 'name_slug'=>'delete-training-placement'],
+
             
 
 
