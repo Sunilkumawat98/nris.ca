@@ -48,7 +48,7 @@ class TrainingPlacementCategory extends Model
 
     public function category_data()
     {
-        return $this->hasMany(TraningPlacement::class, 'cat_id')
+        return $this->hasMany(TrainingPlacement::class, 'cat_id')
         ->with('state_id');
     }
 }
