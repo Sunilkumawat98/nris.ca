@@ -57,7 +57,7 @@ class TrainingPlacement extends Model
 
     public function getImageAttribute($value)
     {
-        return $value ? config('app.image_url').'TRAINING_IMG/'.$value : null;
+        return $value ? config('app.image_url').'TRAINING_IMAGE/'.$value : null;
     }
 
     public function country_id() {
