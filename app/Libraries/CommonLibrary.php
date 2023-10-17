@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use App\Services\CommonService;
-
-
 use Log;
 
 
@@ -85,4 +83,40 @@ class CommonLibrary
     }
 
 
+
+
+/**
+ * 
+ *  newsLetterSubscribe
+ * 
+ */
+    
+
+    public function newsLetterSubscribe($param)
+    {
+        $this->commonSer->inputValidators('newsLetterSubscribe', $param);
+        $serviceResponse                        = $this->commonSer->storeNewsLetter($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+
+
+
+
+
+    
 }

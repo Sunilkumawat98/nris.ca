@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\Admin\StudentTalkController;
 use App\Http\Controllers\Admin\TrainingPlacementCategoryController;
 use App\Http\Controllers\Admin\TrainingPlacementController;
+use App\Http\Controllers\Admin\NewsLetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,6 +140,8 @@ Route::domain(config('app.domain'))->group(function () {
 
 
 
+        Route::resource('news_letter', NewsLetterController::class);
+        Route::post('/news_letter/{id}/active-status', [NewsLetterController::class, 'livePause'])->name('news_letter.activeStatus');
 
 
 

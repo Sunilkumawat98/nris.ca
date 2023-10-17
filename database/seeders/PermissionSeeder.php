@@ -143,6 +143,8 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_training_placement', 'name_slug'=>'show-training-placement'],
             ['name' => 'delete_training_placement', 'name_slug'=>'delete-training-placement'],
 
+            ['name' => 'manage_news_letter', 'name_slug'=>'manage-news-letter'],
+
             
 
 

@@ -115,6 +115,21 @@ return [
         ],
 
 
+        /**
+         * 
+         * 
+         * newsLetterSubscribe
+         */
+
+        "newsLetterSubscribe" => [
+            "required" => [
+                "email_id"
+            ],
+            "optional" => [
+            ]
+        ],
+
+
 
 
 

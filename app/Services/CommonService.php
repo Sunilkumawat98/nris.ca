@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use Validator;
 use App\Models\User;
+use App\Models\SubscribeNewsLetter;
 use App\Exceptions;
 use Illuminate\Support\Facades\Hash;
 
@@ -249,6 +250,72 @@ class CommonService
         }
         
         return $return;
+    }
+
+
+
+
+    /**
+     * @method storeNewsLetter()
+     * 
+     * @param 
+     * emailId
+     * 
+     * 
+     * @response
+     * 200
+     * 
+     */
+
+    public function storeNewsLetter($param)
+    {
+
+        $return[$this->status]              = false;
+        $return[$this->message]             = 'Oops, something went wrong...';
+        $return[$this->code]                = 500;
+        $return[$this->data]                = [];
+
+        if($param['email_id'] != '' && !empty($param['email_id']))
+        {
+            $added_at                       = date("Y-m-d H:i:s");
+            
+            \DB::beginTransaction();
+            try{
+                
+                $create                     = new SubscribeNewsLetter;                
+                $create->email              = $param['email_id'];
+                $create->created_at         = $added_at;
+                $create->updated_at         = $added_at;
+                $store                      = $create->save();                
+            }
+            catch (Exception $e) {
+                \DB::rollBack();
+                $except['status']           = false;
+                $except['error'][]          = 'Exception Error...';
+                $except['message']          = $e;
+                $exception                  = new BaseController();
+                $exception                  = $exception->throwExceptionError($except, 500);
+            }
+            \DB::commit();
+
+            if($store)
+            {
+                $return[$this->status]      = true;
+                $return[$this->message]     = 'Successfully Subscribed...';
+                $return[$this->code]        = 200;
+                $return[$this->data]        = [];
+
+            }
+            else
+            {
+                $return[$this->status]      = false;
+                $return[$this->message]     = 'Oops, please try again...';
+                $return[$this->code]        = 500;
+            }
+        }
+        
+        return $return;        
+        
     }
 
 

@@ -46,67 +46,67 @@ endpoints:
         name: '*first_name'
         description: "String     Ex ('Abc')"
         required: false
-        example: incidunt
+        example: recusandae
         type: required
         custom: []
       '*last_name':
         name: '*last_name'
         description: "String     Ex ('def')"
         required: false
-        example: dolorum
+        example: reiciendis
         type: required
         custom: []
       '*email':
         name: '*email'
         description: "Email      Ex ('you@domain.com')"
         required: false
-        example: rwalter@example.org
+        example: orn.kaylah@example.org
         type: required
         custom: []
       '*dob':
         name: '*dob'
         description: "Date       Ex ('YYYY-MM-DD')"
         required: false
-        example: fugit
+        example: quas
         type: required
         custom: []
       '*mobile':
         name: '*mobile'
         description: "String     Ex ('9876****09')"
         required: false
-        example: velit
+        example: iure
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('Abc')"
         required: false
-        example: ratione
+        example: voluptatibus
         type: required
         custom: []
       '*country_id':
         name: '*country_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: qui
+        example: consectetur
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: molestiae
+        example: aperiam
         type: required
         custom: []
     cleanBodyParameters:
-      '*first_name': incidunt
-      '*last_name': dolorum
-      '*email': rwalter@example.org
-      '*dob': fugit
-      '*mobile': velit
-      '*password': ratione
-      '*country_id': qui
-      '*state_id': molestiae
+      '*first_name': recusandae
+      '*last_name': reiciendis
+      '*email': orn.kaylah@example.org
+      '*dob': quas
+      '*mobile': iure
+      '*password': voluptatibus
+      '*country_id': consectetur
+      '*state_id': aperiam
     fileParameters: []
     responses:
       -
@@ -189,19 +189,19 @@ endpoints:
         name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: quas
+        example: voluptatibus
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('********')"
         required: false
-        example: culpa
+        example: magni
         type: required
         custom: []
     cleanBodyParameters:
-      '*email_id': quas
-      '*password': culpa
+      '*email_id': voluptatibus
+      '*password': magni
     fileParameters: []
     responses:
       -
@@ -288,11 +288,11 @@ endpoints:
         name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: voluptatem
+        example: cumque
         type: required
         custom: []
     cleanBodyParameters:
-      '*email_id': voluptatem
+      '*email_id': cumque
     fileParameters: []
     responses:
       -
@@ -368,27 +368,27 @@ endpoints:
         name: '*email'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: oren.kuhic@example.net
+        example: abeahan@example.org
         type: required
         custom: []
       '*new_password':
         name: '*new_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: minus
+        example: voluptatem
         type: required
         custom: []
       '*retype_password':
         name: '*retype_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: voluptas
+        example: rem
         type: required
         custom: []
     cleanBodyParameters:
-      '*email': oren.kuhic@example.net
-      '*new_password': minus
-      '*retype_password': voluptas
+      '*email': abeahan@example.org
+      '*new_password': voluptatem
+      '*retype_password': rem
     fileParameters: []
     responses:
       -

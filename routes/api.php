@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\V1\NationalEventController;
 use App\Http\Controllers\Api\V1\StudentTalkController;
 use App\Http\Controllers\Api\V1\TrainingPlacementController;
 use App\Http\Controllers\Api\V1\SearchController;
+use App\Http\Controllers\Api\V1\SubscribeNewsLetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -176,11 +177,16 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
         Search 
 
-        
-
     */
     Route::post('/country-search', [SearchController::class,'getCountrySearch']);
     Route::post('/state-search', [SearchController::class,'getStateSearch']);
+
+    /*
+
+        Subscribe NewsLetter 
+
+    */
+    Route::post('/subscribe-us', [SubscribeNewsLetterController::class,'subscribeNewsLetter']);
 
 
 

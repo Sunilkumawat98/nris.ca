@@ -322,6 +322,18 @@
                 </ul>
               </li>
             @endif
+
+            
+            @if(auth()->user()->hasPermission('manage_news_letter'))
+              <li class="nav-item {{ request()->is('news_letter') || request()->is('news_letter/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('news_letter.index') }}" class="nav-link {{ request()->is('news_letter') || request()->is('news_letter/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-email"></i>
+                  <p>
+                    News Letter
+                  </p>
+                </a>
+              </li>
+            @endif
           
          
         </ul>

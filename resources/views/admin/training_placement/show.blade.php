@@ -46,7 +46,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-8">
                       <div class="post">
                         <div class="user-block">
                           <span class="description">{{ $results->created_at }}</span>
@@ -75,6 +75,13 @@
                         
 
                       
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="position-relative">
+                        
+                        <img src="{{ $results->image }}" alt="{{ $results->title }}" class="img-fluid">
+                        
                       </div>
                     </div>
                   </div>

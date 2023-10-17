@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "8b8166f1-3cef-410a-8b63-5d6c5b9ac728",
+        "_postman_id": "02ab669f-b4e7-45ce-bf0e-6c69791d9cc8",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1277,7 +1277,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"incidunt\",\"*last_name\":\"dolorum\",\"*email\":\"rwalter@example.org\",\"*dob\":\"fugit\",\"*mobile\":\"velit\",\"*password\":\"ratione\",\"*country_id\":\"qui\",\"*state_id\":\"molestiae\"}"
+                            "raw": "{\"*first_name\":\"recusandae\",\"*last_name\":\"reiciendis\",\"*email\":\"orn.kaylah@example.org\",\"*dob\":\"quas\",\"*mobile\":\"iure\",\"*password\":\"voluptatibus\",\"*country_id\":\"consectetur\",\"*state_id\":\"aperiam\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -1327,7 +1327,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"quas\",\"*password\":\"culpa\"}"
+                            "raw": "{\"*email_id\":\"voluptatibus\",\"*password\":\"magni\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -1377,7 +1377,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"voluptatem\"}"
+                            "raw": "{\"*email_id\":\"cumque\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -1427,7 +1427,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"oren.kuhic@example.net\",\"*new_password\":\"minus\",\"*retype_password\":\"voluptas\"}"
+                            "raw": "{\"*email\":\"abeahan@example.org\",\"*new_password\":\"voluptatem\",\"*retype_password\":\"rem\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -2274,6 +2274,56 @@
             ]
         },
         {
+            "name": "SubscribeNewsletter Related",
+            "description": "\nAPIs for managing all Search related listing",
+            "item": [
+                {
+                    "name": "subscribeNewsLetter",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/subscribe-us",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/subscribe-us"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\nEX\n {\n\"email_id\":\"you@domain.com\"\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/subscribe-us<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Subscribed...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Training & Placement Related ",
             "description": "\nAPIs for managing all Training & Placement related listing and its Category",
             "item": [
@@ -2844,7 +2894,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"libero\",\"*state_id\":\"omnis\"}"
+                            "raw": "{\"*country_id\":\"voluptatum\",\"*state_id\":\"reprehenderit\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -2894,7 +2944,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"eius\",\"*state_id\":\"atque\"}"
+                            "raw": "{\"*country_id\":\"natus\",\"*state_id\":\"sed\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

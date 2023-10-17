@@ -5606,35 +5606,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: incidunt
+                  example: recusandae
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: dolorum
+                  example: reiciendis
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: rwalter@example.org
+                  example: orn.kaylah@example.org
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: fugit
+                  example: quas
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: velit
+                  example: iure
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: ratione
+                  example: voluptatibus
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: qui
+                  example: consectetur
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: molestiae
+                  example: aperiam
       security: []
   /api/v1/login:
     post:
@@ -5755,11 +5755,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: quas
+                  example: voluptatibus
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: culpa
+                  example: magni
       security: []
   /api/v1/forgot-pass:
     post:
@@ -5844,7 +5844,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: voluptatem
+                  example: cumque
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -5909,15 +5909,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: oren.kuhic@example.net
+                  example: abeahan@example.org
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: minus
+                  example: voluptatem
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: voluptas
+                  example: rem
       security: []
   /api/v1/get-all-nris-talk:
     post:
@@ -8820,6 +8820,77 @@ paths:
                 - '*university_id'
                 - '*email'
                 - '*mobile'
+  /api/v1/subscribe-us:
+    post:
+      summary: subscribeNewsLetter
+      operationId: subscribeNewsLetter
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\nEX\n {\n\"email_id\":\"you@domain.com\"\n}\n\n<aside class=\"notice\">basepath/api/v1/subscribe-us</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully Subscribed...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully Subscribed...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'SubscribeNewsletter Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*email_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*email_id'
+      security: []
   /api/v1/get-all-training-category:
     get:
       summary: getAllCategory
@@ -10824,11 +10895,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: libero
+                  example: voluptatum
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: omnis
+                  example: reprehenderit
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -10989,11 +11060,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: eius
+                  example: natus
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: atque
+                  example: sed
       security: []
 tags:
   -
@@ -11020,6 +11091,9 @@ tags:
   -
     name: 'StudentTalk Related'
     description: "\nAPIs for managing all student talk and its reply related"
+  -
+    name: 'SubscribeNewsletter Related'
+    description: "\nAPIs for managing all Search related listing"
   -
     name: 'Training & Placement Related '
     description: "\nAPIs for managing all Training & Placement related listing and its Category"
