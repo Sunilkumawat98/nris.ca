@@ -68,6 +68,31 @@
         border-radius: 50%;
     }
 </style>
+
+@php
+    $country = $state = $training = [];
+@endphp
+
+@foreach(getAllCountries() as $value)
+    @php
+      $country[$value->id] =  $value->name
+    @endphp
+@endforeach
+
+@foreach(getAllState() as $val)
+    @php
+      $state[$val->id] =  $val->name
+    @endphp
+@endforeach
+
+@foreach(getAllTrainingCategory() as $val)
+    @php
+      $training[$val->id] =  $val->name
+    @endphp
+@endforeach
+
+
+
 @section('content')
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -144,10 +169,14 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
+                      <th width = "20%">Name</th>
+                      <th>Category</th>
+                      <th>Country</th>
+                      <th>State</th>
+                      <th>Image</th>
                       <th>Live</th>
                       <th>Date</th>
-                      <th>Action</th>
+                      <th width = "12%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -159,7 +188,20 @@
                       <tr>
                         
                         <td>{{ $result->title }} </td>
-                        
+                        <td>
+                            {{ $training[$result->cat_id] }}
+                        </td>
+                        <td>
+                            {{ $country[$result->country_id] }}
+                        </td>
+                        <td>
+                            {{ $state[$result->state_id] }}  
+                        </td>
+                        <td>                            
+                            <div class="position-relative" style="max-width: 50%;">                              
+                              <img src="{{ $result->image }}" alt="{{ $result->name }}" class="img-fluid">
+                            </div>
+                        </td>
                         <td>
                           
                           <form action="{{ route($routeUrl.'.activeStatus', $result->id) }}" method="POST">

@@ -115,11 +115,23 @@
     
     
 @php
-    $category = [];
+    $category = $country = $state = [];
 @endphp
 @foreach(getAllBusinessCategory() as $value)
     @php
       $category[$value->id] =  $value->name
+    @endphp
+@endforeach
+
+@foreach(getAllCountries() as $value)
+    @php
+      $country[$value->id] =  $value->name
+    @endphp
+@endforeach
+
+@foreach(getAllState() as $val)
+    @php
+      $state[$val->id] =  $val->name
     @endphp
 @endforeach
 
@@ -155,9 +167,12 @@
                     <tr>
                       <th>Name</th>
                       <th>Category</th>
+                      <th>Country</th>
+                      <th>State</th>
+                      <th>Image</th>
                       <th>Live</th>
                       <th>Date</th>
-                      <th>Action</th>
+                      <th width = "12%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -170,7 +185,18 @@
                         
                         <td>{{ $result->name }} </td>
                         <td>
-                        {{ $category[$result->cat_id] }}
+                            {{ $category[$result->cat_id] }}
+                        </td>
+                        <td>
+                            {{ $country[$result->country_id] }}
+                        </td>
+                        <td>
+                            {{ $state[$result->state_id] }}  
+                        </td>
+                        <td>                            
+                            <div class="position-relative" style="max-width: 50%;">                              
+                              <img src="{{ $result->image }}" alt="{{ $result->name }}" class="img-fluid">
+                            </div>
                         </td>
                         
                         

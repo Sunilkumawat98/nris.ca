@@ -68,6 +68,30 @@
         border-radius: 50%;
     }
 </style>
+
+
+
+@php
+    $country =  $category = $state = [];
+@endphp
+@foreach(getAllCountries() as $value)
+    @php
+      $country[$value->id] =  $value->name
+    @endphp
+@endforeach
+@foreach(getAllEventCategory() as $value)
+    @php
+      $category[$value->id] =  $value->name
+    @endphp
+@endforeach
+
+@foreach(getAllState() as $val)
+    @php
+      $state[$val->id] =  $val->name
+    @endphp
+@endforeach
+
+
 @section('content')
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -144,10 +168,14 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Live</th>
+                      <th width = "20%">Name</th>
+                      <th>Category</th>
+                      <th>Country</th>
+                      <th width = "10%">State</th>
+                      <th>Image</th>
+                      <th width = "4%">Live</th>
                       <th>Date</th>
-                      <th>Action</th>
+                      <th width = "12%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -159,7 +187,20 @@
                       <tr>
                         
                         <td>{{ $result->title }} </td>
-                        
+                        <td>
+                            {{ $category[$result->cat_id] }}
+                        </td>
+                        <td>
+                            {{ $country[$result->country_id] }}
+                        </td>
+                        <td>
+                            {{ $state[$result->state_id] }}  
+                        </td>
+                        <td>                            
+                            <div class="position-relative" style="max-width: 50%;">                              
+                              <img src="{{ $result->image }}" alt="{{ $result->name }}" class="img-fluid">
+                            </div>
+                        </td>
                         <td>
                           
                           <form action="{{ route($routeUrl.'.activeStatus', $result->id) }}" method="POST">

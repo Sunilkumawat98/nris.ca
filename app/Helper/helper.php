@@ -102,6 +102,34 @@ function getAllStudentTalkCategory()
 	return \App\Models\StudentTalkCategory::all();
 }
 
+
+
+function getAllEventCategory()
+{
+
+	return \App\Models\EventCategory::all();
+}
+
+
+function getEventCategoryNamebyId($id)
+{
+	return \App\Models\EventCategory::where('id', $id)->first();
+}
+
+
+function getAllTrainingCategory()
+{
+
+	return \App\Models\TrainingPlacementCategory::all();
+}
+
+
+function getTrainingCategoryNamebyId($id)
+{
+	return \App\Models\TrainingPlacementCategory::where('id', $id)->first();
+}
+
+
 function sendCommentAlert($data)
 {
 

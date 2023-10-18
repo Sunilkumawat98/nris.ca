@@ -61,6 +61,24 @@
         border-radius: 50%;
     }
 </style>
+
+@php
+    $country = $state = [];
+@endphp
+
+@foreach(getAllCountries() as $value)
+    @php
+      $country[$value->id] =  $value->name
+    @endphp
+@endforeach
+
+@foreach(getAllState() as $val)
+    @php
+      $state[$val->id] =  $val->name
+    @endphp
+@endforeach
+
+
 @section('content')
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -131,10 +149,13 @@
                   <thead>
                     <tr>
                       
-                      <th>Name</th>
+                      <th width = "20%">Name</th>
+                      <th>Country</th>
+                      <th>State</th>
+                      <th>Image</th>
                       <th>Live</th>
                       <th>Date</th>
-                      <th>Action</th>
+                      <th width = "12%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -146,6 +167,18 @@
                       <tr>
                         
                         <td>{{ $result->name }}</td>
+                        <td>
+                            {{ $country[$result->country_id] }}
+                        </td>
+                        <td>
+                            {{ $state[$result->state_id] }}  
+                        </td>
+                        <td>                            
+                            <div class="position-relative" style="max-width: 50%;">                              
+                              <img src="{{ $result->image }}" alt="{{ $result->name }}" class="img-fluid">
+                            </div>
+                        </td>
+                        
                         <td>
                           
                           <form action="{{ route('desi_movies.activeStatus', $result->id) }}" method="POST">

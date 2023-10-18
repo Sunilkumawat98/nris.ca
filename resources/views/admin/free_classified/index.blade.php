@@ -157,14 +157,15 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Title</th>
+                      <th width = "25%">Title</th>
                       <th>Message</th>
                       <th>Country</th>
                       <th>State</th>
+                      <th>Image</th>
                       <th>Live</th>
                       <th>Date</th>
                       <th>Expire At</th>
-                      <th>Action</th>
+                      <th width = "10%">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -182,6 +183,11 @@
                         </td>
                         <td>
                             {{ $state[$result->state_id] }}  
+                        </td>
+                        <td>                            
+                            <div class="position-relative" style="max-width: 50%;">                              
+                              <img src="{{ $result->image }}" alt="{{ $result->name }}" class="img-fluid">
+                            </div>
                         </td>
                         
                         <td>
