@@ -674,7 +674,7 @@ class BusinessListingController extends BaseController
      */
     
     
-    
+     
     
     public function getBusinessById(Request $request)
     {

@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\V1\StudentTalkController;
 use App\Http\Controllers\Api\V1\TrainingPlacementController;
 use App\Http\Controllers\Api\V1\SearchController;
 use App\Http\Controllers\Api\V1\SubscribeNewsLetterController;
+use App\Http\Controllers\Api\V1\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -157,6 +158,20 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
 
+
+    /**
+     * 
+     *  BLOG
+     * 
+    */
+
+    Route::get('/get-all-blog-category', [BlogController::class,'getAllCategory']);
+    Route::get('/get-homepage-blog', [BlogController::class,'getHomepageBlog']);
+    Route::get('/get-all-blog', [BlogController::class,'getAllBlog']);
+    Route::post('/get-blog-by-id', [BlogController::class,'getBlogById']);
+    Route::post('/get-blog-by-category', [BlogController::class,'getBlogByCategory']);
+    
+
     /*
     
     Training & Placements and itsCategory
@@ -213,6 +228,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
         $router->post('/add-student-university', [StudentTalkController::class,'addUniversityStudent']);
         $router->post('/create-student-talk', [StudentTalkController::class,'createStudentTalk']);
+
+        $router->post('/blog-like', [BlogController::class,'blogLike']);
+        $router->post('/blog-dislike', [BlogController::class,'blogDisLike']);
     });
 
     

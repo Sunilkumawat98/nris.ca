@@ -130,6 +130,20 @@ function getTrainingCategoryNamebyId($id)
 }
 
 
+
+function getAllBlogCategory()
+{
+
+	return \App\Models\BlogCategory::all();
+}
+
+
+function getBlogCategoryNamebyId($id)
+{
+	return \App\Models\BlogCategory::where('id', $id)->first();
+}
+
+
 function sendCommentAlert($data)
 {
 

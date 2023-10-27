@@ -145,6 +145,17 @@ class PermissionSeeder extends Seeder
 
             ['name' => 'manage_news_letter', 'name_slug'=>'manage-news-letter'],
 
+            ['name' => 'manage_blog', 'name_slug'=>'manage-blog'],
+            ['name' => 'create_blog_category', 'name_slug'=>'create-blog-category'],
+            ['name' => 'edit_blog_category', 'name_slug'=>'edit-blog-category'],
+            ['name' => 'show_blog_category', 'name_slug'=>'show-blog-category'],
+            ['name' => 'delete_blog_category', 'name_slug'=>'delete-blog-category'],
+            ['name' => 'create_blog', 'name_slug'=>'create-blog'],
+            ['name' => 'edit_blog', 'name_slug'=>'edit-blog'],
+            ['name' => 'show_blog', 'name_slug'=>'show-blog'],
+            ['name' => 'delete_blog', 'name_slug'=>'delete-blog'],
+
+
             
 
 

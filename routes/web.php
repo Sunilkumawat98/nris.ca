@@ -26,6 +26,9 @@ use App\Http\Controllers\Admin\UniversityController;
 use App\Http\Controllers\Admin\StudentTalkController;
 use App\Http\Controllers\Admin\TrainingPlacementCategoryController;
 use App\Http\Controllers\Admin\TrainingPlacementController;
+use App\Http\Controllers\Admin\BlogCategoryController;
+use App\Http\Controllers\Admin\BlogController;
+
 use App\Http\Controllers\Admin\NewsLetterController;
 
 /*
@@ -137,6 +140,19 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('training_placement', TrainingPlacementController::class);
         Route::post('/training_placement/{id}/active-status', [TrainingPlacementController::class, 'livePause'])->name('training_placement.activeStatus');
+
+       
+        
+        Route::resource('blog_category', BlogCategoryController::class);
+        Route::post('/blog_category/{id}/active-status', [BlogCategoryController::class, 'livePause'])->name('blog_category.activeStatus');
+
+        Route::resource('blog', BlogController::class);
+        Route::post('/blog/{id}/active-status', [BlogController::class, 'livePause'])->name('blog.activeStatus');
+
+
+
+
+
 
 
 

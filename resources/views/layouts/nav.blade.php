@@ -323,11 +323,38 @@
               </li>
             @endif
 
+
+            @if(auth()->user()->hasPermission('manage_blog'))
+              <li class="nav-item {{ request()->is('blog_category') || request()->is('blog_category/*') || request()->is('blog') || request()->is('blog/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('blog_category') || request()->is('blog_category/*') || request()->is('blog') || request()->is('blog/*')  ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Blogs
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('blog_category.index') }}" class="nav-link {{ request()->is('blog_category') || request()->is('blog_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('blog.index') }}" class="nav-link {{ request()->is('blog') || request()->is('blog/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Blog</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
+
             
             @if(auth()->user()->hasPermission('manage_news_letter'))
               <li class="nav-item {{ request()->is('news_letter') || request()->is('news_letter/*') ? 'menu-open' : '' }}">
                 <a href="{{ route('news_letter.index') }}" class="nav-link {{ request()->is('news_letter') || request()->is('news_letter/*') ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-email"></i>
+                  <i class="nav-icon fas fa-calendar"></i>
                   <p>
                     News Letter
                   </p>

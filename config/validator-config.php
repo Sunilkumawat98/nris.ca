@@ -44,6 +44,7 @@ return [
         'classified_id'         => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'business_list_id'      => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'training_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'blog_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
         'comment'               => "bail|required|string",
@@ -349,8 +350,43 @@ return [
 
 
 
+        /**
+         * 
+         * 
+         * Blog
+         */
 
+        "blogByIdGet" => [
+            "required" => [
+                'blog_id'
+            ],
+            "optional" => [
+            ]
+        ],
 
+        "blogByCategoryGet" => [
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "likeBlog" => [
+            "required" => [
+                'blog_id', 'user_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "dislikeBlog" => [
+            "required" => [
+                'blog_id', 'user_id'
+            ],
+            "optional" => [
+            ]
+        ],
 
 
         /*
