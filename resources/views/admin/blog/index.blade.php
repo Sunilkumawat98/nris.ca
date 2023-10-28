@@ -81,7 +81,16 @@
 @endforeach
 
 
+<?php 
+  echo "<pre>";
+  print_r(getAllBlogCategory()->toArray());
+  echo "</pre>";
+  echo "<pre>";
+  print_r($results->toArray());
+  echo "</pre>";
+  die();
 
+?>
 @section('content')
      <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
