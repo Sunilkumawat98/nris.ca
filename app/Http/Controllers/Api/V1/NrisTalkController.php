@@ -449,8 +449,6 @@ class NrisTalkController extends BaseController
 
 
 
-
-
     
     /**
      * getAllNrisTalk
@@ -539,17 +537,126 @@ class NrisTalkController extends BaseController
             "data": []
         }
      * 
-     *
+     * 
      *
      */
     
     
     
     
-    public function getAllNrisTalk(Request $request)
+     public function getAllNrisTalk(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->nrisLibrary->allNrisTalkFetch($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+      
+
+
+    
+    /**
+     * getAllNrisTalkList
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * EX
+     * {
+            "country_id":1,
+            "state_id":1
+        }
+     *
+     * @method POST
+     * <aside class="notice">basepath/api/v1/get-all-nris-talk-list</aside>
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * 
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     *  {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
+                {
+                    "id": 4,
+                    "title": "new this is test title 3",
+                    "title_slug": "new-this-is-test-title-3",
+                    "description": "This is test title description again 3",
+                    "country_id": 1,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "meta_keywords": null,
+                    "total_views": null,
+                    "created_at": "31-Aug-2023 04:59 PM",
+                    "comments_count": 0,
+                    "likes_count": 1
+                },
+                {
+                    "id": 3,
+                    "title": "new this is test title 2",
+                    "title_slug": "new-this-is-test-title-2",
+                    "description": "This is test title description again 2",
+                    "country_id": 1,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "meta_keywords": null,
+                    "total_views": null,
+                    "created_at": "31-Aug-2023 04:59 PM",
+                    "comments_count": 1,
+                    "likes_count": 0
+                },
+                {
+                    "id": 2,
+                    "title": "new this is test title 1",
+                    "title_slug": "new-this-is-test-title-1",
+                    "description": "This is test title description again1",
+                    "country_id": 1,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "meta_keywords": null,
+                    "total_views": null,
+                    "created_at": "31-Aug-2023 04:59 PM",
+                    "comments_count": 5,
+                    "likes_count": 1
+                }
+            ]
+        }
+     *
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+        }
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+        }
+     * 
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getAllNrisTalkList(Request $request)
     {
         $all = $request->all();
-        $response = $this->nrisLibrary->allNrisTalkFetch($all);
+        $response = $this->nrisLibrary->allNrisTalkListFetch($all);
 
         if (!$response[$this->status]) {
             return $this->sendError($response[$this->message], $response[$this->code]);

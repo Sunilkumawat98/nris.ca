@@ -131,9 +131,31 @@ class NrisTalkLibrary
     
     
     public function allNrisTalkFetch($param)
-    {
+    { 
         $this->commonSer->inputValidators('allNrisTalkFetch', $param);
         $serviceResponse                        = $this->nrisTalkSer->fetchAllNrisTalk($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+    public function allNrisTalkListFetch($param)
+    { 
+        $this->commonSer->inputValidators('allNrisTalkListFetch', $param);
+        $serviceResponse                        = $this->nrisTalkSer->fetchAllNrisTalkList($param);
         
         if($serviceResponse[$this->status])
         {

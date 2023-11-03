@@ -16,6 +16,7 @@ use App\Http\Controllers\Api\V1\TrainingPlacementController;
 use App\Http\Controllers\Api\V1\SearchController;
 use App\Http\Controllers\Api\V1\SubscribeNewsLetterController;
 use App\Http\Controllers\Api\V1\BlogController;
+// use App\Http\Controllers\Api\V1\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +122,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
     */
     Route::post('/get-all-nris-talk', [NrisTalkController::class,'getAllNrisTalk']);
+    Route::post('/get-all-nris-talk-list', [NrisTalkController::class,'getAllNrisTalkList']);
     Route::post('/get-nris-talk-list', [NrisTalkController::class,'getNrisTalkList']);
     Route::post('/get-nris-talk-reply-by-id', [NrisTalkController::class,'getNrisTalkReplyById']);
     Route::post('/like-nris-talk-by-id', [NrisTalkController::class,'likeNrisTalkById']);
@@ -153,6 +155,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/forgot-pass', [LoginRegisterController::class,'forgotPass']);
     Route::post('/forgot-password-change', [LoginRegisterController::class,'changeForgotPassword']); 
 
+    // Route::get('google-login', [LoginRegisterController::class,'googleLogin']);
+    // Route::any('google-callback', [LoginRegisterController::class,'handleGoogleCallback']);
+
+    // Route::get('facebook-login', [LoginRegisterController::class,'facebookLogin']);
+    // Route::any('facebook-callback', [LoginRegisterController::class,'handleCallback']);
 
 
 
@@ -204,6 +211,20 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/subscribe-us', [SubscribeNewsLetterController::class,'subscribeNewsLetter']);
 
 
+    
+
+ /*
+       Forum Listing category & Sub Category
+
+
+    */
+
+    // Route::get('/get-all-forum-category', [ForumController::class,'getAllCategory']);
+    // Route::get('/get-all-forum-sub-category', [ForumController::class,'getAllSubCategory']);
+    // Route::post('/get-all-forum-sub-category-by-id', [ForumController::class,'getAllSubCategoryById']);
+    // Route::post('/get-all-forum-list-by-category-id', [ForumController::class,'getAllForumListByCategoryId']);
+    // Route::post('/get-forum-by-id', [ForumController::class,'getForumById']);
+    
 
 
     /*

@@ -335,6 +335,59 @@ class NrisTalkService
     }
 
 
+
+
+
+     /**
+        
+        * method fetchAllNrisTalk()
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function fetchAllNrisTalkList($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = NrisTalk::where('is_live',1)
+                                        ->where('country_id',$param['country_id'])
+                                        ->where('state_id',$param['state_id'])
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC')
+                                        ->withCount('comments')
+                                        ->withCount('likes')
+                                        ->take(25)
+                                        ->get();
+    
+        if(count($result)>0)
+        {
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully your list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'List not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
+
     /**
         
         * method fetchAllReplyOfNrisTalkById()
