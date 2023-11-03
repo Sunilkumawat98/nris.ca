@@ -362,11 +362,15 @@ class NrisTalkService
                                         ->where('country_id',$param['country_id'])
                                         ->where('state_id',$param['state_id'])
                                         ->where('status',1)
-                                        ->orderBy('id', 'DESC')
                                         ->withCount('comments')
                                         ->withCount('likes')
-                                        ->take(25)
-                                        ->get();
+                                        ->orderBy('id', 'DESC');
+
+
+        $total_count                = $result->count();
+        $result                     = $result->simplePaginate(25);
+    
+        
     
         if(count($result)>0)
         {
