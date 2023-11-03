@@ -12,6 +12,7 @@ return [
         'talk_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'category_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'sub_cat_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'forum_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'contact_name'          => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'first_name'            => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
         'last_name'             => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
@@ -183,6 +184,14 @@ return [
         ],
 
         "allNrisTalkFetch" => [
+            "required" => [
+                'country_id','state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "allNrisTalkListFetch" => [
             "required" => [
                 'country_id','state_id'
             ],
@@ -531,6 +540,39 @@ return [
             ]
         ],
 
+
+        /**
+         * 
+         * Forum, Category & sub category
+         * allForumSubCategoryByIdGet
+         * 
+         */
+
+
+        "allForumSubCategoryByIdGet" => [
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "allForumByCategoryGet" => [
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "forumByIdGet" => [
+            "required" => [
+                'forum_id'
+            ],
+            "optional" => [
+            ]
+        ],
 
         /* 
         
