@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\V1\BaseController;
  */
 
 
+
 class MovieRelatedController extends BaseController
 {
     public function __construct()
@@ -371,6 +372,78 @@ class MovieRelatedController extends BaseController
       
   
  
+
+
+
+
+      
+    /**
+     * getAllRatingSource
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * 
+     *
+     * <aside class="notice">basepath/api/v1/get-all-rating-source</aside>
+     * @method GET
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     *  {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully data found..",
+            "data": [
+                {
+                    "id": 3,
+                    "name": "123Telugu"
+                },
+                {
+                    "id": 2,
+                    "name": "Cinejosh"
+                },
+                {
+                    "id": 1,
+                    "name": "Times of India"
+                }
+            ]
+        }
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getAllRatingSource()
+    {
+        $response = $this->movieRelatedLib->allRatingSourceGet();
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
     
 
 

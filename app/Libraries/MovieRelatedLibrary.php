@@ -14,7 +14,7 @@ use Log;
 
 
 class MovieRelatedLibrary
-{
+{ 
 
     public function __construct()
     {
@@ -127,6 +127,30 @@ class MovieRelatedLibrary
         return $return;
     }
     
+    
+
+
+
+    public function allRatingSourceGet()
+    {
+        $serviceResponse                        = $this->movieRelatedSer->fetchAllRatingSource();
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
     
     
     

@@ -99,6 +99,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::get('/get-all-movie-ratings', [MovieRelatedController::class,'getAllMovieRatings']);
     Route::post('/get-all-desi-movies', [MovieRelatedController::class,'getAllDesiMovies']);
     Route::post('/get-latest-desi-movies', [MovieRelatedController::class,'getLatestDesiMovies']);
+    Route::get('/get-all-source', [MovieRelatedController::class,'getAllRatingSource']);
 
 
     
@@ -249,6 +250,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
         $router->post('/add-student-university', [StudentTalkController::class,'addUniversityStudent']);
         $router->post('/create-student-talk', [StudentTalkController::class,'createStudentTalk']);
+
+        // $router->post('/create-forum', [ForumController::class,'createForum']);
+        // $router->post('/comment-forum', [ForumController::class,'commentForum']);
 
         $router->post('/blog-like', [BlogController::class,'blogLike']);
         $router->post('/blog-dislike', [BlogController::class,'blogDisLike']);

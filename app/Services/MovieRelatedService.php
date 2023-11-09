@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use App\Models\MovieRating;
 use App\Models\DesiMovie;
+use App\Models\RatingSource;
 use App\Exceptions;
 use Illuminate\Support\Str;
 
@@ -236,5 +237,54 @@ class MovieRelatedService
 
 
 
+
+    /**
+        
+        * method getAllMovieRatings()
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function fetchAllRatingSource()
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = RatingSource::where('is_live',1)
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC')->get();
+
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'slug',
+                'created_at'
+            ]);
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully data found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'Data not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
+    
 
 }
