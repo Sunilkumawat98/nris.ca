@@ -7,6 +7,12 @@
 	return \App\Models\ClassifiedCategory::all();
 }
 
+function getAllSubCategory()
+{
+
+	return \App\Models\ClassifiedSubCategory::all();
+}
+
 function getAllRoles()
 {
 	return \App\Models\Role::all();

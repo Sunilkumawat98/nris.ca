@@ -124,8 +124,8 @@
             @endif
          
             @if(auth()->user()->hasPermission('manage_free_classifieds'))
-              <li class="nav-item {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') || request()->is('free_classified') || request()->is('free_classified/*') ? 'menu-open' : '' }}">
-                <a href="#" class="nav-link {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') ||  request()->is('free_classified') || request()->is('free_classified/*') ? 'active' : '' }}">
+              <li class="nav-item {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') || request()->is('classified_sub_sub_category') || request()->is('classified_sub_sub_category/*') || request()->is('free_classified') || request()->is('free_classified/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('classified_category') || request()->is('classified_category/*') || request()->is('classified_sub_category') || request()->is('classified_sub_category/*') || request()->is('classified_sub_sub_category') || request()->is('classified_sub_sub_category/*') ||  request()->is('free_classified') || request()->is('free_classified/*') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-info"></i>
                   <p>
                     Free classified
@@ -146,6 +146,14 @@
                       <p>Sub Category</p>
                     </a>
                   </li>
+
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('classified_sub_sub_category.index') }}" class="nav-link {{ request()->is('classified_sub_sub_category') || request()->is('classified_sub_sub_category/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sub Sub Category</p>
+                    </a>
+                  </li>                  
                   
                   <li class="nav-item">
                     <a href="{{ route('free_classified.index') }}" class="nav-link {{ request()->is('free_classified') || request()->is('free_classified/*') ? 'active' : '' }}">

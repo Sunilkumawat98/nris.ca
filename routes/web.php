@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PermissionRoleController;
 use App\Http\Controllers\Admin\ClassifiedCategoryController;
 use App\Http\Controllers\Admin\ClassifiedSubCategoryController;
+use App\Http\Controllers\Admin\ClassifiedSubSubCategoryController;
 use App\Http\Controllers\Admin\FreeClassifiedController;
 use App\Http\Controllers\Admin\RatingSourceController;
 use App\Http\Controllers\Admin\MovieRatingController;
@@ -97,6 +98,9 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('classified_sub_category', ClassifiedSubCategoryController::class);
         Route::post('/classified_sub_category/{id}/active-status', [ClassifiedSubCategoryController::class, 'livePause'])->name('classified_sub_category.activeStatus');
+
+        Route::resource('classified_sub_sub_category', ClassifiedSubSubCategoryController::class);
+        Route::post('/classified_sub_sub_category/{id}/active-status', [ClassifiedSubSubCategoryController::class, 'livePause'])->name('classified_sub_sub_category.activeStatus');
 
         Route::resource('free_classified', FreeClassifiedController::class);
         Route::post('/free_classified/{id}/active-status', [FreeClassifiedController::class, 'livePause'])->name('free_classified.activeStatus');
