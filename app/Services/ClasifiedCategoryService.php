@@ -12,11 +12,13 @@ use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use App\Models\ClassifiedCategory;
 use App\Models\ClassifiedSubCategory;
+use App\Models\ClassifiedSubSubCategory;
 use App\Models\FreeClassified;
 use App\Models\FreeClassifiedBid;
 use App\Models\FreeClassifiedComment;
 use App\Exceptions;
 use Illuminate\Support\Str;
+
 
 
 class ClasifiedCategoryService
@@ -583,6 +585,120 @@ class ClasifiedCategoryService
         return $return;
     }
 
+
+
+
+
+    /**
+        
+        * method allSubSubCategoryGet()
+        * 
+        * @param
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function allSubSubCategoryGet()
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = ClassifiedSubSubCategory::where('is_live',1)
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC')->get();
+
+
+    
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'slug',
+                'color',
+                'created_at'
+            ]);
+
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully your list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'List not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
+    
+
+    /**
+        
+        * method allSubSubCategoryUnderSubCategoryGet()
+        * 
+        * @param
+        * categoryId
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function allSubSubCategoryUnderSubCategoryGet($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = ClassifiedSubCategory::with('subSubCategory')
+                                        ->where('category_id',$param['category_id'])
+                                        ->where('is_live',1)
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC')->get();
+
+
+    
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'slug',
+                'color',
+                'created_at'
+            ]);
+
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully your list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'List not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
     
 
 

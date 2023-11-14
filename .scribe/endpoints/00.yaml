@@ -312,6 +312,345 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - GET
+    uri: api/v1/get-all-sub-sub-category
+    metadata:
+      groupName: 'ClasifiedCategory Related'
+      groupDescription: |-
+
+        APIs for managing all Clasified Category related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllSubSubCategory
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+
+
+        <aside class="notice">basepath/api/v1/get-all-sub-sub-category</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 16,
+          "sub_category_id": 5,
+          "name": "Manual"
+          },
+          {
+          "id": 15,
+          "sub_category_id": 5,
+          "name": "Automatic"
+          },
+          {
+          "id": 14,
+          "sub_category_id": 4,
+          "name": "Excelent"
+          },
+          {
+          "id": 13,
+          "sub_category_id": 4,
+          "name": "Fair"
+          },
+          {
+          "id": 12,
+          "sub_category_id": 4,
+          "name": "Almost New"
+          },
+          {
+          "id": 11,
+          "sub_category_id": 4,
+          "name": "New"
+          },
+          {
+          "id": 10,
+          "sub_category_id": 3,
+          "name": "Silver"
+          },
+          {
+          "id": 9,
+          "sub_category_id": 3,
+          "name": "Blue"
+          },
+          {
+          "id": 8,
+          "sub_category_id": 3,
+          "name": "Green"
+          },
+          {
+          "id": 7,
+          "sub_category_id": 3,
+          "name": "Red"
+          },
+          {
+          "id": 6,
+          "sub_category_id": 2,
+          "name": "A5"
+          },
+          {
+          "id": 5,
+          "sub_category_id": 2,
+          "name": "A4"
+          },
+          {
+          "id": 4,
+          "sub_category_id": 2,
+          "name": "A2"
+          },
+          {
+          "id": 3,
+          "sub_category_id": 2,
+          "name": "A1"
+          },
+          {
+          "id": 2,
+          "sub_category_id": 1,
+          "name": "BMW"
+          },
+          {
+          "id": 1,
+          "sub_category_id": 1,
+          "name": "Audi"
+          }
+          ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-all-subsub-category-under-sub-category
+    metadata:
+      groupName: 'ClasifiedCategory Related'
+      groupDescription: |-
+
+        APIs for managing all Clasified Category related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllSubSubCategoryUnderSubCategory
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+
+
+        <aside class="notice">basepath/api/v1/get-all-subsub-category-under-sub-category</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*category_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 5,
+          "category_id": 1,
+          "name": "Transmission",
+          "sub_sub_category": [
+          {
+          "sub_category_id": 5,
+          "name": "Automatic"
+          },
+          {
+          "sub_category_id": 5,
+          "name": "Manual"
+          }
+          ]
+          },
+          {
+          "id": 4,
+          "category_id": 1,
+          "name": "Condition",
+          "sub_sub_category": [
+          {
+          "sub_category_id": 4,
+          "name": "New"
+          },
+          {
+          "sub_category_id": 4,
+          "name": "Almost New"
+          },
+          {
+          "sub_category_id": 4,
+          "name": "Fair"
+          },
+          {
+          "sub_category_id": 4,
+          "name": "Excelent"
+          }
+          ]
+          },
+          {
+          "id": 3,
+          "category_id": 1,
+          "name": "Color",
+          "sub_sub_category": [
+          {
+          "sub_category_id": 3,
+          "name": "Red"
+          },
+          {
+          "sub_category_id": 3,
+          "name": "Green"
+          },
+          {
+          "sub_category_id": 3,
+          "name": "Blue"
+          },
+          {
+          "sub_category_id": 3,
+          "name": "Silver"
+          }
+          ]
+          },
+          {
+          "id": 2,
+          "category_id": 1,
+          "name": "Model",
+          "sub_sub_category": [
+          {
+          "sub_category_id": 2,
+          "name": "A1"
+          },
+          {
+          "sub_category_id": 2,
+          "name": "A2"
+          },
+          {
+          "sub_category_id": 2,
+          "name": "A4"
+          },
+          {
+          "sub_category_id": 2,
+          "name": "A5"
+          }
+          ]
+          },
+          {
+          "id": 1,
+          "category_id": 1,
+          "name": "Make",
+          "sub_sub_category": [
+          {
+          "sub_category_id": 1,
+          "name": "Audi"
+          },
+          {
+          "sub_category_id": 1,
+          "name": "BMW"
+          }
+          ]
+          }
+          ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/v1/get-free-clasified-by-id
     metadata:
@@ -1234,7 +1573,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 35ZDg8ve6fV4kEbaha1dP6c'
+      - 'Bearer 38g6akV16DdPve4E5ahcfZb'
     controller: null
     method: null
     route: null
@@ -1379,7 +1718,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer fcPgDv1E4bV386Z5a6hadek'
+      - 'Bearer PEbkg1648cVa6Zev3haDf5d'
     controller: null
     method: null
     route: null
@@ -1514,7 +1853,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer DEck86e3aVd41aPh6fb5vgZ'
+      - 'Bearer ZgeEVkD3dhc6516ba8vf4Pa'
     controller: null
     method: null
     route: null

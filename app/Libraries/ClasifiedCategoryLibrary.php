@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Services\CommonService;
 use App\Services\ClasifiedCategoryService;
 
-
+ 
 use Log;
 
 
@@ -110,6 +110,56 @@ class ClasifiedCategoryLibrary
     
     
     
+
+
+
+    public function allSubSubCategoryGet()
+    {
+        $serviceResponse                        = $this->clasifiedCatServ->allSubSubCategoryGet();
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+
+    public function getAllSubSubCategoryUnderSubCategory($param)
+    {
+        $this->commonSer->inputValidators('getAllSubSubCategoryUnderSubCategory', $param);
+        $serviceResponse                        = $this->clasifiedCatServ->allSubSubCategoryUnderSubCategoryGet($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+
+
+
     public function freeClasifiedCreate($param)
     {
         $this->commonSer->inputValidators('freeClasifiedCreate', $param);

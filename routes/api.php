@@ -48,7 +48,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::get('/get-all-category', [ClasifiedCategoryController::class,'getAllCategory']);
     Route::get('/get-all-sub-category', [ClasifiedCategoryController::class,'getAllSubCategory']);
     Route::post('/get-all-sub-category-by-id', [ClasifiedCategoryController::class,'getAllSubCategoryById']);
-    
+    Route::get('/get-all-sub-sub-category', [ClasifiedCategoryController::class,'getAllSubSubCategory']);
+
+    Route::post('/get-all-subsub-category-under-sub-category', [ClasifiedCategoryController::class,'getAllSubSubCategoryUnderSubCategory']);
     Route::post('/get-free-clasified-by-id', [ClasifiedCategoryController::class,'getFreeClasifiedById']);
     
     Route::post('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);

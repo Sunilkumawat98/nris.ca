@@ -144,6 +144,136 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/v1/get-all-nris-talk-list
+    metadata:
+      groupName: 'NrisTalk Related'
+      groupDescription: |-
+
+        APIs for managing all nris talk and its reply related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllNrisTalkList
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        EX
+        {
+        "country_id":1,
+        "state_id":1
+        }
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 4,
+          "title": "title",
+          "title_slug": "title",
+          "description": "description",
+          "meta_title": null,
+          "meta_description": null,
+          "meta_keywords": null,
+          "total_views": null,
+          "created_at": "31-Aug-2023 04:59 PM",
+          "comments_count": 0,
+          "likes_count": 1
+          },
+          {
+          "id": 3,
+          "title": "title",
+          "title_slug": "title",
+          "description": "description",
+          "meta_title": null,
+          "meta_description": null,
+          "meta_keywords": null,
+          "total_views": null,
+          "created_at": "31-Aug-2023 04:59 PM",
+          "comments_count": 1,
+          "likes_count": 0
+          }
+          ],
+          "first_page_url": "PATH/get-all-nris-talk-list?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATh/get-all-nris-talk-list",
+          "per_page": 25,
+          "prev_page_url": null,
+          "to": 3
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/v1/get-nris-talk-list
     metadata:
       groupName: 'NrisTalk Related'
@@ -667,7 +797,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6cPefEDb61Z8hgad35Vakv4'
+      - 'Bearer Va6PbEd564Dckhf8va1ge3Z'
     controller: null
     method: null
     route: null
@@ -818,7 +948,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1hfeEVaZPvcbD3gda665k84'
+      - 'Bearer 8fce4Pag6akb6h3D5EZdv1V'
     controller: null
     method: null
     route: null
@@ -1006,7 +1136,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1kha3EgVda6bPZ4cefv85D6'
+      - 'Bearer fP8cEgaZ154khdDe3Va6v6b'
     controller: null
     method: null
     route: null

@@ -120,7 +120,6 @@ class PermissionRoleSeeder extends Seeder
             ['role_id' => 1, 'permission_id'=>103, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>104, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>105, 'is_active' => 1],
-
             ['role_id' => 1, 'permission_id'=>106, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>107, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>108, 'is_active' => 1],
@@ -130,6 +129,25 @@ class PermissionRoleSeeder extends Seeder
             ['role_id' => 1, 'permission_id'=>112, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>113, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>114, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>115, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>116, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>117, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>118, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>119, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>120, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>121, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>122, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>123, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>124, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>125, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>126, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>127, 'is_active' => 1],
+
+            ['role_id' => 1, 'permission_id'=>128, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>129, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>130, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>131, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>132, 'is_active' => 1],
             
             
 

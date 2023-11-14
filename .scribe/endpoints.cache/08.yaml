@@ -624,7 +624,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer avZ14bkfDgPd685a36cEVeh'
+      - 'Bearer edEvZbfah4P6a1V6Dc8gk35'
     controller: null
     method: null
     route: null
@@ -741,7 +741,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Eck36d8e1ghaVaZvD6b45fP'
+      - 'Bearer afcvaEedVbD15643Pkh68Zg'
     controller: null
     method: null
     route: null

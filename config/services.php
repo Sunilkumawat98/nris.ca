@@ -37,4 +37,11 @@ return [
         'redirect' => env('GOOGLE_CLIENT_REDIRECT_URL'), // UPDATE THIS URL IN THE GOOGLE DEVELOPER CONSOLE
     ],
 
+    
+    'facebook' => [
+        'client_id' => env('FB_CLIENT_ID'), //USE FROM Facebook DEVELOPER ACCOUNT
+        'client_secret' => env('FB_CLIENT_SECRET'), //USE FROM Facebook DEVELOPER ACCOUNT
+        'redirect' => env('FB_CLIENT_REDIRECT_URL'),
+    ],
+
 ];

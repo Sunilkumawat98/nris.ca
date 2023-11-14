@@ -259,6 +259,306 @@ class ClasifiedCategoryController extends BaseController
 
     
     
+
+
+    /**
+     * getAllSubSubCategory
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * 
+     *
+     * <aside class="notice">basepath/api/v1/get-all-sub-sub-category</aside>
+     * @method GET
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
+                {
+                    "id": 16,
+                    "sub_category_id": 5,
+                    "name": "Manual"
+                },
+                {
+                    "id": 15,
+                    "sub_category_id": 5,
+                    "name": "Automatic"
+                },
+                {
+                    "id": 14,
+                    "sub_category_id": 4,
+                    "name": "Excelent"
+                },
+                {
+                    "id": 13,
+                    "sub_category_id": 4,
+                    "name": "Fair"
+                },
+                {
+                    "id": 12,
+                    "sub_category_id": 4,
+                    "name": "Almost New"
+                },
+                {
+                    "id": 11,
+                    "sub_category_id": 4,
+                    "name": "New"
+                },
+                {
+                    "id": 10,
+                    "sub_category_id": 3,
+                    "name": "Silver"
+                },
+                {
+                    "id": 9,
+                    "sub_category_id": 3,
+                    "name": "Blue"
+                },
+                {
+                    "id": 8,
+                    "sub_category_id": 3,
+                    "name": "Green"
+                },
+                {
+                    "id": 7,
+                    "sub_category_id": 3,
+                    "name": "Red"
+                },
+                {
+                    "id": 6,
+                    "sub_category_id": 2,
+                    "name": "A5"
+                },
+                {
+                    "id": 5,
+                    "sub_category_id": 2,
+                    "name": "A4"
+                },
+                {
+                    "id": 4,
+                    "sub_category_id": 2,
+                    "name": "A2"
+                },
+                {
+                    "id": 3,
+                    "sub_category_id": 2,
+                    "name": "A1"
+                },
+                {
+                    "id": 2,
+                    "sub_category_id": 1,
+                    "name": "BMW"
+                },
+                {
+                    "id": 1,
+                    "sub_category_id": 1,
+                    "name": "Audi"
+                }
+            ]
+        } 
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+     public function getAllSubSubCategory()
+     {
+         $response = $this->clasifiedCatLib->allSubSubCategoryGet();
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+     
+ 
+
+
+    /**
+     * getAllSubSubCategoryUnderSubCategory
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * 
+     *
+     * <aside class="notice">basepath/api/v1/get-all-subsub-category-under-sub-category</aside>
+     * @method POST
+     * 
+     * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
+                {
+                    "id": 5,
+                    "category_id": 1,
+                    "name": "Transmission",
+                    "sub_sub_category": [
+                        {
+                            "sub_category_id": 5,
+                            "name": "Automatic"
+                        },
+                        {
+                            "sub_category_id": 5,
+                            "name": "Manual"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "category_id": 1,
+                    "name": "Condition",
+                    "sub_sub_category": [
+                        {
+                            "sub_category_id": 4,
+                            "name": "New"
+                        },
+                        {
+                            "sub_category_id": 4,
+                            "name": "Almost New"
+                        },
+                        {
+                            "sub_category_id": 4,
+                            "name": "Fair"
+                        },
+                        {
+                            "sub_category_id": 4,
+                            "name": "Excelent"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "category_id": 1,
+                    "name": "Color",
+                    "sub_sub_category": [
+                        {
+                            "sub_category_id": 3,
+                            "name": "Red"
+                        },
+                        {
+                            "sub_category_id": 3,
+                            "name": "Green"
+                        },
+                        {
+                            "sub_category_id": 3,
+                            "name": "Blue"
+                        },
+                        {
+                            "sub_category_id": 3,
+                            "name": "Silver"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "category_id": 1,
+                    "name": "Model",
+                    "sub_sub_category": [
+                        {
+                            "sub_category_id": 2,
+                            "name": "A1"
+                        },
+                        {
+                            "sub_category_id": 2,
+                            "name": "A2"
+                        },
+                        {
+                            "sub_category_id": 2,
+                            "name": "A4"
+                        },
+                        {
+                            "sub_category_id": 2,
+                            "name": "A5"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "category_id": 1,
+                    "name": "Make",
+                    "sub_sub_category": [
+                        {
+                            "sub_category_id": 1,
+                            "name": "Audi"
+                        },
+                        {
+                            "sub_category_id": 1,
+                            "name": "BMW"
+                        }
+                    ]
+                }
+            ]
+        }
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getAllSubSubCategoryUnderSubCategory(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->clasifiedCatLib->getAllSubSubCategoryUnderSubCategory($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+     
+ 
    
     
     /**

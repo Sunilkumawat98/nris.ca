@@ -308,7 +308,7 @@ class TrainingPlacementService
             \DB::commit();
 
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             $except['status'] = false;
             $except['error'][] = 'Exception Error...';
             $except['message'] = $e;

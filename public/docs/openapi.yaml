@@ -2913,6 +2913,499 @@ paths:
               required:
                 - '*category_id'
       security: []
+  /api/v1/get-all-sub-sub-category:
+    get:
+      summary: getAllSubSubCategory
+      operationId: getAllSubSubCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-sub-sub-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 16
+                      sub_category_id: 5
+                      name: Manual
+                    -
+                      id: 15
+                      sub_category_id: 5
+                      name: Automatic
+                    -
+                      id: 14
+                      sub_category_id: 4
+                      name: Excelent
+                    -
+                      id: 13
+                      sub_category_id: 4
+                      name: Fair
+                    -
+                      id: 12
+                      sub_category_id: 4
+                      name: 'Almost New'
+                    -
+                      id: 11
+                      sub_category_id: 4
+                      name: New
+                    -
+                      id: 10
+                      sub_category_id: 3
+                      name: Silver
+                    -
+                      id: 9
+                      sub_category_id: 3
+                      name: Blue
+                    -
+                      id: 8
+                      sub_category_id: 3
+                      name: Green
+                    -
+                      id: 7
+                      sub_category_id: 3
+                      name: Red
+                    -
+                      id: 6
+                      sub_category_id: 2
+                      name: A5
+                    -
+                      id: 5
+                      sub_category_id: 2
+                      name: A4
+                    -
+                      id: 4
+                      sub_category_id: 2
+                      name: A2
+                    -
+                      id: 3
+                      sub_category_id: 2
+                      name: A1
+                    -
+                      id: 2
+                      sub_category_id: 1
+                      name: BMW
+                    -
+                      id: 1
+                      sub_category_id: 1
+                      name: Audi
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 16
+                        sub_category_id: 5
+                        name: Manual
+                      -
+                        id: 15
+                        sub_category_id: 5
+                        name: Automatic
+                      -
+                        id: 14
+                        sub_category_id: 4
+                        name: Excelent
+                      -
+                        id: 13
+                        sub_category_id: 4
+                        name: Fair
+                      -
+                        id: 12
+                        sub_category_id: 4
+                        name: 'Almost New'
+                      -
+                        id: 11
+                        sub_category_id: 4
+                        name: New
+                      -
+                        id: 10
+                        sub_category_id: 3
+                        name: Silver
+                      -
+                        id: 9
+                        sub_category_id: 3
+                        name: Blue
+                      -
+                        id: 8
+                        sub_category_id: 3
+                        name: Green
+                      -
+                        id: 7
+                        sub_category_id: 3
+                        name: Red
+                      -
+                        id: 6
+                        sub_category_id: 2
+                        name: A5
+                      -
+                        id: 5
+                        sub_category_id: 2
+                        name: A4
+                      -
+                        id: 4
+                        sub_category_id: 2
+                        name: A2
+                      -
+                        id: 3
+                        sub_category_id: 2
+                        name: A1
+                      -
+                        id: 2
+                        sub_category_id: 1
+                        name: BMW
+                      -
+                        id: 1
+                        sub_category_id: 1
+                        name: Audi
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 16
+                        sub_category_id:
+                          type: integer
+                          example: 5
+                        name:
+                          type: string
+                          example: Manual
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      security: []
+  /api/v1/get-all-subsub-category-under-sub-category:
+    post:
+      summary: getAllSubSubCategoryUnderSubCategory
+      operationId: getAllSubSubCategoryUnderSubCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-subsub-category-under-sub-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 5
+                      category_id: 1
+                      name: Transmission
+                      sub_sub_category:
+                        -
+                          sub_category_id: 5
+                          name: Automatic
+                        -
+                          sub_category_id: 5
+                          name: Manual
+                    -
+                      id: 4
+                      category_id: 1
+                      name: Condition
+                      sub_sub_category:
+                        -
+                          sub_category_id: 4
+                          name: New
+                        -
+                          sub_category_id: 4
+                          name: 'Almost New'
+                        -
+                          sub_category_id: 4
+                          name: Fair
+                        -
+                          sub_category_id: 4
+                          name: Excelent
+                    -
+                      id: 3
+                      category_id: 1
+                      name: Color
+                      sub_sub_category:
+                        -
+                          sub_category_id: 3
+                          name: Red
+                        -
+                          sub_category_id: 3
+                          name: Green
+                        -
+                          sub_category_id: 3
+                          name: Blue
+                        -
+                          sub_category_id: 3
+                          name: Silver
+                    -
+                      id: 2
+                      category_id: 1
+                      name: Model
+                      sub_sub_category:
+                        -
+                          sub_category_id: 2
+                          name: A1
+                        -
+                          sub_category_id: 2
+                          name: A2
+                        -
+                          sub_category_id: 2
+                          name: A4
+                        -
+                          sub_category_id: 2
+                          name: A5
+                    -
+                      id: 1
+                      category_id: 1
+                      name: Make
+                      sub_sub_category:
+                        -
+                          sub_category_id: 1
+                          name: Audi
+                        -
+                          sub_category_id: 1
+                          name: BMW
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 5
+                        category_id: 1
+                        name: Transmission
+                        sub_sub_category:
+                          -
+                            sub_category_id: 5
+                            name: Automatic
+                          -
+                            sub_category_id: 5
+                            name: Manual
+                      -
+                        id: 4
+                        category_id: 1
+                        name: Condition
+                        sub_sub_category:
+                          -
+                            sub_category_id: 4
+                            name: New
+                          -
+                            sub_category_id: 4
+                            name: 'Almost New'
+                          -
+                            sub_category_id: 4
+                            name: Fair
+                          -
+                            sub_category_id: 4
+                            name: Excelent
+                      -
+                        id: 3
+                        category_id: 1
+                        name: Color
+                        sub_sub_category:
+                          -
+                            sub_category_id: 3
+                            name: Red
+                          -
+                            sub_category_id: 3
+                            name: Green
+                          -
+                            sub_category_id: 3
+                            name: Blue
+                          -
+                            sub_category_id: 3
+                            name: Silver
+                      -
+                        id: 2
+                        category_id: 1
+                        name: Model
+                        sub_sub_category:
+                          -
+                            sub_category_id: 2
+                            name: A1
+                          -
+                            sub_category_id: 2
+                            name: A2
+                          -
+                            sub_category_id: 2
+                            name: A4
+                          -
+                            sub_category_id: 2
+                            name: A5
+                      -
+                        id: 1
+                        category_id: 1
+                        name: Make
+                        sub_sub_category:
+                          -
+                            sub_category_id: 1
+                            name: Audi
+                          -
+                            sub_category_id: 1
+                            name: BMW
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 5
+                        category_id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Transmission
+                        sub_sub_category:
+                          type: array
+                          example:
+                            -
+                              sub_category_id: 5
+                              name: Automatic
+                            -
+                              sub_category_id: 5
+                              name: Manual
+                          items:
+                            type: object
+                            properties:
+                              sub_category_id:
+                                type: integer
+                                example: 5
+                              name:
+                                type: string
+                                example: Automatic
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'ClasifiedCategory Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*category_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*category_id'
+      security: []
   /api/v1/get-free-clasified-by-id:
     post:
       summary: getFreeClasifiedById
@@ -6716,35 +7209,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: amet
+                  example: aut
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: vero
+                  example: velit
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: paula.gleason@example.org
+                  example: smitham.ebony@example.org
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: facere
+                  example: fugiat
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: consequatur
+                  example: non
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: eos
+                  example: et
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: in
+                  example: omnis
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: suscipit
+                  example: eius
       security: []
   /api/v1/login:
     post:
@@ -6865,11 +7358,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: quasi
+                  example: qui
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: officia
+                  example: repellat
       security: []
   /api/v1/forgot-pass:
     post:
@@ -6954,7 +7447,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: molestiae
+                  example: maiores
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -7019,15 +7512,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: elindgren@example.net
+                  example: francis.jenkins@example.net
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: et
+                  example: quibusdam
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: iste
+                  example: ipsam
       security: []
   /api/v1/get-all-nris-talk:
     post:
@@ -7177,6 +7670,226 @@ paths:
                         likes_count:
                           type: integer
                           example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'NrisTalk Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*country_id'
+                - '*state_id'
+      security: []
+  /api/v1/get-all-nris-talk-list:
+    post:
+      summary: getAllNrisTalkList
+      operationId: getAllNrisTalkList
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n{\n\"country_id\":1,\n\"state_id\":1\n}"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 4
+                        title: title
+                        title_slug: title
+                        description: description
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        total_views: null
+                        created_at: '31-Aug-2023 04:59 PM'
+                        comments_count: 0
+                        likes_count: 1
+                      -
+                        id: 3
+                        title: title
+                        title_slug: title
+                        description: description
+                        meta_title: null
+                        meta_description: null
+                        meta_keywords: null
+                        total_views: null
+                        created_at: '31-Aug-2023 04:59 PM'
+                        comments_count: 1
+                        likes_count: 0
+                    first_page_url: 'PATH/get-all-nris-talk-list?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: PATh/get-all-nris-talk-list
+                    per_page: 25
+                    prev_page_url: null
+                    to: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            title: title
+                            title_slug: title
+                            description: description
+                            meta_title: null
+                            meta_description: null
+                            meta_keywords: null
+                            total_views: null
+                            created_at: '31-Aug-2023 04:59 PM'
+                            comments_count: 0
+                            likes_count: 1
+                          -
+                            id: 3
+                            title: title
+                            title_slug: title
+                            description: description
+                            meta_title: null
+                            meta_description: null
+                            meta_keywords: null
+                            total_views: null
+                            created_at: '31-Aug-2023 04:59 PM'
+                            comments_count: 1
+                            likes_count: 0
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            title:
+                              type: string
+                              example: title
+                            title_slug:
+                              type: string
+                              example: title
+                            description:
+                              type: string
+                              example: description
+                            meta_title:
+                              type: string
+                              example: null
+                            meta_description:
+                              type: string
+                              example: null
+                            meta_keywords:
+                              type: string
+                              example: null
+                            total_views:
+                              type: string
+                              example: null
+                            created_at:
+                              type: string
+                              example: '31-Aug-2023 04:59 PM'
+                            comments_count:
+                              type: integer
+                              example: 0
+                            likes_count:
+                              type: integer
+                              example: 1
+                      first_page_url:
+                        type: string
+                        example: 'PATH/get-all-nris-talk-list?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: PATh/get-all-nris-talk-list
+                      per_page:
+                        type: integer
+                        example: 25
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 3
         404:
           description: ''
           content:
@@ -12005,11 +12718,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: ad
+                  example: vel
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: et
+                  example: accusantium
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -12170,11 +12883,120 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: quaerat
+                  example: exercitationem
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: quod
+                  example: quis
+      security: []
+  /api/v1/get-all-source:
+    get:
+      summary: getAllRatingSource
+      operationId: getAllRatingSource
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-rating-source</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data found..'
+                  data:
+                    -
+                      id: 3
+                      name: 123Telugu
+                    -
+                      id: 2
+                      name: Cinejosh
+                    -
+                      id: 1
+                      name: 'Times of India'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: 123Telugu
+                      -
+                        id: 2
+                        name: Cinejosh
+                      -
+                        id: 1
+                        name: 'Times of India'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: 123Telugu
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'allMovieRelated Related'
       security: []
 tags:
   -

@@ -144,6 +144,36 @@ function getBlogCategoryNamebyId($id)
 }
 
 
+
+
+
+function getAllForumCategory()
+{
+
+	return \App\Models\ForumCategory::all();
+}
+
+
+function getForumCategoryNamebyId($id)
+{
+	return \App\Models\ForumCategory::where('id', $id)->first();
+}
+
+
+
+function getAllForumSubCategory()
+{
+
+	return \App\Models\ForumSubCategory::all();
+}
+
+function getForumSubCategoryNamebyId($id)
+{
+	return \App\Models\ForumSubCategory::where('id', $id)->first();
+}
+
+
+
 function sendCommentAlert($data)
 {
 

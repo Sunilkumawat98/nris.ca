@@ -584,50 +584,44 @@ class NrisTalkController extends BaseController
             "status": true,
             "status_code": 200,
             "message": "Successfully your list found..",
-            "data": [
-                {
-                    "id": 4,
-                    "title": "new this is test title 3",
-                    "title_slug": "new-this-is-test-title-3",
-                    "description": "This is test title description again 3",
-                    "country_id": 1,
-                    "meta_title": null,
-                    "meta_description": null,
-                    "meta_keywords": null,
-                    "total_views": null,
-                    "created_at": "31-Aug-2023 04:59 PM",
-                    "comments_count": 0,
-                    "likes_count": 1
-                },
-                {
-                    "id": 3,
-                    "title": "new this is test title 2",
-                    "title_slug": "new-this-is-test-title-2",
-                    "description": "This is test title description again 2",
-                    "country_id": 1,
-                    "meta_title": null,
-                    "meta_description": null,
-                    "meta_keywords": null,
-                    "total_views": null,
-                    "created_at": "31-Aug-2023 04:59 PM",
-                    "comments_count": 1,
-                    "likes_count": 0
-                },
-                {
-                    "id": 2,
-                    "title": "new this is test title 1",
-                    "title_slug": "new-this-is-test-title-1",
-                    "description": "This is test title description again1",
-                    "country_id": 1,
-                    "meta_title": null,
-                    "meta_description": null,
-                    "meta_keywords": null,
-                    "total_views": null,
-                    "created_at": "31-Aug-2023 04:59 PM",
-                    "comments_count": 5,
-                    "likes_count": 1
-                }
-            ]
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 4,
+                        "title": "title",
+                        "title_slug": "title",
+                        "description": "description",
+                        "meta_title": null,
+                        "meta_description": null,
+                        "meta_keywords": null,
+                        "total_views": null,
+                        "created_at": "31-Aug-2023 04:59 PM",
+                        "comments_count": 0,
+                        "likes_count": 1
+                    },
+                    {
+                        "id": 3,
+                        "title": "title",
+                        "title_slug": "title",
+                        "description": "description",
+                        "meta_title": null,
+                        "meta_description": null,
+                        "meta_keywords": null,
+                        "total_views": null,
+                        "created_at": "31-Aug-2023 04:59 PM",
+                        "comments_count": 1,
+                        "likes_count": 0
+                    }
+                ],
+                "first_page_url": "PATH/get-all-nris-talk-list?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "PATh/get-all-nris-talk-list",
+                "per_page": 25,
+                "prev_page_url": null,
+                "to": 3
+            }
         }
      *
      *

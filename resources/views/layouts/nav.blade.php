@@ -194,6 +194,17 @@
               </li>
             @endif
 
+            @if(auth()->user()->hasPermission('manage_nris_talk'))
+              <li class="nav-item {{ request()->is('nris_talk') || request()->is('nris_talk/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('nris_talk.index') }}" class="nav-link {{ request()->is('nris_talk') || request()->is('nris_talk/*') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Nris Talk
+                  </p>
+                </a>
+              </li>
+            @endif
+
             <!-- manage_business_listing -->
 
             @if(auth()->user()->hasPermission('manage_business_listing'))
@@ -361,6 +372,49 @@
                 </a>
               </li>
             @endif
+
+
+
+
+
+
+
+            @if(auth()->user()->hasPermission('manage_forum'))
+              <li class="nav-item {{ request()->is('forum_category') || request()->is('forum_category/*') || request()->is('forum_sub_category') || request()->is('forum_sub_category/*') || request()->is('forum') || request()->is('forum/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('forum_category') || request()->is('forum_category/*') || request()->is('forum_sub_category') || request()->is('forum_sub_category/*') ||  request()->is('forum') || request()->is('forum/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-info"></i>
+                  <p>
+                    Forum
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('forum_category.index') }}" class="nav-link {{ request()->is('forum_category') || request()->is('forum_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('forum_sub_category.index') }}" class="nav-link {{ request()->is('forum_sub_category') || request()->is('forum_sub_category/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sub Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('forum.index') }}" class="nav-link {{ request()->is('forum') || request()->is('forum/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Forum</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
+
+
+
           
          
         </ul>

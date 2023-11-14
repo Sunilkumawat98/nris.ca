@@ -28,6 +28,10 @@ use App\Http\Controllers\Admin\TrainingPlacementCategoryController;
 use App\Http\Controllers\Admin\TrainingPlacementController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ForumCategoryController;
+use App\Http\Controllers\Admin\ForumSubCategoryController;
+use App\Http\Controllers\Admin\ForumController;
+use App\Http\Controllers\Admin\NrisTalkController;
 
 use App\Http\Controllers\Admin\NewsLetterController;
 
@@ -153,6 +157,18 @@ Route::domain(config('app.domain'))->group(function () {
 
 
 
+        Route::resource('forum_category', ForumCategoryController::class);
+        Route::post('/forum_category/{id}/active-status', [ForumCategoryController::class, 'livePause'])->name('forum_category.activeStatus');
+
+        Route::resource('forum_sub_category', ForumSubCategoryController::class);
+        Route::post('/forum_sub_category/{id}/active-status', [ForumSubCategoryController::class, 'livePause'])->name('forum_sub_category.activeStatus');
+       
+        Route::resource('forum', ForumController::class);
+        Route::post('/forum/{id}/active-status', [ForumController::class, 'livePause'])->name('forum.activeStatus');
+
+
+        Route::resource('nris_talk', NrisTalkController::class);
+        Route::post('/nris_talk/{id}/active-status', [NrisTalkController::class, 'livePause'])->name('nris_talk.activeStatus');
 
 
 

@@ -540,6 +540,16 @@ return [
             ]
         ],
 
+        "getAllSubSubCategoryUnderSubCategory" => [
+           
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+
 
         /**
          * 
@@ -569,6 +579,23 @@ return [
         "forumByIdGet" => [
             "required" => [
                 'forum_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "forumCreate" => [
+            "required" => [
+                'user_id', "category_id", "sub_cat_id", "title", "description"
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "forumCommentCreate" => [
+            "required" => [
+                'user_id', "forum_id", "comment"
             ],
             "optional" => [
             ]

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "7dad87dc-98c5-4382-80b8-cfae277a7d7e",
+        "_postman_id": "a212583a-1aaf-465d-86b9-d228b7d92548",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -891,6 +891,103 @@
                     ]
                 },
                 {
+                    "name": "getAllSubSubCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-sub-sub-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-sub-sub-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-sub-sub-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 16,\n\"sub_category_id\": 5,\n\"name\": \"Manual\"\n},\n{\n\"id\": 15,\n\"sub_category_id\": 5,\n\"name\": \"Automatic\"\n},\n{\n\"id\": 14,\n\"sub_category_id\": 4,\n\"name\": \"Excelent\"\n},\n{\n\"id\": 13,\n\"sub_category_id\": 4,\n\"name\": \"Fair\"\n},\n{\n\"id\": 12,\n\"sub_category_id\": 4,\n\"name\": \"Almost New\"\n},\n{\n\"id\": 11,\n\"sub_category_id\": 4,\n\"name\": \"New\"\n},\n{\n\"id\": 10,\n\"sub_category_id\": 3,\n\"name\": \"Silver\"\n},\n{\n\"id\": 9,\n\"sub_category_id\": 3,\n\"name\": \"Blue\"\n},\n{\n\"id\": 8,\n\"sub_category_id\": 3,\n\"name\": \"Green\"\n},\n{\n\"id\": 7,\n\"sub_category_id\": 3,\n\"name\": \"Red\"\n},\n{\n\"id\": 6,\n\"sub_category_id\": 2,\n\"name\": \"A5\"\n},\n{\n\"id\": 5,\n\"sub_category_id\": 2,\n\"name\": \"A4\"\n},\n{\n\"id\": 4,\n\"sub_category_id\": 2,\n\"name\": \"A2\"\n},\n{\n\"id\": 3,\n\"sub_category_id\": 2,\n\"name\": \"A1\"\n},\n{\n\"id\": 2,\n\"sub_category_id\": 1,\n\"name\": \"BMW\"\n},\n{\n\"id\": 1,\n\"sub_category_id\": 1,\n\"name\": \"Audi\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllSubSubCategoryUnderSubCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-subsub-category-under-sub-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-subsub-category-under-sub-category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*category_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-subsub-category-under-sub-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 5,\n\"category_id\": 1,\n\"name\": \"Transmission\",\n\"sub_sub_category\": [\n{\n\"sub_category_id\": 5,\n\"name\": \"Automatic\"\n},\n{\n\"sub_category_id\": 5,\n\"name\": \"Manual\"\n}\n]\n},\n{\n\"id\": 4,\n\"category_id\": 1,\n\"name\": \"Condition\",\n\"sub_sub_category\": [\n{\n\"sub_category_id\": 4,\n\"name\": \"New\"\n},\n{\n\"sub_category_id\": 4,\n\"name\": \"Almost New\"\n},\n{\n\"sub_category_id\": 4,\n\"name\": \"Fair\"\n},\n{\n\"sub_category_id\": 4,\n\"name\": \"Excelent\"\n}\n]\n},\n{\n\"id\": 3,\n\"category_id\": 1,\n\"name\": \"Color\",\n\"sub_sub_category\": [\n{\n\"sub_category_id\": 3,\n\"name\": \"Red\"\n},\n{\n\"sub_category_id\": 3,\n\"name\": \"Green\"\n},\n{\n\"sub_category_id\": 3,\n\"name\": \"Blue\"\n},\n{\n\"sub_category_id\": 3,\n\"name\": \"Silver\"\n}\n]\n},\n{\n\"id\": 2,\n\"category_id\": 1,\n\"name\": \"Model\",\n\"sub_sub_category\": [\n{\n\"sub_category_id\": 2,\n\"name\": \"A1\"\n},\n{\n\"sub_category_id\": 2,\n\"name\": \"A2\"\n},\n{\n\"sub_category_id\": 2,\n\"name\": \"A4\"\n},\n{\n\"sub_category_id\": 2,\n\"name\": \"A5\"\n}\n]\n},\n{\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Make\",\n\"sub_sub_category\": [\n{\n\"sub_category_id\": 1,\n\"name\": \"Audi\"\n},\n{\n\"sub_category_id\": 1,\n\"name\": \"BMW\"\n}\n]\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "getFreeClasifiedById",
                     "request": {
                         "url": {
@@ -1642,7 +1739,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"amet\",\"*last_name\":\"vero\",\"*email\":\"paula.gleason@example.org\",\"*dob\":\"facere\",\"*mobile\":\"consequatur\",\"*password\":\"eos\",\"*country_id\":\"in\",\"*state_id\":\"suscipit\"}"
+                            "raw": "{\"*first_name\":\"aut\",\"*last_name\":\"velit\",\"*email\":\"smitham.ebony@example.org\",\"*dob\":\"fugiat\",\"*mobile\":\"non\",\"*password\":\"et\",\"*country_id\":\"omnis\",\"*state_id\":\"eius\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -1692,7 +1789,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"quasi\",\"*password\":\"officia\"}"
+                            "raw": "{\"*email_id\":\"qui\",\"*password\":\"repellat\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -1742,7 +1839,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"molestiae\"}"
+                            "raw": "{\"*email_id\":\"maiores\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -1792,7 +1889,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"elindgren@example.net\",\"*new_password\":\"et\",\"*retype_password\":\"iste\"}"
+                            "raw": "{\"*email\":\"francis.jenkins@example.net\",\"*new_password\":\"quibusdam\",\"*retype_password\":\"ipsam\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -1854,6 +1951,56 @@
                             "header": [],
                             "code": 200,
                             "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 4,\n\"title\": \"new this is test title 3\",\n\"title_slug\": \"new-this-is-test-title-3\",\n\"description\": \"This is test title description again 3\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 0,\n\"likes_count\": 1\n},\n{\n\"id\": 3,\n\"title\": \"new this is test title 2\",\n\"title_slug\": \"new-this-is-test-title-2\",\n\"description\": \"This is test title description again 2\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 1,\n\"likes_count\": 0\n},\n{\n\"id\": 2,\n\"title\": \"new this is test title 1\",\n\"title_slug\": \"new-this-is-test-title-1\",\n\"description\": \"This is test title description again1\",\n\"country_id\": 1,\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 5,\n\"likes_count\": 1\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllNrisTalkList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-nris-talk-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-nris-talk-list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n{\n\"country_id\":1,\n\"state_id\":1\n}",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 4,\n\"title\": \"title\",\n\"title_slug\": \"title\",\n\"description\": \"description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 0,\n\"likes_count\": 1\n},\n{\n\"id\": 3,\n\"title\": \"title\",\n\"title_slug\": \"title\",\n\"description\": \"description\",\n\"meta_title\": null,\n\"meta_description\": null,\n\"meta_keywords\": null,\n\"total_views\": null,\n\"created_at\": \"31-Aug-2023 04:59 PM\",\n\"comments_count\": 1,\n\"likes_count\": 0\n}\n],\n\"first_page_url\": \"PATH\/get-all-nris-talk-list?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATh\/get-all-nris-talk-list\",\n\"per_page\": 25,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
                             "name": ""
                         },
                         {
@@ -3259,7 +3406,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"ad\",\"*state_id\":\"et\"}"
+                            "raw": "{\"*country_id\":\"vel\",\"*state_id\":\"accusantium\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -3309,7 +3456,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"quaerat\",\"*state_id\":\"quod\"}"
+                            "raw": "{\"*country_id\":\"exercitationem\",\"*state_id\":\"quis\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {
@@ -3327,6 +3474,53 @@
                             "header": [],
                             "code": 404,
                             "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Desi movies not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllRatingSource",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-source",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-source"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-rating-source<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data found..\",\n\"data\": [\n{\n\"id\": 3,\n\"name\": \"123Telugu\"\n},\n{\n\"id\": 2,\n\"name\": \"Cinejosh\"\n},\n{\n\"id\": 1,\n\"name\": \"Times of India\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
                             "name": ""
                         },
                         {

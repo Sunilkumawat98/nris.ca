@@ -51,6 +51,12 @@ class PermissionSeeder extends Seeder
             ['name' => 'delete_city', 'name_slug'=>'delete-city'],
             ['name' => 'show_city', 'name_slug'=>'show-city'],
 
+            ['name' => 'manage_nris_talk', 'name_slug'=>'manage-nris-talk'],
+            ['name' => 'create_nris_talk', 'name_slug'=>'create-nris-talk'],
+            ['name' => 'edit_nris_talk', 'name_slug'=>'edit-nris-talk'],
+            ['name' => 'show_nris_talk', 'name_slug'=>'show-nris-talk'],
+            ['name' => 'delete_nris_talk', 'name_slug'=>'delete-nris-talk'],
+
             ['name' => 'manage_desi_movies', 'name_slug'=>'manage-desi-movies'],
             ['name' => 'create_desi_movies', 'name_slug'=>'create-desi-movies'],
             ['name' => 'edit_desi_movies', 'name_slug'=>'edit-desi-movies'],
@@ -155,8 +161,21 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_blog', 'name_slug'=>'show-blog'],
             ['name' => 'delete_blog', 'name_slug'=>'delete-blog'],
 
+            ['name' => 'manage_forum', 'name_slug'=>'manage-forum'],
+            ['name' => 'create_forum_category', 'name_slug'=>'create-forum-category'],
+            ['name' => 'edit_forum_category', 'name_slug'=>'edit-forum-category'],
+            ['name' => 'show_forum_category', 'name_slug'=>'show-forum-category'],
+            ['name' => 'delete_forum_category', 'name_slug'=>'delete-forum-category'],
+            ['name' => 'create_forum_subcategory', 'name_slug'=>'create-forum-subcategory'],
+            ['name' => 'edit_forum_subcategory', 'name_slug'=>'edit-forum-subcategory'],
+            ['name' => 'show_forum_subcategory', 'name_slug'=>'show-forum-subcategory'],
+            ['name' => 'delete_forum_subcategory', 'name_slug'=>'delete-forum-subcategory'],
+            ['name' => 'create_forum', 'name_slug'=>'create-forum'],
+            ['name' => 'edit_forum', 'name_slug'=>'edit-forum'],
+            ['name' => 'show_forum', 'name_slug'=>'show-forum'],
+            ['name' => 'delete_forum', 'name_slug'=>'delete-forum'],
 
-            
+
 
 
             // Add more user data entries as needed

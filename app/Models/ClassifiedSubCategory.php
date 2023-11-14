@@ -47,4 +47,10 @@ class ClassifiedSubCategory extends Model
         'status'
     ];
 
+
+    public function subSubCategory()
+    {
+        return $this->hasMany(ClassifiedSubSubCategory::class, 'sub_category_id', 'id')->select(['sub_category_id','name']);
+    }
+
 }
