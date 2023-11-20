@@ -704,4 +704,151 @@ class ClasifiedCategoryService
 
 
 
+
+
+
+    /**
+        
+        * method getFreeAdsListByCategory()
+        * 
+        * @param
+        * country_id
+        * state_id
+        * category_id
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function getFreeAdsListByCategory($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = FreeClassified::with('cat_id')
+                                        ->where('country_id',$param['country_id'])
+                                        ->where('state_id',$param['state_id'])                                     
+                                        ->where('cat_id',$param['category_id'])
+                                        ->where('is_live',1)
+                                        ->where('display_status',1)
+                                        ->where('status',1)
+                                        ->orderBy('id', 'DESC');
+        $total_count = $result->count();
+        $result = $result->simplePaginate(10);
+
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'user_id',
+                'country_id',
+                'state_id',
+                'city_id',
+                'sub_cat_id',
+                'meta_title',
+                'meta_description',
+                'meta_keywords',
+                'created_at'
+            ]);
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'Data not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+        return $return;
+    }
+    
+
+
+    /**
+        
+        * method searchFreeAdsList()
+        * 
+        * @param
+        * country_id
+        * state_id
+        * category_id
+        * keyword
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function searchFreeAdsList($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = FreeClassified::where('country_id',$param['country_id'])
+                                        ->where('state_id',$param['state_id'])
+                                        ->where('cat_id',$param['category_id']);
+
+
+        if ($param['keyword']) {
+            $result->where(function ($query) use ($param) {
+                $query->where('title', 'like', '%' . $param['keyword'] . '%')
+                ->orWhere('message', 'like', '%' . $param['keyword'] . '%');
+            });
+        }                                        
+        $result->where('is_live',1);
+        $result->where('display_status',1);
+        $result->where('status',1);
+        $result->orderBy('id', 'DESC');
+        $total_count = $result->count();
+        $result = $result->simplePaginate(10);
+
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'user_id',
+                'country_id',
+                'state_id',
+                'city_id',
+                'cat_id',
+                'sub_cat_id',
+                'meta_title',
+                'meta_description',
+                'meta_keywords',
+                'created_at'
+            ]);
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'Data not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+        return $return;
+    }
+    
+
+
+
 }

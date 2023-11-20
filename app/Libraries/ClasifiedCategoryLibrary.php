@@ -309,5 +309,54 @@ class ClasifiedCategoryLibrary
     
     
 
+    
+    public function freeAdsGetByCategory($param)
+    {
+        $this->commonSer->inputValidators('freeAdsGetByCategory', $param);
+        $serviceResponse                        = $this->clasifiedCatServ->getFreeAdsListByCategory($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+
+    
+    public function freeAdsSearch($param)
+    {
+        $this->commonSer->inputValidators('freeAdsSearch', $param);
+        $serviceResponse                        = $this->clasifiedCatServ->searchFreeAdsList($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
+    
+
 
 }

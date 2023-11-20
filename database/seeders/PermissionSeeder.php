@@ -175,8 +175,22 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_forum', 'name_slug'=>'show-forum'],
             ['name' => 'delete_forum', 'name_slug'=>'delete-forum'],
 
+            ['name' => 'manage_movie_videos', 'name_slug'=>'manage-movie-videos'],
+            ['name' => 'create_movie_videos_category', 'name_slug'=>'create-movie-videos-category'],
+            ['name' => 'edit_movie_videos_category', 'name_slug'=>'edit-movie-videos-category'],
+            ['name' => 'show_movie_videos_category', 'name_slug'=>'show-movie-videos-category'],
+            ['name' => 'delete_movie_videos_category', 'name_slug'=>'delete-movie-videos-category'],
 
 
+            ['name' => 'create_movie_videos_language', 'name_slug'=>'create-movie-videos-language'],
+            ['name' => 'edit_movie_videos_language', 'name_slug'=>'edit-movie-videos-language'],
+            ['name' => 'show_movie_videos_language', 'name_slug'=>'show-movie-videos-language'],
+            ['name' => 'delete_movie_videos_language', 'name_slug'=>'delete-movie-videos-language'],
+
+            ['name' => 'create_movie_videos', 'name_slug'=>'create-movie-videos'],
+            ['name' => 'edit_movie_videos', 'name_slug'=>'edit-movie-videos'],
+            ['name' => 'show_movie_videos', 'name_slug'=>'show-movie-videos'],
+            ['name' => 'delete_movie_videos', 'name_slug'=>'delete-movie-videos'],
 
             // Add more user data entries as needed
         ];

@@ -46,67 +46,67 @@ endpoints:
         name: '*first_name'
         description: "String     Ex ('Abc')"
         required: false
-        example: aut
+        example: totam
         type: required
         custom: []
       '*last_name':
         name: '*last_name'
         description: "String     Ex ('def')"
         required: false
-        example: velit
+        example: qui
         type: required
         custom: []
       '*email':
         name: '*email'
         description: "Email      Ex ('you@domain.com')"
         required: false
-        example: smitham.ebony@example.org
+        example: elian.gottlieb@example.com
         type: required
         custom: []
       '*dob':
         name: '*dob'
         description: "Date       Ex ('YYYY-MM-DD')"
         required: false
-        example: fugiat
+        example: et
         type: required
         custom: []
       '*mobile':
         name: '*mobile'
         description: "String     Ex ('9876****09')"
         required: false
-        example: non
+        example: aperiam
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('Abc')"
         required: false
-        example: et
+        example: ipsam
         type: required
         custom: []
       '*country_id':
         name: '*country_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: omnis
+        example: hic
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: "Number     Ex ('1/2/3/4')"
         required: false
-        example: eius
+        example: expedita
         type: required
         custom: []
     cleanBodyParameters:
-      '*first_name': aut
-      '*last_name': velit
-      '*email': smitham.ebony@example.org
-      '*dob': fugiat
-      '*mobile': non
-      '*password': et
-      '*country_id': omnis
-      '*state_id': eius
+      '*first_name': totam
+      '*last_name': qui
+      '*email': elian.gottlieb@example.com
+      '*dob': et
+      '*mobile': aperiam
+      '*password': ipsam
+      '*country_id': hic
+      '*state_id': expedita
     fileParameters: []
     responses:
       -
@@ -189,19 +189,19 @@ endpoints:
         name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: qui
+        example: consequuntur
         type: required
         custom: []
       '*password':
         name: '*password'
         description: "String     Ex ('********')"
         required: false
-        example: repellat
+        example: omnis
         type: required
         custom: []
     cleanBodyParameters:
-      '*email_id': qui
-      '*password': repellat
+      '*email_id': consequuntur
+      '*password': omnis
     fileParameters: []
     responses:
       -
@@ -288,11 +288,11 @@ endpoints:
         name: '*email_id'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: maiores
+        example: temporibus
         type: required
         custom: []
     cleanBodyParameters:
-      '*email_id': maiores
+      '*email_id': temporibus
     fileParameters: []
     responses:
       -
@@ -368,27 +368,27 @@ endpoints:
         name: '*email'
         description: "Number     Ex ('you@domain.com')"
         required: false
-        example: francis.jenkins@example.net
+        example: ckerluke@example.com
         type: required
         custom: []
       '*new_password':
         name: '*new_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: quibusdam
+        example: cumque
         type: required
         custom: []
       '*retype_password':
         name: '*retype_password'
         description: "String     Ex ('Abc@123')"
         required: false
-        example: ipsam
+        example: harum
         type: required
         custom: []
     cleanBodyParameters:
-      '*email': francis.jenkins@example.net
-      '*new_password': quibusdam
-      '*retype_password': ipsam
+      '*email': ckerluke@example.com
+      '*new_password': cumque
+      '*retype_password': harum
     fileParameters: []
     responses:
       -

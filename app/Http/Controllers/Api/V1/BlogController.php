@@ -121,7 +121,7 @@ class BlogController extends BaseController
      * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
      * @method GET
      *
-     * <aside class="notice">basepath/api/v1/get-all-training-list-by-category-id</aside>
+     * <aside class="notice">basepath/api/v1/get-homepage-blog</aside>
      * @return \Illuminate\Http\Response
      * 
      *

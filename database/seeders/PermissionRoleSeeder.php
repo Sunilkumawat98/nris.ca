@@ -10,7 +10,7 @@ class PermissionRoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     */
+     */ 
     public function run(): void
     {
         $insertsData = [
@@ -148,6 +148,20 @@ class PermissionRoleSeeder extends Seeder
             ['role_id' => 1, 'permission_id'=>130, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>131, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>132, 'is_active' => 1],
+
+            ['role_id' => 1, 'permission_id'=>133, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>134, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>135, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>136, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>137, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>138, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>139, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>140, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>141, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>142, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>143, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>144, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>145, 'is_active' => 1],
             
             
 

@@ -423,6 +423,42 @@
 
 
 
+
+
+
+            @if(auth()->user()->hasPermission('manage_movie_videos'))
+              <li class="nav-item {{ request()->is('movie_video_category') || request()->is('movie_video_category/*') || request()->is('movie_videos_language') || request()->is('movie_videos_language/*') || request()->is('movie_video') || request()->is('movie_video/*') ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link {{ request()->is('movie_video_category') || request()->is('movie_video_category/*') || request()->is('movie_videos_language') || request()->is('movie_videos_language/*') ||  request()->is('movie_video') || request()->is('movie_video/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-info"></i>
+                  <p>
+                    Movie Videos
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('movie_video_category.index') }}" class="nav-link {{ request()->is('movie_video_category') || request()->is('movie_video_category/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('movie_videos_language.index') }}" class="nav-link {{ request()->is('movie_videos_language') || request()->is('movie_videos_language/*')  ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Language</p>
+                    </a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a href="{{ route('movie_video.index') }}" class="nav-link {{ request()->is('movie_video') || request()->is('movie_video/*') ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Movie Videos</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            @endif
           
          
         </ul>

@@ -1086,9 +1086,9 @@ endpoints:
 
 
         Example
-         {
+        {
         "country_id":1
-         }
+        }
 
         <aside class="notice">basepath/api/v1/get-recent-ads</aside>
       authenticated: false
@@ -1264,6 +1264,292 @@ endpoints:
           "per_page": 4,
           "prev_page_url": null,
           "to": 2
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "Clasified not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/search-free-ads
+    metadata:
+      groupName: 'ClasifiedCategory Related'
+      groupDescription: |-
+
+        APIs for managing all Clasified Category related
+      subgroup: ''
+      subgroupDescription: ''
+      title: searchFreeAds
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        Example
+         {
+        "country_id":1,
+        "state_id":1,
+        "category_id":1,
+        "keyword":"text"
+         }
+
+        <aside class="notice">basepath/api/v1/search-free-ads</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*keyword':
+        name: '*keyword'
+        description: ''
+        required: true
+        example: 'text in JSON BODY'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
+      '*category_id': 1
+      '*keyword': 'text in JSON BODY'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 4,
+          "title": "title",
+          "title_slug": "title",
+          "message": message,
+          "image": null,
+          "contact_name": "MdSaddam",
+          "contact_email": "hussainmd@gmail.com",
+          "contact_number": "9088123678",
+          "contact_address": "address",
+          "show_email": 1,
+          "use_address_map": 0,
+          "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+          "end_at": "02/08/2023",
+          "total_views": 0
+          }
+          ],
+          "first_page_url": "PATH/search-free-ads?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATH/v1/search-free-ads",
+          "per_page": 10,
+          "prev_page_url": null,
+          "to": 1
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "Clasified not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-free-ads-by-category
+    metadata:
+      groupName: 'ClasifiedCategory Related'
+      groupDescription: |-
+
+        APIs for managing all Clasified Category related
+      subgroup: ''
+      subgroupDescription: ''
+      title: getFreeAdsByCategory
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        Example
+         {
+        "country_id":1,
+        "state_id":1,
+        "category_id":1
+         }
+
+        <aside class="notice">basepath/api/v1/get-free-ads-by-category</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*keyword':
+        name: '*keyword'
+        description: ''
+        required: true
+        example: 'text in JSON BODY'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
+      '*category_id': 1
+      '*keyword': 'text in JSON BODY'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 5,
+          "cat_id": {
+          "id": 2,
+          "name": "Baby Sitting",
+          "slug": "baby-sitting",
+          "color": "#C04343",
+          "created_at": "14-Nov-2023 09:34 AM"
+          },
+          "title": "this is simple test title 3",
+          "title_slug": "this-is-simple-test-title-3",
+          "message": null,
+          "image": "http://localhost/upload/image-data/ADS_IMAGE/1693910545_user2-160x160.jpg",
+          "contact_name": "MdSaddam",
+          "contact_email": "hussainmd@gmail.com",
+          "contact_number": "9088123678",
+          "contact_address": "address",
+          "show_email": 1,
+          "use_address_map": 0,
+          "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+          "end_at": "02/08/2023",
+          "total_views": 0
+          }
+          ],
+          "first_page_url": "http://local-nris.ca/api/v1/get-free-ads-by-category?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "http://local-nris.ca/api/v1/get-free-ads-by-category",
+          "per_page": 10,
+          "prev_page_url": null,
+          "to": 1
           }
           }
         headers: []
@@ -1575,7 +1861,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 38g6akV16DdPve4E5ahcfZb'
+      - 'Bearer Zeag68aV6hE5dbvP4f3kD1c'
     controller: null
     method: null
     route: null
@@ -1720,7 +2006,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer PEbkg1648cVa6Zev3haDf5d'
+      - 'Bearer PD3eh56EvbkVa4dZc6f1ga8'
     controller: null
     method: null
     route: null
@@ -1855,7 +2141,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer ZgeEVkD3dhc6516ba8vf4Pa'
+      - 'Bearer cVD3aZeah48Ekbf6P15dg6v'
     controller: null
     method: null
     route: null

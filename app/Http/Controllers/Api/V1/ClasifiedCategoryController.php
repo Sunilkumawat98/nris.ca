@@ -1063,9 +1063,9 @@ class ClasifiedCategoryController extends BaseController
      * 
      * 
      * Example
-     *  {
+     * {
             "country_id":1
-     *  }
+     * }
      *
      * <aside class="notice">basepath/api/v1/get-recent-ads</aside>
      * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
@@ -1462,5 +1462,208 @@ class ClasifiedCategoryController extends BaseController
     }
     
     
+    /**
+     * getFreeAdsByCategory
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * Example
+     *  {
+            "country_id":1,
+            "state_id":1,
+            "category_id":1
+     *  }
+     *
+     * <aside class="notice">basepath/api/v1/get-free-ads-by-category</aside>
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *keyword string required Example: text in JSON BODY
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully list found..",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 5,
+                        "cat_id": {
+                            "id": 2,
+                            "name": "Baby Sitting",
+                            "slug": "baby-sitting",
+                            "color": "#C04343",
+                            "created_at": "14-Nov-2023 09:34 AM"
+                        },
+                        "title": "this is simple test title 3",
+                        "title_slug": "this-is-simple-test-title-3",
+                        "message": null,
+                        "image": "http://localhost/upload/image-data/ADS_IMAGE/1693910545_user2-160x160.jpg",
+                        "contact_name": "MdSaddam",
+                        "contact_email": "hussainmd@gmail.com",
+                        "contact_number": "9088123678",
+                        "contact_address": "address",
+                        "show_email": 1,
+                        "use_address_map": 0,
+                        "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+                        "end_at": "02/08/2023",
+                        "total_views": 0
+                    }
+                ],
+                "first_page_url": "http://local-nris.ca/api/v1/get-free-ads-by-category?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "http://local-nris.ca/api/v1/get-free-ads-by-category",
+                "per_page": 10,
+                "prev_page_url": null,
+                "to": 1
+            }
+        }
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "Clasified not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getFreeAdsByCategory(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->clasifiedCatLib->freeAdsGetByCategory($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+    
+    
+
+
+    
+    
+    /**
+     * searchFreeAds
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * Example
+     *  {
+            "country_id":1,
+            "state_id":1,
+            "category_id":1,
+            "keyword":"text"
+     *  }
+     *
+     * <aside class="notice">basepath/api/v1/search-free-ads</aside>
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *keyword string required Example: text in JSON BODY
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully list found..",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 4,
+                        "title": "title",
+                        "title_slug": "title",
+                        "message": message,
+                        "image": null,
+                        "contact_name": "MdSaddam",
+                        "contact_email": "hussainmd@gmail.com",
+                        "contact_number": "9088123678",
+                        "contact_address": "address",
+                        "show_email": 1,
+                        "use_address_map": 0,
+                        "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
+                        "end_at": "02/08/2023",
+                        "total_views": 0
+                    }
+                ],
+                "first_page_url": "PATH/search-free-ads?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "PATH/v1/search-free-ads",
+                "per_page": 10,
+                "prev_page_url": null,
+                "to": 1
+            }
+        }
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "Clasified not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function searchFreeAds(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->clasifiedCatLib->freeAdsSearch($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+    
+    
+
+
+
+
+
 
 }

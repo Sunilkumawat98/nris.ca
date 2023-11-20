@@ -11,6 +11,7 @@ return [
         'event_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'talk_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'category_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'language_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'sub_cat_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'forum_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'contact_name'          => "bail|required|regex:/^[a-z A-Z\.]*$/|min:3|max:120",
@@ -46,6 +47,7 @@ return [
         'business_list_id'      => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'training_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'blog_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'video_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
         'comment'               => "bail|required|string",
@@ -398,6 +400,61 @@ return [
         ],
 
 
+
+
+
+
+
+
+
+        /**
+         * MovieVideo
+         * 
+         * */        
+
+
+        "movieVideoByCategoryGet" => [
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "movieVideoByLanguageGet" => [
+            "required" => [
+                'language_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "movieVideoSearch" => [
+            "required" => [
+                'keyword'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "likeVideoMovie" => [
+            "required" => [
+                'video_id', 'user_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "disLikeVideoMovie" => [
+            "required" => [
+                'video_id', 'user_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
         /*
         
             Traning & Placement Listing & Its category
@@ -504,6 +561,24 @@ return [
            
             "required" => [
                 'country_id', 'state_id'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+        "freeAdsSearch" => [
+           
+            "required" => [
+                'country_id', 'state_id', 'category_id', 'keyword'
+            ],
+            "optional" => [
+                
+            ]
+        ],
+        "freeAdsGetByCategory" => [
+           
+            "required" => [
+                'country_id', 'state_id', 'category_id'
             ],
             "optional" => [
                 

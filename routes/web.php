@@ -33,7 +33,9 @@ use App\Http\Controllers\Admin\ForumCategoryController;
 use App\Http\Controllers\Admin\ForumSubCategoryController;
 use App\Http\Controllers\Admin\ForumController;
 use App\Http\Controllers\Admin\NrisTalkController;
-
+use App\Http\Controllers\Admin\MovieVideoCategoryController;
+use App\Http\Controllers\Admin\MovieVideoLanguageController;
+use App\Http\Controllers\Admin\MovieVideoController;
 use App\Http\Controllers\Admin\NewsLetterController;
 
 /*
@@ -156,6 +158,18 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('blog', BlogController::class);
         Route::post('/blog/{id}/active-status', [BlogController::class, 'livePause'])->name('blog.activeStatus');
+
+       
+
+        
+        Route::resource('movie_video_category', MovieVideoCategoryController::class);
+        Route::post('/movie_video_category/{id}/active-status', [MovieVideoCategoryController::class, 'livePause'])->name('movie_video_category.activeStatus');
+        
+        Route::resource('movie_videos_language', MovieVideoLanguageController::class);
+        Route::post('/movie_videos_language/{id}/active-status', [MovieVideoLanguageController::class, 'livePause'])->name('movie_videos_language.activeStatus');
+
+        Route::resource('movie_video', MovieVideoController::class);
+        Route::post('/movie_video/{id}/active-status', [MovieVideoController::class, 'livePause'])->name('movie_video.activeStatus');
 
 
 

@@ -180,6 +180,30 @@ function getForumSubCategoryNamebyId($id)
 
 
 
+
+
+function getAllMovieVideoCategory()
+{
+
+	return \App\Models\MovieVideoCategory::all();
+}
+
+function getMovieVideoCategoryNamebyId($id)
+{
+	return \App\Models\MovieVideoCategory::where('id', $id)->first();
+}
+
+function getAllMovieVideoLanguage()
+{
+
+	return \App\Models\MovieVideoLanguage::all();
+}
+
+function getMovieVideoLanguageNamebyId($id)
+{
+	return \App\Models\MovieVideoLanguage::where('id', $id)->first();
+}
+
 function sendCommentAlert($data)
 {
 

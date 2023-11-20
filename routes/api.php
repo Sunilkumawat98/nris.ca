@@ -16,7 +16,8 @@ use App\Http\Controllers\Api\V1\TrainingPlacementController;
 use App\Http\Controllers\Api\V1\SearchController;
 use App\Http\Controllers\Api\V1\SubscribeNewsLetterController;
 use App\Http\Controllers\Api\V1\BlogController;
-// use App\Http\Controllers\Api\V1\ForumController;
+use App\Http\Controllers\Api\V1\ForumController;
+use App\Http\Controllers\Api\V1\MovieVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     
     Route::post('/get-recent-ads-list', [ClasifiedCategoryController::class,'getRecentAdsList']);
     Route::post('/get-recent-ads', [ClasifiedCategoryController::class,'getRecentAds']);
+    Route::post('/search-free-ads', [ClasifiedCategoryController::class,'searchFreeAds']);
+    Route::post('/get-free-ads-by-category', [ClasifiedCategoryController::class,'getFreeAdsByCategory']);
     
 
  /*
@@ -182,6 +185,22 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-blog-by-category', [BlogController::class,'getBlogByCategory']);
     
 
+
+    /**
+     * 
+     *  MOVIEVIDEO
+     * 
+    */
+
+    Route::get('/get-all-movie-video-category', [MovieVideoController::class,'getAllCategory']);
+    Route::get('/get-all-movie-video-language', [MovieVideoController::class,'getAllLanguage']);
+    Route::get('/get-all-movie-video', [MovieVideoController::class,'getAllMovieVideo']);
+    Route::post('/get-movie-video-by-category', [MovieVideoController::class,'getMovieVideoByCategory']);
+    Route::post('/get-movie-video-by-language', [MovieVideoController::class,'getMovieVideoByLanguage']);
+    Route::post('/search-movie-video', [MovieVideoController::class,'searchMovieVideo']);
+
+    
+    
     /*
     
     Training & Placements and itsCategory
@@ -222,11 +241,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
     */
 
-    // Route::get('/get-all-forum-category', [ForumController::class,'getAllCategory']);
-    // Route::get('/get-all-forum-sub-category', [ForumController::class,'getAllSubCategory']);
-    // Route::post('/get-all-forum-sub-category-by-id', [ForumController::class,'getAllSubCategoryById']);
-    // Route::post('/get-all-forum-list-by-category-id', [ForumController::class,'getAllForumListByCategoryId']);
-    // Route::post('/get-forum-by-id', [ForumController::class,'getForumById']);
+    Route::get('/get-all-forum-category', [ForumController::class,'getAllCategory']);
+    Route::get('/get-all-forum-sub-category', [ForumController::class,'getAllSubCategory']);
+    Route::post('/get-all-forum-sub-category-by-id', [ForumController::class,'getAllSubCategoryById']);
+    Route::post('/get-all-forum-list-by-category-id', [ForumController::class,'getAllForumListByCategoryId']);
+    Route::post('/get-forum-by-id', [ForumController::class,'getForumById']);
     
 
 
@@ -253,11 +272,14 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
         $router->post('/add-student-university', [StudentTalkController::class,'addUniversityStudent']);
         $router->post('/create-student-talk', [StudentTalkController::class,'createStudentTalk']);
 
-        // $router->post('/create-forum', [ForumController::class,'createForum']);
-        // $router->post('/comment-forum', [ForumController::class,'commentForum']);
+        $router->post('/create-forum', [ForumController::class,'createForum']);
+        $router->post('/comment-forum', [ForumController::class,'commentForum']);
 
         $router->post('/blog-like', [BlogController::class,'blogLike']);
         $router->post('/blog-dislike', [BlogController::class,'blogDisLike']);
+
+        $router->post('/movie-video-like', [MovieVideoController::class,'movieVideoLike']);
+        $router->post('/movie-video-dislike', [MovieVideoController::class,'movieVideoDisLike']);
     });
 
     
