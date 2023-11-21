@@ -1494,12 +1494,51 @@ class ClasifiedCategoryController extends BaseController
                 "data": [
                     {
                         "id": 5,
+                        "country_id": {
+                            "id": 1,
+                            "name": "USA",
+                            "color": "#ef8888",
+                            "code": "US",
+                            "domain": "usa",
+                            "image": "NA",
+                            "c_meta_title": "US META",
+                            "c_meta_description": "US DESC",
+                            "c_meta_keywords": "US KEY",
+                            "created_at": null
+                        },
+                        "state_id": {
+                            "id": 1,
+                            "name": "Alaska",
+                            "code": "AL",
+                            "domain": "alaska",
+                            "description": "AL desc",
+                            "logo": "NA",
+                            "s_meta_title": "Al title",
+                            "s_meta_description": "AL META",
+                            "s_meta_keywords": "AL key",
+                            "header_image": "NULL",
+                            "header_image2": "NULL",
+                            "header_image3": "NULL"
+                        },
+                        "city_id": {
+                            "id": 1,
+                            "name": "Lancaster Park",
+                            "state_code": "AB"
+                        },
                         "cat_id": {
                             "id": 2,
                             "name": "Baby Sitting",
                             "slug": "baby-sitting",
                             "color": "#C04343",
                             "created_at": "14-Nov-2023 09:34 AM"
+                        },
+                        "sub_cat_id": {
+                            "id": 1,
+                            "category_id": 1,
+                            "name": "Make",
+                            "slug": "make",
+                            "color": "#C02C2C",
+                            "created_at": "05-Sep-2023 04:08 PM"
                         },
                         "title": "this is simple test title 3",
                         "title_slug": "this-is-simple-test-title-3",
@@ -1513,7 +1552,8 @@ class ClasifiedCategoryController extends BaseController
                         "use_address_map": 0,
                         "other_details": "[{\"make\":\"audi\"},{\"color\":\"red\"}, {\"condition\": \"1st hand\"}, {\"Transmission\":\"Automatic\"},{\"Type\": \"Van\"} ]",
                         "end_at": "02/08/2023",
-                        "total_views": 0
+                        "total_views": 0,
+                        "created_at": "05-Sep-2023 04:12 PM"
                     }
                 ],
                 "first_page_url": "http://local-nris.ca/api/v1/get-free-ads-by-category?page=1",

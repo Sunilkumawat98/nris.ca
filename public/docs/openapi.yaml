@@ -5036,12 +5036,47 @@ paths:
                     data:
                       -
                         id: 5
+                        country_id:
+                          id: 1
+                          name: USA
+                          color: '#ef8888'
+                          code: US
+                          domain: usa
+                          image: NA
+                          c_meta_title: 'US META'
+                          c_meta_description: 'US DESC'
+                          c_meta_keywords: 'US KEY'
+                          created_at: null
+                        state_id:
+                          id: 1
+                          name: Alaska
+                          code: AL
+                          domain: alaska
+                          description: 'AL desc'
+                          logo: NA
+                          s_meta_title: 'Al title'
+                          s_meta_description: 'AL META'
+                          s_meta_keywords: 'AL key'
+                          header_image: 'NULL'
+                          header_image2: 'NULL'
+                          header_image3: 'NULL'
+                        city_id:
+                          id: 1
+                          name: 'Lancaster Park'
+                          state_code: AB
                         cat_id:
                           id: 2
                           name: 'Baby Sitting'
                           slug: baby-sitting
                           color: '#C04343'
                           created_at: '14-Nov-2023 09:34 AM'
+                        sub_cat_id:
+                          id: 1
+                          category_id: 1
+                          name: Make
+                          slug: make
+                          color: '#C02C2C'
+                          created_at: '05-Sep-2023 04:08 PM'
                         title: 'this is simple test title 3'
                         title_slug: this-is-simple-test-title-3
                         message: null
@@ -5055,6 +5090,7 @@ paths:
                         other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
                         end_at: 02/08/2023
                         total_views: 0
+                        created_at: '05-Sep-2023 04:12 PM'
                     first_page_url: 'http://local-nris.ca/api/v1/get-free-ads-by-category?page=1'
                     from: 1
                     next_page_url: null
@@ -5083,12 +5119,47 @@ paths:
                         example:
                           -
                             id: 5
+                            country_id:
+                              id: 1
+                              name: USA
+                              color: '#ef8888'
+                              code: US
+                              domain: usa
+                              image: NA
+                              c_meta_title: 'US META'
+                              c_meta_description: 'US DESC'
+                              c_meta_keywords: 'US KEY'
+                              created_at: null
+                            state_id:
+                              id: 1
+                              name: Alaska
+                              code: AL
+                              domain: alaska
+                              description: 'AL desc'
+                              logo: NA
+                              s_meta_title: 'Al title'
+                              s_meta_description: 'AL META'
+                              s_meta_keywords: 'AL key'
+                              header_image: 'NULL'
+                              header_image2: 'NULL'
+                              header_image3: 'NULL'
+                            city_id:
+                              id: 1
+                              name: 'Lancaster Park'
+                              state_code: AB
                             cat_id:
                               id: 2
                               name: 'Baby Sitting'
                               slug: baby-sitting
                               color: '#C04343'
                               created_at: '14-Nov-2023 09:34 AM'
+                            sub_cat_id:
+                              id: 1
+                              category_id: 1
+                              name: Make
+                              slug: make
+                              color: '#C02C2C'
+                              created_at: '05-Sep-2023 04:08 PM'
                             title: 'this is simple test title 3'
                             title_slug: this-is-simple-test-title-3
                             message: null
@@ -5102,12 +5173,97 @@ paths:
                             other_details: '[{"make":"audi"},{"color":"red"}, {"condition": "1st hand"}, {"Transmission":"Automatic"},{"Type": "Van"} ]'
                             end_at: 02/08/2023
                             total_views: 0
+                            created_at: '05-Sep-2023 04:12 PM'
                         items:
                           type: object
                           properties:
                             id:
                               type: integer
                               example: 5
+                            country_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: USA
+                                color:
+                                  type: string
+                                  example: '#ef8888'
+                                code:
+                                  type: string
+                                  example: US
+                                domain:
+                                  type: string
+                                  example: usa
+                                image:
+                                  type: string
+                                  example: NA
+                                c_meta_title:
+                                  type: string
+                                  example: 'US META'
+                                c_meta_description:
+                                  type: string
+                                  example: 'US DESC'
+                                c_meta_keywords:
+                                  type: string
+                                  example: 'US KEY'
+                                created_at:
+                                  type: string
+                                  example: null
+                            state_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Alaska
+                                code:
+                                  type: string
+                                  example: AL
+                                domain:
+                                  type: string
+                                  example: alaska
+                                description:
+                                  type: string
+                                  example: 'AL desc'
+                                logo:
+                                  type: string
+                                  example: NA
+                                s_meta_title:
+                                  type: string
+                                  example: 'Al title'
+                                s_meta_description:
+                                  type: string
+                                  example: 'AL META'
+                                s_meta_keywords:
+                                  type: string
+                                  example: 'AL key'
+                                header_image:
+                                  type: string
+                                  example: 'NULL'
+                                header_image2:
+                                  type: string
+                                  example: 'NULL'
+                                header_image3:
+                                  type: string
+                                  example: 'NULL'
+                            city_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: 'Lancaster Park'
+                                state_code:
+                                  type: string
+                                  example: AB
                             cat_id:
                               type: object
                               properties:
@@ -5126,6 +5282,27 @@ paths:
                                 created_at:
                                   type: string
                                   example: '14-Nov-2023 09:34 AM'
+                            sub_cat_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                category_id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Make
+                                slug:
+                                  type: string
+                                  example: make
+                                color:
+                                  type: string
+                                  example: '#C02C2C'
+                                created_at:
+                                  type: string
+                                  example: '05-Sep-2023 04:08 PM'
                             title:
                               type: string
                               example: 'this is simple test title 3'
@@ -5165,6 +5342,9 @@ paths:
                             total_views:
                               type: integer
                               example: 0
+                            created_at:
+                              type: string
+                              example: '05-Sep-2023 04:12 PM'
                       first_page_url:
                         type: string
                         example: 'http://local-nris.ca/api/v1/get-free-ads-by-category?page=1'
@@ -8582,35 +8762,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: totam
+                  example: non
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: qui
+                  example: debitis
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: elian.gottlieb@example.com
+                  example: emory83@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: et
+                  example: optio
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: aperiam
+                  example: sed
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: ipsam
+                  example: dignissimos
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: hic
+                  example: voluptas
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: expedita
+                  example: saepe
       security: []
   /api/v1/login:
     post:
@@ -8731,11 +8911,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: consequuntur
+                  example: vel
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: omnis
+                  example: est
       security: []
   /api/v1/forgot-pass:
     post:
@@ -8820,7 +9000,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: temporibus
+                  example: eveniet
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -8885,15 +9065,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: ckerluke@example.com
+                  example: krista.ratke@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: cumque
+                  example: ea
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: harum
+                  example: delectus
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -15406,11 +15586,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: corrupti
+                  example: molestiae
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: ipsum
+                  example: nostrum
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -15571,11 +15751,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: vitae
+                  example: expedita
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: odio
+                  example: quae
       security: []
   /api/v1/get-all-source:
     get:

@@ -312,7 +312,7 @@ class ClasifiedCategoryLibrary
     
     public function freeAdsGetByCategory($param)
     {
-        $this->commonSer->inputValidators('freeAdsGetByCategory', $param);
+        $this->commonSer->inputValidators('freeAdsGetByCategory', $param); 
         $serviceResponse                        = $this->clasifiedCatServ->getFreeAdsListByCategory($param);
         
         if($serviceResponse[$this->status])

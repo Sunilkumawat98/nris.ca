@@ -731,7 +731,7 @@ class ClasifiedCategoryService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                     = FreeClassified::with('cat_id')
+        $result                     = FreeClassified::with('country_id', 'state_id', 'city_id', 'cat_id', 'sub_cat_id')
                                         ->where('country_id',$param['country_id'])
                                         ->where('state_id',$param['state_id'])                                     
                                         ->where('cat_id',$param['category_id'])
@@ -746,14 +746,9 @@ class ClasifiedCategoryService
         {
             $result->makeHidden([
                 'user_id',
-                'country_id',
-                'state_id',
-                'city_id',
-                'sub_cat_id',
                 'meta_title',
                 'meta_description',
-                'meta_keywords',
-                'created_at'
+                'meta_keywords'
             ]);
             $result                 = $result->toArray();
             $return[$this->status]  = true;

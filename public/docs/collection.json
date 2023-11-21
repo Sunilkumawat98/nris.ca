@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "2f008364-09b6-46fd-a276-ce01ec9965c7",
+        "_postman_id": "c8a0eca4-0512-4e7f-bff9-849ff799fca3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1220,7 +1220,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 5,\n\"cat_id\": {\n\"id\": 2,\n\"name\": \"Baby Sitting\",\n\"slug\": \"baby-sitting\",\n\"color\": \"#C04343\",\n\"created_at\": \"14-Nov-2023 09:34 AM\"\n},\n\"title\": \"this is simple test title 3\",\n\"title_slug\": \"this-is-simple-test-title-3\",\n\"message\": null,\n\"image\": \"http:\/\/localhost\/upload\/image-data\/ADS_IMAGE\/1693910545_user2-160x160.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0\n}\n],\n\"first_page_url\": \"http:\/\/local-nris.ca\/api\/v1\/get-free-ads-by-category?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/local-nris.ca\/api\/v1\/get-free-ads-by-category\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 5,\n\"country_id\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#ef8888\",\n\"code\": \"US\",\n\"domain\": \"usa\",\n\"image\": \"NA\",\n\"c_meta_title\": \"US META\",\n\"c_meta_description\": \"US DESC\",\n\"c_meta_keywords\": \"US KEY\",\n\"created_at\": null\n},\n\"state_id\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n},\n\"city_id\": {\n\"id\": 1,\n\"name\": \"Lancaster Park\",\n\"state_code\": \"AB\"\n},\n\"cat_id\": {\n\"id\": 2,\n\"name\": \"Baby Sitting\",\n\"slug\": \"baby-sitting\",\n\"color\": \"#C04343\",\n\"created_at\": \"14-Nov-2023 09:34 AM\"\n},\n\"sub_cat_id\": {\n\"id\": 1,\n\"category_id\": 1,\n\"name\": \"Make\",\n\"slug\": \"make\",\n\"color\": \"#C02C2C\",\n\"created_at\": \"05-Sep-2023 04:08 PM\"\n},\n\"title\": \"this is simple test title 3\",\n\"title_slug\": \"this-is-simple-test-title-3\",\n\"message\": null,\n\"image\": \"http:\/\/localhost\/upload\/image-data\/ADS_IMAGE\/1693910545_user2-160x160.jpg\",\n\"contact_name\": \"MdSaddam\",\n\"contact_email\": \"hussainmd@gmail.com\",\n\"contact_number\": \"9088123678\",\n\"contact_address\": \"address\",\n\"show_email\": 1,\n\"use_address_map\": 0,\n\"other_details\": \"[{\\\"make\\\":\\\"audi\\\"},{\\\"color\\\":\\\"red\\\"}, {\\\"condition\\\": \\\"1st hand\\\"}, {\\\"Transmission\\\":\\\"Automatic\\\"},{\\\"Type\\\": \\\"Van\\\"} ]\",\n\"end_at\": \"02\/08\/2023\",\n\"total_views\": 0,\n\"created_at\": \"05-Sep-2023 04:12 PM\"\n}\n],\n\"first_page_url\": \"http:\/\/local-nris.ca\/api\/v1\/get-free-ads-by-category?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/local-nris.ca\/api\/v1\/get-free-ads-by-category\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
                             "name": ""
                         },
                         {
@@ -2207,7 +2207,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"totam\",\"*last_name\":\"qui\",\"*email\":\"elian.gottlieb@example.com\",\"*dob\":\"et\",\"*mobile\":\"aperiam\",\"*password\":\"ipsam\",\"*country_id\":\"hic\",\"*state_id\":\"expedita\"}"
+                            "raw": "{\"*first_name\":\"non\",\"*last_name\":\"debitis\",\"*email\":\"emory83@example.com\",\"*dob\":\"optio\",\"*mobile\":\"sed\",\"*password\":\"dignissimos\",\"*country_id\":\"voluptas\",\"*state_id\":\"saepe\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2257,7 +2257,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"consequuntur\",\"*password\":\"omnis\"}"
+                            "raw": "{\"*email_id\":\"vel\",\"*password\":\"est\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2307,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"temporibus\"}"
+                            "raw": "{\"*email_id\":\"eveniet\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2357,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"ckerluke@example.com\",\"*new_password\":\"cumque\",\"*retype_password\":\"harum\"}"
+                            "raw": "{\"*email\":\"krista.ratke@example.com\",\"*new_password\":\"ea\",\"*retype_password\":\"delectus\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4289,7 +4289,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"corrupti\",\"*state_id\":\"ipsum\"}"
+                            "raw": "{\"*country_id\":\"molestiae\",\"*state_id\":\"nostrum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4339,7 +4339,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"vitae\",\"*state_id\":\"odio\"}"
+                            "raw": "{\"*country_id\":\"expedita\",\"*state_id\":\"quae\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {
