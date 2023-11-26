@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\V1\StudentTalkController;
 use App\Http\Controllers\Api\V1\TrainingPlacementController;
 use App\Http\Controllers\Api\V1\SearchController;
 use App\Http\Controllers\Api\V1\SubscribeNewsLetterController;
+use App\Http\Controllers\Api\V1\AdvertiseWithUsController;
 use App\Http\Controllers\Api\V1\BlogController;
 use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\MovieVideoController;
@@ -59,6 +60,16 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/search-free-ads', [ClasifiedCategoryController::class,'searchFreeAds']);
     Route::post('/get-free-ads-by-category', [ClasifiedCategoryController::class,'getFreeAdsByCategory']);
     
+
+
+
+    /**
+     * 
+     * Advertise With US
+     */
+
+
+     Route::post('/create-advertise-with-us', [AdvertiseWithUsController::class,'createAdvertiseWithUs']);
 
  /*
        Business Listing category & Sub Category

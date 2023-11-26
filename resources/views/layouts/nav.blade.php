@@ -380,6 +380,28 @@
                 </a>
               </li>
             @endif
+            
+            @if(auth()->user()->hasPermission('manage_advertise'))
+              <li class="nav-item {{ request()->is('advertise_with_us') || request()->is('advertise_with_us/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('advertise_with_us.index') }}" class="nav-link {{ request()->is('advertise_with_us') || request()->is('advertise_with_us/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Advertise With us
+                  </p>
+                </a>
+              </li>
+            @endif
+
+            @if(auth()->user()->hasPermission('manage_gif_advertisement'))
+              <li class="nav-item {{ request()->is('gif_advertisement') || request()->is('gif_advertisement/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('gif_advertisement.index') }}" class="nav-link {{ request()->is('gif_advertisement') || request()->is('gif_advertisement/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Advertise With us
+                  </p>
+                </a>
+              </li>
+            @endif
 
 
 

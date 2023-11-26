@@ -1,657 +1,40 @@
-name: 'Blog Related '
+name: 'Login, Register'
 description: |-
 
-  APIs for managing all Blog related listing and its Category
+  APIs for managing all Auth Related
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/v1/get-all-blog-category
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: getAllCategory
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-
-
-
-        <aside class="notice">basepath/api/v1/get-all-blog-category</aside>
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully your list found..",
-          "data": [
-          {
-          "id": 2,
-          "name": "Category1",
-          "slug": "category1",
-          "created_at": "21-Oct-2023 10:51 AM"
-          },
-          {
-          "id": 1,
-          "name": "Category2",
-          "slug": "category2",
-          "created_at": "21-Oct-2023 10:49 AM"
-          }
-          ]
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/get-homepage-blog
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: getHomepageBlog
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully data list found..",
-          "data": {
-          "current_page": 1,
-          "data": [
-          {
-          "id": 2,
-          "title": "Excepturi non tempor",
-          "slug": "excepturi-non-tempor",
-          "description": "Eaque dolor duis eni",
-          "image": "PATH/1697881979_WhatsApp_Image_2023-10-03_at_7.20.49_PM.jpeg",
-          "created_at": "21-Oct-2023 03:22 PM"
-          }
-          ],
-          "first_page_url": "PATH/get-homepage-blog?page=1",
-          "from": 1,
-          "next_page_url": "PATH/get-homepage-blog?page=2",
-          "path": "PATH/get-homepage-blog",
-          "per_page": 1,
-          "prev_page_url": null,
-          "to": 1
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/get-all-blog
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: getAllBlog
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully data list found..",
-          "data": {
-          "current_page": 1,
-          "data": [
-          {
-          "id": 2,
-          "title": "Excepturi non tempor",
-          "slug": "excepturi-non-tempor",
-          "description": "Eaque dolor duis eni",
-          "image": "PATH/1697881979_WhatsApp_Image_2023-10-03_at_7.20.49_PM.jpeg",
-          "created_at": "21-Oct-2023 03:22 PM",
-          "category": {
-          "id": 1,
-          "name": "Category1"
-          }
-          },
-          {
-          "id": 1,
-          "title": "Natus eos possimus",
-          "slug": "natus-eos-possimus",
-          "description": "Eos natus non verita",
-          "image": "PATH/1697881025_WhatsApp_Image_done(17).jpeg",
-          "created_at": "21-Oct-2023 03:07 PM",
-          "category": {
-          "id": 2,
-          "name": "Category2"
-          }
-          }
-          ],
-          "first_page_url": "PATH/get-all-blog?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "PATH/get-all-blog",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 2
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/v1/get-blog-by-id
+    uri: api/v1/register
     metadata:
-      groupName: 'Blog Related '
+      groupName: 'Login, Register'
       groupDescription: |-
 
-        APIs for managing all Blog related listing and its Category
+        APIs for managing all Auth Related
       subgroup: ''
       subgroupDescription: ''
-      title: getBlogById
+      title: register
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and a response not found!
 
         EX
          {
-        "blog_id":1
-         }
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*blog_id':
-        name: '*blog_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      '*blog_id': 1
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully data list found..",
-          "data": {
-          "id": 1,
-          "title": "Natus eos possimus",
-          "slug": "natus-eos-possimus",
-          "description": "Eos natus non verita",
-          "image": "PATH/1697881025_WhatsApp_Image_done(17).jpeg",
-          "meta_title": null,
-          "meta_description": null,
-          "meta_keywords": null,
-          "admin_id": 1,
-          "created_at": "21-Oct-2023 03:07 PM",
-          "category": {
-          "id": 2,
-          "name": "New Blog"
-          },
-          "admin": {
-          "id": 1,
-          "name": "Super Admin"
-          },
-          "likes_count": 3,
-          "dislikes_count": 1
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/get-blog-by-category
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: getBlogByCategory
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        EX
-         {
-        "category_id":1
-         }
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*category_id':
-        name: '*category_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      '*category_id': 1
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully data list found..",
-          "data": {
-          "current_page": 1,
-          "data": [
-          {
-          "id": 2,
-          "title": "Excepturi non tempor",
-          "slug": "excepturi-non-tempor",
-          "description": "Eaque dolor duis eni",
-          "image": "PATH/1697881979_WhatsApp_Image_2023-10-03_at_7.20.49_PM.jpeg",
-          "created_at": "21-Oct-2023 03:22 PM",
-          "category": {
-          "id": 1,
-          "name": "Category1"
-          }
-          },
-          {
-          "id": 1,
-          "title": "Natus eos possimus",
-          "slug": "natus-eos-possimus",
-          "description": "Eos natus non verita",
-          "image": "PATH/1697881025_WhatsApp_Image_done(17).jpeg",
-          "created_at": "21-Oct-2023 03:07 PM",
-          "category": {
-          "id": 1,
-          "name": "Category1"
-          }
-          }
-          ],
-          "first_page_url": "PATH/get-blog-by-category?page=1",
-          "from": 1,
-          "next_page_url": null,
-          "path": "PATH/v1/get-blog-by-category",
-          "per_page": 15,
-          "prev_page_url": null,
-          "to": 2
-          }
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "List not found...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-           }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/blog-like
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: blogLike
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-        EX
-         {
-        "blog_id":1,
-        "user_id:1
-         }
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer _token required'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      '*blog_id':
-        name: '*blog_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-      '*user_id':
-        name: '*user_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    cleanBodyParameters:
-      '*blog_id': 1
-      '*user_id': 1
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-          "status": true,
-          "status_code": 200,
-          "message": "Successfully liked...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 401
-        content: |-
-          {
-          "message": "Token is Invalid",
-          "status_code": 401,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 403
-        content: |-
-          {
-          "message": "Authorised Token Not Found",
-          "status_code": 403,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 419
-        content: |-
-          {
-          "message": "Token is Expired",
-          "status_code": 419,
-          "status": false
-          }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 500
-        content: |-
-          {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
-          "data": []
-          }
-        headers: []
-        description: ''
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 5Dcf3ZegEa6PbVadhk4618v'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/blog-dislike
-    metadata:
-      groupName: 'Blog Related '
-      groupDescription: |-
-
-        APIs for managing all Blog related listing and its Category
-      subgroup: ''
-      subgroupDescription: ''
-      title: blogDisLike
-      description: |-
-        If everything is okay, you'll get a `200` OK response with data.
-
-         EX
-         {
-        "blog_id":1,
-        "user_id:1
+        "first_name":"Abc",
+        "last_name":"Def",
+        "email":"You@domain.com",
+        "dob":"2023-02-02",
+        "mobile":"9899****54",
+        "password":"Abc@12345",
+        "country_id":1,
+        "state_id":1
         }
-        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
-      authenticated: true
+        <aside class="notice">basepath/api/v1/register</aside>
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer _token required'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -659,23 +42,71 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      '*blog_id':
-        name: '*blog_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
+      '*first_name':
+        name: '*first_name'
+        description: "String     Ex ('Abc')"
+        required: false
+        example: omnis
+        type: required
         custom: []
-      '*user_id':
-        name: '*user_id'
-        description: ''
-        required: true
-        example: 1
-        type: integer
+      '*last_name':
+        name: '*last_name'
+        description: "String     Ex ('def')"
+        required: false
+        example: voluptatum
+        type: required
+        custom: []
+      '*email':
+        name: '*email'
+        description: "Email      Ex ('you@domain.com')"
+        required: false
+        example: heather.jacobs@example.com
+        type: required
+        custom: []
+      '*dob':
+        name: '*dob'
+        description: "Date       Ex ('YYYY-MM-DD')"
+        required: false
+        example: eveniet
+        type: required
+        custom: []
+      '*mobile':
+        name: '*mobile'
+        description: "String     Ex ('9876****09')"
+        required: false
+        example: quas
+        type: required
+        custom: []
+      '*password':
+        name: '*password'
+        description: "String     Ex ('Abc')"
+        required: false
+        example: qui
+        type: required
+        custom: []
+      '*country_id':
+        name: '*country_id'
+        description: "Number     Ex ('1/2/3/4')"
+        required: false
+        example: et
+        type: required
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: "Number     Ex ('1/2/3/4')"
+        required: false
+        example: voluptate
+        type: required
         custom: []
     cleanBodyParameters:
-      '*blog_id': 1
-      '*user_id': 1
+      '*first_name': omnis
+      '*last_name': voluptatum
+      '*email': heather.jacobs@example.com
+      '*dob': eveniet
+      '*mobile': quas
+      '*password': qui
+      '*country_id': et
+      '*state_id': voluptate
     fileParameters: []
     responses:
       -
@@ -684,9 +115,113 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully disliked...",
-          "data": []
+          "message": "Successfully Registered...",
+          "data": {
+          "user_id": 1,
+          "email": "you@domain.com"
           }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 202
+        content: |-
+          {
+          "status": false,
+          "status_code": 202,
+          "message": "Oops, please try again..."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 409
+        content: |-
+          {
+          "status": false,
+          "status_code": 409,
+          "message": "Email Id already exist..."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: 'Login, Register'
+      groupDescription: |-
+
+        APIs for managing all Auth Related
+      subgroup: ''
+      subgroupDescription: ''
+      title: login
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and a response not found!
+
+        EX
+         {
+        "email_id":"You@domain.com",
+        "password":"Abc@12345",
+        }
+         <aside class="notice">basepath/api/v1/login</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*email_id':
+        name: '*email_id'
+        description: "Number     Ex ('you@domain.com')"
+        required: false
+        example: et
+        type: required
+        custom: []
+      '*password':
+        name: '*password'
+        description: "String     Ex ('********')"
+        required: false
+        example: dolor
+        type: required
+        custom: []
+    cleanBodyParameters:
+      '*email_id': et
+      '*password': dolor
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "status": true,
+               "status_code": 200,
+               "message": "Successfully login..",
+               "data": {
+                   "user_data": {
+                       "user_id": 1,
+                       "name": "Md Saddam Hussain",
+                       "email": "Hussain@gmail.com"
+                   },
+                   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWwtbnJpcy5jYS9hcGkvdjEvbG9naW4iLCJpYXQiOjE2ODk2Nzk3ODYsImV4cCI6MTY4OTY4MzM4NiwibmJmIjoxNjg5Njc5Nzg2LCJqdGkiOiJUeXFsTU95MlA0WXpibXFsIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xSMoCqyWexiUAmnCNmC6xJZjvOWbQM9GMRZuQUYpSfc",
+                   "token_type": "bearer",
+                   "expires_in": 60
+               }
+           }
         headers: []
         description: ''
         custom: []
@@ -694,52 +229,193 @@ endpoints:
         status: 401
         content: |-
           {
-          "message": "Token is Invalid",
-          "status_code": 401,
-          "status": false
-          }
+               "status": false,
+               "status_code": 401,
+               "message": "Incorrect Password...",
+               "data": []
+           }
         headers: []
         description: ''
         custom: []
       -
-        status: 403
+        status: 404
         content: |-
           {
-          "message": "Authorised Token Not Found",
-          "status_code": 403,
-          "status": false
-          }
+               "status": false,
+               "status_code": 404,
+               "message": "Eamil id not found...",
+               "data": []
+           }
         headers: []
         description: ''
         custom: []
-      -
-        status: 419
-        content: |-
-          {
-          "message": "Token is Expired",
-          "status_code": 419,
-          "status": false
-          }
-        headers: []
-        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/forgot-pass
+    metadata:
+      groupName: 'Login, Register'
+      groupDescription: |-
+
+        APIs for managing all Auth Related
+      subgroup: ''
+      subgroupDescription: ''
+      title: forgotPass
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and a response not found!
+
+
+        <aside class="notice">basepath/api/v1/forgot-pass</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*email_id':
+        name: '*email_id'
+        description: "Number     Ex ('you@domain.com')"
+        required: false
+        example: fuga
+        type: required
         custom: []
+    cleanBodyParameters:
+      '*email_id': fuga
+    fileParameters: []
+    responses:
       -
-        status: 500
+        status: 200
         content: |-
           {
-          "status": false,
-          "status_code": 500,
-          "message": "Oops, something went wrong...",
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully email send...",
           "data": []
           }
         headers: []
         description: ''
         custom: []
+      -
+        status: 201
+        content: |-
+          {
+          "status": false,
+          "status_code": 201,
+          "message": "Oops, something went wrong..."
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 202
+        content: |-
+          {
+          "status": false,
+          "status_code": 202,
+          "message": "Oops, please try again..."
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 6khdEv4gca8a6b13VDP5Zef'
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/forgot-password-change
+    metadata:
+      groupName: 'Login, Register'
+      groupDescription: |-
+
+        APIs for managing all Auth Related
+      subgroup: ''
+      subgroupDescription: ''
+      title: changeForgotPassword
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and a response not found!
+
+
+        <aside class="notice">basepath/api/v1/forgot-password-change</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*email':
+        name: '*email'
+        description: "Number     Ex ('you@domain.com')"
+        required: false
+        example: aohara@example.com
+        type: required
+        custom: []
+      '*new_password':
+        name: '*new_password'
+        description: "String     Ex ('Abc@123')"
+        required: false
+        example: nobis
+        type: required
+        custom: []
+      '*retype_password':
+        name: '*retype_password'
+        description: "String     Ex ('Abc@123')"
+        required: false
+        example: aspernatur
+        type: required
+        custom: []
+    cleanBodyParameters:
+      '*email': aohara@example.com
+      '*new_password': nobis
+      '*retype_password': aspernatur
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully password updated...",
+          "data": []
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 201
+        content: |-
+          {
+          "status": false,
+          "status_code": 201,
+          "message": "Oops, some problem occure, Please try again..."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
     controller: null
     method: null
     route: null

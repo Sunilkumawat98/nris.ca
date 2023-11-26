@@ -66,6 +66,16 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-advertise-with-us-related" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="advertise-with-us-related">
+                    <a href="#advertise-with-us-related">Advertise With Us Related</a>
+                </li>
+                                    <ul id="tocify-subheader-advertise-with-us-related" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="advertise-with-us-related-POSTapi-v1-create-advertise-with-us">
+                                <a href="#advertise-with-us-related-POSTapi-v1-create-advertise-with-us">createAdvertiseWithUs</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-blog-related" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="blog-related">
                     <a href="#blog-related">Blog Related </a>
@@ -432,7 +442,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 21, 2023</li>
+        <li>Last updated: November 25, 2023</li>
     </ul>
 </div>
 
@@ -452,7 +462,278 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
-        <h1 id="blog-related">Blog Related </h1>
+        <h1 id="advertise-with-us-related">Advertise With Us Related</h1>
+
+    <p>APIs for managing advertise with us</p>
+
+                                <h2 id="advertise-with-us-related-POSTapi-v1-create-advertise-with-us">createAdvertiseWithUs</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<p>EX
+{
+&quot;first_name&quot;:&quot;Abc&quot;,
+&quot;last_name&quot;:&quot;xyz&quot;,
+&quot;email&quot;:&quot;you@domain.com&quot;,
+&quot;mobile&quot;:&quot;98****3212&quot;,
+&quot;business_name&quot;:&quot;Business Name&quot;,
+&quot;wesite_link&quot;:&quot;www.website.com&quot;,
+&quot;image&quot;:&quot;png, jpeg, jpg, gif&quot;,
+&quot;message&quot;:&quot;this is test message&quot;
+}</p>
+<aside class="notice">basepath/api/v1/create-advertise-with-us</aside>
+
+<span id="example-requests-POSTapi-v1-create-advertise-with-us">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/create-advertise-with-us" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*first_name\": \"\\\"title text \\\" in JSON BODY\",
+    \"*last_name\": \"\\\"title text \\\" in JSON BODY\",
+    \"*message\": \"\\\"message text \\\" in JSON BODY\",
+    \"*image\": \"\\\"abc.jpg\\\" in JSON BODY\",
+    \"*email\": \"you@domain.com in JSON BODY\",
+    \"*mobile\": \"9090654320 in JSON BODY\",
+    \"*business_name\": \"Address in JSON BODY\",
+    \"*wesite_link\": \"www.text.link in JSON BODY\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/create-advertise-with-us"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*first_name": "\"title text \" in JSON BODY",
+    "*last_name": "\"title text \" in JSON BODY",
+    "*message": "\"message text \" in JSON BODY",
+    "*image": "\"abc.jpg\" in JSON BODY",
+    "*email": "you@domain.com in JSON BODY",
+    "*mobile": "9090654320 in JSON BODY",
+    "*business_name": "Address in JSON BODY",
+    "*wesite_link": "www.text.link in JSON BODY"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-create-advertise-with-us">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully submitted...&quot;,
+    &quot;data&quot;: {
+        &quot;first_name&quot;: &quot;abc&quot;,
+        &quot;last_name&quot;: &quot;desf&quot;,
+        &quot;email&quot;: &quot;you@domain.com&quot;,
+        &quot;phone&quot;: &quot;909***0000&quot;,
+        &quot;business&quot;: &quot;business name&quot;,
+        &quot;website&quot;: &quot;www.test.com&quot;,
+        &quot;message&quot;: &quot;this is lorem ipsum&quot;,
+        &quot;image&quot;: &quot;PATH/1700675400_user6-128x128.jpg&quot;,
+        &quot;id&quot;: 3
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-create-advertise-with-us" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-create-advertise-with-us"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-create-advertise-with-us"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-create-advertise-with-us" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-create-advertise-with-us">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-create-advertise-with-us" data-method="POST"
+      data-path="api/v1/create-advertise-with-us"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-create-advertise-with-us', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-create-advertise-with-us"
+                    onclick="tryItOut('POSTapi-v1-create-advertise-with-us');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-create-advertise-with-us"
+                    onclick="cancelTryOut('POSTapi-v1-create-advertise-with-us');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-create-advertise-with-us"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/create-advertise-with-us</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*first_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*first_name"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value=""title text " in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>"title text " in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*last_name"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value=""title text " in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>"title text " in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*message"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value=""message text " in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>"message text " in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*image</code></b>&nbsp;&nbsp;
+<small>image</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*image"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value=""abc.jpg" in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>"abc.jpg" in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*email"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="you@domain.com in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>you@domain.com in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*mobile"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="9090654320 in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>9090654320 in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*business_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*business_name"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="Address in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>Address in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*wesite_link</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*wesite_link"                data-endpoint="POSTapi-v1-create-advertise-with-us"
+               value="www.text.link in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>www.text.link in JSON BODY</code></p>
+        </div>
+        </form>
+
+                <h1 id="blog-related">Blog Related </h1>
 
     <p>APIs for managing all Blog related listing and its Category</p>
 
@@ -10047,14 +10328,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"non\",
-    \"*last_name\": \"debitis\",
-    \"*email\": \"emory83@example.com\",
-    \"*dob\": \"optio\",
-    \"*mobile\": \"sed\",
-    \"*password\": \"dignissimos\",
-    \"*country_id\": \"voluptas\",
-    \"*state_id\": \"saepe\"
+    \"*first_name\": \"omnis\",
+    \"*last_name\": \"voluptatum\",
+    \"*email\": \"heather.jacobs@example.com\",
+    \"*dob\": \"eveniet\",
+    \"*mobile\": \"quas\",
+    \"*password\": \"qui\",
+    \"*country_id\": \"et\",
+    \"*state_id\": \"voluptate\"
 }"
 </code></pre></div>
 
@@ -10070,14 +10351,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "non",
-    "*last_name": "debitis",
-    "*email": "emory83@example.com",
-    "*dob": "optio",
-    "*mobile": "sed",
-    "*password": "dignissimos",
-    "*country_id": "voluptas",
-    "*state_id": "saepe"
+    "*first_name": "omnis",
+    "*last_name": "voluptatum",
+    "*email": "heather.jacobs@example.com",
+    "*dob": "eveniet",
+    "*mobile": "quas",
+    "*password": "qui",
+    "*country_id": "et",
+    "*state_id": "voluptate"
 };
 
 fetch(url, {
@@ -10203,10 +10484,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="non"
+               value="omnis"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>non</code></p>
+<p>String     Ex ('Abc') Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -10214,10 +10495,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="debitis"
+               value="voluptatum"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>debitis</code></p>
+<p>String     Ex ('def') Example: <code>voluptatum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -10225,10 +10506,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="emory83@example.com"
+               value="heather.jacobs@example.com"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>emory83@example.com</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>heather.jacobs@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -10236,10 +10517,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="optio"
+               value="eveniet"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>optio</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>eveniet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -10247,10 +10528,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="sed"
+               value="quas"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>sed</code></p>
+<p>String     Ex ('9876****09') Example: <code>quas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10258,10 +10539,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="dignissimos"
+               value="qui"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>dignissimos</code></p>
+<p>String     Ex ('Abc') Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -10269,10 +10550,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="voluptas"
+               value="et"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>voluptas</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -10280,10 +10561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="saepe"
+               value="voluptate"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>saepe</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>voluptate</code></p>
         </div>
         </form>
 
@@ -10311,8 +10592,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"vel\",
-    \"*password\": \"est\"
+    \"*email_id\": \"et\",
+    \"*password\": \"dolor\"
 }"
 </code></pre></div>
 
@@ -10328,8 +10609,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "vel",
-    "*password": "est"
+    "*email_id": "et",
+    "*password": "dolor"
 };
 
 fetch(url, {
@@ -10463,10 +10744,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="vel"
+               value="et"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>vel</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10474,10 +10755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="est"
+               value="dolor"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>est</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>dolor</code></p>
         </div>
         </form>
 
@@ -10500,7 +10781,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"eveniet\"
+    \"*email_id\": \"fuga\"
 }"
 </code></pre></div>
 
@@ -10516,7 +10797,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "eveniet"
+    "*email_id": "fuga"
 };
 
 fetch(url, {
@@ -10639,10 +10920,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="eveniet"
+               value="fuga"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>eveniet</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>fuga</code></p>
         </div>
         </form>
 
@@ -10665,9 +10946,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"krista.ratke@example.com\",
-    \"*new_password\": \"ea\",
-    \"*retype_password\": \"delectus\"
+    \"*email\": \"aohara@example.com\",
+    \"*new_password\": \"nobis\",
+    \"*retype_password\": \"aspernatur\"
 }"
 </code></pre></div>
 
@@ -10683,9 +10964,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "krista.ratke@example.com",
-    "*new_password": "ea",
-    "*retype_password": "delectus"
+    "*email": "aohara@example.com",
+    "*new_password": "nobis",
+    "*retype_password": "aspernatur"
 };
 
 fetch(url, {
@@ -10797,10 +11078,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="krista.ratke@example.com"
+               value="aohara@example.com"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>krista.ratke@example.com</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>aohara@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -10808,10 +11089,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="ea"
+               value="nobis"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>ea</code></p>
+<p>String     Ex ('Abc@123') Example: <code>nobis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -10819,10 +11100,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="delectus"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>delectus</code></p>
+<p>String     Ex ('Abc@123') Example: <code>aspernatur</code></p>
         </div>
         </form>
 
@@ -18621,8 +18902,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"molestiae\",
-    \"*state_id\": \"nostrum\"
+    \"*country_id\": \"inventore\",
+    \"*state_id\": \"sit\"
 }"
 </code></pre></div>
 
@@ -18638,8 +18919,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "molestiae",
-    "*state_id": "nostrum"
+    "*country_id": "inventore",
+    "*state_id": "sit"
 };
 
 fetch(url, {
@@ -18794,10 +19075,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="molestiae"
+               value="inventore"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>molestiae</code></p>
+<p>integer     Ex 1/2/3 Example: <code>inventore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -18805,10 +19086,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="nostrum"
+               value="sit"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>nostrum</code></p>
+<p>integer     Ex 1/2/3 Example: <code>sit</code></p>
         </div>
         </form>
 
@@ -18831,8 +19112,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"expedita\",
-    \"*state_id\": \"quae\"
+    \"*country_id\": \"porro\",
+    \"*state_id\": \"aut\"
 }"
 </code></pre></div>
 
@@ -18848,8 +19129,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "expedita",
-    "*state_id": "quae"
+    "*country_id": "porro",
+    "*state_id": "aut"
 };
 
 fetch(url, {
@@ -18992,10 +19273,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="expedita"
+               value="porro"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>expedita</code></p>
+<p>integer     Ex 1/2/3 Example: <code>porro</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -19003,10 +19284,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="quae"
+               value="aut"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>quae</code></p>
+<p>integer     Ex 1/2/3 Example: <code>aut</code></p>
         </div>
         </form>
 

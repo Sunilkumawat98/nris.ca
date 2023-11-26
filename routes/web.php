@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin\MovieVideoCategoryController;
 use App\Http\Controllers\Admin\MovieVideoLanguageController;
 use App\Http\Controllers\Admin\MovieVideoController;
 use App\Http\Controllers\Admin\NewsLetterController;
+use App\Http\Controllers\Admin\AdvertiseWithUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -192,6 +193,12 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('news_letter', NewsLetterController::class);
         Route::post('/news_letter/{id}/active-status', [NewsLetterController::class, 'livePause'])->name('news_letter.activeStatus');
+
+        Route::resource('advertise_with_us', AdvertiseWithUsController::class);
+        Route::post('/advertise_with_us/{id}/active-status', [AdvertiseWithUsController::class, 'livePause'])->name('advertise_with_us.activeStatus');
+
+        Route::resource('gif_advertisement', AdvertiseWithUsController::class);
+        Route::post('/gif_advertisement/{id}/active-status', [AdvertiseWithUsController::class, 'livePause'])->name('gif_advertisement.activeStatus');
 
 
 

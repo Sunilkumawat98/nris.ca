@@ -10,11 +10,61 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c8a0eca4-0512-4e7f-bff9-849ff799fca3",
+        "_postman_id": "0513b0b0-8549-4ad1-899d-08cd7e893089",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Advertise With Us Related",
+            "description": "\nAPIs for managing advertise with us",
+            "item": [
+                {
+                    "name": "createAdvertiseWithUs",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/create-advertise-with-us",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/create-advertise-with-us"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*first_name\":\"\\\"title text \\\" in JSON BODY\",\"*last_name\":\"\\\"title text \\\" in JSON BODY\",\"*message\":\"\\\"message text \\\" in JSON BODY\",\"*image\":\"\\\"abc.jpg\\\" in JSON BODY\",\"*email\":\"you@domain.com in JSON BODY\",\"*mobile\":\"9090654320 in JSON BODY\",\"*business_name\":\"Address in JSON BODY\",\"*wesite_link\":\"www.text.link in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"xyz\",\n\"email\":\"you@domain.com\",\n\"mobile\":\"98****3212\",\n\"business_name\":\"Business Name\",\n\"wesite_link\":\"www.website.com\",\n\"image\":\"png, jpeg, jpg, gif\",\n\"message\":\"this is test message\"\n }\n\n<aside class=\"notice\">basepath\/api\/v1\/create-advertise-with-us<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully submitted...\",\n\"data\": {\n\"first_name\": \"abc\",\n\"last_name\": \"desf\",\n\"email\": \"you@domain.com\",\n\"phone\": \"909***0000\",\n\"business\": \"business name\",\n\"website\": \"www.test.com\",\n\"message\": \"this is lorem ipsum\",\n\"image\": \"PATH\/1700675400_user6-128x128.jpg\",\n\"id\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Blog Related ",
             "description": "\nAPIs for managing all Blog related listing and its Category",
@@ -2207,7 +2257,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"non\",\"*last_name\":\"debitis\",\"*email\":\"emory83@example.com\",\"*dob\":\"optio\",\"*mobile\":\"sed\",\"*password\":\"dignissimos\",\"*country_id\":\"voluptas\",\"*state_id\":\"saepe\"}"
+                            "raw": "{\"*first_name\":\"omnis\",\"*last_name\":\"voluptatum\",\"*email\":\"heather.jacobs@example.com\",\"*dob\":\"eveniet\",\"*mobile\":\"quas\",\"*password\":\"qui\",\"*country_id\":\"et\",\"*state_id\":\"voluptate\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2257,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"vel\",\"*password\":\"est\"}"
+                            "raw": "{\"*email_id\":\"et\",\"*password\":\"dolor\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2307,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"eveniet\"}"
+                            "raw": "{\"*email_id\":\"fuga\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2357,7 +2407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"krista.ratke@example.com\",\"*new_password\":\"ea\",\"*retype_password\":\"delectus\"}"
+                            "raw": "{\"*email\":\"aohara@example.com\",\"*new_password\":\"nobis\",\"*retype_password\":\"aspernatur\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4289,7 +4339,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"molestiae\",\"*state_id\":\"nostrum\"}"
+                            "raw": "{\"*country_id\":\"inventore\",\"*state_id\":\"sit\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4339,7 +4389,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"expedita\",\"*state_id\":\"quae\"}"
+                            "raw": "{\"*country_id\":\"porro\",\"*state_id\":\"aut\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

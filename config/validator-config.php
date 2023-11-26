@@ -54,6 +54,8 @@ return [
         'message'               => "bail|required|string",
         'website'               => "bail|required|string",
         'education_field'       => "bail|required|string",
+        'business_name'         => "bail|required|string",
+        'website_link'          => "bail|required|string",
         
     ],
 
@@ -501,6 +503,23 @@ return [
 
 
 
+
+        /***
+         * 
+         * Advertise with us
+         */
+
+
+        "advertiseWithUsCreate" => [
+           
+            "required" => [
+                'first_name','last_name', 'email', 'mobile', 'business_name',  'website_link',
+                'image', 'message'
+            ],
+            "optional" => [
+                
+            ]
+        ],
 
         /*
         

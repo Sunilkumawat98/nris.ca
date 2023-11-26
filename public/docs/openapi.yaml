@@ -7,6 +7,147 @@ servers:
   -
     url: 'https://stage-api.nris.ca'
 paths:
+  /api/v1/create-advertise-with-us:
+    post:
+      summary: createAdvertiseWithUs
+      operationId: createAdvertiseWithUs
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"xyz\",\n\"email\":\"you@domain.com\",\n\"mobile\":\"98****3212\",\n\"business_name\":\"Business Name\",\n\"wesite_link\":\"www.website.com\",\n\"image\":\"png, jpeg, jpg, gif\",\n\"message\":\"this is test message\"\n }\n\n<aside class=\"notice\">basepath/api/v1/create-advertise-with-us</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully submitted...'
+                  data:
+                    first_name: abc
+                    last_name: desf
+                    email: you@domain.com
+                    phone: '909***0000'
+                    business: 'business name'
+                    website: www.test.com
+                    message: 'this is lorem ipsum'
+                    image: PATH/1700675400_user6-128x128.jpg
+                    id: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully submitted...'
+                  data:
+                    type: object
+                    properties:
+                      first_name:
+                        type: string
+                        example: abc
+                      last_name:
+                        type: string
+                        example: desf
+                      email:
+                        type: string
+                        example: you@domain.com
+                      phone:
+                        type: string
+                        example: '909***0000'
+                      business:
+                        type: string
+                        example: 'business name'
+                      website:
+                        type: string
+                        example: www.test.com
+                      message:
+                        type: string
+                        example: 'this is lorem ipsum'
+                      image:
+                        type: string
+                        example: PATH/1700675400_user6-128x128.jpg
+                      id:
+                        type: integer
+                        example: 3
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Advertise With Us Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*first_name':
+                  type: string
+                  description: ''
+                  example: '"title text " in JSON BODY'
+                '*last_name':
+                  type: string
+                  description: ''
+                  example: '"title text " in JSON BODY'
+                '*message':
+                  type: string
+                  description: ''
+                  example: '"message text " in JSON BODY'
+                '*image':
+                  type: image
+                  description: ''
+                  example: '"abc.jpg" in JSON BODY'
+                '*email':
+                  type: string
+                  description: ''
+                  example: 'you@domain.com in JSON BODY'
+                '*mobile':
+                  type: string
+                  description: ''
+                  example: '9090654320 in JSON BODY'
+                '*business_name':
+                  type: string
+                  description: ''
+                  example: 'Address in JSON BODY'
+                '*wesite_link':
+                  type: string
+                  description: ''
+                  example: 'www.text.link in JSON BODY'
+              required:
+                - '*first_name'
+                - '*last_name'
+                - '*message'
+                - '*email'
+                - '*mobile'
+                - '*business_name'
+                - '*wesite_link'
+      security: []
   /api/v1/get-all-blog-category:
     get:
       summary: getAllCategory
@@ -8762,35 +8903,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: non
+                  example: omnis
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: debitis
+                  example: voluptatum
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: emory83@example.com
+                  example: heather.jacobs@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: optio
+                  example: eveniet
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: sed
+                  example: quas
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: dignissimos
+                  example: qui
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: voluptas
+                  example: et
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: saepe
+                  example: voluptate
       security: []
   /api/v1/login:
     post:
@@ -8911,11 +9052,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: vel
+                  example: et
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: est
+                  example: dolor
       security: []
   /api/v1/forgot-pass:
     post:
@@ -9000,7 +9141,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: eveniet
+                  example: fuga
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -9065,15 +9206,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: krista.ratke@example.com
+                  example: aohara@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: ea
+                  example: nobis
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: delectus
+                  example: aspernatur
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -15586,11 +15727,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: molestiae
+                  example: inventore
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: nostrum
+                  example: sit
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -15751,11 +15892,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: expedita
+                  example: porro
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: quae
+                  example: aut
       security: []
   /api/v1/get-all-source:
     get:
@@ -15867,6 +16008,9 @@ paths:
         - 'allMovieRelated Related'
       security: []
 tags:
+  -
+    name: 'Advertise With Us Related'
+    description: "\nAPIs for managing advertise with us"
   -
     name: 'Blog Related '
     description: "\nAPIs for managing all Blog related listing and its Category"

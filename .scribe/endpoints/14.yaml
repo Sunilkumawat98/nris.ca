@@ -1,31 +1,546 @@
-name: 'User Profile Related'
+name: 'Forum Listing Related'
 description: |-
 
-  APIs for managing all user's profile related
+  APIs for managing all Forum listing related Category,  sub category
 endpoints:
   -
     httpMethods:
-      - POST
-    uri: api/v1/get-user-profile
+      - GET
+    uri: api/v1/get-all-forum-category
     metadata:
-      groupName: 'User Profile Related'
+      groupName: 'Forum Listing Related'
       groupDescription: |-
 
-        APIs for managing all user's profile related
+        APIs for managing all Forum listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: getUserProfile
+      title: getAllCategory
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
         Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
 
+
+
+        <aside class="notice">basepath/api/v1/get-all-forum-category</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 2,
+          "name": "Category1",
+          "slug": "category1",
+          "created_at": "01-Nov-2023 01:11 PM"
+          },
+          {
+          "id": 1,
+          "name": "Category2",
+          "slug": "category2",
+          "created_at": "01-Nov-2023 01:15 PM"
+          }
+          ]
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/get-all-forum-sub-category
+    metadata:
+      groupName: 'Forum Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Forum listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllSubCategory
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+
+
+        <aside class="notice">basepath/api/v1/get-all-forum-sub-category</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 2,
+          "category_id": 1,
+          "name": "Sub Category 1",
+          },
+          {
+          "id": 2,
+          "category_id": 2,
+          "name": "Sub Category 2",
+          }
+          ]
+          }
+
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-all-forum-sub-category-by-id
+    metadata:
+      groupName: 'Forum Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Forum listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllSubCategoryById
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+
+
+        <aside class="notice">basepath/api/v1/get-all-forum-sub-category-by-id</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*category_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 1,
+          "category_id": 1,
+          "name": "Audis",
+          }
+          ]
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-all-forum-list-by-category-id
+    metadata:
+      groupName: 'Forum Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Forum listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: getAllForumListByCategoryId
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
         EX
          {
-        "user_id":1
-        }
 
-        <aside class="notice">basepath/api/v1/get-user-profile</aside>
+        "category_id":1,
+         }
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*state_id':
+        name: '*state_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*state_id': 1
+      '*category_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully data list found..",
+          "data": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 1,
+          "title": "title",
+          "title_slug": "title",
+          "description": "description",
+          "total_views": 0,
+          "category": {
+          "id": 1,
+          "name": "Category1"
+          },
+          "subcategory": {
+          "id": 1,
+          "name": "Sub category 1"
+          }
+          }
+          ],
+          "first_page_url": "PATH/get-all-forum-list-by-category-id?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATH/get-all-forum-list-by-category-id",
+          "per_page": 10,
+          "prev_page_url": null,
+          "to": 1
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-forum-by-id
+    metadata:
+      groupName: 'Forum Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Forum listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: getForumById
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        EX
+         {
+        "forum_id":1
+         }
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*forum_id':
+        name: '*forum_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      '*forum_id': 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully data list found..",
+          "data": {
+          "id": 1,
+          "title": "title",
+          "title_slug": "title",
+          "description": "description",
+          "meta_title": "meta",
+          "meta_description": "meta desc",
+          "meta_keywords": "meta key",
+          "total_views": 0,
+          "created_at": "01-Nov-2023 07:51 PM",
+          "category": {
+          "id": 1,
+          "name": "Test 11111"
+          },
+          "subcategory": {
+          "id": 1,
+          "name": "Sub category 1"
+          },
+          "comments": [
+          {
+          "id": 1,
+          "forum_id": 1,
+          "user_id": 1,
+          "comment": "test1",
+          "user": {
+          "id": 2,
+          "first_name": "User1"
+          }
+          },
+          {
+          "id": 3,
+          "forum_id": 1,
+          "user_id": 2,
+          "comment": "test2",
+          "user": {
+          "id": 2,
+          "first_name": "User2"
+          }
+          }
+          ]
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/create-forum
+    metadata:
+      groupName: 'Forum Listing Related'
+      groupDescription: |-
+
+        APIs for managing all Forum listing related Category,  sub category
+      subgroup: ''
+      subgroupDescription: ''
+      title: createForum
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        EX
+         {
+        "user_id":2,
+        "category_id":1,
+        "sub_cat_id":1,
+        "title":"title",
+        "description":"desc"
+        }
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
       authenticated: true
       custom: []
     headers:
@@ -44,8 +559,46 @@ endpoints:
         example: 1
         type: integer
         custom: []
+      '*category_id':
+        name: '*category_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*sub_cat_id':
+        name: '*sub_cat_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*title':
+        name: '*title'
+        description: require
+        required: false
+        example: 'This is title in JSON BODY'
+        type: string
+        custom: []
+      '*description':
+        name: '*description'
+        description: require
+        required: false
+        example: |-
+          This is description in JSON BODY
+
+          <aside class="notice">basepath/api/v1/review-business-list</aside>
+        type: string
+        custom: []
     cleanBodyParameters:
       '*user_id': 1
+      '*category_id': 1
+      '*sub_cat_id': 1
+      '*title': 'This is title in JSON BODY'
+      '*description': |-
+        This is description in JSON BODY
+
+        <aside class="notice">basepath/api/v1/review-business-list</aside>
     fileParameters: []
     responses:
       -
@@ -54,16 +607,18 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully Profile Get...",
+          "message": "Successfully forum submitted...",
           "data": {
-          "id": 1,
-          "first_name": "Abc",
-          "last_name": "Def",
-          "email": "you@domain.com",
-          "dob": "2023-02-02",
-          "mobile": "9899****54"
+          "user_id": 2,
+          "cat_id": 1,
+          "sub_cat_id": 1,
+          "title": "title",
+          "title_slug": "title",
+          "description": "desc",
+          "created_at": "03-Nov-2023 06:16 PM",
+          "id": 3
           }
-           }
+          }
         headers: []
         description: ''
         custom: []
@@ -74,7 +629,7 @@ endpoints:
           "message": "Token is Invalid",
           "status_code": 401,
           "status": false
-           }
+          }
         headers: []
         description: ''
         custom: []
@@ -85,19 +640,7 @@ endpoints:
           "message": "Authorised Token Not Found",
           "status_code": 403,
           "status": false
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 404
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "Profile not found...",
-          "data": []
-            }
+          }
         headers: []
         description: ''
         custom: []
@@ -108,7 +651,19 @@ endpoints:
           "message": "Token is Expired",
           "status_code": 419,
           "status": false
-           }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+          }
         headers: []
         description: ''
         custom: []
@@ -116,7 +671,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 65ga3fZDeh4v8b6k1cPadVE'
+      - 'Bearer ak1ZV8dv5a4begD63hfE6cP'
     controller: null
     method: null
     route: null
@@ -124,32 +679,29 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/v1/change-password
+    uri: api/v1/comment-forum
     metadata:
-      groupName: 'User Profile Related'
+      groupName: 'Forum Listing Related'
       groupDescription: |-
 
-        APIs for managing all user's profile related
+        APIs for managing all Forum listing related Category,  sub category
       subgroup: ''
       subgroupDescription: ''
-      title: changePassword
+      title: commentForum
       description: |-
         If everything is okay, you'll get a `200` OK response with data.
 
-        Otherwise, the request will fail with a `404` error, and Oops, something went wrong...
-
         EX
          {
-        "user_id":1,
-        "current_password":"Abc@123456789",
-        "new_password":"Abc@12345",
-        "retype_password":"Abc@12345"
+        "user_id":2,
+        "forum_id":1,
+        "comment":"this is comment"
         }
-        <aside class="notice">basepath/api/v1/change-password</aside>
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
       authenticated: true
       custom: []
     headers:
-      Authorization: 'Bearer _token required .'
+      Authorization: 'Bearer _token required'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -164,32 +716,30 @@ endpoints:
         example: 1
         type: integer
         custom: []
-      '*current_password':
-        name: '*current_password'
+      '*forum_id':
+        name: '*forum_id'
         description: ''
         required: true
-        example: '1,2,3 in JSON BODY'
-        type: string
+        example: 1
+        type: integer
         custom: []
-      '*new_password':
-        name: '*new_password'
-        description: ''
-        required: true
-        example: '1,2,3 in JSON BODY'
-        type: string
-        custom: []
-      '*retype_password':
-        name: '*retype_password'
-        description: ''
-        required: true
-        example: '1,2,3 in JSON BODY'
+      '*comment':
+        name: '*comment'
+        description: require
+        required: false
+        example: |-
+          This is comment in JSON BODY
+
+          <aside class="notice">basepath/api/v1/comment-forum</aside>
         type: string
         custom: []
     cleanBodyParameters:
       '*user_id': 1
-      '*current_password': '1,2,3 in JSON BODY'
-      '*new_password': '1,2,3 in JSON BODY'
-      '*retype_password': '1,2,3 in JSON BODY'
+      '*forum_id': 1
+      '*comment': |-
+        This is comment in JSON BODY
+
+        <aside class="notice">basepath/api/v1/comment-forum</aside>
     fileParameters: []
     responses:
       -
@@ -198,20 +748,15 @@ endpoints:
           {
           "status": true,
           "status_code": 200,
-          "message": "Successfully Password Changed...",
-          "result": []
+          "message": "Successfully comment done...",
+          "data": {
+          "user_id": 2,
+          "forum_id": 1,
+          "comment": "this is test comment",
+          "created_at": "06-Nov-2023 01:14 PM",
+          "id": 3
           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 201
-        content: |-
-          {
-          "status": false,
-          "status_code": 404,
-          "message": "User not found..."
-           }
+          }
         headers: []
         description: ''
         custom: []
@@ -222,19 +767,7 @@ endpoints:
           "message": "Token is Invalid",
           "status_code": 401,
           "status": false
-           }
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 403
-        content: |-
-          {
-          "status": false,
-          "status_code": 403,
-          "message": "Current password is not being match...",
-          "data": []
-            }
+          }
         headers: []
         description: ''
         custom: []
@@ -245,7 +778,7 @@ endpoints:
           "message": "Authorised Token Not Found",
           "status_code": 403,
           "status": false
-           }
+          }
         headers: []
         description: ''
         custom: []
@@ -256,7 +789,19 @@ endpoints:
           "message": "Token is Expired",
           "status_code": 419,
           "status": false
-           }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+          }
         headers: []
         description: ''
         custom: []
@@ -264,7 +809,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer heab4kPV5136fEDd8Zg6cav'
+      - 'Bearer 8k63EvVbgceZa1h6afdPD45'
     controller: null
     method: null
     route: null

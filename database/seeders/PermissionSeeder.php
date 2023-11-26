@@ -192,6 +192,20 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_movie_videos', 'name_slug'=>'show-movie-videos'],
             ['name' => 'delete_movie_videos', 'name_slug'=>'delete-movie-videos'],
 
+            ['name' => 'manage_advertise', 'name_slug'=>'manage-advertise'],
+            ['name' => 'create_advertise', 'name_slug'=>'create-advertise'],
+            ['name' => 'edit_advertise', 'name_slug'=>'edit-advertise'],
+            ['name' => 'show_advertise', 'name_slug'=>'show-advertise'],
+            ['name' => 'delete_advertise', 'name_slug'=>'delete-advertise'],
+
+
+            ['name' => 'manage_gif_advertisement', 'name_slug'=>'manage-gif-advertisement'],
+            ['name' => 'create_gif_advertisement', 'name_slug'=>'create-gif-advertisement'],
+            ['name' => 'edit_gif_advertisement', 'name_slug'=>'edit-gif-advertisement'],
+            ['name' => 'show_gif_advertisement', 'name_slug'=>'show-gif-advertisement'],
+            ['name' => 'delete_gif_advertisement', 'name_slug'=>'delete-gif-advertisement'],
+
+
             // Add more user data entries as needed
         ];
 

@@ -136,6 +136,7 @@ return [
     'upload_events_img'         => env('UPLOAD_EVENTS_IMG'),
     'training_img'              => env('TRAINING_IMG'),
     'blog_img'                  => env('BLOG_IMG'),
+    'advertise_img'             => env('ADVERTISE_IMG'),
 
     'cipher' => 'AES-256-CBC',
 
