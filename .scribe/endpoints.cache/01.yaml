@@ -69,7 +69,7 @@ endpoints:
       '*image':
         name: '*image'
         description: ''
-        required: false
+        required: true
         example: '"abc.jpg" in JSON BODY'
         type: image
         custom: []

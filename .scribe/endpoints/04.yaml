@@ -230,19 +230,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: inventore
+        example: iste
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: sit
+        example: ut
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': inventore
-      '*state_id': sit
+      '*country_id': iste
+      '*state_id': ut
     fileParameters: []
     responses:
       -
@@ -352,19 +352,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: porro
+        example: eligendi
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: aut
+        example: inventore
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': porro
-      '*state_id': aut
+      '*country_id': eligendi
+      '*state_id': inventore
     fileParameters: []
     responses:
       -

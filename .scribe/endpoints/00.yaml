@@ -1729,10 +1729,10 @@ endpoints:
         example: '"message text " in JSON BODY'
         type: string
         custom: []
-      image:
-        name: image
+      '*image':
+        name: '*image'
         description: ''
-        required: false
+        required: true
         example: '"abc.jpg" in JSON BODY'
         type: image
         custom: []
@@ -1804,7 +1804,7 @@ endpoints:
       sub_cat_id: 1
       title: '"title text " in JSON BODY'
       message: '"message text " in JSON BODY'
-      image: '"abc.jpg" in JSON BODY'
+      '*image': '"abc.jpg" in JSON BODY'
       '*contact_name': 'Abc in JSON BODY'
       '*contact_email': 'you@domain.com in JSON BODY'
       '*contact_number': '9090654320 in JSON BODY'
@@ -1899,7 +1899,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer P4aeEk8ZdbVavf1Dh65c63g'
+      - 'Bearer Dafb46aVZgvk3ecdEh65P81'
     controller: null
     method: null
     route: null
@@ -2044,7 +2044,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer a6aD8g13EfkPeZdh5b6Vv4c'
+      - 'Bearer 3664heVgc5adkfb8PaDZvE1'
     controller: null
     method: null
     route: null
@@ -2179,7 +2179,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6akDeV6fa51dgEchZ8bv43P'
+      - 'Bearer 84h3DfZeEadabgV6k6P1cv5'
     controller: null
     method: null
     route: null

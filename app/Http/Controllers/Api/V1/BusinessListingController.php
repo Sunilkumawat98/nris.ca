@@ -119,7 +119,7 @@ class BusinessListingController extends BaseController
      * 
      * 
      *
-     * <aside class="notice">basepath/api/v1/gget-all-business-sub-category</aside>
+     * <aside class="notice">basepath/api/v1/get-all-business-sub-category</aside>
      * @method GET
      * @return \Illuminate\Http\Response
      *

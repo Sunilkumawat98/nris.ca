@@ -601,7 +601,7 @@ class ClasifiedCategoryController extends BaseController
      * @bodyParam sub_cat_id integer required Example: 1,2,3 in JSON BODY
      * @bodyParam title string  Example: "title text " in JSON BODY
      * @bodyParam message string  Example: "message text " in JSON BODY
-     * @bodyParam image image  Example: "abc.jpg" in JSON BODY
+     * @bodyParam *image image required Example: "abc.jpg" in JSON BODY
      * @bodyParam *contact_name string required Example: Abc in JSON BODY
      * @bodyParam *contact_email string required Example: you@domain.com in JSON BODY
      * @bodyParam *contact_number string required Example: 9090654320 in JSON BODY

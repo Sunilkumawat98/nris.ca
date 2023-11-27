@@ -294,6 +294,19 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-news-videos-related" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="news-videos-related">
+                    <a href="#news-videos-related">News Videos Related </a>
+                </li>
+                                    <ul id="tocify-subheader-news-videos-related" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="news-videos-related-GETapi-v1-get-homepage-news">
+                                <a href="#news-videos-related-GETapi-v1-get-homepage-news">getAllHomepageNews</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="news-videos-related-POSTapi-v1-get-news-by-id">
+                                <a href="#news-videos-related-POSTapi-v1-get-news-by-id">getNewsById</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-nristalk-related" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="nristalk-related">
                     <a href="#nristalk-related">NrisTalk Related</a>
@@ -322,6 +335,28 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-get-nris-talk">
                                 <a href="#nristalk-related-POSTapi-v1-get-nris-talk">getNrisTalk</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-pool-cab-related" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="pool-cab-related">
+                    <a href="#pool-cab-related">Pool & Cab Related</a>
+                </li>
+                                    <ul id="tocify-subheader-pool-cab-related" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="pool-cab-related-GETapi-v1-get-all-carpool-category">
+                                <a href="#pool-cab-related-GETapi-v1-get-all-carpool-category">getAllCategory</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pool-cab-related-POSTapi-v1-get-all-carpool-list-by-category-id">
+                                <a href="#pool-cab-related-POSTapi-v1-get-all-carpool-list-by-category-id">getAllCarpoolListByCategoryId</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pool-cab-related-POSTapi-v1-get-carpool-by-id">
+                                <a href="#pool-cab-related-POSTapi-v1-get-carpool-by-id">getCarpoolById</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pool-cab-related-POSTapi-v1-create-carpool">
+                                <a href="#pool-cab-related-POSTapi-v1-create-carpool">createCarpool</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="pool-cab-related-POSTapi-v1-comment-carpool">
+                                <a href="#pool-cab-related-POSTapi-v1-comment-carpool">commentCarpool</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -442,7 +477,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 25, 2023</li>
+        <li>Last updated: November 27, 2023</li>
     </ul>
 </div>
 
@@ -679,7 +714,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*image</code></b>&nbsp;&nbsp;
 <small>image</small>&nbsp;
-<i>optional</i> &nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
                               name="*image"                data-endpoint="POSTapi-v1-create-advertise-with-us"
                value=""abc.jpg" in JSON BODY"
@@ -2248,7 +2283,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
 <p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
-<aside class="notice">basepath/api/v1/gget-all-business-sub-category</aside>
+<aside class="notice">basepath/api/v1/get-all-business-sub-category</aside>
 
 <span id="example-requests-GETapi-v1-get-all-business-sub-category">
 <blockquote>Example request:</blockquote>
@@ -6191,7 +6226,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"sub_cat_id\": 1,
     \"title\": \"\\\"title text \\\" in JSON BODY\",
     \"message\": \"\\\"message text \\\" in JSON BODY\",
-    \"image\": \"\\\"abc.jpg\\\" in JSON BODY\",
+    \"*image\": \"\\\"abc.jpg\\\" in JSON BODY\",
     \"*contact_name\": \"Abc in JSON BODY\",
     \"*contact_email\": \"you@domain.com in JSON BODY\",
     \"*contact_number\": \"9090654320 in JSON BODY\",
@@ -6224,7 +6259,7 @@ let body = {
     "sub_cat_id": 1,
     "title": "\"title text \" in JSON BODY",
     "message": "\"message text \" in JSON BODY",
-    "image": "\"abc.jpg\" in JSON BODY",
+    "*image": "\"abc.jpg\" in JSON BODY",
     "*contact_name": "Abc in JSON BODY",
     "*contact_email": "you@domain.com in JSON BODY",
     "*contact_number": "9090654320 in JSON BODY",
@@ -6492,11 +6527,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>"message text " in JSON BODY</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>*image</code></b>&nbsp;&nbsp;
 <small>image</small>&nbsp;
-<i>optional</i> &nbsp;
+ &nbsp;
                 <input type="text" style="display: none"
-                              name="image"                data-endpoint="POSTapi-v1-create-free-clasified"
+                              name="*image"                data-endpoint="POSTapi-v1-create-free-clasified"
                value=""abc.jpg" in JSON BODY"
                data-component="body">
     <br>
@@ -10328,14 +10363,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"omnis\",
-    \"*last_name\": \"voluptatum\",
-    \"*email\": \"heather.jacobs@example.com\",
-    \"*dob\": \"eveniet\",
-    \"*mobile\": \"quas\",
-    \"*password\": \"qui\",
-    \"*country_id\": \"et\",
-    \"*state_id\": \"voluptate\"
+    \"*first_name\": \"eum\",
+    \"*last_name\": \"enim\",
+    \"*email\": \"otha51@example.com\",
+    \"*dob\": \"expedita\",
+    \"*mobile\": \"consequatur\",
+    \"*password\": \"animi\",
+    \"*country_id\": \"adipisci\",
+    \"*state_id\": \"amet\"
 }"
 </code></pre></div>
 
@@ -10351,14 +10386,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "omnis",
-    "*last_name": "voluptatum",
-    "*email": "heather.jacobs@example.com",
-    "*dob": "eveniet",
-    "*mobile": "quas",
-    "*password": "qui",
-    "*country_id": "et",
-    "*state_id": "voluptate"
+    "*first_name": "eum",
+    "*last_name": "enim",
+    "*email": "otha51@example.com",
+    "*dob": "expedita",
+    "*mobile": "consequatur",
+    "*password": "animi",
+    "*country_id": "adipisci",
+    "*state_id": "amet"
 };
 
 fetch(url, {
@@ -10484,10 +10519,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="omnis"
+               value="eum"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>omnis</code></p>
+<p>String     Ex ('Abc') Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -10495,10 +10530,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="voluptatum"
+               value="enim"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>voluptatum</code></p>
+<p>String     Ex ('def') Example: <code>enim</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -10506,10 +10541,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="heather.jacobs@example.com"
+               value="otha51@example.com"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>heather.jacobs@example.com</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>otha51@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -10517,10 +10552,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="eveniet"
+               value="expedita"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>eveniet</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>expedita</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -10528,10 +10563,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="quas"
+               value="consequatur"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>quas</code></p>
+<p>String     Ex ('9876****09') Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10539,10 +10574,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="qui"
+               value="animi"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>qui</code></p>
+<p>String     Ex ('Abc') Example: <code>animi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -10550,10 +10585,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="et"
+               value="adipisci"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>et</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -10561,10 +10596,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="voluptate"
+               value="amet"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>voluptate</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>amet</code></p>
         </div>
         </form>
 
@@ -10592,8 +10627,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"et\",
-    \"*password\": \"dolor\"
+    \"*email_id\": \"dolorem\",
+    \"*password\": \"aliquid\"
 }"
 </code></pre></div>
 
@@ -10609,8 +10644,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "et",
-    "*password": "dolor"
+    "*email_id": "dolorem",
+    "*password": "aliquid"
 };
 
 fetch(url, {
@@ -10744,10 +10779,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="et"
+               value="dolorem"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>et</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>dolorem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10755,10 +10790,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="dolor"
+               value="aliquid"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>dolor</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>aliquid</code></p>
         </div>
         </form>
 
@@ -10781,7 +10816,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"fuga\"
+    \"*email_id\": \"quae\"
 }"
 </code></pre></div>
 
@@ -10797,7 +10832,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "fuga"
+    "*email_id": "quae"
 };
 
 fetch(url, {
@@ -10920,10 +10955,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="fuga"
+               value="quae"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>fuga</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>quae</code></p>
         </div>
         </form>
 
@@ -10946,9 +10981,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"aohara@example.com\",
-    \"*new_password\": \"nobis\",
-    \"*retype_password\": \"aspernatur\"
+    \"*email\": \"qolson@example.com\",
+    \"*new_password\": \"voluptatem\",
+    \"*retype_password\": \"est\"
 }"
 </code></pre></div>
 
@@ -10964,9 +10999,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "aohara@example.com",
-    "*new_password": "nobis",
-    "*retype_password": "aspernatur"
+    "*email": "qolson@example.com",
+    "*new_password": "voluptatem",
+    "*retype_password": "est"
 };
 
 fetch(url, {
@@ -11078,10 +11113,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="aohara@example.com"
+               value="qolson@example.com"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>aohara@example.com</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>qolson@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -11089,10 +11124,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="nobis"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>nobis</code></p>
+<p>String     Ex ('Abc@123') Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -11100,10 +11135,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="aspernatur"
+               value="est"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>aspernatur</code></p>
+<p>String     Ex ('Abc@123') Example: <code>est</code></p>
         </div>
         </form>
 
@@ -12673,6 +12708,367 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="*user_id"                data-endpoint="POSTapi-v1-movie-video-dislike"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                <h1 id="news-videos-related">News Videos Related </h1>
+
+    <p>APIs for managing all News Videos related listing and its Category</p>
+
+                                <h2 id="news-videos-related-GETapi-v1-get-homepage-news">getAllHomepageNews</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-GETapi-v1-get-homepage-news">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://stage-api.nris.ca/api/v1/get-homepage-news" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-homepage-news"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-get-homepage-news">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;title&quot;: &quot;title&quot;,
+                &quot;slug&quot;: &quot;title-slug&quot;,
+                &quot;video_link&quot;: &quot;https://youtu.be/-NCPiLoLm2c&quot;,
+                &quot;description&quot;: &quot;description&quot;,
+                &quot;created_at&quot;: null
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/get-homepage-news?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: &quot;PATH/get-homepage-news?page=2&quot;,
+        &quot;path&quot;: &quot;PATH/v1/get-homepage-news&quot;,
+        &quot;per_page&quot;: 1,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 1
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-get-homepage-news" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-get-homepage-news"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-get-homepage-news"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-get-homepage-news" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-get-homepage-news">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-get-homepage-news" data-method="GET"
+      data-path="api/v1/get-homepage-news"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-get-homepage-news', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-get-homepage-news"
+                    onclick="tryItOut('GETapi-v1-get-homepage-news');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-get-homepage-news"
+                    onclick="cancelTryOut('GETapi-v1-get-homepage-news');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-get-homepage-news"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/get-homepage-news</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-get-homepage-news"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-get-homepage-news"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="news-videos-related-POSTapi-v1-get-news-by-id">getNewsById</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;news_id&quot;:1
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-news-by-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-news-by-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*news_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-news-by-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*news_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-news-by-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data found..&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;test tile&quot;,
+        &quot;slug&quot;: &quot;test-title&quot;,
+        &quot;video_link&quot;: &quot;https://youtu.be/QZ1e2bpYbW4&quot;,
+        &quot;description&quot;: &quot;test description&quot;,
+        &quot;meta_title&quot;: &quot;meta title&quot;,
+        &quot;meta_description&quot;: &quot;meta desc&quot;,
+        &quot;meta_keywords&quot;: &quot;meta keyword&quot;,
+        &quot;created_at&quot;: null,
+        &quot;suggestions&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;title&quot;: &quot;title&quot;,
+                &quot;slug&quot;: &quot;title-slug&quot;,
+                &quot;video_link&quot;: &quot;https://youtu.be/-NCPiLoLm2c&quot;,
+                &quot;description&quot;: &quot;desc&quot;,
+                &quot;meta_title&quot;: &quot;meta title&quot;,
+                &quot;meta_description&quot;: &quot;meta desc&quot;,
+                &quot;meta_keywords&quot;: &quot;meta key&quot;,
+                &quot;created_at&quot;: null
+            }
+        ]
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;Data not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-news-by-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-news-by-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-news-by-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-news-by-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-news-by-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-news-by-id" data-method="POST"
+      data-path="api/v1/get-news-by-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-news-by-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-news-by-id"
+                    onclick="tryItOut('POSTapi-v1-get-news-by-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-news-by-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-news-by-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-news-by-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-news-by-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-news-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-news-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*news_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*news_id"                data-endpoint="POSTapi-v1-get-news-by-id"
                value="1"
                data-component="body">
     <br>
@@ -14604,6 +15000,1362 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                <h1 id="pool-cab-related">Pool & Cab Related</h1>
+
+    <p>APIs for managing all Pool &amp; Cab listing related Category,  and comments</p>
+
+                                <h2 id="pool-cab-related-GETapi-v1-get-all-carpool-category">getAllCategory</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+<aside class="notice">basepath/api/v1/get-all-carpool-category</aside>
+
+<span id="example-requests-GETapi-v1-get-all-carpool-category">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://stage-api.nris.ca/api/v1/get-all-carpool-category" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-all-carpool-category"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-get-all-carpool-category">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully your list found..&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Intersnational&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Interstate&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Local&quot;
+        }
+    ]
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-get-all-carpool-category" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-get-all-carpool-category"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-get-all-carpool-category"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-get-all-carpool-category" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-get-all-carpool-category">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-get-all-carpool-category" data-method="GET"
+      data-path="api/v1/get-all-carpool-category"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-get-all-carpool-category', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-get-all-carpool-category"
+                    onclick="tryItOut('GETapi-v1-get-all-carpool-category');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-get-all-carpool-category"
+                    onclick="cancelTryOut('GETapi-v1-get-all-carpool-category');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-get-all-carpool-category"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/get-all-carpool-category</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-get-all-carpool-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-get-all-carpool-category"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="pool-cab-related-POSTapi-v1-get-all-carpool-list-by-category-id">getAllCarpoolListByCategoryId</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{</p>
+<p>&quot;category_id&quot;:1,
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-all-carpool-list-by-category-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-all-carpool-list-by-category-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*category_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-all-carpool-list-by-category-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*category_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-all-carpool-list-by-category-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 4,
+                &quot;from_country_id&quot;: null,
+                &quot;to_country_id&quot;: null,
+                &quot;from_state_id&quot;: null,
+                &quot;to_state_id&quot;: null,
+                &quot;from_city_id&quot;: 1,
+                &quot;to_city_id&quot;: 2,
+                &quot;journey_type&quot;: &quot;twoway&quot;,
+                &quot;contact_name&quot;: &quot;test&quot;,
+                &quot;contact_email&quot;: &quot;test@test.com&quot;,
+                &quot;contact_number&quot;: &quot;9876543211&quot;,
+                &quot;contact_address&quot;: &quot;M test address&quot;,
+                &quot;start_date&quot;: &quot;2023-11-12&quot;,
+                &quot;end_date&quot;: &quot;2023-11-25&quot;,
+                &quot;start_time&quot;: &quot;15:12&quot;,
+                &quot;end_time&quot;: &quot;15:00&quot;,
+                &quot;flex_date&quot;: &quot;no&quot;,
+                &quot;flex_time&quot;: &quot;no&quot;,
+                &quot;flex_location&quot;: &quot;no&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;category&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Local&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;from_country_id&quot;: null,
+                &quot;to_country_id&quot;: null,
+                &quot;from_state_id&quot;: null,
+                &quot;to_state_id&quot;: null,
+                &quot;from_city_id&quot;: 4,
+                &quot;to_city_id&quot;: 6,
+                &quot;journey_type&quot;: &quot;oneway&quot;,
+                &quot;contact_name&quot;: &quot;test&quot;,
+                &quot;contact_email&quot;: &quot;test@test.com&quot;,
+                &quot;contact_number&quot;: &quot;9876543211&quot;,
+                &quot;contact_address&quot;: &quot;M test address&quot;,
+                &quot;start_date&quot;: &quot;2023-11-12&quot;,
+                &quot;end_date&quot;: null,
+                &quot;start_time&quot;: &quot;15:12&quot;,
+                &quot;end_time&quot;: null,
+                &quot;flex_date&quot;: &quot;no&quot;,
+                &quot;flex_time&quot;: &quot;no&quot;,
+                &quot;flex_location&quot;: &quot;no&quot;,
+                &quot;total_views&quot;: 0,
+                &quot;category&quot;: {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;Local&quot;
+                }
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;PATH/get-all-carpool-list-by-category-id?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;PATH/get-all-carpool-list-by-category-id&quot;,
+        &quot;per_page&quot;: 10,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 3
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-all-carpool-list-by-category-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-all-carpool-list-by-category-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-all-carpool-list-by-category-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-all-carpool-list-by-category-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-all-carpool-list-by-category-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-all-carpool-list-by-category-id" data-method="POST"
+      data-path="api/v1/get-all-carpool-list-by-category-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-all-carpool-list-by-category-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-all-carpool-list-by-category-id"
+                    onclick="tryItOut('POSTapi-v1-get-all-carpool-list-by-category-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-all-carpool-list-by-category-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-all-carpool-list-by-category-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-all-carpool-list-by-category-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-all-carpool-list-by-category-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-all-carpool-list-by-category-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-all-carpool-list-by-category-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*category_id"                data-endpoint="POSTapi-v1-get-all-carpool-list-by-category-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="pool-cab-related-POSTapi-v1-get-carpool-by-id">getCarpoolById</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;carpool_id&quot;:1
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-get-carpool-by-id">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/get-carpool-by-id" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*carpool_id\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/get-carpool-by-id"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*carpool_id": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-get-carpool-by-id">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data list found..&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 2,
+        &quot;from_country_id&quot;: null,
+        &quot;to_country_id&quot;: null,
+        &quot;from_state_id&quot;: null,
+        &quot;to_state_id&quot;: null,
+        &quot;from_city_id&quot;: null,
+        &quot;to_city_id&quot;: null,
+        &quot;journey_type&quot;: &quot;oneway&quot;,
+        &quot;contact_name&quot;: &quot;test&quot;,
+        &quot;contact_email&quot;: &quot;test@test.com&quot;,
+        &quot;contact_number&quot;: &quot;9876543211&quot;,
+        &quot;contact_address&quot;: &quot;M test address&quot;,
+        &quot;start_date&quot;: &quot;2023-11-12&quot;,
+        &quot;end_date&quot;: null,
+        &quot;start_time&quot;: &quot;15:12&quot;,
+        &quot;end_time&quot;: null,
+        &quot;flex_date&quot;: &quot;no&quot;,
+        &quot;flex_time&quot;: &quot;no&quot;,
+        &quot;flex_location&quot;: &quot;no&quot;,
+        &quot;total_views&quot;: 0,
+        &quot;created_at&quot;: &quot;27-Nov-2023 03:57 PM&quot;,
+        &quot;category&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Local&quot;
+        },
+        &quot;comments&quot;: [
+            {
+                &quot;id&quot;: 4,
+                &quot;carpool_id&quot;: 2,
+                &quot;user_id&quot;: 2,
+                &quot;comment&quot;: &quot;this is test comment&quot;,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 2,
+                    &quot;first_name&quot;: &quot;ABC&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;carpool_id&quot;: 2,
+                &quot;user_id&quot;: 2,
+                &quot;comment&quot;: &quot;this is test comment&quot;,
+                &quot;user&quot;: {
+                    &quot;id&quot;: 21,
+                    &quot;first_name&quot;: &quot;XYZ&quot;
+                }
+            }
+        ]
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-get-carpool-by-id" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-get-carpool-by-id"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-get-carpool-by-id"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-get-carpool-by-id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-get-carpool-by-id">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-get-carpool-by-id" data-method="POST"
+      data-path="api/v1/get-carpool-by-id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-get-carpool-by-id', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-get-carpool-by-id"
+                    onclick="tryItOut('POSTapi-v1-get-carpool-by-id');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-get-carpool-by-id"
+                    onclick="cancelTryOut('POSTapi-v1-get-carpool-by-id');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-get-carpool-by-id"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/get-carpool-by-id</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-get-carpool-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-get-carpool-by-id"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*carpool_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*carpool_id"                data-endpoint="POSTapi-v1-get-carpool-by-id"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="pool-cab-related-POSTapi-v1-create-carpool">createCarpool</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;user_id&quot;:2,
+&quot;category_id&quot;:1,
+&quot;from_country_id&quot;:1,
+&quot;to_country_id&quot;:null,
+&quot;from_state_id&quot;: null,
+&quot;to_state_id&quot;: null,
+&quot;from_city_id&quot;: null,
+&quot;to_city_id&quot;: null,
+&quot;category_id&quot;: 1,
+&quot;user_id&quot;: 2,
+&quot;journey_type&quot;: &quot;twoway&quot;,
+&quot;contact_name&quot;: &quot;test&quot;,
+&quot;contact_email&quot;: &quot;test@test.com&quot;,
+&quot;contact_number&quot;: &quot;9876543211&quot;,
+&quot;contact_address&quot;: &quot;M test address&quot;,
+&quot;start_date&quot;: &quot;2023-11-12&quot;,
+&quot;end_date&quot;: &quot;2023-11-25&quot;,
+&quot;start_time&quot;: &quot;15:12&quot;,
+&quot;end_time&quot;: &quot;15:00&quot;,
+&quot;flex_date&quot;: &quot;no&quot;,
+&quot;flex_time&quot;: &quot;no&quot;,
+&quot;flex_location&quot;: &quot;no&quot;,
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-create-carpool">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/create-carpool" \
+    --header "Authorization: Bearer _token required" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"from_country_id\": 1,
+    \"to_country_id\": 1,
+    \"from_state_id\": 1,
+    \"to_state_id\": 1,
+    \"from_city_id\": 1,
+    \"to_city_id\": 1,
+    \"*user_id\": 1,
+    \"*category_id\": 1,
+    \"*journey_type\": \"no in JSON BODY\",
+    \"*contact_name\": \"Abc in JSON BODY\",
+    \"*contact_email\": \"you@domain.com in JSON BODY\",
+    \"*contact_number\": \"9999****99 in JSON BODY\",
+    \"*contact_address\": \"This is address in JSON BODY\",
+    \"*start_date\": \"(2023-11-12) YYYY-MM-DD in JSON BODY\",
+    \"end_date\": \"(2023-11-12) YYYY-MM-DD in JSON BODY\",
+    \"*start_time\": \"20:10 in JSON BODY\",
+    \"end_time\": \"20:10 in JSON BODY\",
+    \"*flex_date\": \"no in JSON BODY\",
+    \"*flex_time\": \"no in JSON BODY\",
+    \"*flex_location\": \"no in JSON BODY\\n\\n\\n&lt;aside class=\\\"notice\\\"&gt;basepath\\/api\\/v1\\/review-business-list&lt;\\/aside&gt;\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/create-carpool"
+);
+
+const headers = {
+    "Authorization": "Bearer _token required",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "from_country_id": 1,
+    "to_country_id": 1,
+    "from_state_id": 1,
+    "to_state_id": 1,
+    "from_city_id": 1,
+    "to_city_id": 1,
+    "*user_id": 1,
+    "*category_id": 1,
+    "*journey_type": "no in JSON BODY",
+    "*contact_name": "Abc in JSON BODY",
+    "*contact_email": "you@domain.com in JSON BODY",
+    "*contact_number": "9999****99 in JSON BODY",
+    "*contact_address": "This is address in JSON BODY",
+    "*start_date": "(2023-11-12) YYYY-MM-DD in JSON BODY",
+    "end_date": "(2023-11-12) YYYY-MM-DD in JSON BODY",
+    "*start_time": "20:10 in JSON BODY",
+    "end_time": "20:10 in JSON BODY",
+    "*flex_date": "no in JSON BODY",
+    "*flex_time": "no in JSON BODY",
+    "*flex_location": "no in JSON BODY\n\n\n&lt;aside class=\"notice\"&gt;basepath\/api\/v1\/review-business-list&lt;\/aside&gt;"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-create-carpool">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully data submitted...&quot;,
+    &quot;data&quot;: {
+        &quot;from_country_id&quot;: null,
+        &quot;to_country_id&quot;: null,
+        &quot;from_state_id&quot;: null,
+        &quot;to_state_id&quot;: null,
+        &quot;from_city_id&quot;: null,
+        &quot;to_city_id&quot;: null,
+        &quot;cat_id&quot;: 1,
+        &quot;user_id&quot;: 2,
+        &quot;journey_type&quot;: &quot;twoway&quot;,
+        &quot;contact_name&quot;: &quot;test&quot;,
+        &quot;contact_email&quot;: &quot;test@test.com&quot;,
+        &quot;contact_number&quot;: &quot;9876543211&quot;,
+        &quot;contact_address&quot;: &quot;M test address&quot;,
+        &quot;start_date&quot;: &quot;2023-11-12&quot;,
+        &quot;end_date&quot;: &quot;2023-11-25&quot;,
+        &quot;start_time&quot;: &quot;15:12&quot;,
+        &quot;end_time&quot;: &quot;15:00&quot;,
+        &quot;flex_date&quot;: &quot;no&quot;,
+        &quot;flex_time&quot;: &quot;no&quot;,
+        &quot;flex_location&quot;: &quot;no&quot;,
+        &quot;created_at&quot;: &quot;27-Nov-2023 04:05 PM&quot;,
+        &quot;id&quot;: 6
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Invalid&quot;,
+    &quot;status_code&quot;: 401,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Authorised Token Not Found&quot;,
+    &quot;status_code&quot;: 403,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (419):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Expired&quot;,
+    &quot;status_code&quot;: 419,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-create-carpool" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-create-carpool"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-create-carpool"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-create-carpool" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-create-carpool">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-create-carpool" data-method="POST"
+      data-path="api/v1/create-carpool"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-create-carpool', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-create-carpool"
+                    onclick="tryItOut('POSTapi-v1-create-carpool');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-create-carpool"
+                    onclick="cancelTryOut('POSTapi-v1-create-carpool');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-create-carpool"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/create-carpool</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-create-carpool"
+               value="Bearer _token required"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer _token required</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-create-carpool"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-create-carpool"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="from_country_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_country_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="to_country_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="from_state_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_state_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="to_state_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_city_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="from_city_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_city_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="to_city_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*user_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*category_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*category_id"                data-endpoint="POSTapi-v1-create-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*journey_type</code></b>&nbsp;&nbsp;
+<small>enum(&#039;oneway&#039;/&#039;twoway&#039;)</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*journey_type"                data-endpoint="POSTapi-v1-create-carpool"
+               value="no in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>no in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*contact_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*contact_name"                data-endpoint="POSTapi-v1-create-carpool"
+               value="Abc in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>Abc in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*contact_email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*contact_email"                data-endpoint="POSTapi-v1-create-carpool"
+               value="you@domain.com in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>you@domain.com in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*contact_number</code></b>&nbsp;&nbsp;
+<small>integet</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*contact_number"                data-endpoint="POSTapi-v1-create-carpool"
+               value="9999****99 in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>9999****99 in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*contact_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*contact_address"                data-endpoint="POSTapi-v1-create-carpool"
+               value="This is address in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>This is address in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*start_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*start_date"                data-endpoint="POSTapi-v1-create-carpool"
+               value="(2023-11-12) YYYY-MM-DD in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>(2023-11-12) YYYY-MM-DD in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="POSTapi-v1-create-carpool"
+               value="(2023-11-12) YYYY-MM-DD in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>(2023-11-12) YYYY-MM-DD in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*start_time</code></b>&nbsp;&nbsp;
+<small>time</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*start_time"                data-endpoint="POSTapi-v1-create-carpool"
+               value="20:10 in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>20:10 in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
+<small>time</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="end_time"                data-endpoint="POSTapi-v1-create-carpool"
+               value="20:10 in JSON BODY"
+               data-component="body">
+    <br>
+<p>Example: <code>20:10 in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*flex_date</code></b>&nbsp;&nbsp;
+<small>enum(&#039;yes&#039;/&#039;no&#039;)</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*flex_date"                data-endpoint="POSTapi-v1-create-carpool"
+               value="no in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>no in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*flex_time</code></b>&nbsp;&nbsp;
+<small>enum(&#039;yes&#039;/&#039;no&#039;)</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*flex_time"                data-endpoint="POSTapi-v1-create-carpool"
+               value="no in JSON BODY"
+               data-component="body">
+    <br>
+<p>require Example: <code>no in JSON BODY</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*flex_location</code></b>&nbsp;&nbsp;
+<small>enum(&#039;yes&#039;/&#039;no&#039;)</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*flex_location"                data-endpoint="POSTapi-v1-create-carpool"
+               value="no in JSON BODY
+
+
+<aside class="notice">basepath/api/v1/review-business-list</aside>"
+               data-component="body">
+    <br>
+<p>require Example: `no in JSON BODY</p>
+<aside class="notice">basepath/api/v1/review-business-list</aside>`
+        </div>
+        </form>
+
+                    <h2 id="pool-cab-related-POSTapi-v1-comment-carpool">commentCarpool</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;user_id&quot;:2,
+&quot;carpool_id&quot;:1,
+&quot;comment&quot;:&quot;this is comment&quot;
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-comment-carpool">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/comment-carpool" \
+    --header "Authorization: Bearer _token required" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*user_id\": 1,
+    \"*carpool_id\": 1,
+    \"*comment\": \"This is comment in JSON BODY\\n\\n&lt;aside class=\\\"notice\\\"&gt;basepath\\/api\\/v1\\/comment-carpool&lt;\\/aside&gt;\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/comment-carpool"
+);
+
+const headers = {
+    "Authorization": "Bearer _token required",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*user_id": 1,
+    "*carpool_id": 1,
+    "*comment": "This is comment in JSON BODY\n\n&lt;aside class=\"notice\"&gt;basepath\/api\/v1\/comment-carpool&lt;\/aside&gt;"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-comment-carpool">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully comment done...&quot;,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: 2,
+        &quot;carpool_id&quot;: 2,
+        &quot;comment&quot;: &quot;this is test comment&quot;,
+        &quot;created_at&quot;: &quot;27-Nov-2023 04:46 PM&quot;,
+        &quot;id&quot;: 4
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Invalid&quot;,
+    &quot;status_code&quot;: 401,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Authorised Token Not Found&quot;,
+    &quot;status_code&quot;: 403,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (419):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Token is Expired&quot;,
+    &quot;status_code&quot;: 419,
+    &quot;status&quot;: false
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-comment-carpool" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-comment-carpool"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-comment-carpool"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-comment-carpool" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-comment-carpool">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-comment-carpool" data-method="POST"
+      data-path="api/v1/comment-carpool"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-comment-carpool', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-comment-carpool"
+                    onclick="tryItOut('POSTapi-v1-comment-carpool');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-comment-carpool"
+                    onclick="cancelTryOut('POSTapi-v1-comment-carpool');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-comment-carpool"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/comment-carpool</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-comment-carpool"
+               value="Bearer _token required"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer _token required</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-comment-carpool"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-comment-carpool"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*user_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*user_id"                data-endpoint="POSTapi-v1-comment-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*carpool_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="*carpool_id"                data-endpoint="POSTapi-v1-comment-carpool"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*comment</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="*comment"                data-endpoint="POSTapi-v1-comment-carpool"
+               value="This is comment in JSON BODY
+
+<aside class="notice">basepath/api/v1/comment-carpool</aside>"
+               data-component="body">
+    <br>
+<p>require Example: `This is comment in JSON BODY</p>
+<aside class="notice">basepath/api/v1/comment-carpool</aside>`
         </div>
         </form>
 
@@ -18902,8 +20654,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"inventore\",
-    \"*state_id\": \"sit\"
+    \"*country_id\": \"iste\",
+    \"*state_id\": \"ut\"
 }"
 </code></pre></div>
 
@@ -18919,8 +20671,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "inventore",
-    "*state_id": "sit"
+    "*country_id": "iste",
+    "*state_id": "ut"
 };
 
 fetch(url, {
@@ -19075,10 +20827,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="inventore"
+               value="iste"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>inventore</code></p>
+<p>integer     Ex 1/2/3 Example: <code>iste</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -19086,10 +20838,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="sit"
+               value="ut"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>sit</code></p>
+<p>integer     Ex 1/2/3 Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -19112,8 +20864,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"porro\",
-    \"*state_id\": \"aut\"
+    \"*country_id\": \"eligendi\",
+    \"*state_id\": \"inventore\"
 }"
 </code></pre></div>
 
@@ -19129,8 +20881,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "porro",
-    "*state_id": "aut"
+    "*country_id": "eligendi",
+    "*state_id": "inventore"
 };
 
 fetch(url, {
@@ -19273,10 +21025,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="porro"
+               value="eligendi"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>porro</code></p>
+<p>integer     Ex 1/2/3 Example: <code>eligendi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -19284,10 +21036,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="aut"
+               value="inventore"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>aut</code></p>
+<p>integer     Ex 1/2/3 Example: <code>inventore</code></p>
         </div>
         </form>
 

@@ -114,7 +114,7 @@ endpoints:
 
 
 
-        <aside class="notice">basepath/api/v1/gget-all-business-sub-category</aside>
+        <aside class="notice">basepath/api/v1/get-all-business-sub-category</aside>
       authenticated: false
       custom: []
     headers:
@@ -946,7 +946,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g6c8bDv1eZaakhV4fEd5P36'
+      - 'Bearer 63dchaPgZ184b5Vfa6vDekE'
     controller: null
     method: null
     route: null

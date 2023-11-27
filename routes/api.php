@@ -19,6 +19,8 @@ use App\Http\Controllers\Api\V1\AdvertiseWithUsController;
 use App\Http\Controllers\Api\V1\BlogController;
 use App\Http\Controllers\Api\V1\ForumController;
 use App\Http\Controllers\Api\V1\MovieVideoController;
+use App\Http\Controllers\Api\V1\NewsVideosController;
+use App\Http\Controllers\Api\V1\CarPoolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -260,6 +262,29 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     
 
 
+
+
+
+ /*
+       Car poll related
+
+
+    */
+
+    Route::get('/get-all-carpool-category', [CarPoolController::class,'getAllCategory']);
+    Route::post('/get-all-carpool-list-by-category-id', [CarPoolController::class,'getAllCarpoolListByCategoryId']);
+    Route::post('/get-carpool-by-id', [CarPoolController::class,'getCarpoolById']);
+    
+
+
+    /***
+     * 
+     * News Videos Related
+     */
+    
+     Route::get('/get-homepage-news', [NewsVideosController::class,'getAllHomepageNews']);
+     Route::post('/get-news-by-id', [NewsVideosController::class,'getNewsById']);
+
     /*
         After Login Start
     */
@@ -285,6 +310,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
         $router->post('/create-forum', [ForumController::class,'createForum']);
         $router->post('/comment-forum', [ForumController::class,'commentForum']);
+
+        $router->post('/create-carpool', [CarPoolController::class,'createCarpool']);
+        $router->post('/comment-carpool', [CarPoolController::class,'commentCarpool']);
 
         $router->post('/blog-like', [BlogController::class,'blogLike']);
         $router->post('/blog-dislike', [BlogController::class,'blogDisLike']);

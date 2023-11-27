@@ -143,6 +143,7 @@ paths:
                 - '*first_name'
                 - '*last_name'
                 - '*message'
+                - '*image'
                 - '*email'
                 - '*mobile'
                 - '*business_name'
@@ -1393,7 +1394,7 @@ paths:
     get:
       summary: getAllSubCategory
       operationId: getAllSubCategory
-      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/gget-all-business-sub-category</aside>"
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-business-sub-category</aside>"
       parameters: []
       responses:
         200:
@@ -5825,7 +5826,7 @@ paths:
                   type: string
                   description: ''
                   example: '"message text " in JSON BODY'
-                image:
+                '*image':
                   type: image
                   description: ''
                   example: '"abc.jpg" in JSON BODY'
@@ -5868,6 +5869,7 @@ paths:
                 - '*city_id'
                 - category_id
                 - sub_cat_id
+                - '*image'
                 - '*contact_name'
                 - '*contact_email'
                 - '*contact_number'
@@ -8903,35 +8905,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: omnis
+                  example: eum
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: voluptatum
+                  example: enim
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: heather.jacobs@example.com
+                  example: otha51@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: eveniet
+                  example: expedita
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: quas
+                  example: consequatur
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: qui
+                  example: animi
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: et
+                  example: adipisci
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: voluptate
+                  example: amet
       security: []
   /api/v1/login:
     post:
@@ -9052,11 +9054,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: et
+                  example: dolorem
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: dolor
+                  example: aliquid
       security: []
   /api/v1/forgot-pass:
     post:
@@ -9141,7 +9143,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: fuga
+                  example: quae
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -9206,15 +9208,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: aohara@example.com
+                  example: qolson@example.com
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: nobis
+                  example: voluptatem
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: aspernatur
+                  example: est
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -10531,6 +10533,344 @@ paths:
               required:
                 - '*video_id'
                 - '*user_id'
+  /api/v1/get-homepage-news:
+    get:
+      summary: getAllHomepageNews
+      operationId: getAllHomepageNews
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data list found..'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 2
+                        title: title
+                        slug: title-slug
+                        video_link: 'https://youtu.be/-NCPiLoLm2c'
+                        description: description
+                        created_at: null
+                    first_page_url: 'PATH/get-homepage-news?page=1'
+                    from: 1
+                    next_page_url: 'PATH/get-homepage-news?page=2'
+                    path: PATH/v1/get-homepage-news
+                    per_page: 1
+                    prev_page_url: null
+                    to: 1
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data list found..'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 2
+                            title: title
+                            slug: title-slug
+                            video_link: 'https://youtu.be/-NCPiLoLm2c'
+                            description: description
+                            created_at: null
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            title:
+                              type: string
+                              example: title
+                            slug:
+                              type: string
+                              example: title-slug
+                            video_link:
+                              type: string
+                              example: 'https://youtu.be/-NCPiLoLm2c'
+                            description:
+                              type: string
+                              example: description
+                            created_at:
+                              type: string
+                              example: null
+                      first_page_url:
+                        type: string
+                        example: 'PATH/get-homepage-news?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: 'PATH/get-homepage-news?page=2'
+                      path:
+                        type: string
+                        example: PATH/v1/get-homepage-news
+                      per_page:
+                        type: integer
+                        example: 1
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'News Videos Related '
+      security: []
+  /api/v1/get-news-by-id:
+    post:
+      summary: getNewsById
+      operationId: getNewsById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"news_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data found..'
+                  data:
+                    id: 1
+                    title: 'test tile'
+                    slug: test-title
+                    video_link: 'https://youtu.be/QZ1e2bpYbW4'
+                    description: 'test description'
+                    meta_title: 'meta title'
+                    meta_description: 'meta desc'
+                    meta_keywords: 'meta keyword'
+                    created_at: null
+                    suggestions:
+                      -
+                        id: 2
+                        title: title
+                        slug: title-slug
+                        video_link: 'https://youtu.be/-NCPiLoLm2c'
+                        description: desc
+                        meta_title: 'meta title'
+                        meta_description: 'meta desc'
+                        meta_keywords: 'meta key'
+                        created_at: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data found..'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: 'test tile'
+                      slug:
+                        type: string
+                        example: test-title
+                      video_link:
+                        type: string
+                        example: 'https://youtu.be/QZ1e2bpYbW4'
+                      description:
+                        type: string
+                        example: 'test description'
+                      meta_title:
+                        type: string
+                        example: 'meta title'
+                      meta_description:
+                        type: string
+                        example: 'meta desc'
+                      meta_keywords:
+                        type: string
+                        example: 'meta keyword'
+                      created_at:
+                        type: string
+                        example: null
+                      suggestions:
+                        type: array
+                        example:
+                          -
+                            id: 2
+                            title: title
+                            slug: title-slug
+                            video_link: 'https://youtu.be/-NCPiLoLm2c'
+                            description: desc
+                            meta_title: 'meta title'
+                            meta_description: 'meta desc'
+                            meta_keywords: 'meta key'
+                            created_at: null
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            title:
+                              type: string
+                              example: title
+                            slug:
+                              type: string
+                              example: title-slug
+                            video_link:
+                              type: string
+                              example: 'https://youtu.be/-NCPiLoLm2c'
+                            description:
+                              type: string
+                              example: desc
+                            meta_title:
+                              type: string
+                              example: 'meta title'
+                            meta_description:
+                              type: string
+                              example: 'meta desc'
+                            meta_keywords:
+                              type: string
+                              example: 'meta key'
+                            created_at:
+                              type: string
+                              example: null
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Data not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Data not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'News Videos Related '
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*news_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*news_id'
+      security: []
   /api/v1/get-all-nris-talk:
     post:
       summary: getAllNrisTalk
@@ -12081,6 +12421,1133 @@ paths:
               required:
                 - '*user_id'
                 - '*talk_id'
+  /api/v1/get-all-carpool-category:
+    get:
+      summary: getAllCategory
+      operationId: getAllCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-carpool-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 3
+                      name: Intersnational
+                    -
+                      id: 2
+                      name: Interstate
+                    -
+                      id: 1
+                      name: Local
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: Intersnational
+                      -
+                        id: 2
+                        name: Interstate
+                      -
+                        id: 1
+                        name: Local
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: Intersnational
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Pool & Cab Related'
+      security: []
+  /api/v1/get-all-carpool-list-by-category-id:
+    post:
+      summary: getAllCarpoolListByCategoryId
+      operationId: getAllCarpoolListByCategoryId
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\n\"category_id\":1,\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data list found..'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 4
+                        from_country_id: null
+                        to_country_id: null
+                        from_state_id: null
+                        to_state_id: null
+                        from_city_id: 1
+                        to_city_id: 2
+                        journey_type: twoway
+                        contact_name: test
+                        contact_email: test@test.com
+                        contact_number: '9876543211'
+                        contact_address: 'M test address'
+                        start_date: '2023-11-12'
+                        end_date: '2023-11-25'
+                        start_time: '15:12'
+                        end_time: '15:00'
+                        flex_date: 'no'
+                        flex_time: 'no'
+                        flex_location: 'no'
+                        total_views: 0
+                        category:
+                          id: 1
+                          name: Local
+                      -
+                        id: 3
+                        from_country_id: null
+                        to_country_id: null
+                        from_state_id: null
+                        to_state_id: null
+                        from_city_id: 4
+                        to_city_id: 6
+                        journey_type: oneway
+                        contact_name: test
+                        contact_email: test@test.com
+                        contact_number: '9876543211'
+                        contact_address: 'M test address'
+                        start_date: '2023-11-12'
+                        end_date: null
+                        start_time: '15:12'
+                        end_time: null
+                        flex_date: 'no'
+                        flex_time: 'no'
+                        flex_location: 'no'
+                        total_views: 0
+                        category:
+                          id: 1
+                          name: Local
+                    first_page_url: 'PATH/get-all-carpool-list-by-category-id?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: PATH/get-all-carpool-list-by-category-id
+                    per_page: 10
+                    prev_page_url: null
+                    to: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data list found..'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            from_country_id: null
+                            to_country_id: null
+                            from_state_id: null
+                            to_state_id: null
+                            from_city_id: 1
+                            to_city_id: 2
+                            journey_type: twoway
+                            contact_name: test
+                            contact_email: test@test.com
+                            contact_number: '9876543211'
+                            contact_address: 'M test address'
+                            start_date: '2023-11-12'
+                            end_date: '2023-11-25'
+                            start_time: '15:12'
+                            end_time: '15:00'
+                            flex_date: 'no'
+                            flex_time: 'no'
+                            flex_location: 'no'
+                            total_views: 0
+                            category:
+                              id: 1
+                              name: Local
+                          -
+                            id: 3
+                            from_country_id: null
+                            to_country_id: null
+                            from_state_id: null
+                            to_state_id: null
+                            from_city_id: 4
+                            to_city_id: 6
+                            journey_type: oneway
+                            contact_name: test
+                            contact_email: test@test.com
+                            contact_number: '9876543211'
+                            contact_address: 'M test address'
+                            start_date: '2023-11-12'
+                            end_date: null
+                            start_time: '15:12'
+                            end_time: null
+                            flex_date: 'no'
+                            flex_time: 'no'
+                            flex_location: 'no'
+                            total_views: 0
+                            category:
+                              id: 1
+                              name: Local
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            from_country_id:
+                              type: string
+                              example: null
+                            to_country_id:
+                              type: string
+                              example: null
+                            from_state_id:
+                              type: string
+                              example: null
+                            to_state_id:
+                              type: string
+                              example: null
+                            from_city_id:
+                              type: integer
+                              example: 1
+                            to_city_id:
+                              type: integer
+                              example: 2
+                            journey_type:
+                              type: string
+                              example: twoway
+                            contact_name:
+                              type: string
+                              example: test
+                            contact_email:
+                              type: string
+                              example: test@test.com
+                            contact_number:
+                              type: string
+                              example: '9876543211'
+                            contact_address:
+                              type: string
+                              example: 'M test address'
+                            start_date:
+                              type: string
+                              example: '2023-11-12'
+                            end_date:
+                              type: string
+                              example: '2023-11-25'
+                            start_time:
+                              type: string
+                              example: '15:12'
+                            end_time:
+                              type: string
+                              example: '15:00'
+                            flex_date:
+                              type: string
+                              example: 'no'
+                            flex_time:
+                              type: string
+                              example: 'no'
+                            flex_location:
+                              type: string
+                              example: 'no'
+                            total_views:
+                              type: integer
+                              example: 0
+                            category:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: Local
+                      first_page_url:
+                        type: string
+                        example: 'PATH/get-all-carpool-list-by-category-id?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: PATH/get-all-carpool-list-by-category-id
+                      per_page:
+                        type: integer
+                        example: 10
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 3
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Pool & Cab Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*category_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*category_id'
+      security: []
+  /api/v1/get-carpool-by-id:
+    post:
+      summary: getCarpoolById
+      operationId: getCarpoolById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"carpool_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data list found..'
+                  data:
+                    id: 2
+                    from_country_id: null
+                    to_country_id: null
+                    from_state_id: null
+                    to_state_id: null
+                    from_city_id: null
+                    to_city_id: null
+                    journey_type: oneway
+                    contact_name: test
+                    contact_email: test@test.com
+                    contact_number: '9876543211'
+                    contact_address: 'M test address'
+                    start_date: '2023-11-12'
+                    end_date: null
+                    start_time: '15:12'
+                    end_time: null
+                    flex_date: 'no'
+                    flex_time: 'no'
+                    flex_location: 'no'
+                    total_views: 0
+                    created_at: '27-Nov-2023 03:57 PM'
+                    category:
+                      id: 1
+                      name: Local
+                    comments:
+                      -
+                        id: 4
+                        carpool_id: 2
+                        user_id: 2
+                        comment: 'this is test comment'
+                        user:
+                          id: 2
+                          first_name: ABC
+                      -
+                        id: 5
+                        carpool_id: 2
+                        user_id: 2
+                        comment: 'this is test comment'
+                        user:
+                          id: 21
+                          first_name: XYZ
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data list found..'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      from_country_id:
+                        type: string
+                        example: null
+                      to_country_id:
+                        type: string
+                        example: null
+                      from_state_id:
+                        type: string
+                        example: null
+                      to_state_id:
+                        type: string
+                        example: null
+                      from_city_id:
+                        type: string
+                        example: null
+                      to_city_id:
+                        type: string
+                        example: null
+                      journey_type:
+                        type: string
+                        example: oneway
+                      contact_name:
+                        type: string
+                        example: test
+                      contact_email:
+                        type: string
+                        example: test@test.com
+                      contact_number:
+                        type: string
+                        example: '9876543211'
+                      contact_address:
+                        type: string
+                        example: 'M test address'
+                      start_date:
+                        type: string
+                        example: '2023-11-12'
+                      end_date:
+                        type: string
+                        example: null
+                      start_time:
+                        type: string
+                        example: '15:12'
+                      end_time:
+                        type: string
+                        example: null
+                      flex_date:
+                        type: string
+                        example: 'no'
+                      flex_time:
+                        type: string
+                        example: 'no'
+                      flex_location:
+                        type: string
+                        example: 'no'
+                      total_views:
+                        type: integer
+                        example: 0
+                      created_at:
+                        type: string
+                        example: '27-Nov-2023 03:57 PM'
+                      category:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: Local
+                      comments:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            carpool_id: 2
+                            user_id: 2
+                            comment: 'this is test comment'
+                            user:
+                              id: 2
+                              first_name: ABC
+                          -
+                            id: 5
+                            carpool_id: 2
+                            user_id: 2
+                            comment: 'this is test comment'
+                            user:
+                              id: 21
+                              first_name: XYZ
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            carpool_id:
+                              type: integer
+                              example: 2
+                            user_id:
+                              type: integer
+                              example: 2
+                            comment:
+                              type: string
+                              example: 'this is test comment'
+                            user:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                first_name:
+                                  type: string
+                                  example: ABC
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Pool & Cab Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*carpool_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*carpool_id'
+      security: []
+  /api/v1/create-carpool:
+    post:
+      summary: createCarpool
+      operationId: createCarpool
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"user_id\":2,\n\"category_id\":1,\n\"from_country_id\":1,\n\"to_country_id\":null,\n\"from_state_id\": null,\n\"to_state_id\": null,\n\"from_city_id\": null,\n\"to_city_id\": null,\n\"category_id\": 1,\n\"user_id\": 2,\n\"journey_type\": \"twoway\",\n\"contact_name\": \"test\",\n\"contact_email\": \"test@test.com\",\n\"contact_number\": \"9876543211\",\n\"contact_address\": \"M test address\",\n\"start_date\": \"2023-11-12\",\n\"end_date\": \"2023-11-25\",\n\"start_time\": \"15:12\",\n\"end_time\": \"15:00\",\n\"flex_date\": \"no\",\n\"flex_time\": \"no\",\n\"flex_location\": \"no\",\n}\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer _token required'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data submitted...'
+                  data:
+                    from_country_id: null
+                    to_country_id: null
+                    from_state_id: null
+                    to_state_id: null
+                    from_city_id: null
+                    to_city_id: null
+                    cat_id: 1
+                    user_id: 2
+                    journey_type: twoway
+                    contact_name: test
+                    contact_email: test@test.com
+                    contact_number: '9876543211'
+                    contact_address: 'M test address'
+                    start_date: '2023-11-12'
+                    end_date: '2023-11-25'
+                    start_time: '15:12'
+                    end_time: '15:00'
+                    flex_date: 'no'
+                    flex_time: 'no'
+                    flex_location: 'no'
+                    created_at: '27-Nov-2023 04:05 PM'
+                    id: 6
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data submitted...'
+                  data:
+                    type: object
+                    properties:
+                      from_country_id:
+                        type: string
+                        example: null
+                      to_country_id:
+                        type: string
+                        example: null
+                      from_state_id:
+                        type: string
+                        example: null
+                      to_state_id:
+                        type: string
+                        example: null
+                      from_city_id:
+                        type: string
+                        example: null
+                      to_city_id:
+                        type: string
+                        example: null
+                      cat_id:
+                        type: integer
+                        example: 1
+                      user_id:
+                        type: integer
+                        example: 2
+                      journey_type:
+                        type: string
+                        example: twoway
+                      contact_name:
+                        type: string
+                        example: test
+                      contact_email:
+                        type: string
+                        example: test@test.com
+                      contact_number:
+                        type: string
+                        example: '9876543211'
+                      contact_address:
+                        type: string
+                        example: 'M test address'
+                      start_date:
+                        type: string
+                        example: '2023-11-12'
+                      end_date:
+                        type: string
+                        example: '2023-11-25'
+                      start_time:
+                        type: string
+                        example: '15:12'
+                      end_time:
+                        type: string
+                        example: '15:00'
+                      flex_date:
+                        type: string
+                        example: 'no'
+                      flex_time:
+                        type: string
+                        example: 'no'
+                      flex_location:
+                        type: string
+                        example: 'no'
+                      created_at:
+                        type: string
+                        example: '27-Nov-2023 04:05 PM'
+                      id:
+                        type: integer
+                        example: 6
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Pool & Cab Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                from_country_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                to_country_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                from_state_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                to_state_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                from_city_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                to_city_id:
+                  type: integer
+                  description: ''
+                  example: 1
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*category_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*journey_type':
+                  type: "enum('oneway'/'twoway')"
+                  description: require
+                  example: 'no in JSON BODY'
+                '*contact_name':
+                  type: string
+                  description: require
+                  example: 'Abc in JSON BODY'
+                '*contact_email':
+                  type: string
+                  description: require
+                  example: 'you@domain.com in JSON BODY'
+                '*contact_number':
+                  type: integet
+                  description: require
+                  example: '9999****99 in JSON BODY'
+                '*contact_address':
+                  type: string
+                  description: require
+                  example: 'This is address in JSON BODY'
+                '*start_date':
+                  type: date
+                  description: require
+                  example: '(2023-11-12) YYYY-MM-DD in JSON BODY'
+                end_date:
+                  type: date
+                  description: ''
+                  example: '(2023-11-12) YYYY-MM-DD in JSON BODY'
+                '*start_time':
+                  type: time
+                  description: require
+                  example: '20:10 in JSON BODY'
+                end_time:
+                  type: time
+                  description: ''
+                  example: '20:10 in JSON BODY'
+                '*flex_date':
+                  type: "enum('yes'/'no')"
+                  description: require
+                  example: 'no in JSON BODY'
+                '*flex_time':
+                  type: "enum('yes'/'no')"
+                  description: require
+                  example: 'no in JSON BODY'
+                '*flex_location':
+                  type: "enum('yes'/'no')"
+                  description: require
+                  example: "no in JSON BODY\n\n\n<aside class=\"notice\">basepath/api/v1/review-business-list</aside>"
+              required:
+                - '*user_id'
+                - '*category_id'
+  /api/v1/comment-carpool:
+    post:
+      summary: commentCarpool
+      operationId: commentCarpool
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"user_id\":2,\n\"carpool_id\":1,\n\"comment\":\"this is comment\"\n}\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response..."
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer _token required'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully comment done...'
+                  data:
+                    user_id: 2
+                    carpool_id: 2
+                    comment: 'this is test comment'
+                    created_at: '27-Nov-2023 04:46 PM'
+                    id: 4
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully comment done...'
+                  data:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                        example: 2
+                      carpool_id:
+                        type: integer
+                        example: 2
+                      comment:
+                        type: string
+                        example: 'this is test comment'
+                      created_at:
+                        type: string
+                        example: '27-Nov-2023 04:46 PM'
+                      id:
+                        type: integer
+                        example: 4
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Invalid'
+                  status_code: 401
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Invalid'
+                  status_code:
+                    type: integer
+                    example: 401
+                  status:
+                    type: boolean
+                    example: false
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Authorised Token Not Found'
+                  status_code: 403
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Authorised Token Not Found'
+                  status_code:
+                    type: integer
+                    example: 403
+                  status:
+                    type: boolean
+                    example: false
+        419:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Token is Expired'
+                  status_code: 419
+                  status: false
+                properties:
+                  message:
+                    type: string
+                    example: 'Token is Expired'
+                  status_code:
+                    type: integer
+                    example: 419
+                  status:
+                    type: boolean
+                    example: false
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Pool & Cab Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*carpool_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*comment':
+                  type: string
+                  description: require
+                  example: "This is comment in JSON BODY\n\n<aside class=\"notice\">basepath/api/v1/comment-carpool</aside>"
+              required:
+                - '*user_id'
+                - '*carpool_id'
   /api/v1/country-search:
     post:
       summary: getCountrySearch
@@ -15727,11 +17194,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: inventore
+                  example: iste
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: sit
+                  example: ut
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -15892,11 +17359,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: porro
+                  example: eligendi
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: aut
+                  example: inventore
       security: []
   /api/v1/get-all-source:
     get:
@@ -16036,8 +17503,14 @@ tags:
     name: 'MovieVideo Related '
     description: "\nAPIs for managing all MovieVideo related listing and its Category & Language"
   -
+    name: 'News Videos Related '
+    description: "\nAPIs for managing all News Videos related listing and its Category"
+  -
     name: 'NrisTalk Related'
     description: "\nAPIs for managing all nris talk and its reply related"
+  -
+    name: 'Pool & Cab Related'
+    description: "\nAPIs for managing all Pool & Cab listing related Category,  and comments"
   -
     name: 'Search Related'
     description: "\nAPIs for managing all Search related listing"

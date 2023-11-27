@@ -62,7 +62,7 @@ class AdvertiseWithUsController extends BaseController
      * @bodyParam *first_name string required Example: "title text " in JSON BODY
      * @bodyParam *last_name string required Example: "title text " in JSON BODY
      * @bodyParam *message string  required Example: "message text " in JSON BODY
-     * @bodyParam *image image  Example: "abc.jpg" in JSON BODY
+     * @bodyParam *image image required Example: "abc.jpg" in JSON BODY
      * @bodyParam *email string required Example: you@domain.com in JSON BODY
      * @bodyParam *mobile string required Example: 9090654320 in JSON BODY
      * @bodyParam *business_name string required Example: Address in JSON BODY

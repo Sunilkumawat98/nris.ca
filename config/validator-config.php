@@ -9,6 +9,7 @@ return [
         'state_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'city_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'event_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'carpool_id'            => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'talk_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'category_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'language_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
@@ -32,6 +33,19 @@ return [
         'dob'                   => "required|date|date_format:Y-m-d",
         'from_date'             => "required|date|date_format:Y-m-d",
         'to_date'               => "required|date|date_format:Y-m-d",
+        
+        'journey_type'          => "bail|required|string|in:oneway,twoway",
+        'flex_date'             => "bail|required|string|in:no,yes",
+        'flex_time'             => "bail|required|string|in:no,yes",
+        'flex_location'         => "bail|required|string|in:no,yes",
+
+        'start_date'            => "required|date|date_format:Y-m-d",
+        'end_date'              => "required_if:journey_type,twoway|date|date_format:Y-m-d",
+
+        'start_time'            => "required|date_format:H:i",
+        'end_time'              => "required_if:journey_type,twoway|date_format:H:i",
+        
+
         'end_at'                => "required|date|date_format:Y-m-d",
         'cookie_session'        => "bail|required|numeric",
         'password'              => 'required|string|min:8|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
@@ -47,6 +61,7 @@ return [
         'business_list_id'      => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'training_id'           => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'blog_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
+        'news_id'               => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'video_id'              => "bail|required|numeric|regex:/^\d{1,15}?$/",
         'rating'                => "required|integer|min:1|max:5",
         'amount'                => 'required|numeric|regex:/^\d{1,6}(\.\d{1,2})?$/',
@@ -362,6 +377,62 @@ return [
         ],
 
 
+        /**
+         * 
+         * 
+         * News Videos
+         */
+
+         "newsByIdGet" => [
+            "required" => [
+                'news_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        /**
+         * 
+         * 
+         * Carpool
+         */
+
+        "carpoolCreate" => [        
+            "required" => [
+                'category_id', 'journey_type', 'user_id', 'contact_name', 'contact_email', 'contact_number', 'contact_address',
+                'start_date', 'end_date',  'start_time', 'end_time', 'flex_date', 'flex_time', 'flex_location', 
+            ],
+
+            "optional" => [
+                
+            ]
+        ],
+
+        "carpoolCommentCreate" => [
+            "required" => [
+                'user_id', "carpool_id", "comment"
+            ],
+            "optional" => [
+            ]
+        ],
+
+
+        "allCarpoolByCategoryGet" => [
+            "required" => [
+                'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+        "carpoolByIdGet" => [
+            "required" => [
+                'carpool_id'
+            ],
+            "optional" => [
+            ]
+        ],
 
         /**
          * 
