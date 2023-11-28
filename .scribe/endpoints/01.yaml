@@ -150,3 +150,111 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/get-gif-ads
+    metadata:
+      groupName: 'Advertise With Us Related'
+      groupDescription: |-
+
+        APIs for managing advertise with us
+      subgroup: ''
+      subgroupDescription: ''
+      title: getGifAds
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+
+        {
+        "country_id":1,
+        "ad_position":"top"
+        }
+
+
+        <aside class="notice">basepath/api/v1/get-gif-ads</aside>
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*country_id':
+        name: '*country_id'
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      '*ad_position':
+        name: '*ad_position'
+        description: ''
+        required: true
+        example: 'top/left/right in JSON BODY'
+        type: enum
+        custom: []
+    cleanBodyParameters:
+      '*country_id': 1
+      '*ad_position': 'top/left/right in JSON BODY'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully your list found..",
+          "data": [
+          {
+          "id": 2,
+          "ad_position": "top",
+          "image": "PATH/testimage2.gif",
+          "click_url": "testclickurl"
+          },
+          {
+          "id": 1,
+          "ad_position": "top",
+          "image": "PATH/testimage.gif",
+          "click_url": "thes.co.in"
+          }
+          ]
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

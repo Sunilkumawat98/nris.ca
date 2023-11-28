@@ -35,6 +35,7 @@ return [
         'to_date'               => "required|date|date_format:Y-m-d",
         
         'journey_type'          => "bail|required|string|in:oneway,twoway",
+        'ad_position'           => "bail|required|string|in:top,left,right",
         'flex_date'             => "bail|required|string|in:no,yes",
         'flex_time'             => "bail|required|string|in:no,yes",
         'flex_location'         => "bail|required|string|in:no,yes",
@@ -591,6 +592,17 @@ return [
                 
             ]
         ],
+
+
+        "homePageGifAdsGet" => [
+            "required" => [
+                'country_id', "ad_position"
+            ],
+            "optional" => [
+            ]
+        ],
+
+
 
         /*
         

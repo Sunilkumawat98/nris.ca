@@ -56,6 +56,28 @@ class AdvertiseWithUsLibrary
     }
     
     
+
+    public function homePageGifAdsGet($param)
+    {
+        $this->commonSer->inputValidators('homePageGifAdsGet', $param);
+        $serviceResponse                        = $this->advertiseSer->allhomepageGifGet($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
     
 
 

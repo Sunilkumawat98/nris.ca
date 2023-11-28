@@ -71,7 +71,11 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
      */
 
 
-     Route::post('/create-advertise-with-us', [AdvertiseWithUsController::class,'createAdvertiseWithUs']);
+    Route::post('/create-advertise-with-us', [AdvertiseWithUsController::class,'createAdvertiseWithUs']);
+    Route::post('/get-gif-ads', [AdvertiseWithUsController::class,'getGifAds']);
+
+
+
 
  /*
        Business Listing category & Sub Category
@@ -266,7 +270,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
 
  /*
-       Car poll related
+       Car pool related
 
 
     */

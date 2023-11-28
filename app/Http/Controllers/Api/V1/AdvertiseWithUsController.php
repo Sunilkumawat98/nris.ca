@@ -117,6 +117,87 @@ class AdvertiseWithUsController extends BaseController
     }
     
     
+
+
+     
+    /**
+     * getGifAds
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * 
+     * {
+            "country_id":1,
+            "ad_position":"top"
+        }
+
+     *
+     * <aside class="notice">basepath/api/v1/get-gif-ads</aside>
+     * @method POST
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *ad_position enum required Example: top/left/right in JSON BODY
+     * @return \Illuminate\Http\Response
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully your list found..",
+            "data": [
+                {
+                    "id": 2,
+                    "ad_position": "top",
+                    "image": "PATH/testimage2.gif",
+                    "click_url": "testclickurl"
+                },
+                {
+                    "id": 1,
+                    "ad_position": "top",
+                    "image": "PATH/testimage.gif",
+                    "click_url": "thes.co.in"
+                }
+            ]
+        } 
+     *
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+    public function getGifAds(Request $request)
+    {
+        $all = $request->all();
+        $response = $this->advertiseLib->homePageGifAdsGet($all);
+
+        if (!$response[$this->status]) {
+            return $this->sendError($response[$this->message], $response[$this->code]);
+        }
+        
+        return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+    }
+     
+ 
+ 
+ 
    
 
 

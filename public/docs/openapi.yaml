@@ -149,6 +149,141 @@ paths:
                 - '*business_name'
                 - '*wesite_link'
       security: []
+  /api/v1/get-gif-ads:
+    post:
+      summary: getGifAds
+      operationId: getGifAds
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n{\n\"country_id\":1,\n\"ad_position\":\"top\"\n}\n\n\n<aside class=\"notice\">basepath/api/v1/get-gif-ads</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully your list found..'
+                  data:
+                    -
+                      id: 2
+                      ad_position: top
+                      image: PATH/testimage2.gif
+                      click_url: testclickurl
+                    -
+                      id: 1
+                      ad_position: top
+                      image: PATH/testimage.gif
+                      click_url: thes.co.in
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully your list found..'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        ad_position: top
+                        image: PATH/testimage2.gif
+                        click_url: testclickurl
+                      -
+                        id: 1
+                        ad_position: top
+                        image: PATH/testimage.gif
+                        click_url: thes.co.in
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        ad_position:
+                          type: string
+                          example: top
+                        image:
+                          type: string
+                          example: PATH/testimage2.gif
+                        click_url:
+                          type: string
+                          example: testclickurl
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'List not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'List not found...'
+                  data:
+                    type: array
+                    example: []
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 500
+                  message: 'Oops, something went wrong...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 500
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Advertise With Us Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*ad_position':
+                  type: enum
+                  description: ''
+                  example: 'top/left/right in JSON BODY'
+              required:
+                - '*country_id'
+                - '*ad_position'
+      security: []
   /api/v1/get-all-blog-category:
     get:
       summary: getAllCategory
@@ -8905,35 +9040,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: eum
+                  example: vel
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: enim
+                  example: magni
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: otha51@example.com
+                  example: nayeli81@example.com
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: expedita
+                  example: veniam
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: consequatur
+                  example: blanditiis
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: animi
+                  example: et
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: adipisci
+                  example: nobis
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: amet
+                  example: pariatur
       security: []
   /api/v1/login:
     post:
@@ -9054,11 +9189,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: dolorem
+                  example: modi
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: aliquid
+                  example: ex
       security: []
   /api/v1/forgot-pass:
     post:
@@ -9143,7 +9278,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: quae
+                  example: qui
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -9208,15 +9343,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: qolson@example.com
+                  example: ratke.lyric@example.net
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: voluptatem
+                  example: deleniti
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: est
+                  example: dolor
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -17194,11 +17329,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: iste
+                  example: officia
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: ut
+                  example: autem
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -17359,11 +17494,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: eligendi
+                  example: consequatur
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: inventore
+                  example: vel
       security: []
   /api/v1/get-all-source:
     get:

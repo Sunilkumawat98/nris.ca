@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f97e89ce-4731-4983-8712-575c71cf01db",
+        "_postman_id": "c6b9689d-8305-4b10-8005-1bc3dc802366",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -59,6 +59,56 @@
                             "header": [],
                             "code": 500,
                             "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getGifAds",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-gif-ads",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-gif-ads"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*ad_position\":\"top\\\/left\\\/right in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n{\n\"country_id\":1,\n\"ad_position\":\"top\"\n}\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-gif-ads<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully your list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"ad_position\": \"top\",\n\"image\": \"PATH\/testimage2.gif\",\n\"click_url\": \"testclickurl\"\n},\n{\n\"id\": 1,\n\"ad_position\": \"top\",\n\"image\": \"PATH\/testimage.gif\",\n\"click_url\": \"thes.co.in\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
                             "name": ""
                         }
                     ]
@@ -2257,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"eum\",\"*last_name\":\"enim\",\"*email\":\"otha51@example.com\",\"*dob\":\"expedita\",\"*mobile\":\"consequatur\",\"*password\":\"animi\",\"*country_id\":\"adipisci\",\"*state_id\":\"amet\"}"
+                            "raw": "{\"*first_name\":\"vel\",\"*last_name\":\"magni\",\"*email\":\"nayeli81@example.com\",\"*dob\":\"veniam\",\"*mobile\":\"blanditiis\",\"*password\":\"et\",\"*country_id\":\"nobis\",\"*state_id\":\"pariatur\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2307,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"dolorem\",\"*password\":\"aliquid\"}"
+                            "raw": "{\"*email_id\":\"modi\",\"*password\":\"ex\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2357,7 +2407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"quae\"}"
+                            "raw": "{\"*email_id\":\"qui\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2407,7 +2457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"qolson@example.com\",\"*new_password\":\"voluptatem\",\"*retype_password\":\"est\"}"
+                            "raw": "{\"*email\":\"ratke.lyric@example.net\",\"*new_password\":\"deleniti\",\"*retype_password\":\"dolor\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4713,7 +4763,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"iste\",\"*state_id\":\"ut\"}"
+                            "raw": "{\"*country_id\":\"officia\",\"*state_id\":\"autem\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4763,7 +4813,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"eligendi\",\"*state_id\":\"inventore\"}"
+                            "raw": "{\"*country_id\":\"consequatur\",\"*state_id\":\"vel\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

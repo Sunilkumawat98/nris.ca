@@ -11,6 +11,7 @@ use Illuminate\Pagination\Paginator;
 use App\Http\Controllers\Api\V1\BaseController;
 use Log;
 use App\Models\AdvertiseWithUs;
+use App\Models\GifAds;
 use App\Exceptions;
 use Illuminate\Support\Str;
 
@@ -113,5 +114,60 @@ class AdvertiseWithUsService
     }
     
 
+
+
+
+
+    /**
+        
+        * method allhomepageGifGet()
+        * 
+        * @param
+        * country_id
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function allhomepageGifGet($param)
+    {
+        $return[$this->status]                      = false;
+        $return[$this->message]                     = 'Oops, something went wrong...';
+        $return[$this->code]                        = 500;
+        $return[$this->data]                        = [];
+        
+        $result                     = GifAds::where('country_id', $param['country_id'])
+                                        ->where('ad_position',$param['ad_position'])
+                                        ->where('is_live',1)
+                                        ->where('status',1)
+                                        ->whereDate('end_date','>',now())
+                                        ->orderBy('id', 'DESC')->get();
+
+
+    
+        if(count($result)>0)
+        {
+            $result->makeHidden(['country_id', 'state_id', 'category_id', 'ad_name', 'ad_contact', 'ad_address', 'amount', 'start_date', 'end_date', 'total_views']);
+            $result                 = $result->toArray();
+            $return[$this->status]  = true;
+            $return[$this->message] = 'Successfully your list found..';
+            $return[$this->code]    = 200;
+            $return[$this->data]    = $result;
+        }
+        else
+        {
+            $return[$this->status]  = false;
+            $return[$this->message] = 'List not found...';
+            $return[$this->code]    = 404;
+            $return[$this->data]    = [];
+        }
+
+
+        return $return;
+    }
 
 }
