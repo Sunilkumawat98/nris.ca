@@ -397,7 +397,7 @@
                 <a href="{{ route('gif_advertisement.index') }}" class="nav-link {{ request()->is('gif_advertisement') || request()->is('gif_advertisement/*') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-calendar"></i>
                   <p>
-                    Advertise With us
+                    Gif Ads
                   </p>
                 </a>
               </li>
