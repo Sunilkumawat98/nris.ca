@@ -174,6 +174,12 @@ class PermissionRoleSeeder extends Seeder
             ['role_id' => 1, 'permission_id'=>153, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>154, 'is_active' => 1],
             ['role_id' => 1, 'permission_id'=>155, 'is_active' => 1],
+
+            ['role_id' => 1, 'permission_id'=>156, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>157, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>158, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>159, 'is_active' => 1],
+            ['role_id' => 1, 'permission_id'=>160, 'is_active' => 1],
             
             
 

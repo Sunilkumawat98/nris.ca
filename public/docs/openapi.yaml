@@ -9040,35 +9040,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: vel
+                  example: est
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: magni
+                  example: earum
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: nayeli81@example.com
+                  example: ferry.marilie@example.org
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: veniam
+                  example: blanditiis
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: blanditiis
+                  example: perspiciatis
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: et
+                  example: corrupti
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: nobis
+                  example: sunt
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: pariatur
+                  example: magnam
       security: []
   /api/v1/login:
     post:
@@ -9189,11 +9189,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: modi
+                  example: et
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: ex
+                  example: aut
       security: []
   /api/v1/forgot-pass:
     post:
@@ -9278,7 +9278,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: qui
+                  example: molestias
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -9343,15 +9343,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: ratke.lyric@example.net
+                  example: jerad68@example.org
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: deleniti
+                  example: natus
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: dolor
+                  example: officiis
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -14689,6 +14689,30 @@ paths:
                           meta_description: '0'
                           meta_keywords: '0'
                           created_at: '21-Sep-2023 03:49 PM'
+                          country:
+                            id: 1
+                            name: USA
+                            color: '#ef8888'
+                            code: US
+                            domain: usa
+                            image: NA
+                            c_meta_title: 'US META'
+                            c_meta_description: 'US DESC'
+                            c_meta_keywords: 'US KEY'
+                            created_at: null
+                          state:
+                            id: 1
+                            name: Alaska
+                            code: AL
+                            domain: alaska
+                            description: 'AL desc'
+                            logo: NA
+                            s_meta_title: 'Al title'
+                            s_meta_description: 'AL META'
+                            s_meta_keywords: 'AL key'
+                            header_image: 'NULL'
+                            header_image2: 'NULL'
+                            header_image3: 'NULL'
                     -
                       id: 1
                       name: 'Campus Job'
@@ -14731,6 +14755,30 @@ paths:
                             meta_description: '0'
                             meta_keywords: '0'
                             created_at: '21-Sep-2023 03:49 PM'
+                            country:
+                              id: 1
+                              name: USA
+                              color: '#ef8888'
+                              code: US
+                              domain: usa
+                              image: NA
+                              c_meta_title: 'US META'
+                              c_meta_description: 'US DESC'
+                              c_meta_keywords: 'US KEY'
+                              created_at: null
+                            state:
+                              id: 1
+                              name: Alaska
+                              code: AL
+                              domain: alaska
+                              description: 'AL desc'
+                              logo: NA
+                              s_meta_title: 'Al title'
+                              s_meta_description: 'AL META'
+                              s_meta_keywords: 'AL key'
+                              header_image: 'NULL'
+                              header_image2: 'NULL'
+                              header_image3: 'NULL'
                       -
                         id: 1
                         name: 'Campus Job'
@@ -14772,6 +14820,30 @@ paths:
                               meta_description: '0'
                               meta_keywords: '0'
                               created_at: '21-Sep-2023 03:49 PM'
+                              country:
+                                id: 1
+                                name: USA
+                                color: '#ef8888'
+                                code: US
+                                domain: usa
+                                image: NA
+                                c_meta_title: 'US META'
+                                c_meta_description: 'US DESC'
+                                c_meta_keywords: 'US KEY'
+                                created_at: null
+                              state:
+                                id: 1
+                                name: Alaska
+                                code: AL
+                                domain: alaska
+                                description: 'AL desc'
+                                logo: NA
+                                s_meta_title: 'Al title'
+                                s_meta_description: 'AL META'
+                                s_meta_keywords: 'AL key'
+                                header_image: 'NULL'
+                                header_image2: 'NULL'
+                                header_image3: 'NULL'
                           items:
                             type: object
                             properties:
@@ -14823,6 +14895,78 @@ paths:
                               created_at:
                                 type: string
                                 example: '21-Sep-2023 03:49 PM'
+                              country:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 1
+                                  name:
+                                    type: string
+                                    example: USA
+                                  color:
+                                    type: string
+                                    example: '#ef8888'
+                                  code:
+                                    type: string
+                                    example: US
+                                  domain:
+                                    type: string
+                                    example: usa
+                                  image:
+                                    type: string
+                                    example: NA
+                                  c_meta_title:
+                                    type: string
+                                    example: 'US META'
+                                  c_meta_description:
+                                    type: string
+                                    example: 'US DESC'
+                                  c_meta_keywords:
+                                    type: string
+                                    example: 'US KEY'
+                                  created_at:
+                                    type: string
+                                    example: null
+                              state:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 1
+                                  name:
+                                    type: string
+                                    example: Alaska
+                                  code:
+                                    type: string
+                                    example: AL
+                                  domain:
+                                    type: string
+                                    example: alaska
+                                  description:
+                                    type: string
+                                    example: 'AL desc'
+                                  logo:
+                                    type: string
+                                    example: NA
+                                  s_meta_title:
+                                    type: string
+                                    example: 'Al title'
+                                  s_meta_description:
+                                    type: string
+                                    example: 'AL META'
+                                  s_meta_keywords:
+                                    type: string
+                                    example: 'AL key'
+                                  header_image:
+                                    type: string
+                                    example: 'NULL'
+                                  header_image2:
+                                    type: string
+                                    example: 'NULL'
+                                  header_image3:
+                                    type: string
+                                    example: 'NULL'
         500:
           description: ''
           content:
@@ -17329,11 +17473,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: officia
+                  example: unde
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: autem
+                  example: beatae
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -17494,11 +17638,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: consequatur
+                  example: numquam
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: vel
+                  example: nulla
       security: []
   /api/v1/get-all-source:
     get:

@@ -198,6 +198,12 @@ class PermissionSeeder extends Seeder
             ['name' => 'show_advertise', 'name_slug'=>'show-advertise'],
             ['name' => 'delete_advertise', 'name_slug'=>'delete-advertise'],
 
+            ['name' => 'manage_homepagenews', 'name_slug'=>'manage-homepagenews'],
+            ['name' => 'create_homepagenews', 'name_slug'=>'create-homepagenews'],
+            ['name' => 'edit_homepagenews', 'name_slug'=>'edit-homepagenews'],
+            ['name' => 'show_homepagenews', 'name_slug'=>'show-homepagenews'],
+            ['name' => 'delete_homepagenews', 'name_slug'=>'delete-homepagenews'],
+
 
             ['name' => 'manage_gif_advertisement', 'name_slug'=>'manage-gif-advertisement'],
             ['name' => 'create_gif_advertisement', 'name_slug'=>'create-gif-advertisement'],

@@ -39,6 +39,7 @@ use App\Http\Controllers\Admin\MovieVideoController;
 use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\AdvertiseWithUsController;
 use App\Http\Controllers\Admin\GifAdsController;
+use App\Http\Controllers\Admin\NewsVideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -194,6 +195,9 @@ Route::domain(config('app.domain'))->group(function () {
 
         Route::resource('news_letter', NewsLetterController::class);
         Route::post('/news_letter/{id}/active-status', [NewsLetterController::class, 'livePause'])->name('news_letter.activeStatus');
+
+        Route::resource('homepage_news', NewsVideosController::class);
+        Route::post('/homepage_news/{id}/active-status', [NewsVideosController::class, 'livePause'])->name('homepage_news.activeStatus');
 
         Route::resource('advertise_with_us', AdvertiseWithUsController::class);
         Route::post('/advertise_with_us/{id}/active-status', [AdvertiseWithUsController::class, 'livePause'])->name('advertise_with_us.activeStatus');

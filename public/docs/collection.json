@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c6b9689d-8305-4b10-8005-1bc3dc802366",
+        "_postman_id": "076386c7-8ca2-4af5-ad8d-16027dcdec51",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -2307,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"vel\",\"*last_name\":\"magni\",\"*email\":\"nayeli81@example.com\",\"*dob\":\"veniam\",\"*mobile\":\"blanditiis\",\"*password\":\"et\",\"*country_id\":\"nobis\",\"*state_id\":\"pariatur\"}"
+                            "raw": "{\"*first_name\":\"est\",\"*last_name\":\"earum\",\"*email\":\"ferry.marilie@example.org\",\"*dob\":\"blanditiis\",\"*mobile\":\"perspiciatis\",\"*password\":\"corrupti\",\"*country_id\":\"sunt\",\"*state_id\":\"magnam\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2357,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"modi\",\"*password\":\"ex\"}"
+                            "raw": "{\"*email_id\":\"et\",\"*password\":\"aut\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2407,7 +2407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"qui\"}"
+                            "raw": "{\"*email_id\":\"molestias\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2457,7 +2457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"ratke.lyric@example.net\",\"*new_password\":\"deleniti\",\"*retype_password\":\"dolor\"}"
+                            "raw": "{\"*email\":\"jerad68@example.org\",\"*new_password\":\"natus\",\"*retype_password\":\"officiis\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4011,7 +4011,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Accomodation\",\n\"slug\": \"accomodation\",\n\"created_at\": \"19-Sep-2023 12:58 PM\",\n\"category_data\": [\n{\n\"id\": 8,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 2,\n\"university_id\": 4,\n\"user_id\": 2,\n\"title\": \"category 2 only new title this is  for testing title\",\n\"email\": \"test@email.com\",\n\"mobile\": \"9899998987\",\n\"address\": \"test address\",\n\"details\": \"0\",\n\"other_details\": \"0\",\n\"meta_title\": \"0\",\n\"meta_description\": \"0\",\n\"meta_keywords\": \"0\",\n\"created_at\": \"21-Sep-2023 03:49 PM\"\n}\n]\n},\n{\n\"id\": 1,\n\"name\": \"Campus Job\",\n\"slug\": \"campus-job\",\n\"created_at\": \"19-Sep-2023 12:38 PM\",\n\"category_data\": []\n}\n]\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Accomodation\",\n\"slug\": \"accomodation\",\n\"created_at\": \"19-Sep-2023 12:58 PM\",\n\"category_data\": [\n{\n\"id\": 8,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 2,\n\"university_id\": 4,\n\"user_id\": 2,\n\"title\": \"category 2 only new title this is  for testing title\",\n\"email\": \"test@email.com\",\n\"mobile\": \"9899998987\",\n\"address\": \"test address\",\n\"details\": \"0\",\n\"other_details\": \"0\",\n\"meta_title\": \"0\",\n\"meta_description\": \"0\",\n\"meta_keywords\": \"0\",\n\"created_at\": \"21-Sep-2023 03:49 PM\",\n\"country\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#ef8888\",\n\"code\": \"US\",\n\"domain\": \"usa\",\n\"image\": \"NA\",\n\"c_meta_title\": \"US META\",\n\"c_meta_description\": \"US DESC\",\n\"c_meta_keywords\": \"US KEY\",\n\"created_at\": null\n},\n\"state\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n}\n}\n]\n},\n{\n\"id\": 1,\n\"name\": \"Campus Job\",\n\"slug\": \"campus-job\",\n\"created_at\": \"19-Sep-2023 12:38 PM\",\n\"category_data\": []\n}\n]\n}",
                             "name": ""
                         },
                         {
@@ -4763,7 +4763,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"officia\",\"*state_id\":\"autem\"}"
+                            "raw": "{\"*country_id\":\"unde\",\"*state_id\":\"beatae\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4813,7 +4813,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"consequatur\",\"*state_id\":\"vel\"}"
+                            "raw": "{\"*country_id\":\"numquam\",\"*state_id\":\"nulla\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

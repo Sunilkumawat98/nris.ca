@@ -369,6 +369,19 @@
               </li>
             @endif
 
+
+
+            @if(auth()->user()->hasPermission('manage_homepagenews'))
+              <li class="nav-item {{ request()->is('homepage_news') || request()->is('homepage_news/*') ? 'menu-open' : '' }}">
+                <a href="{{ route('homepage_news.index') }}" class="nav-link {{ request()->is('homepage_news') || request()->is('homepage_news/*') ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    News Videos
+                  </p>
+                </a>
+              </li>
+            @endif
+
             
             @if(auth()->user()->hasPermission('manage_news_letter'))
               <li class="nav-item {{ request()->is('news_letter') || request()->is('news_letter/*') ? 'menu-open' : '' }}">

@@ -571,9 +571,35 @@ class StudentTalkController extends BaseController
                             "meta_title": "0",
                             "meta_description": "0",
                             "meta_keywords": "0",
-                            "created_at": "21-Sep-2023 03:49 PM"
+                            "created_at": "21-Sep-2023 03:49 PM",
+                            "country": {
+                                "id": 1,
+                                "name": "USA",
+                                "color": "#ef8888",
+                                "code": "US",
+                                "domain": "usa",
+                                "image": "NA",
+                                "c_meta_title": "US META",
+                                "c_meta_description": "US DESC",
+                                "c_meta_keywords": "US KEY",
+                                "created_at": null
+                            },
+                            "state": {
+                                "id": 1,
+                                "name": "Alaska",
+                                "code": "AL",
+                                "domain": "alaska",
+                                "description": "AL desc",
+                                "logo": "NA",
+                                "s_meta_title": "Al title",
+                                "s_meta_description": "AL META",
+                                "s_meta_keywords": "AL key",
+                                "header_image": "NULL",
+                                "header_image2": "NULL",
+                                "header_image3": "NULL"
+                            }
                         }
-                    ]
+                    ] 
                 },
                 {
                     "id": 1,

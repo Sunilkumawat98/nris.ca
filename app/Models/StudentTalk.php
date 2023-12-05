@@ -33,7 +33,7 @@ class StudentTalk extends Model
     protected $casts            = [
         'created_at'            => "datetime:d-M-Y h:i A",        
         'updated_at'            => "datetime:d-M-Y h:i A",
-    ];
+    ]; 
 
     protected $fillable         = [        
         'country_id',
@@ -57,6 +57,14 @@ class StudentTalk extends Model
         'status'
     ];
 
+
+    public function country() {
+        return $this->belongsTo(Country::class, 'country_id', 'id');
+    }
+
+    public function state() {
+        return $this->belongsTo(State::class, 'state_id', 'id');
+    }
 
 
 }
