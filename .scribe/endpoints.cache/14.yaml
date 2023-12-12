@@ -344,6 +344,8 @@ endpoints:
           "title_slug": "title",
           "description": "description",
           "total_views": 0,
+          "created_at": "03-Nov-2023 06:16 PM",
+          "comments_count": 1,
           "category": {
           "id": 1,
           "name": "Category1"
@@ -351,6 +353,11 @@ endpoints:
           "subcategory": {
           "id": 1,
           "name": "Sub category 1"
+          },
+          "user": {
+          "id": 2,
+          "first_name": "1st name",
+          "last_name": "Last Name"
           }
           }
           ],
@@ -673,7 +680,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer VP6gv63518bcaZDekEhfa4d'
+      - 'Bearer cf36eZaD1a4VkEgP58vd6bh'
     controller: null
     method: null
     route: null
@@ -811,7 +818,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 6Pvc3DgVdka1b84eZaf56Eh'
+      - 'Bearer bVfa3h4ad6cgvPkDZ5Ee816'
     controller: null
     method: null
     route: null

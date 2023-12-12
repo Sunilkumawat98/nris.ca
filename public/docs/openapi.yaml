@@ -8206,12 +8206,18 @@ paths:
                         title_slug: title
                         description: description
                         total_views: 0
+                        created_at: '03-Nov-2023 06:16 PM'
+                        comments_count: 1
                         category:
                           id: 1
                           name: Category1
                         subcategory:
                           id: 1
                           name: 'Sub category 1'
+                        user:
+                          id: 2
+                          first_name: '1st name'
+                          last_name: 'Last Name'
                     first_page_url: 'PATH/get-all-forum-list-by-category-id?page=1'
                     from: 1
                     next_page_url: null
@@ -8244,12 +8250,18 @@ paths:
                             title_slug: title
                             description: description
                             total_views: 0
+                            created_at: '03-Nov-2023 06:16 PM'
+                            comments_count: 1
                             category:
                               id: 1
                               name: Category1
                             subcategory:
                               id: 1
                               name: 'Sub category 1'
+                            user:
+                              id: 2
+                              first_name: '1st name'
+                              last_name: 'Last Name'
                         items:
                           type: object
                           properties:
@@ -8268,6 +8280,12 @@ paths:
                             total_views:
                               type: integer
                               example: 0
+                            created_at:
+                              type: string
+                              example: '03-Nov-2023 06:16 PM'
+                            comments_count:
+                              type: integer
+                              example: 1
                             category:
                               type: object
                               properties:
@@ -8286,6 +8304,18 @@ paths:
                                 name:
                                   type: string
                                   example: 'Sub category 1'
+                            user:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                first_name:
+                                  type: string
+                                  example: '1st name'
+                                last_name:
+                                  type: string
+                                  example: 'Last Name'
                       first_page_url:
                         type: string
                         example: 'PATH/get-all-forum-list-by-category-id?page=1'
@@ -9040,35 +9070,35 @@ paths:
                 '*first_name':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: est
+                  example: adipisci
                 '*last_name':
                   type: required
                   description: "String     Ex ('def')"
-                  example: earum
+                  example: perspiciatis
                 '*email':
                   type: required
                   description: "Email      Ex ('you@domain.com')"
-                  example: ferry.marilie@example.org
+                  example: kristian98@example.net
                 '*dob':
                   type: required
                   description: "Date       Ex ('YYYY-MM-DD')"
-                  example: blanditiis
+                  example: et
                 '*mobile':
                   type: required
                   description: "String     Ex ('9876****09')"
-                  example: perspiciatis
+                  example: veritatis
                 '*password':
                   type: required
                   description: "String     Ex ('Abc')"
-                  example: corrupti
+                  example: est
                 '*country_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: sunt
+                  example: fugiat
                 '*state_id':
                   type: required
                   description: "Number     Ex ('1/2/3/4')"
-                  example: magnam
+                  example: ad
       security: []
   /api/v1/login:
     post:
@@ -9189,11 +9219,11 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: et
+                  example: ut
                 '*password':
                   type: required
                   description: "String     Ex ('********')"
-                  example: aut
+                  example: saepe
       security: []
   /api/v1/forgot-pass:
     post:
@@ -9278,7 +9308,7 @@ paths:
                 '*email_id':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: molestias
+                  example: harum
       security: []
   /api/v1/forgot-password-change:
     post:
@@ -9343,15 +9373,15 @@ paths:
                 '*email':
                   type: required
                   description: "Number     Ex ('you@domain.com')"
-                  example: jerad68@example.org
+                  example: trystan64@example.org
                 '*new_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: natus
+                  example: illo
                 '*retype_password':
                   type: required
                   description: "String     Ex ('Abc@123')"
-                  example: officiis
+                  example: est
       security: []
   /api/v1/get-all-movie-video-category:
     get:
@@ -14689,6 +14719,11 @@ paths:
                           meta_description: '0'
                           meta_keywords: '0'
                           created_at: '21-Sep-2023 03:49 PM'
+                          university:
+                            id: 4
+                            name: 'King Bin Salman University'
+                            website: www.websitelink.com
+                            education_field: BCA
                           country:
                             id: 1
                             name: USA
@@ -14755,6 +14790,11 @@ paths:
                             meta_description: '0'
                             meta_keywords: '0'
                             created_at: '21-Sep-2023 03:49 PM'
+                            university:
+                              id: 4
+                              name: 'King Bin Salman University'
+                              website: www.websitelink.com
+                              education_field: BCA
                             country:
                               id: 1
                               name: USA
@@ -14820,6 +14860,11 @@ paths:
                               meta_description: '0'
                               meta_keywords: '0'
                               created_at: '21-Sep-2023 03:49 PM'
+                              university:
+                                id: 4
+                                name: 'King Bin Salman University'
+                                website: www.websitelink.com
+                                education_field: BCA
                               country:
                                 id: 1
                                 name: USA
@@ -14895,6 +14940,21 @@ paths:
                               created_at:
                                 type: string
                                 example: '21-Sep-2023 03:49 PM'
+                              university:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 4
+                                  name:
+                                    type: string
+                                    example: 'King Bin Salman University'
+                                  website:
+                                    type: string
+                                    example: www.websitelink.com
+                                  education_field:
+                                    type: string
+                                    example: BCA
                               country:
                                 type: object
                                 properties:
@@ -17473,11 +17533,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: unde
+                  example: accusamus
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: beatae
+                  example: quia
       security: []
   /api/v1/get-latest-desi-movies:
     post:
@@ -17638,11 +17698,11 @@ paths:
                 '*country_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: numquam
+                  example: beatae
                 '*state_id':
                   type: required
                   description: 'integer     Ex 1/2/3'
-                  example: nulla
+                  example: ea
       security: []
   /api/v1/get-all-source:
     get:

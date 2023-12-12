@@ -66,5 +66,9 @@ class StudentTalk extends Model
         return $this->belongsTo(State::class, 'state_id', 'id');
     }
 
+    public function university() {
+        return $this->belongsTo(University::class, 'university_id', 'id')->select(['id','name', 'website', 'education_field']);
+    }
+
 
 }

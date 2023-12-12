@@ -572,6 +572,12 @@ class StudentTalkController extends BaseController
                             "meta_description": "0",
                             "meta_keywords": "0",
                             "created_at": "21-Sep-2023 03:49 PM",
+                            "university": {
+                                "id": 4,
+                                "name": "King Bin Salman University",
+                                "website": "www.websitelink.com",
+                                "education_field": "BCA"
+                            },
                             "country": {
                                 "id": 1,
                                 "name": "USA",

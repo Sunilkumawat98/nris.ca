@@ -409,6 +409,12 @@ endpoints:
           "meta_description": "0",
           "meta_keywords": "0",
           "created_at": "21-Sep-2023 03:49 PM",
+          "university": {
+          "id": 4,
+          "name": "King Bin Salman University",
+          "website": "www.websitelink.com",
+          "education_field": "BCA"
+          },
           "country": {
           "id": 1,
           "name": "USA",
@@ -649,7 +655,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer cdDfa43Zak6ebgvh6EVP815'
+      - 'Bearer 5ZEVga6eckf81dbD6v4Ph3a'
     controller: null
     method: null
     route: null
@@ -873,7 +879,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer e4661dbPE8aVkcag3DZfv5h'
+      - 'Bearer 8bavd66kaZ4cPf5EVh1ge3D'
     controller: null
     method: null
     route: null

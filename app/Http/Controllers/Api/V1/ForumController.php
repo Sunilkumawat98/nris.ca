@@ -285,6 +285,8 @@ class ForumController extends BaseController
                         "title_slug": "title",
                         "description": "description",
                         "total_views": 0,
+                        "created_at": "03-Nov-2023 06:16 PM",
+                        "comments_count": 1,
                         "category": {
                             "id": 1,
                             "name": "Category1"
@@ -292,6 +294,11 @@ class ForumController extends BaseController
                         "subcategory": {
                             "id": 1,
                             "name": "Sub category 1"
+                        },
+                        "user": {
+                            "id": 2,
+                            "first_name": "1st name",
+                            "last_name": "Last Name"
                         }
                     }
                 ],

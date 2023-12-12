@@ -480,7 +480,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 5, 2023</li>
+        <li>Last updated: December 12, 2023</li>
     </ul>
 </div>
 
@@ -9654,6 +9654,8 @@ fetch(url, {
                 &quot;title_slug&quot;: &quot;title&quot;,
                 &quot;description&quot;: &quot;description&quot;,
                 &quot;total_views&quot;: 0,
+                &quot;created_at&quot;: &quot;03-Nov-2023 06:16 PM&quot;,
+                &quot;comments_count&quot;: 1,
                 &quot;category&quot;: {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;Category1&quot;
@@ -9661,6 +9663,11 @@ fetch(url, {
                 &quot;subcategory&quot;: {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;Sub category 1&quot;
+                },
+                &quot;user&quot;: {
+                    &quot;id&quot;: 2,
+                    &quot;first_name&quot;: &quot;1st name&quot;,
+                    &quot;last_name&quot;: &quot;Last Name&quot;
                 }
             }
         ],
@@ -10563,14 +10570,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"est\",
-    \"*last_name\": \"earum\",
-    \"*email\": \"ferry.marilie@example.org\",
-    \"*dob\": \"blanditiis\",
-    \"*mobile\": \"perspiciatis\",
-    \"*password\": \"corrupti\",
-    \"*country_id\": \"sunt\",
-    \"*state_id\": \"magnam\"
+    \"*first_name\": \"adipisci\",
+    \"*last_name\": \"perspiciatis\",
+    \"*email\": \"kristian98@example.net\",
+    \"*dob\": \"et\",
+    \"*mobile\": \"veritatis\",
+    \"*password\": \"est\",
+    \"*country_id\": \"fugiat\",
+    \"*state_id\": \"ad\"
 }"
 </code></pre></div>
 
@@ -10586,14 +10593,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "est",
-    "*last_name": "earum",
-    "*email": "ferry.marilie@example.org",
-    "*dob": "blanditiis",
-    "*mobile": "perspiciatis",
-    "*password": "corrupti",
-    "*country_id": "sunt",
-    "*state_id": "magnam"
+    "*first_name": "adipisci",
+    "*last_name": "perspiciatis",
+    "*email": "kristian98@example.net",
+    "*dob": "et",
+    "*mobile": "veritatis",
+    "*password": "est",
+    "*country_id": "fugiat",
+    "*state_id": "ad"
 };
 
 fetch(url, {
@@ -10719,10 +10726,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="est"
+               value="adipisci"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>est</code></p>
+<p>String     Ex ('Abc') Example: <code>adipisci</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -10730,10 +10737,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="earum"
+               value="perspiciatis"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>earum</code></p>
+<p>String     Ex ('def') Example: <code>perspiciatis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -10741,10 +10748,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="ferry.marilie@example.org"
+               value="kristian98@example.net"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>ferry.marilie@example.org</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>kristian98@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -10752,10 +10759,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="blanditiis"
+               value="et"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>blanditiis</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -10763,10 +10770,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="perspiciatis"
+               value="veritatis"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>perspiciatis</code></p>
+<p>String     Ex ('9876****09') Example: <code>veritatis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10774,10 +10781,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="corrupti"
+               value="est"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>corrupti</code></p>
+<p>String     Ex ('Abc') Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -10785,10 +10792,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="sunt"
+               value="fugiat"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>sunt</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>fugiat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -10796,10 +10803,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="magnam"
+               value="ad"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>magnam</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>ad</code></p>
         </div>
         </form>
 
@@ -10827,8 +10834,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"et\",
-    \"*password\": \"aut\"
+    \"*email_id\": \"ut\",
+    \"*password\": \"saepe\"
 }"
 </code></pre></div>
 
@@ -10844,8 +10851,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "et",
-    "*password": "aut"
+    "*email_id": "ut",
+    "*password": "saepe"
 };
 
 fetch(url, {
@@ -10979,10 +10986,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="et"
+               value="ut"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>et</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10990,10 +10997,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="aut"
+               value="saepe"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>aut</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>saepe</code></p>
         </div>
         </form>
 
@@ -11016,7 +11023,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"molestias\"
+    \"*email_id\": \"harum\"
 }"
 </code></pre></div>
 
@@ -11032,7 +11039,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "molestias"
+    "*email_id": "harum"
 };
 
 fetch(url, {
@@ -11155,10 +11162,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="molestias"
+               value="harum"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>molestias</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>harum</code></p>
         </div>
         </form>
 
@@ -11181,9 +11188,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"jerad68@example.org\",
-    \"*new_password\": \"natus\",
-    \"*retype_password\": \"officiis\"
+    \"*email\": \"trystan64@example.org\",
+    \"*new_password\": \"illo\",
+    \"*retype_password\": \"est\"
 }"
 </code></pre></div>
 
@@ -11199,9 +11206,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "jerad68@example.org",
-    "*new_password": "natus",
-    "*retype_password": "officiis"
+    "*email": "trystan64@example.org",
+    "*new_password": "illo",
+    "*retype_password": "est"
 };
 
 fetch(url, {
@@ -11313,10 +11320,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="jerad68@example.org"
+               value="trystan64@example.org"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>jerad68@example.org</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>trystan64@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -11324,10 +11331,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="natus"
+               value="illo"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>natus</code></p>
+<p>String     Ex ('Abc@123') Example: <code>illo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -11335,10 +11342,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="officiis"
+               value="est"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>officiis</code></p>
+<p>String     Ex ('Abc@123') Example: <code>est</code></p>
         </div>
         </form>
 
@@ -17673,6 +17680,12 @@ fetch(url, {
                     &quot;meta_description&quot;: &quot;0&quot;,
                     &quot;meta_keywords&quot;: &quot;0&quot;,
                     &quot;created_at&quot;: &quot;21-Sep-2023 03:49 PM&quot;,
+                    &quot;university&quot;: {
+                        &quot;id&quot;: 4,
+                        &quot;name&quot;: &quot;King Bin Salman University&quot;,
+                        &quot;website&quot;: &quot;www.websitelink.com&quot;,
+                        &quot;education_field&quot;: &quot;BCA&quot;
+                    },
                     &quot;country&quot;: {
                         &quot;id&quot;: 1,
                         &quot;name&quot;: &quot;USA&quot;,
@@ -20880,8 +20893,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"unde\",
-    \"*state_id\": \"beatae\"
+    \"*country_id\": \"accusamus\",
+    \"*state_id\": \"quia\"
 }"
 </code></pre></div>
 
@@ -20897,8 +20910,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "unde",
-    "*state_id": "beatae"
+    "*country_id": "accusamus",
+    "*state_id": "quia"
 };
 
 fetch(url, {
@@ -21053,10 +21066,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="unde"
+               value="accusamus"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>unde</code></p>
+<p>integer     Ex 1/2/3 Example: <code>accusamus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -21064,10 +21077,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="beatae"
+               value="quia"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>beatae</code></p>
+<p>integer     Ex 1/2/3 Example: <code>quia</code></p>
         </div>
         </form>
 
@@ -21090,8 +21103,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"numquam\",
-    \"*state_id\": \"nulla\"
+    \"*country_id\": \"beatae\",
+    \"*state_id\": \"ea\"
 }"
 </code></pre></div>
 
@@ -21107,8 +21120,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "numquam",
-    "*state_id": "nulla"
+    "*country_id": "beatae",
+    "*state_id": "ea"
 };
 
 fetch(url, {
@@ -21251,10 +21264,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="numquam"
+               value="beatae"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>numquam</code></p>
+<p>integer     Ex 1/2/3 Example: <code>beatae</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -21262,10 +21275,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="nulla"
+               value="ea"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>nulla</code></p>
+<p>integer     Ex 1/2/3 Example: <code>ea</code></p>
         </div>
         </form>
 

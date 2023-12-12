@@ -222,10 +222,11 @@ class ForumService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                                     = Forum::with('category', 'subcategory')
+        $result                                     = Forum::with('category', 'subcategory', 'user', 'comments')
                                                         ->where('cat_id',$param['category_id'])
                                                         ->where('is_live',1)
                                                         ->where('status',1)
+                                                        ->withCount('comments')
                                                         ->orderBy('id', 'DESC');
 
         $total_count                                = $result->count();
@@ -242,7 +243,8 @@ class ForumService
                 'meta_description',
                 'meta_keywords',
                 'display_status',
-                'created_at',
+                'comments',
+                
             ]);
             $result                 = $result->toArray();
             $return[$this->status]  = true;

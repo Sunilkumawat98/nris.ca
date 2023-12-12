@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "076386c7-8ca2-4af5-ad8d-16027dcdec51",
+        "_postman_id": "aed8d75f-b482-4956-974f-a94c8bccf511",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -2094,7 +2094,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 1,\n\"title\": \"title\",\n\"title_slug\": \"title\",\n\"description\": \"description\",\n\"total_views\": 0,\n\"category\": {\n\"id\": 1,\n\"name\": \"Category1\"\n},\n\"subcategory\": {\n\"id\": 1,\n\"name\": \"Sub category 1\"\n}\n}\n],\n\"first_page_url\": \"PATH\/get-all-forum-list-by-category-id?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATH\/get-all-forum-list-by-category-id\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 1,\n\"title\": \"title\",\n\"title_slug\": \"title\",\n\"description\": \"description\",\n\"total_views\": 0,\n\"created_at\": \"03-Nov-2023 06:16 PM\",\n\"comments_count\": 1,\n\"category\": {\n\"id\": 1,\n\"name\": \"Category1\"\n},\n\"subcategory\": {\n\"id\": 1,\n\"name\": \"Sub category 1\"\n},\n\"user\": {\n\"id\": 2,\n\"first_name\": \"1st name\",\n\"last_name\": \"Last Name\"\n}\n}\n],\n\"first_page_url\": \"PATH\/get-all-forum-list-by-category-id?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATH\/get-all-forum-list-by-category-id\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
                             "name": ""
                         },
                         {
@@ -2307,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"est\",\"*last_name\":\"earum\",\"*email\":\"ferry.marilie@example.org\",\"*dob\":\"blanditiis\",\"*mobile\":\"perspiciatis\",\"*password\":\"corrupti\",\"*country_id\":\"sunt\",\"*state_id\":\"magnam\"}"
+                            "raw": "{\"*first_name\":\"adipisci\",\"*last_name\":\"perspiciatis\",\"*email\":\"kristian98@example.net\",\"*dob\":\"et\",\"*mobile\":\"veritatis\",\"*password\":\"est\",\"*country_id\":\"fugiat\",\"*state_id\":\"ad\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2357,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"et\",\"*password\":\"aut\"}"
+                            "raw": "{\"*email_id\":\"ut\",\"*password\":\"saepe\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2407,7 +2407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"molestias\"}"
+                            "raw": "{\"*email_id\":\"harum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2457,7 +2457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"jerad68@example.org\",\"*new_password\":\"natus\",\"*retype_password\":\"officiis\"}"
+                            "raw": "{\"*email\":\"trystan64@example.org\",\"*new_password\":\"illo\",\"*retype_password\":\"est\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4011,7 +4011,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Accomodation\",\n\"slug\": \"accomodation\",\n\"created_at\": \"19-Sep-2023 12:58 PM\",\n\"category_data\": [\n{\n\"id\": 8,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 2,\n\"university_id\": 4,\n\"user_id\": 2,\n\"title\": \"category 2 only new title this is  for testing title\",\n\"email\": \"test@email.com\",\n\"mobile\": \"9899998987\",\n\"address\": \"test address\",\n\"details\": \"0\",\n\"other_details\": \"0\",\n\"meta_title\": \"0\",\n\"meta_description\": \"0\",\n\"meta_keywords\": \"0\",\n\"created_at\": \"21-Sep-2023 03:49 PM\",\n\"country\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#ef8888\",\n\"code\": \"US\",\n\"domain\": \"usa\",\n\"image\": \"NA\",\n\"c_meta_title\": \"US META\",\n\"c_meta_description\": \"US DESC\",\n\"c_meta_keywords\": \"US KEY\",\n\"created_at\": null\n},\n\"state\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n}\n}\n]\n},\n{\n\"id\": 1,\n\"name\": \"Campus Job\",\n\"slug\": \"campus-job\",\n\"created_at\": \"19-Sep-2023 12:38 PM\",\n\"category_data\": []\n}\n]\n}",
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": [\n{\n\"id\": 2,\n\"name\": \"Accomodation\",\n\"slug\": \"accomodation\",\n\"created_at\": \"19-Sep-2023 12:58 PM\",\n\"category_data\": [\n{\n\"id\": 8,\n\"country_id\": 1,\n\"state_id\": 1,\n\"cat_id\": 2,\n\"university_id\": 4,\n\"user_id\": 2,\n\"title\": \"category 2 only new title this is  for testing title\",\n\"email\": \"test@email.com\",\n\"mobile\": \"9899998987\",\n\"address\": \"test address\",\n\"details\": \"0\",\n\"other_details\": \"0\",\n\"meta_title\": \"0\",\n\"meta_description\": \"0\",\n\"meta_keywords\": \"0\",\n\"created_at\": \"21-Sep-2023 03:49 PM\",\n\"university\": {\n\"id\": 4,\n\"name\": \"King Bin Salman University\",\n\"website\": \"www.websitelink.com\",\n\"education_field\": \"BCA\"\n},\n\"country\": {\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#ef8888\",\n\"code\": \"US\",\n\"domain\": \"usa\",\n\"image\": \"NA\",\n\"c_meta_title\": \"US META\",\n\"c_meta_description\": \"US DESC\",\n\"c_meta_keywords\": \"US KEY\",\n\"created_at\": null\n},\n\"state\": {\n\"id\": 1,\n\"name\": \"Alaska\",\n\"code\": \"AL\",\n\"domain\": \"alaska\",\n\"description\": \"AL desc\",\n\"logo\": \"NA\",\n\"s_meta_title\": \"Al title\",\n\"s_meta_description\": \"AL META\",\n\"s_meta_keywords\": \"AL key\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\"\n}\n}\n]\n},\n{\n\"id\": 1,\n\"name\": \"Campus Job\",\n\"slug\": \"campus-job\",\n\"created_at\": \"19-Sep-2023 12:38 PM\",\n\"category_data\": []\n}\n]\n}",
                             "name": ""
                         },
                         {
@@ -4763,7 +4763,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"unde\",\"*state_id\":\"beatae\"}"
+                            "raw": "{\"*country_id\":\"accusamus\",\"*state_id\":\"quia\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4813,7 +4813,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"numquam\",\"*state_id\":\"nulla\"}"
+                            "raw": "{\"*country_id\":\"beatae\",\"*state_id\":\"ea\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

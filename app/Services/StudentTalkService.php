@@ -375,7 +375,7 @@ class StudentTalkService
         $return[$this->code]                        = 500;
         $return[$this->data]                        = [];
         
-        $result                                     = StudentTalkCategory::with(['category_data.country','category_data.state','category_data' => function ($query) use ($param) {
+        $result                                     = StudentTalkCategory::with(['category_data.university','category_data.country','category_data.state','category_data' => function ($query) use ($param) {
                                                             $query->where('country_id', $param['country_id'])
                                                                     ->where('state_id', $param['state_id'])
                                                             ->take(1)->orderBy('id', 'DESC');

@@ -63,12 +63,11 @@ class Forum extends Model
     }
 
     public function user() {
-        return $this->belongsTo(User::class, 'user_id', 'id')->select(['id', 'name']);
+        return $this->belongsTo(User::class, 'user_id', 'id')->select(['id', 'first_name', 'last_name']);
     }
 
     public function comments() {
         return $this->hasMany(ForumComment::class, 'forum_id', 'id')->select(['id','forum_id','user_id','comment']);
     }
-
 
 }
