@@ -230,6 +230,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 
     Route::get('/get-all-training-category', [TrainingPlacementController::class,'getAllCategory']);
     Route::post('/get-training-list-by-category', [TrainingPlacementController::class,'getTraningPlacementListByCat']);
+    Route::post('/get-all-training-palcement', [TrainingPlacementController::class,'getAllTrainingPlacementList']);
     Route::post('/get-all-training-list-by-category-id', [TrainingPlacementController::class,'getAllTrainingPlacementListByCategoryId']);
     Route::post('/get-training-by-id', [TrainingPlacementController::class,'getTrainingPlacementById']);
 

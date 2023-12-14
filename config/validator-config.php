@@ -544,6 +544,17 @@ return [
         */
 
 
+
+
+        "allTrainingPlacementListingGet" => [
+            "required" => [
+                'country_id', 'state_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
+
         "trainingPlacementListingByCategoryGet" => [
             "required" => [
                 'country_id'

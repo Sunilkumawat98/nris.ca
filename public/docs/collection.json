@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "3c0a4ab1-8bde-4b3b-9a49-9080a7ad9609",
+        "_postman_id": "5ec071b2-6626-4cb9-97b3-d47d04f7eb2a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -2307,7 +2307,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*first_name\":\"blanditiis\",\"*last_name\":\"soluta\",\"*email\":\"marlin58@example.org\",\"*dob\":\"veritatis\",\"*mobile\":\"quam\",\"*password\":\"incidunt\",\"*country_id\":\"ad\",\"*state_id\":\"dolores\"}"
+                            "raw": "{\"*first_name\":\"et\",\"*last_name\":\"sunt\",\"*email\":\"telly70@example.org\",\"*dob\":\"eos\",\"*mobile\":\"tempore\",\"*password\":\"ut\",\"*country_id\":\"laudantium\",\"*state_id\":\"ut\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"first_name\":\"Abc\",\n\"last_name\":\"Def\",\n\"email\":\"You@domain.com\",\n\"dob\":\"2023-02-02\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\",\n\"country_id\":1,\n\"state_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
                         "auth": {
@@ -2357,7 +2357,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"et\",\"*password\":\"culpa\"}"
+                            "raw": "{\"*email_id\":\"tempora\",\"*password\":\"cum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\",\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
                         "auth": {
@@ -2407,7 +2407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email_id\":\"nisi\"}"
+                            "raw": "{\"*email_id\":\"sit\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
                         "auth": {
@@ -2457,7 +2457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*email\":\"sgoyette@example.net\",\"*new_password\":\"ipsam\",\"*retype_password\":\"quidem\"}"
+                            "raw": "{\"*email\":\"jackeline40@example.com\",\"*new_password\":\"eos\",\"*retype_password\":\"ipsum\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
                         "auth": {
@@ -4344,6 +4344,56 @@
                     ]
                 },
                 {
+                    "name": "getAllTrainingPlacementList",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-training-palcement",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-training-palcement"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nEX\n {\n\"country_id\":1,\n\"state_id\":1\n }\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data list found..\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 1,\n\"title\": \"Java training\",\n\"slug\": \"java-training\",\n\"description\": null,\n\"image\": \"http:\/\/localhost\/upload\/image-data\/TRAINING_IMAGE\/1695982951_Stone.png\",\n\"expire_at\": \"2023-10-05\",\n\"total_views\": null,\n\"created_at\": \"03-Oct-2023 04:08 PM\"\n}\n],\n\"first_page_url\": \"PATH\/v1\/get-all-training-palcement?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"PATH\/get-all-training-palcement\",\n\"per_page\": 10,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"List not found...\",\n\"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n\"status\": false,\n\"status_code\": 500,\n\"message\": \"Oops, something went wrong...\",\n\"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "getAllTrainingPlacementListByCategoryId",
                     "request": {
                         "url": {
@@ -4813,7 +4863,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"amet\",\"*state_id\":\"quisquam\"}"
+                            "raw": "{\"*country_id\":\"vero\",\"*state_id\":\"velit\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-desi-movies<\/aside>",
                         "auth": {
@@ -4863,7 +4913,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"*country_id\":\"reiciendis\",\"*state_id\":\"aliquam\"}"
+                            "raw": "{\"*country_id\":\"excepturi\",\"*state_id\":\"et\"}"
                         },
                         "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-latest-desi-movies<\/aside>",
                         "auth": {

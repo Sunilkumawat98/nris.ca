@@ -104,6 +104,97 @@ class TrainingPlacementController extends BaseController
     
 
 
+
+
+
+
+
+    /**
+     * getAllTrainingPlacementList
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * EX
+     *  {
+            "country_id":1,
+            "state_id":1
+     *  }
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * @method POST
+     * @bodyParam *country_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *state_id integer required Example: 1,2,3 in JSON BODY
+     *
+     * <aside class="notice">basepath/api/v1/get-all-training-palcement</aside>
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     *  
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully data list found..",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 1,
+                        "title": "Java training",
+                        "slug": "java-training",
+                        "description": null,
+                        "image": "http://localhost/upload/image-data/TRAINING_IMAGE/1695982951_Stone.png",
+                        "expire_at": "2023-10-05",
+                        "total_views": null,
+                        "created_at": "03-Oct-2023 04:08 PM"
+                    }
+                ],
+                "first_page_url": "PATH/v1/get-all-training-palcement?page=1",
+                "from": 1,
+                "next_page_url": null,
+                "path": "PATH/get-all-training-palcement",
+                "per_page": 10,
+                "prev_page_url": null,
+                "to": 1
+            }
+        }
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+     public function getAllTrainingPlacementList(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->traningLib->allTrainingPlacementListingGet($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+   
+     
+
+
      
    
       
