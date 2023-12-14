@@ -337,6 +337,68 @@ class MovieVideoService
         return $response;
     }
 
+ /**
+        
+        * method fetchMovieVideoByLanguageCategory()
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+
+
+    public function fetchMovieVideoByLanguageCategory($param)
+    {
+        $response = [
+            $this->status => false,
+            $this->message => 'Oops, something went wrong...',
+            $this->code => 500,
+            $this->data => [],
+        ];
+
+        $result = MovieVideo::with('language', 'category')
+            ->where('language_id', $param['language_id'])
+            ->where('category_id', $param['category_id'])
+            ->where('is_live', 1)
+            ->where('status', 1)
+            ->orderBy('id', 'DESC');
+            $total_count = $result->count();
+            $result = $result->simplePaginate(10);
+
+        if ($result->isNotEmpty()) {
+            
+            $likesCount = 0;
+            $dislikesCount = 0;
+
+            $result->each(function ($movieVideo) use (&$likesCount, &$dislikesCount) {
+                $likesCount += $movieVideo->likesCount()->count();
+                $dislikesCount += $movieVideo->dislikesCount()->count();
+                $movieVideo->makeHidden(['category_id', 'language_id', 'created_at']);
+
+                $movieVideo->total_likes = $likesCount;
+                $movieVideo->total_dislikes = $dislikesCount;
+            });
+
+            $response[$this->status] = true;
+            $response[$this->message] = 'Successfully data list found..';
+            $response[$this->code] = 200;
+            $response[$this->data]   = [
+                'total'=>$total_count,
+                'result'=>$result->toArray(),
+            ];
+        } else {
+            $response[$this->status] = false;
+            $response[$this->message] = 'List not found...';
+            $response[$this->code] = 404;
+        }
+
+        return $response;
+    }
+
     
 
 

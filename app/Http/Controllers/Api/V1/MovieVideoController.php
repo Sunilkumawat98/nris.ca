@@ -499,6 +499,104 @@ class MovieVideoController extends BaseController
      
 
 
+
+
+
+
+
+/**
+     * getMovieVideoByCategoryLanguage
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * EX
+     *  {
+            "language_id":1,
+            "category_id":1
+     *  }
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * @method POST
+     * @bodyParam *language_id integer required Example: 1,2,3 in JSON BODY
+     * @bodyParam *category_id integer required Example: 1,2,3 in JSON BODY
+     *
+     * <aside class="notice">basepath/api/v1/get-all-movie-video-by-category-language-id</aside>
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully data list found..",
+            "data": {
+                "total": 1,
+                "result": {
+                    "current_page": 1,
+                    "data": [
+                        {
+                            "id": 2,
+                            "name": "X-Men: Apocalypse",
+                            "link": "https://www.youtube.com/watch?v=COvnHv42T-A",
+                            "total_likes": 0,
+                            "total_dislikes": 1,
+                            "language": {
+                                "id": 2,
+                                "name": "English"
+                            },
+                            "category": {
+                                "id": 3,
+                                "name": "Action"
+                            }
+                        }
+                    ],
+                    "first_page_url": "PATH/get-all-movie-video-by-category-language-id?page=1",
+                    "from": 1,
+                    "next_page_url": null,
+                    "path": "PATH/get-all-movie-video-by-category-language-id",
+                    "per_page": 10,
+                    "prev_page_url": null,
+                    "to": 1
+                }
+            }
+        }
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+     public function getMovieVideoByCategoryLanguage(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->movieVideoLib->movieVideoByLanguageCategoryGet($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+
+
+
+
 /**
      * searchMovieVideo
      * 

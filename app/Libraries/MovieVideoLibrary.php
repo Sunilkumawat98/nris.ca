@@ -154,6 +154,28 @@ class MovieVideoLibrary
         return $return;
     }
     
+    public function movieVideoByLanguageCategoryGet($param)
+    {
+        $this->commonSer->inputValidators('movieVideoByLanguageCategoryGet', $param);
+        $serviceResponse                        = $this->movieVideoSer->fetchMovieVideoByLanguageCategory($param);
+        
+        if($serviceResponse[$this->status])
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = $serviceResponse[$this->data];
+        }
+        else
+        {
+            $return[$this->code]                = $serviceResponse[$this->code];
+            $return[$this->status]              = $serviceResponse[$this->status];
+            $return[$this->message]             = $serviceResponse[$this->message];
+            $return[$this->data]                = [];
+        }
+        return $return;
+    }
+    
     public function movieVideoSearch($param)
     {
         $this->commonSer->inputValidators('movieVideoSearch', $param);

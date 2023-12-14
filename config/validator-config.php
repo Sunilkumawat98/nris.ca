@@ -503,6 +503,14 @@ return [
             ]
         ],
 
+        "movieVideoByLanguageCategoryGet" => [
+            "required" => [
+                'language_id', 'category_id'
+            ],
+            "optional" => [
+            ]
+        ],
+
         "movieVideoSearch" => [
             "required" => [
                 'keyword'

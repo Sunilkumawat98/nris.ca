@@ -214,6 +214,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::get('/get-all-movie-video', [MovieVideoController::class,'getAllMovieVideo']);
     Route::post('/get-movie-video-by-category', [MovieVideoController::class,'getMovieVideoByCategory']);
     Route::post('/get-movie-video-by-language', [MovieVideoController::class,'getMovieVideoByLanguage']);
+    Route::post('/get-all-movie-video-by-category-language-id', [MovieVideoController::class,'getMovieVideoByCategoryLanguage']);
     Route::post('/search-movie-video', [MovieVideoController::class,'searchMovieVideo']);
 
     
