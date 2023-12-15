@@ -480,4 +480,78 @@ class ForumService
 
 
 
+    /**
+        
+        * method fetchMovieVideoSearch()
+        * 
+        *
+        * @return 
+        * 200
+        * 
+        * @error
+        * 500
+        * 
+    **/
+    
+    public function fetchSearchResults($param)
+    {
+        $response = [
+            $this->status   => false,
+            $this->message  => 'Data not found...',
+            $this->code     => 404,
+            $this->data     => [],
+        ];
+        
+        $result                                     = Forum::with('category', 'subcategory', 'user', 'comments');
+        
+
+        if ($param['keyword']) {
+            $result->where(function ($query) use ($param) {
+                $query->where('title', 'like', '%' . $param['keyword'] . '%');
+            });
+        }
+
+        $result->where('is_live', 1);
+        $result->where('status', 1);
+        $result->withCount('comments');
+        $result->orderBy('id', 'DESC');
+
+        $total_count = $result->count();
+        $result = $result->simplePaginate(10);
+
+
+        
+    
+        if(count($result)>0)
+        {
+            $result->makeHidden([
+                'user_id',
+                'cat_id',
+                'sub_cat_id',
+                'meta_title',
+                'meta_description',
+                'meta_keywords',
+                'display_status',
+                'comments',
+                
+            ]);
+
+            $response = [
+                $this->status   => true,
+                $this->message  => 'Successfully list get...',
+                $this->code     => 200,
+                $this->data     => [
+                    'total'=>$total_count,
+                    'result'=>$result->toArray(),
+                ],
+            ];
+        }
+        
+
+        return $response;
+    }
+
+
+
+
 }

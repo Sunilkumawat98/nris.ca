@@ -149,6 +149,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-nris-talk-list', [NrisTalkController::class,'getNrisTalkList']);
     Route::post('/get-nris-talk-reply-by-id', [NrisTalkController::class,'getNrisTalkReplyById']);
     Route::post('/like-nris-talk-by-id', [NrisTalkController::class,'likeNrisTalkById']);
+    Route::post('/search-nris-talk', [NrisTalkController::class,'searchData']);
 
 
 
@@ -265,6 +266,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
     Route::post('/get-all-forum-sub-category-by-id', [ForumController::class,'getAllSubCategoryById']);
     Route::post('/get-all-forum-list-by-category-id', [ForumController::class,'getAllForumListByCategoryId']);
     Route::post('/get-forum-by-id', [ForumController::class,'getForumById']);
+    Route::post('/search-forum', [ForumController::class,'searchData']);
     
 
 

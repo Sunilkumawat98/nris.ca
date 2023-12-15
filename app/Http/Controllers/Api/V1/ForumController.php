@@ -638,6 +638,110 @@ class ForumController extends BaseController
         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
     }
     
+
+
+
+
+
+/**
+     * searchForum
+     * 
+     * If everything is okay, you'll get a `200` OK response with data.
+     *
+     * EX
+     *  {
+            "keyword":text
+     *  }
+     * Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+     * @method POST
+     * @bodyParam *keyword string required Example: text in JSON BODY
+     *
+     * <aside class="notice">basepath/api/v1/search-forum</aside>
+     * @return \Illuminate\Http\Response
+     * 
+     *
+     * @response 200
+     * {
+            "status": true,
+            "status_code": 200,
+            "message": "Successfully list get...",
+            "data": {
+                "total": 2,
+                "result": {
+                    "current_page": 1,
+                    "data": [
+                        {
+                            "id": 3,
+                            "title": "title",
+                            "title_slug": "title",
+                            "description": "desc",
+                            "total_views": 0,
+                            "created_at": "03-Nov-2023 06:16 PM",
+                            "comments_count": 1,
+                            "category": {
+                                "id": 1,
+                                "name": "Test"
+                            },
+                            "subcategory": {
+                                "id": 1,
+                                "name": "Sub category 1"
+                            },
+                            "user": {
+                                "id": 2,
+                                "first_name": "User",
+                                "last_name": "Name"
+                            }
+                        }
+                    ],
+                    "first_page_url": "PATH/v1/search-forum?page=1",
+                    "from": 1,
+                    "next_page_url": null,
+                    "path": "PATH/search-forum",
+                    "per_page": 10,
+                    "prev_page_url": null,
+                    "to": 2
+                }
+            }
+        }
+     *
+     * @response 404
+     *  {
+            "status": false,
+            "status_code": 404,
+            "message": "List not found...",
+            "data": []
+     *  }
+     *
+     * @response 500
+     *  {
+            "status": false,
+            "status_code": 500,
+            "message": "Oops, something went wrong...",
+            "data": []
+     *  }
+     * 
+     *
+     */
+    
+    
+    
+    
+     public function searchData(Request $request)
+     {
+         $all = $request->all();
+         $response = $this->forumLib->dataSearch($all);
+ 
+         if (!$response[$this->status]) {
+             return $this->sendError($response[$this->message], $response[$this->code]);
+         }
+         
+         return $this->sendResponse($response[$this->data], $response[$this->message], $response[$this->code]);
+     }
+     
+
+
+
+
     
 
 

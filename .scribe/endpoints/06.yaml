@@ -650,6 +650,119 @@ endpoints:
   -
     httpMethods:
       - POST
+    uri: api/v1/search-nris-talk
+    metadata:
+      groupName: 'NrisTalk Related'
+      groupDescription: |-
+
+        APIs for managing all nris talk and its reply related
+      subgroup: ''
+      subgroupDescription: ''
+      title: searchNrisTalk
+      description: |-
+        If everything is okay, you'll get a `200` OK response with data.
+
+        EX
+         {
+        "keyword":text
+         }
+        Otherwise, the request will fail with a `404` error, and Profile not found and token related response...
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      '*keyword':
+        name: '*keyword'
+        description: ''
+        required: true
+        example: |-
+          text in JSON BODY
+
+          <aside class="notice">basepath/api/v1/search-nris-talk</aside>
+        type: string
+        custom: []
+    cleanBodyParameters:
+      '*keyword': |-
+        text in JSON BODY
+
+        <aside class="notice">basepath/api/v1/search-nris-talk</aside>
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "status": true,
+          "status_code": 200,
+          "message": "Successfully list get...",
+          "data": {
+          "total": 3,
+          "result": {
+          "current_page": 1,
+          "data": [
+          {
+          "id": 4,
+          "title": "title",
+          "title_slug": "title",
+          "description": "description",
+          "total_views": null,
+          "created_at": "31-Aug-2023 04:59 PM",
+          "comments_count": 0,
+          "likes_count": 1
+          }
+          ],
+          "first_page_url": "PATH/search-nris-talk?page=1",
+          "from": 1,
+          "next_page_url": null,
+          "path": "PATH/search-nris-talk",
+          "per_page": 10,
+          "prev_page_url": null,
+          "to": 3
+          }
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+          "status": false,
+          "status_code": 404,
+          "message": "List not found...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+          "status": false,
+          "status_code": 500,
+          "message": "Oops, something went wrong...",
+          "data": []
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
     uri: api/v1/create-nris-talk
     metadata:
       groupName: 'NrisTalk Related'
@@ -795,7 +908,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer he46PaV1f8vEDdcZ5gkba63'
+      - 'Bearer kg1Db46a6ahe8VPE35vcfZd'
     controller: null
     method: null
     route: null
@@ -946,7 +1059,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Zg8bhd5evaV4Dafk6cE63P1'
+      - 'Bearer c665g3aDe8VkaPfb4dhE1vZ'
     controller: null
     method: null
     route: null
@@ -1134,7 +1247,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 54cEk16bDa3vPe8VZha6dgf'
+      - 'Bearer 16gakfDZbdaV34E85evchP6'
     controller: null
     method: null
     route: null

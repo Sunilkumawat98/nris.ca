@@ -239,6 +239,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="forum-listing-related-POSTapi-v1-get-forum-by-id">
                                 <a href="#forum-listing-related-POSTapi-v1-get-forum-by-id">getForumById</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="forum-listing-related-POSTapi-v1-search-forum">
+                                <a href="#forum-listing-related-POSTapi-v1-search-forum">searchForum</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="forum-listing-related-POSTapi-v1-create-forum">
                                 <a href="#forum-listing-related-POSTapi-v1-create-forum">createForum</a>
                             </li>
@@ -332,6 +335,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-like-nris-talk-by-id">
                                 <a href="#nristalk-related-POSTapi-v1-like-nris-talk-by-id">likeNrisTalkById</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-search-nris-talk">
+                                <a href="#nristalk-related-POSTapi-v1-search-nris-talk">searchNrisTalk</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="nristalk-related-POSTapi-v1-create-nris-talk">
                                 <a href="#nristalk-related-POSTapi-v1-create-nris-talk">createNrisTalk</a>
@@ -10027,6 +10033,215 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                    <h2 id="forum-listing-related-POSTapi-v1-search-forum">searchForum</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;keyword&quot;:text
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-search-forum">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/search-forum" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*keyword\": \"text in JSON BODY\\n\\n&lt;aside class=\\\"notice\\\"&gt;basepath\\/api\\/v1\\/search-forum&lt;\\/aside&gt;\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/search-forum"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*keyword": "text in JSON BODY\n\n&lt;aside class=\"notice\"&gt;basepath\/api\/v1\/search-forum&lt;\/aside&gt;"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-search-forum">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully list get...&quot;,
+    &quot;data&quot;: {
+        &quot;total&quot;: 2,
+        &quot;result&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;data&quot;: [
+                {
+                    &quot;id&quot;: 3,
+                    &quot;title&quot;: &quot;title&quot;,
+                    &quot;title_slug&quot;: &quot;title&quot;,
+                    &quot;description&quot;: &quot;desc&quot;,
+                    &quot;total_views&quot;: 0,
+                    &quot;created_at&quot;: &quot;03-Nov-2023 06:16 PM&quot;,
+                    &quot;comments_count&quot;: 1,
+                    &quot;category&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;Test&quot;
+                    },
+                    &quot;subcategory&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;Sub category 1&quot;
+                    },
+                    &quot;user&quot;: {
+                        &quot;id&quot;: 2,
+                        &quot;first_name&quot;: &quot;User&quot;,
+                        &quot;last_name&quot;: &quot;Name&quot;
+                    }
+                }
+            ],
+            &quot;first_page_url&quot;: &quot;PATH/v1/search-forum?page=1&quot;,
+            &quot;from&quot;: 1,
+            &quot;next_page_url&quot;: null,
+            &quot;path&quot;: &quot;PATH/search-forum&quot;,
+            &quot;per_page&quot;: 10,
+            &quot;prev_page_url&quot;: null,
+            &quot;to&quot;: 2
+        }
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-search-forum" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-search-forum"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-search-forum"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-search-forum" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-search-forum">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-search-forum" data-method="POST"
+      data-path="api/v1/search-forum"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-search-forum', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-search-forum"
+                    onclick="tryItOut('POSTapi-v1-search-forum');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-search-forum"
+                    onclick="cancelTryOut('POSTapi-v1-search-forum');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-search-forum"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/search-forum</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-search-forum"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-search-forum"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*keyword</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*keyword"                data-endpoint="POSTapi-v1-search-forum"
+               value="text in JSON BODY
+
+<aside class="notice">basepath/api/v1/search-forum</aside>"
+               data-component="body">
+    <br>
+<p>Example: `text in JSON BODY</p>
+<aside class="notice">basepath/api/v1/search-forum</aside>`
+        </div>
+        </form>
+
                     <h2 id="forum-listing-related-POSTapi-v1-create-forum">createForum</h2>
 
 <p>
@@ -10576,14 +10791,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*first_name\": \"et\",
-    \"*last_name\": \"sunt\",
-    \"*email\": \"telly70@example.org\",
-    \"*dob\": \"eos\",
-    \"*mobile\": \"tempore\",
-    \"*password\": \"ut\",
-    \"*country_id\": \"laudantium\",
-    \"*state_id\": \"ut\"
+    \"*first_name\": \"id\",
+    \"*last_name\": \"voluptas\",
+    \"*email\": \"aliyah46@example.net\",
+    \"*dob\": \"rerum\",
+    \"*mobile\": \"aperiam\",
+    \"*password\": \"quibusdam\",
+    \"*country_id\": \"doloremque\",
+    \"*state_id\": \"delectus\"
 }"
 </code></pre></div>
 
@@ -10599,14 +10814,14 @@ const headers = {
 };
 
 let body = {
-    "*first_name": "et",
-    "*last_name": "sunt",
-    "*email": "telly70@example.org",
-    "*dob": "eos",
-    "*mobile": "tempore",
-    "*password": "ut",
-    "*country_id": "laudantium",
-    "*state_id": "ut"
+    "*first_name": "id",
+    "*last_name": "voluptas",
+    "*email": "aliyah46@example.net",
+    "*dob": "rerum",
+    "*mobile": "aperiam",
+    "*password": "quibusdam",
+    "*country_id": "doloremque",
+    "*state_id": "delectus"
 };
 
 fetch(url, {
@@ -10732,10 +10947,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*first_name"                data-endpoint="POSTapi-v1-register"
-               value="et"
+               value="id"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>et</code></p>
+<p>String     Ex ('Abc') Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*last_name</code></b>&nbsp;&nbsp;
@@ -10743,10 +10958,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*last_name"                data-endpoint="POSTapi-v1-register"
-               value="sunt"
+               value="voluptas"
                data-component="body">
     <br>
-<p>String     Ex ('def') Example: <code>sunt</code></p>
+<p>String     Ex ('def') Example: <code>voluptas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*email</code></b>&nbsp;&nbsp;
@@ -10754,10 +10969,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-register"
-               value="telly70@example.org"
+               value="aliyah46@example.net"
                data-component="body">
     <br>
-<p>Email      Ex ('you@domain.com') Example: <code>telly70@example.org</code></p>
+<p>Email      Ex ('you@domain.com') Example: <code>aliyah46@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*dob</code></b>&nbsp;&nbsp;
@@ -10765,10 +10980,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*dob"                data-endpoint="POSTapi-v1-register"
-               value="eos"
+               value="rerum"
                data-component="body">
     <br>
-<p>Date       Ex ('YYYY-MM-DD') Example: <code>eos</code></p>
+<p>Date       Ex ('YYYY-MM-DD') Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*mobile</code></b>&nbsp;&nbsp;
@@ -10776,10 +10991,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*mobile"                data-endpoint="POSTapi-v1-register"
-               value="tempore"
+               value="aperiam"
                data-component="body">
     <br>
-<p>String     Ex ('9876****09') Example: <code>tempore</code></p>
+<p>String     Ex ('9876****09') Example: <code>aperiam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -10787,10 +11002,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-register"
-               value="ut"
+               value="quibusdam"
                data-component="body">
     <br>
-<p>String     Ex ('Abc') Example: <code>ut</code></p>
+<p>String     Ex ('Abc') Example: <code>quibusdam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*country_id</code></b>&nbsp;&nbsp;
@@ -10798,10 +11013,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-register"
-               value="laudantium"
+               value="doloremque"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>laudantium</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>doloremque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -10809,10 +11024,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-register"
-               value="ut"
+               value="delectus"
                data-component="body">
     <br>
-<p>Number     Ex ('1/2/3/4') Example: <code>ut</code></p>
+<p>Number     Ex ('1/2/3/4') Example: <code>delectus</code></p>
         </div>
         </form>
 
@@ -10840,8 +11055,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"tempora\",
-    \"*password\": \"cum\"
+    \"*email_id\": \"quia\",
+    \"*password\": \"velit\"
 }"
 </code></pre></div>
 
@@ -10857,8 +11072,8 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "tempora",
-    "*password": "cum"
+    "*email_id": "quia",
+    "*password": "velit"
 };
 
 fetch(url, {
@@ -10992,10 +11207,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-login"
-               value="tempora"
+               value="quia"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>tempora</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*password</code></b>&nbsp;&nbsp;
@@ -11003,10 +11218,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*password"                data-endpoint="POSTapi-v1-login"
-               value="cum"
+               value="velit"
                data-component="body">
     <br>
-<p>String     Ex ('<strong>****</strong>') Example: <code>cum</code></p>
+<p>String     Ex ('<strong>****</strong>') Example: <code>velit</code></p>
         </div>
         </form>
 
@@ -11029,7 +11244,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email_id\": \"sit\"
+    \"*email_id\": \"repellat\"
 }"
 </code></pre></div>
 
@@ -11045,7 +11260,7 @@ const headers = {
 };
 
 let body = {
-    "*email_id": "sit"
+    "*email_id": "repellat"
 };
 
 fetch(url, {
@@ -11168,10 +11383,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email_id"                data-endpoint="POSTapi-v1-forgot-pass"
-               value="sit"
+               value="repellat"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>sit</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>repellat</code></p>
         </div>
         </form>
 
@@ -11194,9 +11409,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*email\": \"jackeline40@example.com\",
-    \"*new_password\": \"eos\",
-    \"*retype_password\": \"ipsum\"
+    \"*email\": \"fkiehn@example.org\",
+    \"*new_password\": \"quia\",
+    \"*retype_password\": \"dolore\"
 }"
 </code></pre></div>
 
@@ -11212,9 +11427,9 @@ const headers = {
 };
 
 let body = {
-    "*email": "jackeline40@example.com",
-    "*new_password": "eos",
-    "*retype_password": "ipsum"
+    "*email": "fkiehn@example.org",
+    "*new_password": "quia",
+    "*retype_password": "dolore"
 };
 
 fetch(url, {
@@ -11326,10 +11541,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*email"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="jackeline40@example.com"
+               value="fkiehn@example.org"
                data-component="body">
     <br>
-<p>Number     Ex ('you@domain.com') Example: <code>jackeline40@example.com</code></p>
+<p>Number     Ex ('you@domain.com') Example: <code>fkiehn@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*new_password</code></b>&nbsp;&nbsp;
@@ -11337,10 +11552,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*new_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="eos"
+               value="quia"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>eos</code></p>
+<p>String     Ex ('Abc@123') Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*retype_password</code></b>&nbsp;&nbsp;
@@ -11348,10 +11563,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*retype_password"                data-endpoint="POSTapi-v1-forgot-password-change"
-               value="ipsum"
+               value="dolore"
                data-component="body">
     <br>
-<p>String     Ex ('Abc@123') Example: <code>ipsum</code></p>
+<p>String     Ex ('Abc@123') Example: <code>dolore</code></p>
         </div>
         </form>
 
@@ -14604,6 +14819,203 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="nristalk-related-POSTapi-v1-search-nris-talk">searchNrisTalk</h2>
+
+<p>
+</p>
+
+<p>If everything is okay, you'll get a <code>200</code> OK response with data.</p>
+<p>EX
+{
+&quot;keyword&quot;:text
+}
+Otherwise, the request will fail with a <code>404</code> error, and Profile not found and token related response...</p>
+
+<span id="example-requests-POSTapi-v1-search-nris-talk">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://stage-api.nris.ca/api/v1/search-nris-talk" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"*keyword\": \"text in JSON BODY\\n\\n&lt;aside class=\\\"notice\\\"&gt;basepath\\/api\\/v1\\/search-nris-talk&lt;\\/aside&gt;\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://stage-api.nris.ca/api/v1/search-nris-talk"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "*keyword": "text in JSON BODY\n\n&lt;aside class=\"notice\"&gt;basepath\/api\/v1\/search-nris-talk&lt;\/aside&gt;"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-search-nris-talk">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: true,
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;Successfully list get...&quot;,
+    &quot;data&quot;: {
+        &quot;total&quot;: 3,
+        &quot;result&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;data&quot;: [
+                {
+                    &quot;id&quot;: 4,
+                    &quot;title&quot;: &quot;title&quot;,
+                    &quot;title_slug&quot;: &quot;title&quot;,
+                    &quot;description&quot;: &quot;description&quot;,
+                    &quot;total_views&quot;: null,
+                    &quot;created_at&quot;: &quot;31-Aug-2023 04:59 PM&quot;,
+                    &quot;comments_count&quot;: 0,
+                    &quot;likes_count&quot;: 1
+                }
+            ],
+            &quot;first_page_url&quot;: &quot;PATH/search-nris-talk?page=1&quot;,
+            &quot;from&quot;: 1,
+            &quot;next_page_url&quot;: null,
+            &quot;path&quot;: &quot;PATH/search-nris-talk&quot;,
+            &quot;per_page&quot;: 10,
+            &quot;prev_page_url&quot;: null,
+            &quot;to&quot;: 3
+        }
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 404,
+    &quot;message&quot;: &quot;List not found...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: false,
+    &quot;status_code&quot;: 500,
+    &quot;message&quot;: &quot;Oops, something went wrong...&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-search-nris-talk" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-search-nris-talk"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-search-nris-talk"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-search-nris-talk" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-search-nris-talk">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-search-nris-talk" data-method="POST"
+      data-path="api/v1/search-nris-talk"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-search-nris-talk', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-search-nris-talk"
+                    onclick="tryItOut('POSTapi-v1-search-nris-talk');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-search-nris-talk"
+                    onclick="cancelTryOut('POSTapi-v1-search-nris-talk');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-search-nris-talk"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/search-nris-talk</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-search-nris-talk"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-search-nris-talk"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>*keyword</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="*keyword"                data-endpoint="POSTapi-v1-search-nris-talk"
+               value="text in JSON BODY
+
+<aside class="notice">basepath/api/v1/search-nris-talk</aside>"
+               data-component="body">
+    <br>
+<p>Example: `text in JSON BODY</p>
+<aside class="notice">basepath/api/v1/search-nris-talk</aside>`
         </div>
         </form>
 
@@ -21317,8 +21729,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"vero\",
-    \"*state_id\": \"velit\"
+    \"*country_id\": \"cupiditate\",
+    \"*state_id\": \"sed\"
 }"
 </code></pre></div>
 
@@ -21334,8 +21746,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "vero",
-    "*state_id": "velit"
+    "*country_id": "cupiditate",
+    "*state_id": "sed"
 };
 
 fetch(url, {
@@ -21490,10 +21902,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="vero"
+               value="cupiditate"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>vero</code></p>
+<p>integer     Ex 1/2/3 Example: <code>cupiditate</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -21501,10 +21913,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-all-desi-movies"
-               value="velit"
+               value="sed"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>velit</code></p>
+<p>integer     Ex 1/2/3 Example: <code>sed</code></p>
         </div>
         </form>
 
@@ -21527,8 +21939,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"*country_id\": \"excepturi\",
-    \"*state_id\": \"et\"
+    \"*country_id\": \"atque\",
+    \"*state_id\": \"ipsam\"
 }"
 </code></pre></div>
 
@@ -21544,8 +21956,8 @@ const headers = {
 };
 
 let body = {
-    "*country_id": "excepturi",
-    "*state_id": "et"
+    "*country_id": "atque",
+    "*state_id": "ipsam"
 };
 
 fetch(url, {
@@ -21688,10 +22100,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*country_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="excepturi"
+               value="atque"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>excepturi</code></p>
+<p>integer     Ex 1/2/3 Example: <code>atque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>*state_id</code></b>&nbsp;&nbsp;
@@ -21699,10 +22111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="*state_id"                data-endpoint="POSTapi-v1-get-latest-desi-movies"
-               value="et"
+               value="ipsam"
                data-component="body">
     <br>
-<p>integer     Ex 1/2/3 Example: <code>et</code></p>
+<p>integer     Ex 1/2/3 Example: <code>ipsam</code></p>
         </div>
         </form>
 

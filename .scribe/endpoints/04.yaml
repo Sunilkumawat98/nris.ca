@@ -230,19 +230,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: vero
+        example: cupiditate
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: velit
+        example: sed
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': vero
-      '*state_id': velit
+      '*country_id': cupiditate
+      '*state_id': sed
     fileParameters: []
     responses:
       -
@@ -352,19 +352,19 @@ endpoints:
         name: '*country_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: excepturi
+        example: atque
         type: required
         custom: []
       '*state_id':
         name: '*state_id'
         description: 'integer     Ex 1/2/3'
         required: false
-        example: et
+        example: ipsam
         type: required
         custom: []
     cleanBodyParameters:
-      '*country_id': excepturi
-      '*state_id': et
+      '*country_id': atque
+      '*state_id': ipsam
     fileParameters: []
     responses:
       -
