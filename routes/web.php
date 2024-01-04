@@ -56,7 +56,7 @@ use App\Http\Controllers\Admin\NewsVideosController;
 //     return view('welcome');
 // });
 
-
+// test 
 
 Route::domain(config('app.domain'))->group(function () {
 
